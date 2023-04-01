@@ -1,0 +1,130 @@
+$desktop-breakpoint: 1025px;
+$laptop-breakpoint: 1024px;
+$tablet-breakpoint: 768px;
+$mobile-breakpoint: 600px;
+
+
+.post {
+    margin: auto;
+    width: clamp(400px, 60%, 900px);
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    display: flex;
+}
+
+.post__content{
+    width: 70%;
+}
+
+.post__sidebar {
+    //width: min-content;
+    //margin-top: 100px;
+    height: fit-content;
+    width: 30%;
+    background-color: #ffffff;
+    border-top: solid;
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: #ddd;
+    margin-top: 90px;
+    margin-left: 30px;
+    overflow-y: auto;
+    // stick to top
+    position: sticky;
+    position: -webkit-sticky;
+    top: 20px;
+    // end: stick to top
+    &::-webkit-scrollbar{  
+        width: 0.5em;
+    }
+    &::-webkit-scrollbar-track{  
+        background: rgb(168, 168, 168);
+        border-radius: 100vw;
+    }
+    &::-webkit-scrollbar-thumb{  
+        background: rgb(226, 215, 215);
+        border-radius: 100vw;
+    }
+  }
+
+.post__title{
+    text-align: center;
+}
+
+
+/* CSS for Social Media Icons*/
+.post__socials{
+display: flex;
+justify-content:center;
+padding: 0px;
+}
+
+.post__icon{
+padding-left: 15px;
+padding-right: 15px;
+font-size: 30px;
+}
+
+.post__twitter{
+    color: 	#1DA1F2;
+}
+
+.post__github{
+    color: 	black;
+}
+
+.post__youtube{
+    color:#FF0000
+}
+
+.post__copy{  //Handle copy icon css sepparately because it's a button
+    all: unset;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 26px;
+}
+
+.fas:hover, .fab:hover{
+opacity: 0.7;
+scale: 1.1;
+}
+
+
+
+
+/*Media queries*/
+@media only screen and (min-width: $desktop-breakpoint){
+    .post{
+        flex-direction: row;
+    }
+}
+@media only screen and (max-width: $laptop-breakpoint){
+    .post{
+        flex-direction: row;
+    }
+}
+@media only screen and (max-width: $tablet-breakpoint){
+    .post{
+        flex-direction: column;
+    }
+    .post__content{
+        width: 100%;
+        margin: 5px;
+    }
+    .post__sidebar {
+        width: 100%;
+        margin: 5px;
+    }
+}
+@media only screen and (max-width: $mobile-breakpoint){
+    .post{
+        flex-direction: column;
+    }
+    .post__content{
+        width: 100%;
+    }
+    .post__sidebar {
+        width: 100%;
+    }
+}
+

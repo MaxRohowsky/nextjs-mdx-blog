@@ -9,8 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.10",
+    "@wordpress/block-library": "^8.6.0",
+    "fa-icons": "^0.2.0",
+    "font-awesome": "^4.7.0",
+    "graphql": "^16.6.0",
     "next": "13.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.9.0",
+    "sass": "^1.59.3"
   }
 }

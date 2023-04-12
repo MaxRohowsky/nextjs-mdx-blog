@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React from "react";
 import { gql } from "@apollo/client";
-import { getApolloClient } from '../pages/lib/client.js';
+import { getApolloClient } from './client.js';
 import { useRouter } from 'next/router'
 
 export default function Sidebar(sidebarData) {

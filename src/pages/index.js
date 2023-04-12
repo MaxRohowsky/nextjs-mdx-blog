@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.scss'
 import { gql } from '@apollo/client';
-import { getApolloClient } from './lib/client';
+import { getApolloClient } from '../components/client';
 import Socials from '@/components/Socials';
 import Link from 'next/link'
 

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 //import { ApolloProvider } from "@apollo/client";
 import { gql } from "@apollo/client";
 //import client from "../lib/client";
-import { getApolloClient } from '../../lib/client';
+import { getApolloClient } from '../../../components/client';
 import Socials from '@/components/Socials';
 import Sidebar from '@/components/Sidebar';
 import Script from 'next/script'

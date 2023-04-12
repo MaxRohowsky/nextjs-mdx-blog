@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { gql } from "@apollo/client";
-import { getApolloClient } from '../lib/client';
+import { getApolloClient } from '../../components/client';
 import Socials from '@/components/Socials';
 import Sidebar from '@/components/Sidebar';
 

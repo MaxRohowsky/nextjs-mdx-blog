@@ -1,7 +1,7 @@
 import Card from "@/components/Card"
 import styles from '../styles/Courses.module.scss'
 import { gql } from "@apollo/client";
-import { getApolloClient } from './lib/client';
+import { getApolloClient } from '../components/client';
 
 export default function Courses({ categories }) {
   //console.log(categories[1].node.contentNodes.nodes);

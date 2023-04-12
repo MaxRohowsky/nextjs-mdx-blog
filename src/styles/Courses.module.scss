@@ -1,5 +1,8 @@
+/* Use CSS Modules when you want to scope CSS to a specific component?*/
+
 .title {
     text-align: center;
+    margin-top: 100px;
     margin-bottom: 0px;
 }
 
@@ -17,3 +20,16 @@
     margin-top: 0px;
     margin-bottom: 25px;
 }
+
+.cards{
+	/*display: flex;
+	flex-wrap: wrap;
+	justify-content: center;*/
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+    width: 70%;
+    margin: auto;
+}
+  

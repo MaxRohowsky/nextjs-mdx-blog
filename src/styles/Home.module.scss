@@ -1,0 +1,229 @@
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  height: 100vh;
+  
+}
+
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: left;
+  width: 70%;
+  margin: auto;
+  align-content: center;
+  gap: 30px;
+  
+  /*padding: 6rem;
+  align-items: center;
+  min-height: 100vh;
+  height: 70vh;*/
+}
+
+.cta{
+  color: blue;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.container {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  height: 150px;
+  margin-top: 20px;
+  background-color: white;
+  overflow: hidden;
+  justify-content: flex-start;
+  /*&:hover{
+    transform: scale(1.02);
+  }
+  border-radius: 20px;*/
+}
+
+.featured__text {
+  padding-left: 10px;
+  overflow-y: auto;
+  /*mask-image: linear-gradient(180deg, #000 80%, transparent);*/
+  &::-webkit-scrollbar {
+    width: 0.5em;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgb(168, 168, 168);
+    border-radius: 100vw;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgb(226, 215, 215);
+    border-radius: 100vw;
+  }
+}
+
+.featured__img {
+  height: 150px;
+}
+
+.featured__title {
+  font-size: large;
+  margin: 0px;
+}
+
+.featured__date {
+  margin: 0px;
+  font-weight: 100;
+  font-size: small;
+}
+
+.featured__excerpt {
+  margin: 0px;
+  font-weight: 100;
+  font-size: medium;
+}
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(25%, auto));
+  width: var(--max-width);
+  max-width: 100%;
+}
+
+.tagline{
+  text-transform: capitalize;
+}
+
+// Typewrier Animation Start
+@keyframes typing {
+  0%, 25% { content: ""; }
+  1%, 24% { content: "p"; }
+  2%, 23% { content: "pr"; }
+  3%, 22% { content: "pro"; }
+  4%, 21% { content: "proj"; }
+  5%, 20% { content: "proje"; }
+  6%, 19% { content: "projec"; }
+  7%, 18% { content: "project"; }
+  8%, 17% { content: "project "; }
+  9%, 16% { content: "project 🔥"; }
+
+  32%, 55% { content: ""; }
+  33%, 54% { content: "c"; }
+  34%, 53% { content: "ca"; }
+  35%, 52% { content: "car"; }
+  36%, 51% { content: "care"; }
+  37%, 50% { content: "caree"; }
+  38%, 49% { content: "career"; }
+  39%, 48% { content: "career"; }
+  40%, 47% { content: "career 💰"; }
+
+  62%, 90% { content: ""; }
+  63%, 89% { content: "b"; }
+  64%, 88% { content: "bu"; }
+  65%, 87% { content: "bus"; }
+  67%, 86% { content: "busi"; }
+  68%, 85% { content: "busin"; }
+  69%, 84% { content: "busine"; }
+  70%, 83% { content: "busines"; }
+  71%, 82% { content: "business"; }
+  72%, 81% { content: "business "; }
+  73%, 80% { content: "business 📈"; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter {
+  color: black;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 1ch solid black;
+  animation: blink 0.5s linear infinite;
+}
+// Typewrier Animation End
+
+
+
+.cta {
+  --b: 1px;   /* border thickness */
+  --s: 0em; /* size of the corner */
+  --color: #000000;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 14px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.cta:hover,
+.cta:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.cta:active {
+  background: var(--color);
+  color: #fff;
+}
+
+
+.latest{
+  color:black;
+}
+
+/*.latest {
+  --b: 1px;   
+  --s: 0em; 
+  --color: #000000;
+  
+  color: var(--color);
+  --_p: var(--s);
+
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 14px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.latest:hover,
+.latest:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}*/
+

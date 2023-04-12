@@ -12,13 +12,23 @@ $mobile-breakpoint: 600px;
     display: flex;
 }
 
+
 .post__content{
     width: 70%;
 }
 
+
+.post__title{
+    text-align: center;
+    margin-top: 100px;
+}
+
+
+
 .post__sidebar {
     //width: min-content;
     //margin-top: 100px;
+    z-index: 0;
     height: fit-content;
     width: 30%;
     background-color: #ffffff;
@@ -47,9 +57,7 @@ $mobile-breakpoint: 600px;
     }
   }
 
-.post__title{
-    text-align: center;
-}
+
 
 
 /* CSS for Social Media Icons*/

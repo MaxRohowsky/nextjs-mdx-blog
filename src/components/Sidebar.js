@@ -1,40 +1,48 @@
 
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import React from "react";
-import toc from "../toc/toc.json"
+import { gql } from "@apollo/client";
+import { getApolloClient } from '../pages/lib/client.js';
+import { useRouter } from 'next/router'
 
+export default function Sidebar(sidebarData) {
+    const router = useRouter()
+    
+    
+    
 
-
-export default function Sidebar(title) {
     var items = []
-    
-    const table =  toc;
 
-    const uniqueCourseName = "unity";
-    
-    const tableEntry = table.courses.find(c => c.course === uniqueCourseName)
-    //console.log(tableEntry.chapters[0].title)
-    //console.log(tableEntry.chapters.length)
-    console.log(title)
+    let courses = sidebarData.data
+    let coursesToSort = [...courses]
+    let sortedCourses = coursesToSort.sort(function (a, b) {
+        return a.node.menuOrder - b.node.menuOrder
+    })
 
-    for (var i = 0; i < tableEntry.chapters.length; i++){
-        items.push(<li className='sidebar__item' key={i}>Chapter {i+1}: {tableEntry.chapters[i].title}</li>)
-    } 
+    //console.log(router.query.course)
+    //console.log(sortedCourses[0].node.slug)
+
+    for (var i = 0; i < sidebarData.data.length; i++) {
+        let linkClassName = ""
+        if(router.query.course === sortedCourses[i].node.slug){
+            linkClassName = "sidebar__link__active"
+        }
+
+        items.push(
+            <li className='sidebar__item' key={i}>
+                <Link className={linkClassName} href={sortedCourses[i].node.uri}>
+                    Chapter {i + 1}: {sortedCourses[i].node.title}
+                </Link>
+            </li>
+        )
+    }
 
 
-
-    {/*
-    for (var i = 0; i < 15; i++){
-        items.push(<li className='sidebar__item' key={i}>Chapter X </li>)
-    } 
-    */}
-
-    return ( 
+    return (
         <>
             <ul className='sidebar__list'>
-                {/*<li className='sidebar__item'> Sample Entry </li>*/}
                 {items}
-            </ul>  
+            </ul>
         </>
     );
 }

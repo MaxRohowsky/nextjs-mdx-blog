@@ -3,64 +3,72 @@ $tablet-breakpoint: 768px;
 $laptop-breakpoint: 992px;
 $desktop-breakpoint: 1024px;
 
-:root {
-	--mainColor: #0d2ca7;
-	--mainColorLight: #5767aa;
-	--secondaryColor: #db2b39;
-	--textColor: #eee;
-}
 
-header {
+
+.header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	height: 80px;
-	padding: 0 2rem;
 	background-color: var(--mainColor);
 	color: var(--textColor);
+	position: fixed; /* Set the navbar to fixed position */
+	top: 0; /* Position the navbar at the top of the page */
+	width: 100%; /* Full width */
+	z-index: 10;
 }
 
-nav a {
+.header__nav {
+	display: flex;
+	align-items: center;
+
+}
+
+.nav__link {
 	margin: 0 1rem;
 	color: var(--textColor);
-	text-decoration: none;
+	&:hover {
+		transform: scale(1.1);
+		transition-duration: .1s;
+	}
 }
 
-nav a:hover {
-	color: var(--secondaryColor);
+.header__logo {
+	color: rgb(0, 0, 0);
+	padding-left: 20px;
 }
 
-header .nav-btn {
+.nav__btn {
 	padding: 5px;
 	cursor: pointer;
 	background: transparent;
 	border: none;
 	outline: none;
 	color: var(--textColor);
-	visibility: hidden;
+	//visibility: hidden;
+	display: none;
 	opacity: 0;
 	font-size: 1.8rem;
 }
 
-header div,
-nav {
-	display: flex;
-	align-items: center;
-}
+
+
 
 @media only screen and (max-width: 1024px) {
-	header .nav-btn {
+	.nav__btn { //this is the hamburger menu
 		visibility: visible;
 		opacity: 1;
+		display: flex;
 	}
 
-	header nav {
+	// This is the mobile menu
+	.header__nav {
 		position: fixed;
 		top: -100vh;
 		left: 0;
 		height: 100%;
 		width: 100%;
-		display: flex;
+		display: absolute;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
@@ -69,19 +77,20 @@ nav {
 		transition: 1s;
 	}
 
-	header .responsive_nav {
+	.responsive_nav {
 		transform: translateY(100vh);
+		background-color: white
 	}
 
-	nav .nav-close-btn {
+	.nav__closebtn {
 		position: absolute;
 		top: 2rem;
 		right: 2rem;
 	}
 
-	nav a {
+	/*nav a {
 		font-size: 1.5rem;
-	}
+	}*/
 }
 
 .seperator {

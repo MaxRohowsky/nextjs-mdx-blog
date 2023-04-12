@@ -2,16 +2,19 @@
   /* Grow and shrink between values*/
   min-width: 200px;
   max-width: 300px;
+  
+  //flex:1;
 
-  flex:1;
   /* Margins */
   margin: 10px 20px 40px;
   /*other*/
   overflow: hidden;
-  box-shadow: 0px 0px 15px -5px;
+  //box-shadow: 0px 0px 15px -5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   transition: 0.5s;
   animation: ease-in;
   border-radius: 10px;
+  background-color: white;
 
   &:hover{
     transform: scale(1.05);
@@ -25,9 +28,19 @@
 
 }
 
-.card__title .card__description{
-  margin: 1rem;
-  margin-top: 0.5rem;
+.card__title{
+  margin: 15px;
+  margin-top: 10px;
+}
+
+.title__text{
+  color: #000000;
+}
+
+.card__description{
+  color: #000000;
+  margin: 15px;
+  margin-top: 10px;
 }
 
 .card__button {

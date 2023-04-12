@@ -6,8 +6,6 @@ export default function Document() {
       <Head>
         {/* Stylesheet for Social Icons */}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-
-        {/* Stylesheet for Syntax Highlighting */}
         
       </Head>
       <body>
@@ -15,6 +13,8 @@ export default function Document() {
         <NextScript />
         
       </body>
+      
+
     </Html>
   )
 }

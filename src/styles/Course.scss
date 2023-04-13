@@ -5,11 +5,11 @@ $mobile-breakpoint: 600px;
 
 
 .post {
+    display: flex;
     margin: auto;
     width: clamp(400px, 60%, 900px);
     padding-left: 0.75rem;
     padding-right: 0.75rem;
-    display: flex;
 }
 
 

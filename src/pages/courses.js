@@ -4,7 +4,7 @@ import { gql } from "@apollo/client";
 import { getApolloClient } from '../components/client';
 
 export default function Courses({ categories }) {
-  //console.log(categories[1].node.contentNodes.nodes);
+  
   var items = []
   
   // This for loop goes through all the categories

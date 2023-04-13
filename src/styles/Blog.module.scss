@@ -1,5 +1,6 @@
 .main {
-    margin-left: auto;
+    margin: auto;
+    width: clamp(400px, 60%, 900px);
     margin-top: 100px;
     margin-right: auto;
     width: 100%;
@@ -29,19 +30,19 @@
 
 .list {
     list-style: none;
+    padding: 0px;
 }
 
 .link {
     text-decoration: none;
 }
 
-
 .card {
     display: flex;
     position: relative;
     flex-direction: column;
     margin: 30px auto;
-    box-shadow: 0 3px 7px -1px rgba(#000, .1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     margin-bottom: 1.6%;
     background: white;
     line-height: 1.4;
@@ -50,13 +51,13 @@
     overflow: hidden;
     z-index: 1;
     &:hover {
-        .post_image {
+        .post__image {
             transform: scale(1.1) rotate(2deg);
         }
     }
 }
 
-.post_image {
+.post__image {
     position: relative;
     height: 200px;
     top: 0;
@@ -69,20 +70,15 @@
     z-index: 2;
 }
 
-.post_title {
-
-    a:link,
-    a:visited {
-        text-decoration: none;
-    }
+.post__title {
+    color: black;
 }
 
-.post_description {
+.post__description {
     padding: 1rem;
     background: white;
     position: relative;
     z-index: 1;
-
     h3 {
         line-height: 1;
         margin: 0;
@@ -90,9 +86,12 @@
     }
 }
 
-.post_excerpt {
-    position: relative;
-    margin: 1rem 0 0;
+.post__date{
+    color: black;
+}
+
+.post__excerpt {
+    color: black; 
 }
 
 .post_sepparator {

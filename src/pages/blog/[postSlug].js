@@ -1,16 +1,14 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { gql } from "@apollo/client";
 import { getApolloClient } from '../../components/client';
-import Socials from '@/components/Socials';
-import Sidebar from '@/components/Sidebar';
+//import Socials from '@/components/Socials';
+import styles from '../../styles/Blog.module.scss'
 
 
 
 export default function Course({ post, site }) {
-  console.log(post)
-  console.log(site)
+
   return (
     <div>
       <Head>
@@ -19,8 +17,8 @@ export default function Course({ post, site }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>
+      <main className={styles.main}>
+        <h1 className={styles.title}>
           {post.title}
         </h1>
 

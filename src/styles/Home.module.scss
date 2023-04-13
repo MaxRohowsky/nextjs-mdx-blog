@@ -4,7 +4,8 @@
   align-items: center;
   text-align: left;
   height: 100vh;
-  
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 
@@ -227,3 +228,7 @@
   outline-offset: .05em;
 }*/
 
+
+@media only screen and (max-width: 900px) {
+  .center{margin-top: 100px;}
+}

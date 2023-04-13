@@ -6,13 +6,12 @@ import { gql } from '@apollo/client';
 import { getApolloClient } from '../components/client';
 import Socials from '@/components/Socials';
 import Link from 'next/link'
+import { dateTime } from '../components/datetime.js';
 
 const inter = Inter({ subsets: ['latin'] })
 
 
 export default function Home({ firstPost, firstCourse }) {
-  
-  console.log(firstPost.uri)
 
   function MyButton(link) {
     return (
@@ -87,21 +86,6 @@ export default function Home({ firstPost, firstCourse }) {
       </main>
     </>
   )
-}
-
-function dateTime(input) {
-  const dateTime = new Date(input);
-  const formattedDateTime = new Intl.DateTimeFormat('en-GB', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric' /*,
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-    hour12: false */
-  }).format(dateTime);
-
-  return (formattedDateTime)
 }
 
 

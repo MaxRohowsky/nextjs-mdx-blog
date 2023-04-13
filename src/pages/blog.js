@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { gql } from '@apollo/client';
 import { getApolloClient } from '../components/client';
+import { dateTime } from '../components/datetime.js';
 import styles from '../styles/Blog.module.scss'
 
 
@@ -17,11 +18,11 @@ export default function BlogEntires({ page, posts }) {
         </Head>*/}
 
       <main className={styles.main}>
-        {/*<h1 className={styles.title}>{title}</h1>
-        <p>{description}</p>*/}
         <h1 className={styles.title}> Blog </h1>
         <h4 className={styles.subtitle}>thoughts on code, tech, and the future</h4>
+        
         <hr className={styles.sepparator}/>
+
         <ul className={styles.list}>
           {posts && posts.length > 0 && posts.map(post => {
             return (
@@ -29,15 +30,15 @@ export default function BlogEntires({ page, posts }) {
                 <Link className={styles.link} href={post.path}>
                   <div className={styles.card}>
                     
-                    <div className={styles.post_image} style={{backgroundImage: `url(${post.featuredImage.node.mediaItemUrl})`}}></div>
-                    {/*<img className={styles.post_image} src={post.featuredImage.node.mediaItemUrl} /> */}
+                    <div className={styles.post__image} style={{backgroundImage: `url(${post.featuredImage.node.mediaItemUrl})`}}></div>
 
-                    <div className={styles.post_description}>
-                      <h3 className={styles.post_title} dangerouslySetInnerHTML={{
+                    <div className={styles.post__description}>
+                      <h3 className={styles.post__title} dangerouslySetInnerHTML={{
                         __html: post.title
                       }} />
+                      <p className={styles.post__date}>{dateTime(post.date)}</p>
                       <hr className={styles.post_sepparator}/>
-                      <h4 className={styles.post_excerpt} dangerouslySetInnerHTML={{
+                      <p className={styles.post__excerpt} dangerouslySetInnerHTML={{
                         __html: post.excerpt
                       }} />
                     </div>
@@ -79,6 +80,7 @@ export async function getStaticProps() {
               excerpt
               title
               slug
+              date
               featuredImage{
                 node{
                   mediaItemUrl

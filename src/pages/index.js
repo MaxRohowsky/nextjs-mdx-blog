@@ -36,7 +36,8 @@ export default function Home({ firstPost, firstCourse }) {
       <div className={styles.main}>
         <div>
           <p>About</p>
-          <h2 className={styles.tagline}>Learn code. Build your&nbsp;<span className={styles.typewriter}></span></h2>
+          <h2 className={styles.tagline}>Learn code. Build your</h2>
+          <h2 className={styles.tagline}><span className={styles.typewriter}></span></h2>
           <h4>Welcome to max teaches tech. Here you'll find free and quality coding tutorials!</h4>
           
           {MyButton("/courses")}

@@ -27,3 +27,12 @@
     margin: auto;
 }
   
+
+@media only screen and (max-width: 500px ) {
+    /*Applies to screens with width below 992 and height below 520*/
+    .cards{
+        width: 100%;
+    }
+  }
+  
+  

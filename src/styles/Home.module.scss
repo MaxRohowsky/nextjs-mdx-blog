@@ -102,6 +102,8 @@
   text-transform: capitalize;
 }
 
+
+
 // Typewrier Animation Start
 @keyframes typing {
   0%, 25% { content: ""; }
@@ -201,34 +203,23 @@
   color:black;
 }
 
-/*.latest {
-  --b: 1px;   
-  --s: 0em; 
-  --color: #000000;
-  
-  color: var(--color);
-  --_p: var(--s);
 
-  transition: .3s linear, color 0s, background-color 0s;
-  outline: var(--b) solid #0000;
-  outline-offset: .6em;
-  font-size: 14px;
+@media only screen and (max-width: 992px ), (max-height: 520px ) {
+  /*Applies to screens with width below 992 and height below 520*/
+  .center{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 0;
+    padding-right: 0px;
+  }
 
-  border: 0;
-
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  .main {
+    margin-left: 5px;
+    margin-right: 5px;
+    overflow-wrap: break-word;
+  }
 }
 
-.latest:hover,
-.latest:focus-visible{
-  --_p: 0px;
-  outline-color: var(--color);
-  outline-offset: .05em;
-}*/
 
 
-@media only screen and (max-width: 900px) {
-  .center{margin-top: 100px;}
-}
+

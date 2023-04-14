@@ -7,7 +7,7 @@ $mobile-breakpoint: 600px;
 .post {
     display: flex;
     margin: auto;
-    width: clamp(400px, 60%, 900px);
+    width: clamp(300px, 60%, 900px);
     padding-left: 0.75rem;
     padding-right: 0.75rem;
 }
@@ -127,6 +127,9 @@ scale: 1.1;
 @media only screen and (max-width: $mobile-breakpoint){
     .post{
         flex-direction: column;
+        width: 90%;
+        margin-left: 0.15rem;
+        margin-right: 0.15rem;
     }
     .post__content{
         width: 100%;

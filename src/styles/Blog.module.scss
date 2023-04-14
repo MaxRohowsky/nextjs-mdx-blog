@@ -103,3 +103,12 @@
     border-width: 0px;
     margin-left: 0;
 }
+
+@media only screen and (max-width: 770px ) {
+    /*Applies to screens with width below 992 and height below 520*/
+    .card {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+  }
+  

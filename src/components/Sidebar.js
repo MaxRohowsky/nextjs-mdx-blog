@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 
 export default function Sidebar(sidebarData) {
     const router = useRouter()
-    
+    //console.log(sidebarData)
     
     
 

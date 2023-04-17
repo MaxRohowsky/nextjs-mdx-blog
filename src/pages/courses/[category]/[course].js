@@ -7,27 +7,28 @@ import { getApolloClient } from '../../../components/client';
 import Socials from '@/components/Socials';
 import Sidebar from '@/components/Sidebar';
 import Script from 'next/script'
+import styles from '../../../styles/Course.module.scss'
 
 
 export default function Course({ courseData,  sidebarData }) {
 
   //console.log(sidebarData)
 
-  //console.log(econtent)
+  console.log(courseData)
 
   return (
     <>
-      <main className="post wp-embed-responsive" >
+      <main className={`${styles.post} wp-embed-responsive`} >
 
-        <div className="post__content">
-          <h1 className="post__title" dangerouslySetInnerHTML={{ __html: courseData.title }} />
+        <div className={styles.post__content}>
+          <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: courseData.title }} />
 
-  <div className="post__text" dangerouslySetInnerHTML={{ __html: courseData.content }} />
+  <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: courseData.content }} />
 
           <Socials />
           
         </div>
-        <div className="post__sidebar">
+        <div className={styles.post__sidebar}>
           <Sidebar data={sidebarData}/>
         </div>
       </main>
@@ -70,13 +71,13 @@ export async function getStaticProps({ params = {} } = {}) {
     }
   });
 
-  // For the sidebar. For a category, get courses with corresp. title, link, menuO.
+  // For the sidebar. For a category, get *50* courses with corresp. title, link, menuO.
   const data2 = await apolloClient.query({
     query: gql`
     query GetSidebarData($slug: [String]){
       categories(where: {slug: $slug}){
           nodes {
-              courses {
+              courses(first: 50) {
                   edges {
                       node {
                           id

@@ -9,11 +9,15 @@
     text-align: left;
     padding: 5px 5px 5px 5px;
     border-bottom:1px solid #ddd;
+    
 }
 
 .sidebar__link__active{
-    background-color: aqua;
+    font-weight: bold;
 }
 
-
+.item__link{
+    color: black;
+    text-decoration: none;
+}
 

@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 
 export default function Sidebar(sidebarData) {
     const router = useRouter()
-    //console.log(sidebarData)
+    console.log(sidebarData)
     
     
 
@@ -30,8 +30,8 @@ export default function Sidebar(sidebarData) {
 
         items.push(
             <li className='sidebar__item' key={i}>
-                <Link className={linkClassName} href={sortedCourses[i].node.uri}>
-                    Chapter {i + 1}: {sortedCourses[i].node.title}
+                <Link className={`item__link ${linkClassName}`} href={sortedCourses[i].node.uri}>
+                    {i + 1}. {sortedCourses[i].node.title}
                 </Link>
             </li>
         )

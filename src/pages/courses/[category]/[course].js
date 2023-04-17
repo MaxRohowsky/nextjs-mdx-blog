@@ -6,7 +6,7 @@ import { gql } from "@apollo/client";
 import { getApolloClient } from '../../../components/client';
 import Socials from '@/components/Socials';
 import Sidebar from '@/components/Sidebar';
-import Script from 'next/script'
+//import Script from 'next/script'
 import styles from '../../../styles/Course.module.scss'
 
 

@@ -3,30 +3,40 @@ import styles from '../styles/Courses.module.scss'
 import { gql } from "@apollo/client";
 import { getApolloClient } from '../components/client';
 
-export default function Courses({ categories }) {
+export default function Courses({ categories, catedata }) {
   
+
+
+  /*console.log(catedata[0].name)
+  console.log(catedata[0].categoryImages.categoryImage.sourceUrl)
+  console.log(catedata[0].description)
+  console.log(catedata[0].courses.edges[0].node.uri)*/
+
+ // console.log(catedata.length)
+  //console.log(catedata[4].name)
+
   var items = []
   
   // This for loop goes through all the categories
-  for (var i = 0; i < categories.length; i++) {
+  for (var i = 0; i < catedata.length; i++) {
     
     
-    if(categories[i].node.contentNodes.nodes.length > 0 && !(categories[i].node.name=='Uncategorized') ){ // category > one child and not uncategorized -> create card.
+    if(catedata[i].courses.edges.length > 0 && !(catedata[i].name=='Uncategorized') ){ // category > one child and not uncategorized -> create card.
       
      // Sort courses in category i by menuOrder -- improve by simply chosing 0.
-      let courses = categories[i].node.contentNodes.nodes
-      let coursesToSort = [...courses]
-      let sortedCourses = coursesToSort.sort(function(a,b){
-        return a.menuOrder - b.menuOrder
-      })
-      console.log(courses)
+      //let courses = categories[i].node.contentNodes.nodes
+      //let coursesToSort = [...courses]
+      //let sortedCourses = coursesToSort.sort(function(a,b){
+       // return a.menuOrder - b.menuOrder
+      //})
+      //console.log(courses)
 
     items.push(
       <Card
-        title={categories[i].node.name}
-        img={categories[i].node.categoryImages.categoryImage.sourceUrl}
-        body={categories[i].node.description}
-        link={sortedCourses[0].uri} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
+        title={catedata[i].name}
+        img={catedata[i].categoryImages.categoryImage.sourceUrl}
+        body={catedata[i].description}
+        link={catedata[i].courses.edges[0].node.uri} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
       />)
     }
 
@@ -52,7 +62,7 @@ export default function Courses({ categories }) {
 export async function getStaticProps() {
   const apolloClient = getApolloClient();
 
-  const data = await apolloClient.query({
+  /*const data = await apolloClient.query({
     query: gql`
         query GetCategoryData{
           categories {
@@ -89,16 +99,60 @@ export async function getStaticProps() {
           }
         }
       `
+  });*/
+
+  const data2 = await apolloClient.query({
+    query:gql`
+    {
+      categories {
+        nodes {
+          id
+          name
+          slug
+          description
+          categoryImages {
+            categoryImage {
+              sourceUrl
+            }
+          }
+          courses(where: {orderby: {field: MENU_ORDER, order: ASC}}, first: 1) {
+            edges {
+              node {
+                id
+                uri
+                title
+                slug
+                menuOrder
+                link
+              }
+            }
+          }
+        }
+      }
+    }
+    `
   });
 
 
-  const categories = data?.data.categories.edges
+
+
+  const catedata = data2.data.categories.nodes
+
+
+
+
+
+
+
+
+
+  //const categories = data?.data.categories.edges
   //const content = data?.data.courses.edges[0].node.content;
 
 
   return {
     props: {
-      categories
+      catedata
     }
   }
 }

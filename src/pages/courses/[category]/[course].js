@@ -1,20 +1,16 @@
-import { useRouter } from 'next/router'
-//import { ApolloClient, InMemoryCache } from "@apollo/client";
-//import { ApolloProvider } from "@apollo/client";
+//import { useRouter } from 'next/router'
 import { gql } from "@apollo/client";
-//import client from "../lib/client";
 import { getApolloClient } from '../../../components/client';
 import Socials from '@/components/Socials';
 import Sidebar from '@/components/Sidebar';
-//import Script from 'next/script'
 import styles from '../../../styles/Course.module.scss'
 
 
-export default function Course({ courseData,  sidebarData }) {
+export default function Course({ courseData, sidebarData }) {
 
   //console.log(sidebarData)
 
-  console.log(courseData)
+  //console.log(courseData)
 
   return (
     <>
@@ -23,13 +19,14 @@ export default function Course({ courseData,  sidebarData }) {
         <div className={styles.post__content}>
           <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: courseData.title }} />
 
-  <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: courseData.content }} />
+          <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: courseData.content }} />
 
           <Socials />
-          
+
         </div>
+        
         <div className={styles.post__sidebar}>
-          <Sidebar data={sidebarData}/>
+          <Sidebar data={sidebarData} />
         </div>
       </main>
     </>
@@ -93,9 +90,9 @@ export async function getStaticProps({ params = {} } = {}) {
       }
   }
       `,
-      variables: {
-        slug: category
-      }
+    variables: {
+      slug: category
+    }
   });
 
 
@@ -120,7 +117,7 @@ export async function getStaticProps({ params = {} } = {}) {
   //const content = data?.data.courses.edges[0].node.content;
   //const category = data?.data.courses.edges[0].node.categories.nodes[0].id;
   //const sidebarData = data2?.data.categories.nodes
- 
+
   //const econtent = String(execute(content));
 
 
@@ -129,7 +126,7 @@ export async function getStaticProps({ params = {} } = {}) {
 
   return {
     props: {
-      courseData, 
+      courseData,
       sidebarData
     }
   }

@@ -19,7 +19,7 @@ export default function Courses({ categories }) {
       let sortedCourses = coursesToSort.sort(function(a,b){
         return a.menuOrder - b.menuOrder
       })
-      //console.log(courses)
+      console.log(courses)
 
     items.push(
       <Card

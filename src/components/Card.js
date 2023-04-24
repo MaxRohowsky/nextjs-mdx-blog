@@ -4,7 +4,7 @@ import styles from '../styles/Card.module.scss'
 
 function Card({title, img, body, link}){
     //const navigate = useNavigate();
-    console.log(link)
+    // console.log(link)
 
 
     return(

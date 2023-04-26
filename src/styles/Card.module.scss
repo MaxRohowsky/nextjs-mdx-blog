@@ -1,13 +1,16 @@
 .card{
-  margin: 10px 20px 40px;
+  
+  margin: 0px; // Margin between Card and Grid Border
+
   overflow: hidden;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  background-color: white;
+  background-color: var(--card-color);
   /* Grow and shrink between values*/
-  min-width: 200px;
-  max-width: 300px;
-  /* Card scale on hover w/ ease in & ease out*/
+  //min-width: 250px;
+  //max-width: 325px;
+
+  /* Card Hover*/
   transition: 0.5s;
   animation: ease-in;
   &:hover{
@@ -18,8 +21,7 @@
 .card__image{
   overflow: hidden;
   /* Scale image to parent div*/
-  max-width:100%;
-
+  max-width: 100%;
 }
 
 .card__title{
@@ -28,16 +30,16 @@
 }
 
 .title__text{
-  color: #000000;
+  color: var(--textColor);
 }
 
 .card__description{
-  color: #000000;
+  color: var(--textColor);
   margin: 15px;
   margin-top: 10px;
 }
 
-.card__button {
+/*.card__button {
   width: 100%;
   color: #fff;
   font-size: 1rem;
@@ -76,4 +78,4 @@
       width: 100%;
     }
   }
-}
+}*/

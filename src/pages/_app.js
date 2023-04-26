@@ -1,4 +1,4 @@
-import '@/styles/globals.css';
+import '@/styles/globals.scss';
 //import '@/styles/Navbar.module.scss'
 //import '@/styles/Card.scss'
 //import '@/styles/Courses.scss'

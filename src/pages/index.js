@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
+//import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.scss'
 import { gql } from '@apollo/client';
@@ -34,7 +34,7 @@ export default function Home({ firstPost, firstCourse }) {
 
       <main className={styles.center}>
       <div className={styles.main}>
-        <div>
+        <div className={styles.about}>
           <p>About</p>
           <h2 className={styles.tagline}>Learn code. Build your</h2>
           <h2 className={styles.tagline}><span className={styles.typewriter}></span></h2>

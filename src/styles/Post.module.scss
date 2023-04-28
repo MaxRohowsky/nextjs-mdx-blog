@@ -2,7 +2,7 @@
     margin: auto;
     width: clamp(400px, 60%, 900px);
     margin-top: 100px;
-    margin-right: auto;
+    margin-right: auto; //redundant? see margin above?
     width: 100%;
     max-width: 80ch;
 }

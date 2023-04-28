@@ -7,10 +7,17 @@ import styles from '../../../styles/Course.module.scss'
 
 
 export default function Course({ courseData, sidebarData }) {
-
-  //console.log(sidebarData)
-
+  //console.log(sidebarData.length)
   //console.log(courseData)
+  
+  let showSidebar = true;
+  
+  if (sidebarData.length <= 1) {
+    showSidebar = false;
+  } else {
+    showSidebar = true;
+  }
+  
 
   return (
     <>
@@ -25,9 +32,9 @@ export default function Course({ courseData, sidebarData }) {
 
         </div>
         
-        <div className={styles.post__sidebar}>
+        {showSidebar && (<div className={styles.post__sidebar}>
           <Sidebar data={sidebarData} />
-        </div>
+        </div>)}
       </main>
     </>
   )

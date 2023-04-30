@@ -57,3 +57,43 @@ p{
   margin-top: 3px;
   margin-top: 3px;
 }
+
+.hljs{
+  border-radius: 10px;
+}
+
+// SHOW LANGUAGE
+// This code shows the programming language within the code blocks
+// See https://github.com/westonruter/syntax-highlighting-code-block/wiki/Advanced-Usage
+// Problem is the language is not always correct
+/*
+.wp-block-code {
+	position: relative;
+}
+
+.wp-block-code .shcb-language {
+	clip: initial;
+	width: auto;
+	height: auto;
+	margin: auto;
+	clip-path: none;
+
+	bottom: 6px;
+	right: 6px;
+	line-height: 1em;
+	white-space: normal;
+	//font-family: sans-serif;
+	font-size: 12px;
+	//font-weight: bold;
+  
+}
+
+.wp-block-code .shcb-language__label,
+.wp-block-code .shcb-language__paren,  // yes, paren is correct :D
+.wp-block-code .shcb-language__slug {
+	display: none;
+}
+
+*/
+// SHOW LANGUAGE END
+

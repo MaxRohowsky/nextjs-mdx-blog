@@ -3,7 +3,7 @@ import styles from '../styles/Courses.module.scss'
 import { gql } from "@apollo/client";
 import { getApolloClient } from '../components/client';
 
-export default function Courses({ categories, catedata }) {
+export default function Courses({ catedata }) {
 
 
   var items = []
@@ -26,14 +26,16 @@ export default function Courses({ categories, catedata }) {
 
   return (
     <>
-      <h1 className={styles.title}> Courses </h1>
-      <h4 className={styles.subtitle}>simple coding lessons and tutorials</h4>
-      <hr className={styles.sepparator} />
-      <div className={styles.container}>
-        <div className={styles.cards}>
-          {items}
+
+        <h1 className={styles.title}> Courses </h1>
+        <h4 className={styles.subtitle}>simple coding lessons and tutorials</h4>
+        <hr className={styles.sepparator} />
+        <div className={styles.container}>
+          <div className={styles.cards}>
+            {items}
+          </div>
         </div>
-      </div>
+
     </>
 
   );

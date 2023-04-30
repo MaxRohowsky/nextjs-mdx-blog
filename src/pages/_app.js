@@ -18,23 +18,26 @@ import '@wordpress/block-library/build-style/theme.css';
 //import '@wordpress/block-library/build-style/common.css'
 
 import '@/styles/titillium.scss';
-
 import Navbar from "@/components/Navbar";
 import Head from 'next/head';
 import Footer from '@/components/Footer';
+import Overlay from '@/components/Overlay';
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Head>
 
-      </Head>
+      <Head/>
+
+      <Overlay />
 
       <Navbar />
-      
+    
+
+
       <Component {...pageProps} />
 
-      {/*<Footer/>*/}
+      <Footer/>
     </>
   )
 }

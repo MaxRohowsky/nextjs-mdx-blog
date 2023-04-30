@@ -10,12 +10,15 @@ $desktop-breakpoint: 1024px;*/
 	align-items: center;
 	justify-content: space-between;
 	height: 80px;
+	margin: 20px;
+	border-radius: 20px;
 	background-color: var(--mainColor);
 	color: var(--textColor);
 	position: fixed; /* Set the navbar to fixed position */
 	top: 0; /* Position the navbar at the top of the page */
-	width: 100%; /* Full width */
+	width: calc(100vw - (2 * 20px)); /* Full width minus the margin on each side*/
 	z-index: 10;
+	flex-shrink: 0;
 }
 
 .header__nav {

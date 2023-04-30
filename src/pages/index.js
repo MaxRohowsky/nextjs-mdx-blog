@@ -35,7 +35,9 @@ export default function Home({ firstPost, firstCourse }) {
       <main className={styles.center}>
       <div className={styles.main}>
         <div className={styles.about}>
-          <p>About</p>
+
+
+          <h3>About</h3>
           <h2 className={styles.tagline}>Learn code. Build your</h2>
           <h2 className={styles.tagline}><span className={styles.typewriter}></span></h2>
           <h4>Welcome to max teaches tech. Here you'll find free and quality coding tutorials!</h4>
@@ -43,15 +45,14 @@ export default function Home({ firstPost, firstCourse }) {
           {MyButton("/courses")}
           
           
-
-          
-
-          <p>Socials</p>
+          <h3>Socials</h3>
           <Socials />
         </div>
 
+
+
         <div className={styles.rightSide}>
-          <p>Latest</p>
+          <h3>Latest</h3>
 
           <Link style={{ textDecoration: 'none' }} className={styles.latest} href={"/blog"+firstPost.uri}>
           <div className={styles.container}>

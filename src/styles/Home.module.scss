@@ -166,7 +166,7 @@
   --b: 1px;   /* border thickness */
   --s: 0em; /* size of the corner */
   --color: #000000;
-  
+
   padding: calc(.5em + var(--s)) calc(.9em + var(--s));
   color: var(--color);
   --_p: var(--s);
@@ -177,7 +177,6 @@
   outline: var(--b) solid #0000;
   outline-offset: .6em;
   font-size: 14px;
-
   border: 0;
 
   user-select: none;
@@ -187,12 +186,14 @@
 
 .cta:hover,
 .cta:focus-visible{
+
   --_p: 0px;
   outline-color: var(--color);
   outline-offset: .05em;
 }
 
 .cta:active {
+
   background: var(--color);
   color: #fff;
 }

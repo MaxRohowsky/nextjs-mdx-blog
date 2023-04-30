@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from 'next/link';
-import styles from '../styles/Navbar.module.scss'
+import styles from '@/styles/Navbar.module.scss'
 
 function Navbar() {
 	const navRef = useRef();

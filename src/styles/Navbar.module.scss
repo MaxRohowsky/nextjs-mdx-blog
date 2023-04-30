@@ -24,7 +24,7 @@ $desktop-breakpoint: 1024px;*/
 .header__nav {
 	display: flex;
 	align-items: center;
-
+	padding-right: 10px;
 }
 
 .nav__link {
@@ -39,6 +39,7 @@ $desktop-breakpoint: 1024px;*/
 .header__logo {
 	color: rgb(0, 0, 0);
 	padding-left: 20px;
+	margin: 0px;
 }
 
 .nav__btn {

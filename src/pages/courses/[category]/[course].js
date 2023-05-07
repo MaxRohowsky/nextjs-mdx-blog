@@ -5,6 +5,7 @@ import Socials from '@/components/Socials';
 import Sidebar from '@/components/Sidebar';
 import styles from '../../../styles/Course.module.scss'
 import Head from "next/head";
+import parse from "node-html-parser";
 
 
 
@@ -18,14 +19,15 @@ export default function Course({ courseData, sidebarData }) {
   }
 
   const doc = parse(courseData.excerpt);
-  const excerptText = doc.querySelector("p").text;
-  console.log(excerptText)
+  const excerptTextPre = doc.querySelector("p");
+  const excerptTextPost = excerptTextPre ? excerptTextPre.text : '';
+  //console.log(excerptTextPost)
 
   return (
     <>
       <Head>
         <title>{courseData.title}</title>
-        <meta name="description" content={excerptText} />
+        <meta name="description" content={excerptTextPost} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

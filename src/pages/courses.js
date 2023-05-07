@@ -2,7 +2,7 @@ import Card from "@/components/Card"
 import styles from '../styles/Courses.module.scss'
 import { gql } from "@apollo/client";
 import { getApolloClient } from '../components/client';
-
+import Head from "next/head";
 export default function Courses({ catedata }) {
 
 
@@ -26,15 +26,21 @@ export default function Courses({ catedata }) {
 
   return (
     <>
+      <Head>
+        <title>Courses</title>
+        <meta name="description" content="Free Tech Tutorials"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-        <h1 className={styles.title}> Courses </h1>
-        <h4 className={styles.subtitle}>simple coding lessons and tutorials</h4>
-        <hr className={styles.sepparator} />
-        <div className={styles.container}>
-          <div className={styles.cards}>
-            {items}
-          </div>
+      <h1 className={styles.title}> Courses </h1>
+      <h4 className={styles.subtitle}>simple coding lessons and tutorials</h4>
+      <hr className={styles.sepparator} />
+      <div className={styles.container}>
+        <div className={styles.cards}>
+          {items}
         </div>
+      </div>
 
     </>
 

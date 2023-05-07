@@ -11,42 +11,46 @@ export default function BlogEntires({ page, posts }) {
   const { title, description } = page;
   return (
     <div>
-      {/*<Head>
+
+      <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        </Head>*/}
+      </Head>
+
+
 
       <main className={styles.main}>
         <h1 className={styles.title}> Blog </h1>
         <h4 className={styles.subtitle}>thoughts on code, tech, and the future</h4>
-        
-        <hr className={styles.sepparator}/>
+
+        <hr className={styles.sepparator} />
 
         <ul className={styles.list}>
           {posts && posts.length > 0 && posts.map(post => {
             return (
-                <li  key={post.slug}>
+              <li key={post.slug}>
                 <Link className={styles.link} href={post.path}>
                   <div className={styles.card}>
-                    
-                    <div className={styles.post__image} style={{backgroundImage: `url(${post.featuredImage.node.mediaItemUrl})`}}></div>
+
+                    <div className={styles.post__image} style={{ backgroundImage: `url(${post.featuredImage.node.mediaItemUrl})` }}></div>
 
                     <div className={styles.post__description}>
                       <h3 className={styles.post__title} dangerouslySetInnerHTML={{
                         __html: post.title
                       }} />
                       <p className={styles.post__date}>{dateTime(post.date)}</p>
-                      <hr className={styles.post_sepparator}/>
+                      <hr className={styles.post_sepparator} />
                       <p className={styles.post__excerpt} dangerouslySetInnerHTML={{
                         __html: post.excerpt
                       }} />
                     </div>
 
                   </div>
-                  </Link>
-                </li>
-           
+                </Link>
+              </li>
+
             );
           })}
 

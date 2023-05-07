@@ -4,23 +4,33 @@ import { getApolloClient } from '../../../components/client';
 import Socials from '@/components/Socials';
 import Sidebar from '@/components/Sidebar';
 import styles from '../../../styles/Course.module.scss'
+import Head from "next/head";
+
 
 
 export default function Course({ courseData, sidebarData }) {
-  //console.log(sidebarData.length)
-  //console.log(courseData)
-  
   let showSidebar = true;
-  
+
   if (sidebarData.length <= 1) {
     showSidebar = false;
   } else {
     showSidebar = true;
   }
-  
+
+  const doc = parse(courseData.excerpt);
+  const excerptText = doc.querySelector("p").text;
+  console.log(excerptText)
 
   return (
     <>
+      <Head>
+        <title>{courseData.title}</title>
+        <meta name="description" content={excerptText} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+
       <main className={`${styles.post} wp-embed-responsive`} >
 
         <div className={styles.post__content}>
@@ -31,7 +41,7 @@ export default function Course({ courseData, sidebarData }) {
           <Socials />
 
         </div>
-        
+
         {showSidebar && (<div className={styles.post__sidebar}>
           <Sidebar data={sidebarData} />
         </div>)}
@@ -56,6 +66,7 @@ export async function getStaticProps({ params = {} } = {}) {
               slug
               title
               content
+              excerpt
               id
               categories{
                 nodes{

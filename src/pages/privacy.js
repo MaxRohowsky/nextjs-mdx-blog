@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import styles from '../styles/Imprint.module.scss'
 
 export default function Imprint() {
@@ -5,6 +6,14 @@ export default function Imprint() {
 
     return (
         <>
+            <Head>
+                <title>Imprint</title>
+                <meta name="description" content="Imprint" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="robots" content="noindex, nofollow" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+
             <div className={styles.imprint}>
                 <h1 className={styles.header}>Datenschutzerklärung</h1>
 

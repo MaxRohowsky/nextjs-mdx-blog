@@ -4,16 +4,20 @@ import { gql } from "@apollo/client";
 import { getApolloClient } from '../../components/client';
 //import Socials from '@/components/Socials';
 import styles from '../../styles/Blog.module.scss'
-
+import { parse } from 'node-html-parser';
 
 
 export default function Course({ post, site }) {
+
+  const doc = parse(post.excerpt);
+  const excerptText = doc.querySelector("p").text;
+  console.log(excerptText)
 
   return (
     <div>
       <Head>
         <title>{post.title}</title>
-        <meta name="description" content={`Read more about ${post.title} on ${site.title}`} />
+        <meta name="description" content={excerptText} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -57,6 +61,7 @@ export async function getStaticProps({ params = {} } = {}) {
           content
           title
           slug
+          excerpt
       }
     }`,
     variables: {

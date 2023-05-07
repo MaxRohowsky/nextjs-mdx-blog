@@ -17,17 +17,29 @@ import '@wordpress/block-library/build-style/theme.css';
 //import '@wordpress/block-library/build-style/common.css'
 //import '@wordpress/block-library/build-style/common.css'
 
+/* Font */
 import '@/styles/titillium.scss';
+/* Components */
+import Head from 'next/head';
 import Navbar from "@/components/Navbar";
-import Script from 'next/script';
 import Footer from '@/components/Footer';
 import Overlay from '@/components/Overlay';
-
-import ReactGA from 'react-ga';
+//import ReactGA from 'react-ga';
+/* Other */
+import Script from 'next/script';
+import { parse } from 'node-html-parser';
 
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <title>Max Teaches Tech</title>
+        <meta name="description" content="Quality Code Tutorials" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow"/>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
 
 
 

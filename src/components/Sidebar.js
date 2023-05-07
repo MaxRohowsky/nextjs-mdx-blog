@@ -39,11 +39,11 @@ export default function Sidebar(sidebarData) {
 
 
     return (
-        <>
+        <div className='sidebar__wrap'>
             <ul className='sidebar__list'>
                 {items}
             </ul>
-        </>
+        </div>
     );
 }
 

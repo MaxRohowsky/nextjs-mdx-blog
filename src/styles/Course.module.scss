@@ -34,20 +34,20 @@ $mobile-breakpoint: 600px;
     //width: min-content;
     //margin-top: 100px;
     z-index: 0;
-    height: fit-content;
+    //height: fit-content;
     width: 30%;
-    background-color: #ffffff;
-    border-top: solid;
-    border-bottom: solid;
-    border-width: 2px;
-    border-color: #ddd;
-    margin-top: 90px;
+    //background-color: #ffffff;
+    //border-top: solid;
+    //border-bottom: solid;
+    //border-width: 2px;
+    //border-color: #ddd;
+    margin-top: 120px;
     margin-left: 30px;
-    overflow-y: auto;
+    //overflow-y: auto;
     // stick to top
-    position: sticky;
-    position: -webkit-sticky;
-    top: 20px;
+    //position: sticky;
+    //position: -webkit-sticky;
+    //top: 20px;
     // end: stick to top
     &::-webkit-scrollbar{  
         width: 0.5em;

@@ -1,15 +1,24 @@
+$desktop-breakpoint: 1025px;
+$laptop-breakpoint: 1024px;
+$tablet-breakpoint: 768px;
+$mobile-breakpoint: 600px;
+
+.sidebar__wrap{
+    position: fixed;
+    
+}
+
 .sidebar__list {
     list-style-type: none;
     padding: 0;
     margin: 0px;
-
+    
 }
 
 .sidebar__item{
     text-align: left;
     padding: 5px 5px 5px 5px;
-    border-bottom:1px solid #ddd;
-    
+    border-bottom:1px solid #ddd;  
 }
 
 .sidebar__link__active{
@@ -19,5 +28,30 @@
 .item__link{
     color: black;
     text-decoration: none;
+}
+
+
+
+@media only screen and (max-width: $tablet-breakpoint){
+    .post{
+        flex-direction: column;
+    }
+    .post__content{
+        width: 100%;
+        margin: 5px;
+    }
+    .post__sidebar {
+        width: 100%;
+        margin: 5px;
+    }
+}
+
+
+
+@media only screen and (max-width: $tablet-breakpoint){
+    .sidebar__wrap{
+        position: static;
+        
+    }
 }
 

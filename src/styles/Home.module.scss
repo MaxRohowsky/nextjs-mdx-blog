@@ -3,9 +3,9 @@
   justify-content: center;
   align-items: center;
   text-align: left;
-  height: 100vh;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+  height: 100%;
 }
 
 
@@ -207,9 +207,8 @@
 @media only screen and (max-width: 992px ), (max-height: 520px ) {
   /*Applies to screens with width below 992 and height below 520*/
   .center{
-    padding-top: 80px;
-    padding-bottom: 80px;
-    padding-left: 0;
+    //padding-bottom: 80px;
+    //padding-left: 0;
     padding-right: 0px;
   }
 

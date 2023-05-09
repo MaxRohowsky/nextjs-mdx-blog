@@ -48,21 +48,20 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/*<!-- Google tag (gtag.js) -->*/}
-
-
-
-
 
       <Overlay />
 
-      <Navbar />
+      <div id="page-container">
+        <Navbar />
+
+        <div id="content-wrap">
+          <Component {...pageProps} />
+        </div>
+        
+        <Footer />
+      </div>
 
 
-
-      <Component {...pageProps} />
-
-      <Footer />
     </>
   )
 }

@@ -5,15 +5,15 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div>
-        <Link href="/sitemap">
+        <Link href="/sitemap" style={{textDecoration: "none", color: "black"}}>
           Sitemap
         </Link>
         {' | '}
-        <Link href="/privacy">
+        <Link href="/privacy" style={{textDecoration: "none", color: "black"}}>
           Privacy
         </Link>
         {' | '}
-        <Link href="/imprint">
+        <Link href="/imprint" style={{textDecoration: "none", color: "black"}}>
           Imprint
         </Link>
       </div>

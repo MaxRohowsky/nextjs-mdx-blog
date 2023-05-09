@@ -1,35 +1,15 @@
 .footer {
-	position: fixed;
-  left: 0;
-  bottom: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 30px;
-	background-color: rgb(255, 255, 255);
-	bottom: 0; // Position the navbar at the top of the page 
+	position: absolute;
+	bottom: 0;
 	width: 100%;
-	z-index: 10;
-	flex-shrink: 0;
+	height: 30px;   
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    z-index: 10;
+    flex-shrink: 0;
 }
-
-
-/* This makes the footer look like the menu bar*/
-/*
-
-.footer {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 80px;
-	margin: 20px;
-	border-radius: 20px;
-	background-color: var(--mainColor);
-	color: var(--textColor);
-	bottom: 0; // Position the navbar at the top of the page 
-	width: calc(100vw - (2 * 20px)); // Full width minus the margin on each side
-	z-index: 10;
-	flex-shrink: 0;
-}
-
-*/

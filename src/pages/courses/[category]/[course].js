@@ -1,4 +1,3 @@
-//import { useRouter } from 'next/router'
 import { gql } from "@apollo/client";
 import { getApolloClient } from '../../../components/client';
 import Socials from '@/components/Socials';
@@ -21,7 +20,6 @@ export default function Course({ courseData, sidebarData }) {
   const doc = parse(courseData.excerpt);
   const excerptTextPre = doc.querySelector("p");
   const excerptTextPost = excerptTextPre ? excerptTextPre.text : '';
-  //console.log(excerptTextPost)
 
   return (
     <>
@@ -32,26 +30,23 @@ export default function Course({ courseData, sidebarData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
       <main className={`${styles.post} wp-embed-responsive`} >
 
         <div className={styles.post__content}>
           <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: courseData.title }} />
-
-          <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: courseData.content }} />
-
           <Socials />
-
+          <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: courseData.content }} />
         </div>
 
-        {showSidebar && (<div className={styles.post__sidebar}>
-          <Sidebar data={sidebarData} />
-        </div>)}
+        {showSidebar && (
+          <div className={styles.post__sidebar}>
+            <Sidebar data={sidebarData} />
+          </div>)}
+          
       </main>
     </>
   )
 }
-//category={category}
 
 
 export async function getStaticProps({ params = {} } = {}) {

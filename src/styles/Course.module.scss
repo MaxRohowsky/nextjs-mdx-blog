@@ -3,39 +3,32 @@ $laptop-breakpoint: 1024px;
 $tablet-breakpoint: 768px;
 $mobile-breakpoint: 600px;
 
-
 .post {
+    position: relative;
     display: flex;
     margin: auto;
     width: clamp(300px, 60%, 900px);
     padding-left: 0.75rem;
     padding-right: 0.75rem;
-
 }
-
 
 .post__content{
     width: 70%;
     margin-left: auto;
     margin-right: auto;
-    /*background-color: rgb(255, 255, 255);
-    padding: 5px;*/
-
 }
-
 
 .post__title{
     text-align: center;
-    margin-top: 100px;
 }
-
 
 .post__sidebar {
     //width: min-content;
     //margin-top: 100px;
     z-index: 0;
     //height: fit-content;
-    width: 30%;
+    //width: 30%;
+    width: 200px;
     //background-color: #ffffff;
     //border-top: solid;
     //border-bottom: solid;
@@ -61,47 +54,6 @@ $mobile-breakpoint: 600px;
         border-radius: 100vw;
     }
   }
-
-
-
-
-/* CSS for Social Media Icons*/
-.post__socials{
-display: flex;
-justify-content:center;
-padding: 0px;
-}
-
-.post__icon{
-padding-left: 15px;
-padding-right: 15px;
-font-size: 30px;
-}
-
-.post__twitter{
-    color: 	#1DA1F2;
-}
-
-.post__github{
-    color: 	black;
-}
-
-.post__youtube{
-    color:#FF0000
-}
-
-.post__copy{  //Handle copy icon css sepparately because it's a button
-    all: unset;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 26px;
-}
-
-.fas:hover, .fab:hover{
-opacity: 0.7;
-scale: 1.1;
-}
-
 
 
 

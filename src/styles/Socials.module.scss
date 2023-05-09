@@ -1,0 +1,76 @@
+/* CSS for Social Media Icons*/
+.post__socials {
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    margin-bottom: 5px;
+}
+
+.post__icon {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 30px;
+}
+
+.post__twitter {
+    color: #1DA1F2;
+    &:hover{
+        .tooltip {
+            visibility: visible;
+        }
+    }
+}
+
+.post__github {
+    color: black;
+    &:hover{
+        .tooltip {
+            visibility: visible;
+        }
+    }
+}
+
+.post__youtube {
+    color: #FF0000;
+    &:hover{
+        .tooltip {
+            visibility: visible;
+        }
+    }
+}
+
+.post__copy {
+    //Handle copy icon css sepparately because it's a button
+    all: unset;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 26px;
+    &:hover{
+        .tooltip {
+            visibility: visible;
+        }
+    }
+}
+
+.post__icon:hover {
+    opacity: 0.7;
+    scale: 1.1;
+}
+
+
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+
+    color: white;
+    font-size: 10px;
+    background-color: #192733;
+    border-radius: 10px;
+    padding: 2px 5px 2px 5px;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+

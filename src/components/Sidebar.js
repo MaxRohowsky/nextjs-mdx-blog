@@ -15,7 +15,7 @@ export default function Sidebar(sidebarData) {
     })
 
     // Sometimes caused issues with scrolling. Be aware!
-    /*useEffect(() => {
+    useEffect(() => {
         window.addEventListener('scroll', onScroll, false);
         return () => window.removeEventListener('scroll', onScroll, false);
     }, []);
@@ -28,8 +28,8 @@ export default function Sidebar(sidebarData) {
    }
     
     console.log(isFixed)
-    
-   const positionStyle = isFixed ? 'fixed' : 'relative';*/
+
+   const positionStyle = isFixed ? 'sidebar__stay' : 'sidebar__absolute';
     
     //const positionStyle = isFixed ? 'fixed' : 'absolute'; // After the colon = else
     
@@ -51,7 +51,7 @@ export default function Sidebar(sidebarData) {
     }
 
     return (
-        <div className='sidebar__wrap' >
+        <div className={`sidebar__wrap sidebar__absolute ${positionStyle}`} >
             <ul className='sidebar__list'>
                 {items}
             </ul>

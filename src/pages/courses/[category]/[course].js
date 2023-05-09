@@ -39,9 +39,11 @@ export default function Course({ courseData, sidebarData }) {
         </div>
 
         {showSidebar && (
-          <div className={styles.post__sidebar}>
+          //<div className={styles.post__sidebar}>
             <Sidebar data={sidebarData} />
-          </div>)}
+          //</div>
+          )
+        }
           
       </main>
     </>

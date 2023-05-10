@@ -12,7 +12,7 @@ $mobile-breakpoint: 600px;
 }
 
 .block{
-    height: calc(100vh - 240px);
+    height: calc(90vh - 240px);
     overflow-y: auto;
 }
 
@@ -66,6 +66,10 @@ $mobile-breakpoint: 600px;
 @media only screen and (max-width: 1200px){
     .wrap{
         position: static;
+    }
+    .block{
+        height: auto;
+        overflow:visible;
     }
     .sidebar__absolute, .sidebar__stay{
         position: static;

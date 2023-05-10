@@ -23,6 +23,14 @@ $mobile-breakpoint: 600px;
     text-align: center;
 }
 
+.post__text{
+    border-radius: 5px;
+    padding: 10px 5px 10px 5px;
+    background-color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);;
+}
+
 /*
 .post__sidebar {
     //width: min-content;
@@ -80,10 +88,10 @@ $mobile-breakpoint: 600px;
         width: 100%;
         margin: 5px;
     }
-    .post__sidebar {
+    /*.post__sidebar {
         width: 100%;
         margin: 5px;
-    }
+    }*/
 }
 @media only screen and (max-width: $mobile-breakpoint){
     .post{
@@ -95,9 +103,9 @@ $mobile-breakpoint: 600px;
     .post__content{
         width: 100%;
     }
-    .post__sidebar {
+    /*.post__sidebar {
         width: 100%;
-    }
+    }*/
 }
 
 

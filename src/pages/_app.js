@@ -3,7 +3,7 @@ import '@/styles/globals.scss';
 //import '@/styles/Card.scss'
 //import '@/styles/Courses.scss'
 //import '@/styles/Course.scss';
-import '@/styles/Sidebar.scss';
+import '@/styles/Sidebar.module.scss';
 
 /*Use the Wordpress CSS*/
 import '@wordpress/block-library/build-style/style.css';

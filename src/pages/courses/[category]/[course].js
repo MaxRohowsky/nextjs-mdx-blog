@@ -30,7 +30,9 @@ export default function Course({ courseData, sidebarData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={`${styles.post} wp-embed-responsive`} >
+      <div className={`${styles.post} wp-embed-responsive`} >
+
+      
 
         <div className={styles.post__content}>
           <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: courseData.title }} />
@@ -45,7 +47,7 @@ export default function Course({ courseData, sidebarData }) {
           )
         }
           
-      </main>
+      </div>
     </>
   )
 }

@@ -5,15 +5,16 @@ $mobile-breakpoint: 600px;
 
 .post {
     position: relative;
-    display: flex;
-    margin: auto;
-    max-width: clamp(300px, 60%, 900px);
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    display: block;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    //display: flex;
+    //max-width: 100%;//clamp(300px, 60%, 900px);
 }
 
 .post__content{
-    width: 70%;
+    width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -59,15 +60,17 @@ $mobile-breakpoint: 600px;
 
 
 /*Media queries*/
-@media only screen and (min-width: $desktop-breakpoint){
+/*@media only screen and (min-width: $desktop-breakpoint){
     .post{
         flex-direction: row;
     }
-}
-@media only screen and (max-width: $laptop-breakpoint){
+}*/
+@media only screen and (max-width: 1200px){
     .post{
-        flex-direction: row;
+        display: flex;
+        flex-direction: column;
     }
+
 }
 @media only screen and (max-width: $tablet-breakpoint){
     .post{

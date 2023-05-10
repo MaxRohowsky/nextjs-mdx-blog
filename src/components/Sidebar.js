@@ -2,10 +2,12 @@ import Link from 'next/link';
 import React from "react";
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react';
+import styles from '../styles/Sidebar.module.scss'
+
 
 export default function Sidebar(sidebarData) {
     const router = useRouter()
-    let [isFixed, setIsFixed] = useState(true);
+    let [isFixed, setIsFixed] = useState(false);
     var items = []
 
     let courses = sidebarData.data
@@ -21,15 +23,14 @@ export default function Sidebar(sidebarData) {
     }, []);
     
     const onScroll = () => {
-        if (window.scrollY > 100)
+        if (window.scrollY > 130)
         setIsFixed(true);
         else
         setIsFixed(false);
    }
     
-    console.log(isFixed)
 
-   const positionStyle = isFixed ? 'sidebar__stay' : 'sidebar__absolute';
+   const positionStyle = isFixed ? styles.sidebar__stay : styles.sidebar__absolute;
     
     //const positionStyle = isFixed ? 'fixed' : 'absolute'; // After the colon = else
     
@@ -38,23 +39,25 @@ export default function Sidebar(sidebarData) {
     for (var i = 0; i < sidebarData.data.length; i++) {
         let active = ""
         if (router.query.course === sortedCourses[i].node.slug) {
-            active = "sidebar__link__active"
+            active = styles.sidebar__link__active
         }
 
         items.push(
-            <li className='sidebar__item' key={i}>
-                <Link className={`item__link ${active}`} href={sortedCourses[i].node.uri}>
+            <li className={styles.sidebar__item} key={i}>
+                <Link className={`${styles.item__link} ${active}`} href={sortedCourses[i].node.uri}>
                     {i + 1}. {sortedCourses[i].node.title}
                 </Link>
             </li>
         )
     }
-
     return (
-        <div className={`sidebar__wrap sidebar__absolute ${positionStyle}`} >
-            <ul className='sidebar__list'>
+        <div className={styles.wrap}>
+        <div className={` ${positionStyle}`} >
+            <ul className={styles.sidebar__list}>
+            <span className={styles.sidebar__toc}>Table of Content:</span>
                 {items}
             </ul>
+        </div>
         </div>
     );
 }

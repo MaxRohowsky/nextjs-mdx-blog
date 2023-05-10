@@ -3,36 +3,34 @@ $laptop-breakpoint: 1024px;
 $tablet-breakpoint: 768px;
 $mobile-breakpoint: 600px;
 
-/*.sidebar__wrap{
-    //display: block;
-    //width: 300px;
-    //height: 100%;
-    //right: 0px;
-    //margin-left: 30px;
-}*/
+.wrap{
+    position: absolute;
+    left: 620px;
+    top: 120px;
+    width: 300px;
+}
 
 .sidebar__absolute{
-    margin-top: 100px;
-    width: 300px;
-    right: -200px;
     position: absolute;
+    width: 300px;
     list-style-type: none;
-    //margin: 0;
 }
 
 .sidebar__stay{
     position: fixed;
-    top: 100px;
-    right: 280px;
+    top: 120px;
     width: 300px;
-    z-index: 11;
-    bottom: 12px;
-    overflow-y: auto;
-    margin: 0px;
+    list-style-type: none;
 }
 
 
-
+.sidebar__toc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    padding: 5px;
+}
 
 .sidebar__list {
     list-style-type: none;
@@ -40,12 +38,14 @@ $mobile-breakpoint: 600px;
     margin: 0px;
     max-height: calc(100% - 0px);
     overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.474);
+    border-radius: 5px;
 }
 
 .sidebar__item{
     text-align: left;
-    padding: 5px 5px 5px 5px;
-    border-bottom:1px solid #ddd;
+    padding: 8px 5px 8px 15px;
+    border-top:1px solid #ddd;
 }
 
 .sidebar__link__active{
@@ -59,11 +59,19 @@ $mobile-breakpoint: 600px;
 
 
 
-@media only screen and (max-width: $tablet-breakpoint){
-    .sidebar__wrap{
+@media only screen and (max-width: 1200px){
+    .wrap{
+        position: static;
+    }
+    .sidebar__absolute, .sidebar__stay{
         position: static;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 600px;
+        left: 50%;
+        transform: translate(0px, 0px);
     }
     .post{
         flex-direction: column;
@@ -72,10 +80,10 @@ $mobile-breakpoint: 600px;
         width: 100%;
         margin: 5px;
     }
-    .post__sidebar {
+    /*.post__sidebar {
         width: 100%;
         margin: 5px;
-    }
+    }*/
 }
 
 

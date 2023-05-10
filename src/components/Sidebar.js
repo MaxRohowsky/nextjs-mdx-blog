@@ -51,8 +51,8 @@ export default function Sidebar(sidebarData) {
         )
     }
     return (
-        <div className={styles.wrap}>
-        <div className={` ${positionStyle}`} >
+        <div className={styles.wrap} >
+        <div className={`${styles.block} ${positionStyle}`}>
             <ul className={styles.sidebar__list}>
             <span className={styles.sidebar__toc}>Table of Content:</span>
                 {items}

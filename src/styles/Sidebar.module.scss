@@ -66,28 +66,27 @@ $mobile-breakpoint: 600px;
 @media only screen and (max-width: 1200px){
     .wrap{
         position: static;
+        width: 100%;
     }
     .block{
         height: auto;
         overflow:visible;
-    }
-    .sidebar__absolute, .sidebar__stay{
         position: static;
         margin-left: auto;
         margin-right: auto;
         margin-top: 20px;
         margin-bottom: 20px;
-        width: 600px;
+        width: 100%;
         left: 50%;
         transform: translate(0px, 0px);
     }
-    .post{
+    /*.post{
         flex-direction: column;
     }
     .post__content{
         width: 100%;
         margin: 5px;
-    }
+    }*/
     /*.post__sidebar {
         width: 100%;
         margin: 5px;

@@ -8,12 +8,13 @@ $mobile-breakpoint: 600px;
     left: 620px;
     top: 120px;
     width: 300px;
-
+    
 }
 
 .block{
     height: calc(90vh - 240px);
     overflow-y: auto;
+    
 }
 
 .sidebar__absolute{
@@ -42,7 +43,7 @@ $mobile-breakpoint: 600px;
     list-style-type: none;
     padding: 0;
     margin: 0px;
-    background-color: rgba(255, 255, 255, 0.474);
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
 }
 
@@ -50,6 +51,7 @@ $mobile-breakpoint: 600px;
     text-align: left;
     padding: 8px 5px 8px 15px;
     border-top:1px solid #ddd;
+
 }
 
 .sidebar__link__active{

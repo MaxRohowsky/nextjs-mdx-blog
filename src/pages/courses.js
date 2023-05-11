@@ -12,9 +12,12 @@ export default function Courses({ catedata }) {
   for (var i = 0; i < catedata.length; i++) {
 
     if (catedata[i].courses.edges.length > 0 && !(catedata[i].name == 'Uncategorized')) { // category > one child and not uncategorized -> create card.
+      //console.log(catedata[6].name)
+      //console.log(catedata[6].categoryImages.categoryImage.sourceUrl)
       items.push(
         <Card
           title={catedata[i].name}
+          
           img={catedata[i].categoryImages.categoryImage.sourceUrl}
           body={catedata[i].description}
           link={catedata[i].courses.edges[0].node.uri} // courses/category/lesson e.g. courses/pycharm/pycharm-basics

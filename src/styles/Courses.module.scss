@@ -31,7 +31,7 @@
     column-gap: 30px;
 
     /*grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));*/
-    grid-template-columns: repeat(4, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, minmax(300px, 320px));
     grid-auto-flow: dense;
     justify-items: center; // center cards within grid
     justify-content: center; // center all cards within page
@@ -42,21 +42,21 @@
   
 @media only screen and (max-width: 1350px ) {
     .cards{
-        grid-template-columns: repeat(3, minmax(300px, 1fr));
+        grid-template-columns: repeat(3, minmax(300px, 320px));
         width: 85%;
     }
   }
   
 @media only screen and (max-width: 1000px ) {
     .cards{
-        grid-template-columns: repeat(2, minmax(300px, 1fr));
+        grid-template-columns: repeat(2, minmax(300px, 320px));
         width: 85%;
     }
   }
 
 @media only screen and (max-width: 670px ) {
     .cards{
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
         width: 85%;
     }
   }

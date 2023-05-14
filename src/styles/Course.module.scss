@@ -77,6 +77,8 @@ $mobile-breakpoint: 600px;
     .post{
         display: flex;
         flex-direction: column;
+        align-items: center;
+
     }
 
 }

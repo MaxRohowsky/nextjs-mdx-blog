@@ -43,7 +43,10 @@
     margin: 30px auto;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     margin-bottom: 1.6%;
-    background: white;
+    background: #f1f1f138;
+    backdrop-filter: blur(0.5px);
+    //-webkit-backdrop-filter: blur(0.5px);
+    border: 1px solid rgba(255, 255, 255, 0.23);
     line-height: 1.4;
     font-family: sans-serif;
     border-radius: 5px;
@@ -74,11 +77,12 @@
 }
 
 .post__description {
+
     padding: 1rem;
-    background: white;
     position: relative;
     z-index: 1;
     h3 {
+        font-size: larger !important;
         line-height: 1;
         margin: 0;
         font-size: 1.7rem;
@@ -87,6 +91,9 @@
 
 .post__date{
     color: black;
+    margin-top: 10px;;
+    margin-bottom: 10px;
+    margin-right: 20px;
 }
 
 .post__excerpt {

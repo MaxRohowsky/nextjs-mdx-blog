@@ -19,6 +19,8 @@ $desktop-breakpoint: 1024px;*/
 	width: calc(100vw - (2 * 20px)); /* Full width minus the margin on each side*/
 	z-index: 10;
 	flex-shrink: 0;
+	backdrop-filter: blur(4.5px);
+    //-webkit-backdrop-filter: blur(4.5px);
 }
 
 .header__nav {

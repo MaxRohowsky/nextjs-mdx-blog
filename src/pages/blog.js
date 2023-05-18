@@ -23,7 +23,7 @@ export default function BlogEntires({ page, posts }) {
 
       <main className={styles.main}>
         <h1 className={styles.title}> Blog </h1>
-        <h4 className={styles.subtitle}>thoughts on code, tech, and the future</h4>
+        <h4 className={styles.subtitle}>thoughts on code and tech</h4>
 
         <hr className={styles.sepparator} />
 
@@ -34,14 +34,14 @@ export default function BlogEntires({ page, posts }) {
                 <Link className={styles.link} href={post.path}>
                   <div className={styles.card}>
 
-                    <div className={styles.post__image} style={{ backgroundImage: `url(${post.featuredImage.node.mediaItemUrl})` }}></div>
+                    {/*<div className={styles.post__image} style={{ backgroundImage: `url(${post.featuredImage.node.mediaItemUrl})` }}></div>*/}
 
                     <div className={styles.post__description}>
+                    <p className={styles.post__date}>{dateTime(post.date)}</p>
                       <h3 className={styles.post__title} dangerouslySetInnerHTML={{
                         __html: post.title
-                      }} />
-
-                      <p className={styles.post__date}>{dateTime(post.date)}</p>
+                      }} /> 
+                      
                       <hr className={styles.post_sepparator} />
                       <p className={styles.post__excerpt} dangerouslySetInnerHTML={{
                         __html: post.excerpt
@@ -86,17 +86,21 @@ export async function getStaticProps() {
               title
               slug
               date
-              featuredImage{
-                node{
-                  mediaItemUrl
-                }
-              }
+
             }
           }
         }
       }
     `,
   });
+
+  /* Removed image from blog
+                featuredImage{
+                node{
+                  mediaItemUrl
+                }
+              }
+  */
 
   const page = {
     ...data?.data.generalSettings

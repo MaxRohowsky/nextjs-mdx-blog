@@ -128,7 +128,7 @@ export default function Imprint() {
 
                 <h2>3. Datenerfassung auf unserer Website</h2>
 
-                <h2>Cookies</h2>
+                <h3>Cookies</h3>
 
                 <p> Die Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf Ihrem Rechner keinen Schaden an und enthalten keine Viren. Cookies dienen dazu,
                     unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen. Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden und die Ihr Browser speichert.</p>
@@ -142,7 +142,7 @@ export default function Imprint() {
                     technisch fehlerfreien und optimierten Bereitstellung seiner Dienste. Soweit andere Cookies (z.B. Cookies zur Analyse Ihres Surfverhaltens) gespeichert werden, werden diese
                     in dieser Datenschutzerklärung gesondert behandelt.</p>
 
-                <h2>Server-Log-Dateien</h2>
+                <h3>Server-Log-Dateien</h3>
                 <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log­ Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:</p>
                 <p>Browsertyp und Browserversion<br />
                     verwendetes Betriebssystem<br />
@@ -154,7 +154,7 @@ export default function Imprint() {
                 <p>Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung
                     und der Optimierung seiner Website - hierzu müssen die Server-Log-Files erfasst werden.</p>
 
-                <h2>Anfrage per E-Mail, Telefon oder Telefax</h2>
+                <h3>Anfrage per E-Mail, Telefon oder Telefax</h3>
                 <p>Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der
                     Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
                 <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung
@@ -163,6 +163,87 @@ export default function Imprint() {
                 <p>Die von Ihnen an uns per Kontaktanfragen übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck
                     für die Datenspeicherung entfällt (z.B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen - insbesondere gesetzliche Aufbewahrungsfristen -
                     bleiben unberührt.</p>
+
+                <h3>Newsletter / Abonnierung der Kommentare bestimmter Seiten via eMail</h3>
+                <p>Auf Grundlage Ihrer ausdrücklich erteilten Einwilligung, übersenden wir Ihnen regelmäßig unseren Newsletter bzw. vergleichbare Informationen per E-Mail an Ihre angegebene E-Mail-Adresse.</p>
+
+                <p>Für den Empfang des Newsletters ist die Angabe Ihrer E-Mail-Adresse ausreichend. Bei der Anmeldung zum Bezug unseres Newsletters werden die von Ihnen angegebenen Daten ausschließlich für
+                    diesen Zweck verwendet. Abonnenten können auch über Umstände per E-Mail informiert werden, die für den Dienst oder die Registrierung relevant sind (Beispielsweise Änderungen des
+                    Newsletterangebots oder technische Gegebenheiten).</p>
+
+                <p>Für eine wirksame Registrierung benötigen wir eine valide E-Mail-Adresse. Um zu überprüfen, dass eine Anmeldung tatsächlich durch den Inhaber einer E-Mail-Adresse erfolgt, setzen
+                    wir das „Double-opt-in“-Verfahren ein. Hierzu protokollieren wir die Bestellung des Newsletters, den Versand einer Bestätigungsmail und den Eingang der hiermit angeforderten Antwort.
+                    Weitere Daten werden nicht erhoben. Die Daten werden ausschließlich für den Newsletterversand verwendet und nicht an Dritte weitergegeben.</p>
+
+                <p>Die Einwilligung zur Speicherung Ihrer persönlichen Daten und ihrer Nutzung für den Newsletterversand können Sie jederzeit widerrufen. In jedem Newsletter findet sich dazu ein entsprechender Link.
+                    Außerdem können Sie sich jederzeit auch direkt auf dieser Webseite abmelden oder uns Ihren entsprechenden Wunsch über die am Ende dieser Datenschutzhinweise angegebene Kontaktmöglichkeit mitteilen.</p>
+
+
+                <h3>Eingebettete YouTube-Videos</h3>
+
+                <p>Auf einigen unserer Webseiten betten wir Youtube-Videos ein. Betreiber der entsprechenden Plugins ist die YouTube, LLC, 901 Cherry Ave., San Bruno, CA 94066, USA. Wenn Sie eine Seite
+                    mit dem YouTube-Plugin besuchen, wird eine Verbindung zu Servern von Youtube hergestellt. Dabei wird Youtube mitgeteilt, welche Seiten Sie besuchen. Wenn Sie in Ihrem Youtube-Account
+                    eingeloggt sind, kann Youtube Ihr Surfverhalten Ihnen persönlich zuzuordnen. Dies verhindern Sie, indem Sie sich vorher aus Ihrem Youtube-Account ausloggen.</p>
+
+                <p>Wird ein Youtube-Video gestartet, setzt der Anbieter Cookies ein, die Hinweise über das Nutzerverhalten sammeln.</p>
+
+                <p>Wer das Speichern von Cookies für das Google-Ad-Programm deaktiviert hat, wird auch beim Anschauen von Youtube-Videos mit keinen solchen Cookies rechnen müssen. Youtube legt aber auch in anderen
+                    Cookies nicht-personenbezogene Nutzungsinformationen ab. Möchten Sie dies verhindern, so müssen Sie das Speichern von Cookies im Browser blockieren.</p>
+
+                <p>Weitere Informationen zum Datenschutz bei „Youtube“ finden Sie in der Datenschutzerklärung des Anbieters unter: https://www.google.de/intl/de/policies/privacy/</p>
+
+
+                <h3>Google Analytics</h3>
+
+                <p> Wir nutzen auf unserer Webseite Google Analytics, einen Webanalysedienst der Google Inc. („Google“), 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.</p>
+
+                <p>Google Analytics verwendet sogenannte „Cookies“, Textdateien, die auf Ihrem Gerät gespeichert werden und die eine Analyse der Benutzung der durch Sie besuchten Webseiten ermöglichen.
+                Google Analytics kann auch sogenannte Web Beacons (nicht sichtbare Grafiken) verwenden. Durch diese Web Beacons können Informationen wie der Besucherverkehr auf Webseiten ausgewertet werden.
+                ie durch Cookies und Web Beacons erzeugten Informationen über die Benutzung unserer Webseite (einschließlich der IP-Adresse der Nutzer) werden an einen Server von Google, möglicherweise in
+                den USA oder anderen Drittstaaten, übertragen und dort gespeichert. Diese Informationen können von Google an Vertragspartner von Google weitergegeben werden.</p>
+
+                <p>Informationen zu den Standardvertragsklausel und der Übermittlung in die USA von uns an Google und weiteren relevanten Daten zur Datenverarbeitung durch Google im Rahmen der Nutzung der Google
+                Dienste finden Sie in dieser Datenschutzerklärung unter dem Abschnitt „5) Informationen zu Google-Diensten“.</p>
+
+                <p>Folgende Datenarten werden von Google verarbeitet:</p>
+
+                <p>Online-Kennzeichnungen (einschließlich Cookie-Kennungen)
+                IP-Adresse
+                Gerätekennungen
+                Darüber hinaus finden Sie weitere detaillierte Informationen zu den verarbeiteten Informationen unter https://www.google.com/intl/de/policies/privacy/#infocollect unter „Daten, die wir aufgrund
+                Ihrer Nutzung unserer Dienste erhalten“, sowie unter https://privacy.google.com/businesses/adsservices/ .</p>
+
+                <p>Im Rahmen der Einwilligungserteilung zur Nutzung von Google Analytics werden zudem folgende Daten von uns verarbeitet:</p>
+
+                <p>Ihre IP-Adresse
+                Datum und Uhrzeit des Absendens
+                Wir setzen Google Analytics nur mit aktivierter IP-Anonymisierung („anonymize IP“) ein. Hierdurch wird Ihre IP-Adresse von Google innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen
+                Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt.</p>
+
+                <p>Weiterhin haben wir für den Einsatz von Google Analytics mit Google einen Vertrag zur Auftragsverarbeitung geschlossen (Art. 28 DSGVO). Google verarbeitet die Daten in unserem Auftrag, um Ihre
+                Nutzung der Webseite auszuwerten, um Reports über die Webseitenaktivitäten für uns zusammenzustellen und um weitere mit der Webseitennutzung und der Internetnutzung verbundene Dienstleistungen
+                uns gegenüber zu erbringen. Google kann diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben ist oder soweit Dritte diese Daten im Auftrag von Google verarbeiten.</p>
+
+                <p>Durch die Einbindung von Google Analytics verfolgen wir den Zweck, das Nutzerverhalten auf unserer Webseite zu analysieren und hierauf reagieren zu können. Dadurch können wir unser Angebot
+                kontinuierlich verbessern.</p>
+
+                <p>Zweck der Verarbeitung der Daten, die im Zuge der Einwilligungserklärung erhoben werden, ist die Protokollierung Ihrer Einwilligung.</p>
+
+                <p>Rechtsgrundlage für die hier beschriebene Verarbeitung personenbezogener Daten im Rahmen des Messverfahrens ist eine von Ihnen ausdrücklich erteilte Einwilligung gem. Art. 6 Abs. 1 lit. a) DSGVO.</p>
+
+                <p>Rechtsgrundlage der Verarbeitung derjenigen Daten, die im Rahmen der Einholung der Einwilligung verarbeitet werden, ist unser berechtigtes Interesse gem. Art. 6 Abs. 1 lit. f) DSGVO. Wir haben ein
+                berechtigtes Interesse daran, die von Ihnen erteilte Einwilligung in das Messverfahren nachweisen zu können (Art. 7 Abs. 1 DSGVO).</p>
+
+                <p>Im Rahmen der Auftragsverarbeitung ist Google berechtigt, Subunternehmer zu beauftragen. Eine Liste dieser Subunternehmer können Sie unter https://privacy.google.com/businesses/subprocessors/ finden.</p>
+
+
+
+
+
+
+
+
+
 
 
             </div>

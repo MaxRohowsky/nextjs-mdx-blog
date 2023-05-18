@@ -4,7 +4,7 @@ import { gql } from '@apollo/client';
 import { getApolloClient } from '../components/client';
 import { dateTime } from '../components/datetime.js';
 import styles from '../styles/Blog.module.scss'
-
+import Socials from '@/components/Socials';
 
 
 export default function BlogEntires({ page, posts }) {
@@ -40,6 +40,7 @@ export default function BlogEntires({ page, posts }) {
                       <h3 className={styles.post__title} dangerouslySetInnerHTML={{
                         __html: post.title
                       }} />
+
                       <p className={styles.post__date}>{dateTime(post.date)}</p>
                       <hr className={styles.post_sepparator} />
                       <p className={styles.post__excerpt} dangerouslySetInnerHTML={{

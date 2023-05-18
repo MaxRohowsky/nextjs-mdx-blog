@@ -31,9 +31,6 @@ export default function Course({ courseData, sidebarData }) {
       </Head>
 
       <div className={`${styles.post} wp-embed-responsive`} >
-
-      
-
         <div className={styles.post__content}>
           <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: courseData.title }} />
           <Socials />

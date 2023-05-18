@@ -80,7 +80,7 @@ export default function Overlay() {
                                     function gtag(){dataLayer.push(arguments);}
                                     gtag('js', new Date());
                                     gtag('config', 'G-1CHMGCDEXS', {
-                                      page_path: window.location.pathname,
+                                     'anonymize_ip': true
                                     });
                                   `,
                         }}

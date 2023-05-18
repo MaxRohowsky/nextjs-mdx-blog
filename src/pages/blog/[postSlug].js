@@ -2,8 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { gql } from "@apollo/client";
 import { getApolloClient } from '../../components/client';
-//import Socials from '@/components/Socials';
-import styles from '../../styles/Blog.module.scss'
+import Socials from '@/components/Socials';
+import styles from '../../styles/Post.module.scss'
 import { parse } from 'node-html-parser';
 
 
@@ -11,7 +11,6 @@ export default function Course({ post, site }) {
 
   const doc = parse(post.excerpt);
   const excerptText = doc.querySelector("p").text;
-  console.log(excerptText)
 
   return (
     <div>
@@ -21,16 +20,19 @@ export default function Course({ post, site }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main className={styles.post}>
+      <div className={styles.post__content}>
         <h1 className={styles.title}>
           {post.title}
         </h1>
+        <Socials />
 
-        <div>
+        <div className={styles.post__text}>
           <div dangerouslySetInnerHTML={{
             __html: post.content
           }} />
         </div>
+      </div>
 
         <p>
           <Link href="/">

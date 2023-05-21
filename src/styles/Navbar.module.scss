@@ -59,6 +59,10 @@ $desktop-breakpoint: 1024px;*/
 
 
 @media only screen and (max-width: 1024px) {
+	.header{
+		backdrop-filter: none;  //required for mobile navbar to work
+	}
+	
 	.nav__btn { //this is the hamburger menu
 		visibility: visible;
 		opacity: 1;
@@ -72,7 +76,7 @@ $desktop-breakpoint: 1024px;*/
 		left: 0;
 		height: 100%;
 		width: 100%;
-		display: absolute;
+		//display: absolute; # this is wrong
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;

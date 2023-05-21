@@ -1,7 +1,9 @@
 //import styles from '../styles/Course.module.scss'
 import styles from '../styles/Socials.module.scss'
+import React, { useEffect, useState } from 'react';
 
 export default function Socials() {
+    const [twitterShareUrl, setTwitterShareUrl] = useState('');
 
     function CopyUrl() {
         var link = window.location.href;
@@ -9,11 +11,19 @@ export default function Socials() {
         navigator.clipboard.writeText(link)
     }
 
+    useEffect(() => {
+        const currentUrl = window.location.href;
+        const encodedUrl = encodeURIComponent(currentUrl);
+        const shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}`;
+        setTwitterShareUrl(shareUrl);
+      }, []);
+
+
     return (
         <>  
             <div className={styles.post__socials}>
 
-                <a href={`https://twitter.com`} className={`${styles.post__icon} ${styles.post__twitter}`}>
+                <a href={twitterShareUrl} className={`${styles.post__icon} ${styles.post__twitter}`}>
                 <span className={styles.tooltip}>Twitter</span>
                     <span><i className="fab fa-twitter" ></i></span>
                 </a>

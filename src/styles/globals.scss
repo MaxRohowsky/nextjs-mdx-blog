@@ -107,14 +107,36 @@ box-shadow: 0px 0px 4px 1px #0000003a;
     margin-bottom: 1em;
 }
 
+/* Highlighting option that can be added by adding the tag ".highlight-green" in wordpress*/
 .highlight-green{
-  background-color: #f0fff0; /* sets a light green background color */
-  border-left: 5px solid #008000; /* adds a dark green border to the left side */
-  padding: 10px; /* adds 10px of padding around the text */
-
+  background-color: #f0fff0; 
+  border-left: 5px solid #008000;
+  padding: 10px;
 }
 
+/* Sets the Styling for the Table of Content on the Course Pages*/
+.course-table-of-content {
+  border-left: 5px solid #eaeaea; 
+}
+
+.course-table-of-content__ordered-list li {
+  margin-bottom: 5px;
+}
+
+.course-table-of-content__ordered-list li:hover {
+  font-weight: bold;
+}
+
+.course-table-of-content__ordered-list a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Code that is written in paragraphs is visually enhanced*/
 p>code{
+  background: #e5e7eb;
+  border-radius: 0.25em;
+  padding: 0.1em 0.25em;
   font-size: large;
 }
 

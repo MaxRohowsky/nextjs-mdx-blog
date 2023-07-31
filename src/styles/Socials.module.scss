@@ -1,76 +1,133 @@
 /* CSS for Social Media Icons*/
-.post__socials {
+
+.wrapper {
+    margin-bottom: 10px;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
-    padding: 0px;
-    margin-bottom: 5px;
+    align-items: center;
 }
 
-.post__icon {
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 30px;
+.post__socials {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin: 0px 10px;
+    overflow: hidden;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+    border-width: 0px;
 }
 
-.post__twitter {
-    color: #1DA1F2;
-    &:hover{
-        .tooltip {
-            visibility: visible;
-        }
-    }
-}
 
-.post__github {
+.post__socials div {
+    display: inline-block;
     color: black;
-    &:hover{
-        .tooltip {
-            visibility: visible;
-        }
-    }
-}
-
-.post__youtube {
-    color: #FF0000;
-    &:hover{
-        .tooltip {
-            visibility: visible;
-        }
-    }
-}
-
-.post__copy {
-    //Handle copy icon css sepparately because it's a button
-    all: unset;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 26px;
-    &:hover{
-        .tooltip {
-            visibility: visible;
-        }
-    }
-}
-
-.post__icon:hover {
-    opacity: 0.7;
-    scale: 1.1;
-}
-
-
-.tooltip {
-    visibility: hidden;
-    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 50px;
     text-align: center;
-    z-index: 1;
-
-    color: white;
-    font-size: 10px;
-    background-color: #192733;
-    border-radius: 10px;
-    padding: 2px 5px 2px 5px;
-    top: -11px;
-    left: 50%;
-    transform: translateX(-50%)
+    transition: all 0.4s ease-out;
 }
 
+.post__socials div i {
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.post__socials span {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    width: 110px;
+    text-align: center;
+
+}
+
+@media (hover: hover) {
+    .post__facebook:hover>div {
+        background-color: #4267B2;
+
+        & i {
+            color: white
+        }
+    }
+
+    .post__linkedin:hover>div {
+        background-color: #0072b1;
+
+        & i {
+            color: white
+        }
+    }
+
+    .post__twitter:hover>div {
+        background-color: #1DA1F2;
+
+        & i {
+            color: white
+        }
+    }
+
+    .post__github:hover>div {
+        background-color: #171515;
+
+        & i {
+            color: white
+        }
+    }
+
+    .post__youtube:hover>div {
+        background-color: #FF0000;
+
+        & i {
+            color: white
+        }
+    }
+
+    .post__copy:hover>div {
+        background-color: #171515;
+
+        & i {
+            color: white
+        }
+    }
+}
+
+
+.post__copy:active {
+
+    .getlink {
+        display: none;
+    }
+
+    .copied {
+        display: inline-block;
+    }
+}
+
+
+
+@media only screen and (hover: hover) and (min-width: 501px) {
+    .post__socials:hover {
+        width: 170px;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .post__socials {
+        width: 50px;
+    }
+}
+
+
+@media only screen and (min-width: 450px) {
+    .post__socials {
+        background: #fff;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
+    }
+}

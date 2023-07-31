@@ -29,6 +29,9 @@ function Navbar() {
 					<FaTimes />
 				</button>
 			</nav>
+			
+
+
 			<button
 				className={styles.nav__btn}
 				onClick={showNavbar}>

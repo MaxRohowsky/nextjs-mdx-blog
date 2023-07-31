@@ -10,8 +10,8 @@ $desktop-breakpoint: 1024px;*/
 	align-items: center;
 	justify-content: space-between;
 	height: 80px;
-	margin: 20px;
-	border-radius: 20px;
+	margin: 5px 10px 10px 10px;
+	border-radius: 15px;
 	background-color: var(--mainColor);
 	color: var(--textColor);
 	position: fixed; /* Set the navbar to fixed position */
@@ -26,12 +26,13 @@ $desktop-breakpoint: 1024px;*/
 .header__nav {
 	display: flex;
 	align-items: center;
-	padding-right: 10px;
+	padding-right: 20px;
 }
 
 .nav__link {
 	margin: 0 1rem;
 	color: var(--textColor);
+	font-size: larger;
 	&:hover {
 		transform: scale(1.1);
 		transition-duration: .1s;
@@ -39,9 +40,10 @@ $desktop-breakpoint: 1024px;*/
 }
 
 .header__logo {
-	color: rgb(0, 0, 0);
-	padding-left: 20px;
+	color: var(--textColor);
+	padding-left: 36px;
 	margin: 0px;
+	font-size: larger;
 }
 
 .nav__btn {

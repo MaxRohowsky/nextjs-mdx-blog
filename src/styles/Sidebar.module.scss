@@ -5,16 +5,14 @@ $mobile-breakpoint: 600px;
 
 .wrap{
     position: absolute;
-    left: 620px;
-    top: 120px;
+    left: 670px;
+    top: 130px;
     width: 300px;
-    
 }
 
 .block{
     height: calc(90vh - 240px);
     overflow-y: auto;
-    
 }
 
 .sidebar__absolute{
@@ -43,7 +41,7 @@ $mobile-breakpoint: 600px;
     list-style-type: none;
     padding: 0;
     margin: 0px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(250, 250, 250);
     border-radius: 5px;
 }
 

@@ -3,8 +3,8 @@ import styles from '../styles/Courses.module.scss'
 import { gql } from "@apollo/client";
 import { getApolloClient } from '../components/client';
 import Head from "next/head";
-export default function Courses({ catedata }) {
 
+export default function Courses({ catedata }) {
 
   var items = []
 
@@ -12,12 +12,10 @@ export default function Courses({ catedata }) {
   for (var i = 0; i < catedata.length; i++) {
 
     if (catedata[i].courses.edges.length > 0 && !(catedata[i].name == 'Uncategorized')) { // category > one child and not uncategorized -> create card.
-      //console.log(catedata[6].name)
       //console.log(catedata[6].categoryImages.categoryImage.sourceUrl)
       items.push(
         <Card
           title={catedata[i].name}
-          
           img={catedata[i].categoryImages.categoryImage.sourceUrl}
           body={catedata[i].description}
           link={catedata[i].courses.edges[0].node.uri} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
@@ -55,46 +53,7 @@ export default function Courses({ catedata }) {
 export async function getStaticProps() {
   const apolloClient = getApolloClient();
 
-  /*const data = await apolloClient.query({
-    query: gql`
-        query GetCategoryData{
-          categories {
-            edges {
-              node {
-                id
-                name
-                slug
-                description
-
-                contentNodes (where: {contentTypes: COURSES}){
-                  nodes {
-                    slug
-                    ... on Course {
-                      id
-                      title
-                      menuOrder
-                      slug
-                      link
-                      uri
-                    }
-                  }
-                }
-
-                categoryImages {
-                  categoryImage {
-                    sourceUrl
-                  }
-                }
-
-              }
-
-            }
-          }
-        }
-      `
-  });*/
-
-  const data2 = await apolloClient.query({
+  const data = await apolloClient.query({
     query: gql`
     {
       categories {
@@ -126,22 +85,9 @@ export async function getStaticProps() {
     `
   });
 
-
-
-
-  const catedata = data2.data.categories.nodes
-
-
-
-
-
-
-
-
-
+  const catedata = data.data.categories.nodes
   //const categories = data?.data.categories.edges
   //const content = data?.data.courses.edges[0].node.content;
-
 
   return {
     props: {

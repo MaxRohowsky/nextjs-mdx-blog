@@ -2,22 +2,26 @@
 import styles from '../styles/Socials.module.scss'
 import React, { useEffect, useState } from 'react';
 
-export default function Socials() {
+export default function Socials(input) {
+
+    /* Twitter: Share Button shares the current page */
     const [twitterShareUrl, setTwitterShareUrl] = useState('');
 
-    function CopyUrl() {
-        var link = window.location.href;
-        /*console.log(link)*/
-        navigator.clipboard.writeText(link)
-    }
-
-    useEffect(() => {
+    useEffect(() => { // Runs once after initial render due to empty dependency array []
         const currentUrl = window.location.href;
         const encodedUrl = encodeURIComponent(currentUrl);
         const shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}`;
         setTwitterShareUrl(shareUrl);
       }, []);
 
+    /* Copy: Copy the current link and toogle tooltip */
+    function CopyUrl() {
+        var link = window.location.href;
+        navigator.clipboard.writeText(link)
+    }
+      
+    /* Github: Link to correct github page*/
+    const githubReference = input.githubReference !== null ? input.githubReference : '';
 
     return (
         <>  
@@ -28,7 +32,7 @@ export default function Socials() {
                     <span><i className="fab fa-twitter" ></i></span>
                 </a>
 
-                <a href="https://github.com/codewmax" target="_blank" rel="noreferrer" className={`${styles.post__icon} ${styles.post__github}`}>
+                <a href={`https://github.com/codewmax/${githubReference}`}target="_blank" rel="noreferrer" className={`${styles.post__icon} ${styles.post__github}`}>
                 <span className={styles.tooltip}>Github</span>
                     <span><i className="fab fa-github" ></i></span>
                 </a>
@@ -40,7 +44,7 @@ export default function Socials() {
                 </a>
 
                 <button onClick={() => CopyUrl()} className={`${styles.post__icon} ${styles.post__copy}`}>
-                <span className={styles.tooltip}>Copy</span>
+                <span className={styles.tooltip}>Copy URL</span>
                     <span><i className="fas fa-link"></i></span>
                 </button>
 

@@ -11,15 +11,18 @@ import parse from "node-html-parser";
 export default function Course({ courseData, sidebarData }) {
   let showSidebar = true;
 
+  /* Only show sidebar if necessary */
   if (sidebarData.length <= 1) {
     showSidebar = false;
   } else {
     showSidebar = true;
   }
 
+  /* Get the description from the course - but only what's within the p tag */
   const doc = parse(courseData.excerpt);
   const excerptTextPre = doc.querySelector("p");
   const excerptTextPost = excerptTextPre ? excerptTextPre.text : '';
+
 
   return (
     <>
@@ -33,7 +36,7 @@ export default function Course({ courseData, sidebarData }) {
       <div className={`${styles.post} wp-embed-responsive`} >
         <div className={styles.post__content}>
           <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: courseData.title }} />
-          <Socials />
+          <Socials githubReference={courseData.githubRef.githubReference}/>
           <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: courseData.content }} />
         </div>
 
@@ -73,6 +76,9 @@ export async function getStaticProps({ params = {} } = {}) {
                   categoryId
                   uri
                 }
+              }
+              githubRef {
+                githubReference
               }
             }
           }

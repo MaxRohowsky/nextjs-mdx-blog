@@ -1,0 +1,14 @@
+/* Container for Navbar, Content, and Footer*/
+.container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Align children horizontally at the center */
+    align-items: start; /* Align children vertically at the center */
+  }
+  
+/* Container for main content*/
+.wrap {
+    padding-top:  100px; /* Navbar height 95 px. 95px - 35px (from header) + 10px from padding =approx. 70 minimum*/
+    //padding-bottom: 30px;    /* Footer height */
+  }

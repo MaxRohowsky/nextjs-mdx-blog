@@ -4,7 +4,7 @@ import { gql } from '@apollo/client';
 import { getApolloClient } from '../components/client';
 import { dateTime } from '../components/datetime.js';
 import styles from '../styles/Blog.module.scss'
-import Socials from '@/components/Socials';
+//import Socials from '@/components/Socials';
 
 
 export default function BlogEntires({ page, posts }) {

@@ -1,6 +1,5 @@
 import styles from '../styles/Socials.module.scss'
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
 
 export default function Socials(input) {
 

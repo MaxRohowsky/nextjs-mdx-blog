@@ -4,6 +4,7 @@ import '@/styles/globals.scss';
 //import '@/styles/Courses.scss'
 //import '@/styles/Course.scss';
 import '@/styles/Sidebar.module.scss';
+import styles from '@/styles/App.module.scss'
 
 /*Use the Wordpress CSS*/
 import '@wordpress/block-library/build-style/style.css';
@@ -26,11 +27,11 @@ import Footer from '@/components/Footer';
 import Overlay from '@/components/Overlay';
 //import ReactGA from 'react-ga';
 /* Other */
-import Script from 'next/script';
+//import Script from 'next/script';
 //import { parse } from 'node-html-parser';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import Cookies from 'js-cookie';
+//import { useEffect } from 'react';
+//import { useState } from 'react';
+//import Cookies from 'js-cookie';
 
 
 export default function App({ Component, pageProps }) {
@@ -51,12 +52,12 @@ export default function App({ Component, pageProps }) {
 
       <Overlay />
 
-      <div id="page-container">
+      <div className={styles.container} > 
         <Navbar />
 
-        <div id="content-wrap">
+        <main className={styles.wrap}>
           <Component {...pageProps} />
-        </div>
+        </main>
         
         <Footer />
       </div>

@@ -13,7 +13,7 @@ function Navbar() {
 	};
 
 	return (
-		<header className={styles.header}>
+		<>
 			<Link style={{ textDecoration: 'none' }} href="/">
 				<h3 className={styles.header__logo}>max teaches tech</h3>
 			</Link>
@@ -37,7 +37,7 @@ function Navbar() {
 				onClick={showNavbar}>
 				<FaBars />
 			</button>
-		</header>
+		</>
 	);
 }
 

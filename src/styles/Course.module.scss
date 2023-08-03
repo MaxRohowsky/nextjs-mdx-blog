@@ -1,7 +1,5 @@
-$desktop-breakpoint: 1025px;
-$laptop-breakpoint: 1024px;
-$tablet-breakpoint: 768px;
-$mobile-breakpoint: 600px;
+@import "_variables.scss";
+
 
 .post {
     position: relative;

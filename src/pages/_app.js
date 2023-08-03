@@ -36,9 +36,6 @@ import Overlay from '@/components/Overlay';
 
 export default function App({ Component, pageProps }) {
 
-
-
-
   return (
     <>
       <Head>
@@ -52,14 +49,21 @@ export default function App({ Component, pageProps }) {
 
       <Overlay />
 
-      <div className={styles.container} > 
-        <Navbar />
+      <div className={styles.container} >
+        
+        <header className={styles.header}>
+          <Navbar />
+        </header>
+        <div className={styles.headerBlur}/>
 
-        <main className={styles.wrap}>
+        <main className={styles.main}>
           <Component {...pageProps} />
         </main>
-        
-        <Footer />
+
+        <footer className={styles.footer}>
+          <Footer />
+        </footer>
+
       </div>
 
 

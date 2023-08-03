@@ -1,9 +1,11 @@
+@import "_variables.scss";
+
 .card{
   margin: 0px; // Margin between Card and Grid Border
   overflow: hidden;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  background-color: var(--card-color);
+  border-radius: $border-radius;
+  background-color: $card-color;
   /* Grow and shrink between values*/
   //min-width: 250px;
   //max-width: 325px;
@@ -28,11 +30,11 @@
 }
 
 .title__text{
-  color: var(--textColor);
+  color: $text-color;
 }
 
 .card__description{
-  color: var(--textColor);
+  color: $text-color;
   margin: 15px;
   margin-top: 10px;
 }

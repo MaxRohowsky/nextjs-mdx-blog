@@ -35,7 +35,7 @@ export default function Courses({ catedata }) {
       </Head>
 
       <h1 className={styles.title}> Courses </h1>
-      <h4 className={styles.subtitle}>simple coding lessons and tutorials</h4>
+      <h4 className={styles.subtitle}>Tech Tips, Tutorials & How-to Guides</h4>
       <hr className={styles.sepparator} />
       <div className={styles.container}>
         <div className={styles.cards}>

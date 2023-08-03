@@ -1,20 +1,11 @@
-:root {
-  /*Global Font*/
-  font-family: "Titillium Web", sans-serif;
-  
-  /*Global Colors*/
-  --mainColor: #ffffffd0;
-	--textColor: #000000;
-  --bg-color:#f5f5f7; 
-  --card-color: white;
-}
+@import "_variables.scss";
 
-html,
-body {
+
+html, body {
   width: 100vw;
-  //overflow-x: hidden;
+  font-family: "Titillium Web", sans-serif;
   margin: 0px;
-  background-color: var(--bg-color);
+  background-color: $bg-color;
 }
 
 
@@ -110,13 +101,16 @@ p{
 }
 
 
-/* Code that is written in paragraphs is visually enhanced*/
-p>code{
+// Code that is written in paragraphs is visually enhanced
+p > code{
   background: #e5e7eb;
   border-radius: 0.25em;
   padding: 0.1em 0.25em;
   font-size: large;
 }
+
+// Remove the line under links
+a { text-decoration: none; }
 
 // SHOW LANGUAGE
 // This code shows the programming language within the code blocks

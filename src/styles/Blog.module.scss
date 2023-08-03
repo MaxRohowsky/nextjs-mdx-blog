@@ -1,3 +1,5 @@
+@import "_variables.scss";
+
 .main {
     margin: auto;
     width: clamp(400px, 60%, 900px);
@@ -9,16 +11,18 @@
 .title {
     text-align: center;
     margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 
 .subtitle {
     margin-top: 0px;
     text-align: center;
+    color: rgba(110, 110, 110, 0.69);
 }
 
 .sepparator {
-    height: 5px;
+    height: 3px;
     background: #555555;
     width: 45px;
     border-radius: 3px;
@@ -41,22 +45,22 @@
     position: relative;
     flex-direction: column;
     margin: 30px auto;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: $box-shadow;
     margin-bottom: 1.6%;
-    background: #f1f1f138;
+    background: $card-color-blog;
     backdrop-filter: blur(0.5px);
     //-webkit-backdrop-filter: blur(0.5px);
-    border: 1px solid rgba(255, 255, 255, 0.23);
+    //border: 1px solid rgba(255, 255, 255, 0.23);
     line-height: 1.4;
     font-family: sans-serif;
-    border-radius: 5px;
+    border-radius: $border-radius;
     overflow: hidden;
     z-index: 1;
+    transition: transform 0.3s ease-in-out;
     &:hover {
-        .post__image {
-            transform: scale(1.1) rotate(2deg);
-        }
-    }
+        transform: scale(1.05);
+        transition-duration: .1s;
+      }
 }
 
 .post__image {

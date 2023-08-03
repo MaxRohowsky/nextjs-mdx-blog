@@ -23,7 +23,7 @@ export default function BlogEntires({ page, posts }) {
 
       <main className={styles.main}>
         <h1 className={styles.title}> Blog </h1>
-        <h4 className={styles.subtitle}>thoughts on code and tech</h4>
+        <h4 className={styles.subtitle}>My Humble Opinion on Tech & Finance</h4>
 
         <hr className={styles.sepparator} />
 

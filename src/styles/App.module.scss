@@ -1,14 +1,74 @@
-/* Container for Navbar, Content, and Footer*/
+@import "_variables.scss";
+
+/* Container for Entire site*/
 .container {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center; /* Align children horizontally at the center */
-    align-items: start; /* Align children vertically at the center */
-  }
-  
-/* Container for main content*/
-.wrap {
-    padding-top:  100px; /* Navbar height 95 px. 95px - 35px (from header) + 10px from padding =approx. 70 minimum*/
-    //padding-bottom: 30px;    /* Footer height */
-  }
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+//
+.headerBlur{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+
+  /* Change the background color and opacity to control the blur intensity */
+  backdrop-filter: blur(8px); /* Adjust the blur radius as needed */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  z-index: 5; /* Set the z-index lower than the header to make sure it's behind it */
+}
+
+// Container for Header(Navbar)
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  margin: 10px 0px 10px 0px;
+  border-radius: 8px;
+  background-color: $bg-color-navbar;
+  color: $text-color;
+  box-shadow: $box-shadow;
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
+  width: calc(100vw - (2 * 20px));
+  /* Full width minus the margin on each side*/
+  z-index: 10;
+  flex-shrink: 0;
+  backdrop-filter: blur(4.5px);
+  //-webkit-backdrop-filter: blur(4.5px);
+}
+
+
+// Container for Content
+.main {
+  padding-top: 100px;
+  width: calc(100vw - (2 * 20px));
+  /* Navbar height 95 px. 95px - 35px (from header) + 10px from padding =approx. 70 minimum*/
+  //padding-bottom: 30px;    /* Footer height */
+}
+
+
+// Container for Footer
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  z-index: 10;
+  flex-shrink: 0;
+}

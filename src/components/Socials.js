@@ -17,7 +17,7 @@ export default function Socials(input) {
         setTwitterShareUrl(shareUrlTwitter);
         setFacebookShareUrl(shareUrlFacebook);
         setLinkedinShareUrl(shareUrlLinkedin);
-        console.log(shareUrlFacebook)
+        //console.log(shareUrlFacebook)
     }, []);
 
     

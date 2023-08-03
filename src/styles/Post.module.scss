@@ -1,15 +1,6 @@
-$desktop-breakpoint: 1025px;
-$laptop-breakpoint: 1024px;
-$tablet-breakpoint: 768px;
-$mobile-breakpoint: 600px;
+@import "_variables.scss";
 
 .post {
-    /*margin: auto;
-    width: clamp(400px, 60%, 900px);
-    margin-top: 100px;
-    margin-right: auto; //redundant? see margin above?
-    width: 100%;
-    max-width: 80ch;*/
     position: relative;
     display: block;
     width: 600px;

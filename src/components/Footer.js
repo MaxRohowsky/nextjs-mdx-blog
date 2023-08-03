@@ -1,9 +1,9 @@
-import styles from '../styles/Footer.module.scss'
+//import styles from '../styles/Footer.module.scss'
 import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    
       <div>
         <Link href="/sitemap" style={{textDecoration: "none", color: "black"}}>
           Sitemap
@@ -17,8 +17,7 @@ export default function Footer() {
           Imprint
         </Link>
       </div>
-
-    </footer>
+      
   );
 };
 

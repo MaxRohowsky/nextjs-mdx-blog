@@ -13,7 +13,7 @@ export default function Course({ post, site }) {
   const excerptText = doc.querySelector("p").text;
 
   return (
-    <div>
+    <div className={styles.container}>
       <Head>
         <title>{post.title}</title>
         <meta name="description" content={excerptText} />

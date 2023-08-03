@@ -47,7 +47,7 @@ export default function Home({ firstPost, firstCourse, secondPost, secondCourse 
                 </span>
               </Link>
 
-              <Link style={{ textDecoration: 'none' }} href="" >
+              <Link style={{ textDecoration: 'none' }} href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw?sub_confirmation=1" >
                 <span className={styles.subCta}>
                   <span className={styles.subCta__content}>
                     <i className="fab fa-youtube" />

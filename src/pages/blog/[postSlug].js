@@ -34,11 +34,11 @@ export default function Course({ post, site }) {
         </div>
       </div>
 
-        <p>
+        {/*<p>
           <Link href="/">
               Back to home
           </Link>
-        </p>
+        </p>*/}
       </main>
     </div>
   )

@@ -15,7 +15,7 @@ function Navbar() {
 	return (
 		<>
 			<Link style={{ textDecoration: 'none' }} href="/">
-				<h3 className={styles.header__logo}>max teaches tech</h3>
+				<h3 className={styles.header__logo}>max on tech</h3>
 			</Link>
 			<nav className={styles.header__nav} ref={navRef}>
 				<Link style={{ textDecoration: 'none' }} onClick={showNavbar} href="/"><h4 className={styles.nav__link}>Home</h4></Link>

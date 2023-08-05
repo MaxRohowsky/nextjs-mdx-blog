@@ -2,10 +2,12 @@
 
 
 html, body {
-  width: 100vw;
+  //width: 100vw;
   font-family: "Titillium Web", sans-serif;
   margin: 0px;
+  padding: 0px;
   background-color: $bg-color;
+  overflow-x: hidden;
 }
 
 

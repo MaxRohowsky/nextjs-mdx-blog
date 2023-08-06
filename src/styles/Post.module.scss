@@ -7,38 +7,32 @@
 .post {
     position: relative;
     display: block;
-    width: 600px;
+    width: 650px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .post__content{
-    width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    
+    background-color: rgb(250, 250, 250);
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
 }
 
 
 .title {
     text-align: center;
-    border-bottom: 4px solid transparent;
-    background-image: linear-gradient(to right, transparent, #b5b5b5, #b5b5b5, transparent);
-    background-position: bottom;
-    background-size: 600px 3px;
-    background-repeat: repeat-x;
+    margin: 0px;
+    //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 10px 10px 10px
 }
 
 .post__text{
-    border-radius: 5px;
     padding: 15px 15px 15px 15px;
-    background-color: white;
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
-@media only screen and (max-width: 1200px){
+/*@media only screen and (max-width: 1200px){
     .post{
         display: flex;
         flex-direction: column;
@@ -46,8 +40,8 @@
 
     }
 
-}
-@media only screen and (max-width: $tablet-breakpoint){
+}*/
+/*@media only screen and (max-width: $tablet-breakpoint){
     .post{
         flex-direction: column;
     }
@@ -56,8 +50,17 @@
         margin: 5px;
     }
 
+}*/
+@media only screen and (max-width: $tablet-breakpoint){
+    .post{
+        width: calc(100svw - (2 * 20px));
+        //flex-direction: column;
+    }
 }
-@media only screen and (max-width: $mobile-breakpoint){
+
+
+
+/*@media only screen and (max-width: $mobile-breakpoint){
     .post{
         flex-direction: column;
         width: 90%;
@@ -65,5 +68,5 @@
     .post__content{
         width: 100%;
     }
-}
+}*/
 

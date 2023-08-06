@@ -40,6 +40,7 @@
 @media only screen and (max-width: $tablet-breakpoint){
     .post{
         width: calc(100svw - (2 * 20px));
+        
         //flex-direction: column;
     }
     //.post__content{

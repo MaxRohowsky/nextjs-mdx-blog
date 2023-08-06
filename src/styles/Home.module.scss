@@ -128,12 +128,18 @@
   height: 400px;
 }
 
-
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: $desktop-breakpoint) {
   .hero__container {
-    flex-direction: row;
-    align-items: center;
     width: 90%;
+  }
+}
+
+
+@media only screen and (max-width: $laptop-breakpoint) {
+  .hero__container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   .myImage {
@@ -142,30 +148,31 @@
   }
 
   .hero__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     & h1 {
       font-size: 28px;
+      text-align: center;
     }
 
     & h2 {
       font-size: 18px;
+      text-align: center;
     }
   }
 }
 
-@media only screen and (max-width: 960px) {
-  .hero__container {
+@media only screen and (max-width: $mobile-breakpoint) {
+
+  .hero__cta {
     flex-direction: column;
-    width: 100%;
+    justify-content: center;
   }
 
   .myImage {
-    width: 450px;
-    height: 300px;
-  }
-
-  .hero__cta {
-    flex-direction: row;
-    justify-content: center;
+    width: 320px;
+    height: 250px;
   }
 }
 
@@ -304,20 +311,15 @@
   .content__container {
     width: 80%;
   }
-
 }
 
-
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: $desktop-breakpoint) {
   .content__container {
     width: 100%;
   }
-
 }
 
-
-@media only screen and (max-width: 500px) {
-
+@media only screen and (max-width: $tablet-breakpoint) {
   .content__container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

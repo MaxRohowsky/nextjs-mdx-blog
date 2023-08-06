@@ -11,6 +11,11 @@ html, body {
 }
 
 
+  strong {
+    font-weight: bold; 
+  }
+
+
 /*Not optimal. This styling is actually already in the images/styles wordpress library but doesn't work.*/
 .aligncenter{
   margin-left: auto !important;

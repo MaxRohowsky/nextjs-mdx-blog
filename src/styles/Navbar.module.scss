@@ -51,28 +51,37 @@
 	// This is the mobile menu
 	.header__nav {
 		position: absolute;
-		top: 0;
-		left: 0px;
-		height: fit-content;
-		width: inherit;
+		//width: calc(100%);
+		top: 100px;
+		right: 10px;
+		left: 10px;
+		//top: 0;
+		//left: 0px;
+		//height: fit-content;
 		padding: 30px 0px 30px 0px;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		gap: 1.5rem;
-		background-color: $bg-color-navbar;
-		transition: 1s;
+		background-color: rgb(255, 255, 255);
 		border-radius: $border-radius;
+		box-shadow: $box-shadow;
+		
+		//transition: opacity 1s ease;
+		//opacity: 0;
+		
 	}
 
 	.responsive_nav {
-		transform: translateY(-100vh);
+		//transform: translateY(-100vh);
+		display: none;
+		//opacity: 1;
 	}
 
 	.nav__closebtn {
 		position: absolute;
-		top: 2rem;
-		right: 2rem;
+		right: 10px;
+		top: 10px;
 	}
 
 	/*nav a {

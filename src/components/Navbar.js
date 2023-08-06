@@ -32,9 +32,7 @@ function Navbar() {
 			
 
 
-			<button
-				className={styles.nav__btn}
-				onClick={showNavbar}>
+			<button className={styles.nav__btn} onClick={showNavbar}>
 				<FaBars />
 			</button>
 		</>

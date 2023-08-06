@@ -1,10 +1,15 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from 'next/link';
 import styles from '@/styles/Navbar.module.scss'
 
 function Navbar() {
 	const navRef = useRef();
+
+	  // Use useEffect to add the 'hidden_nav' class to the navigation element initially
+	  useEffect(() => {
+		navRef.current.classList.add(`${styles.responsive_nav}`);
+	  }, []);
 
 	const showNavbar = () => {
 		navRef.current.classList.toggle(

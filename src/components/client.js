@@ -20,7 +20,7 @@ export function getApolloClient() {
 export function _createApolloClient() {
   return new ApolloClient({
     link: new HttpLink({
-      uri: 'https://hosting189589.a2f4e.netcup.net/graphql'//'https://hosting168647.ae855.netcup.net/graphql' //'http://localhost/Wordpress/graphql'//'https://skipthequeue.net/graphql/' //process.env.WORDPRESS_GRAPHQL_ENDPOINT,
+      uri: 'http://hosting189589.a2f4e.netcup.net/graphql'//'https://hosting168647.ae855.netcup.net/graphql' //'http://localhost/Wordpress/graphql'//'https://skipthequeue.net/graphql/' //process.env.WORDPRESS_GRAPHQL_ENDPOINT,
     }),
     cache: new InMemoryCache(),
   });

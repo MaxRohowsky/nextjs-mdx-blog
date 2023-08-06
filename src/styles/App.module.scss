@@ -3,7 +3,7 @@
 /* Container for Entire site*/
 .container {
   position: relative;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -39,7 +39,7 @@
   /* Set the navbar to fixed position */
   top: 0;
   /* Position the navbar at the top of the page */
-  width: calc(100vw - (2 * 20px));
+  width: calc(100svw - (2 * 20px));
   /* Full width minus the margin on each side*/
   z-index: 10;
   flex-shrink: 0;
@@ -51,7 +51,7 @@
 // Container for Content
 .main {
   padding-top: 100px;
-  width: calc(100vw - (2 * 20px));
+  width: calc(100svw - (2 * 20px));
   /* Navbar height 95 px. 95px - 35px (from header) + 10px from padding =approx. 70 minimum*/
   //padding-bottom: 30px;    /* Footer height */
 }
@@ -68,7 +68,7 @@
   box-shadow: $box-shadow;
   //box-shadow: rgb(204, 51, 51) 0px 0px 30px 10px;
   background-color: $bg-color-navbar;
-  width: calc(100vw - (2 * 20px));
+  width: calc(100svw - (2 * 20px));
   //z-index: 10;
   //flex-shrink: 0;
 }

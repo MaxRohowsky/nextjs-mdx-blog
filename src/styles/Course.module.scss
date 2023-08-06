@@ -7,17 +7,12 @@
     width: 650px;
     margin-left: auto;
     margin-right: auto;
-    //display: flex;
-    //max-width: 100%;//clamp(300px, 60%, 900px);
 }
 
 .post__content{
-    width: 650px;
-    margin-left: auto;
-    margin-right: auto;
     background-color: rgb(250, 250, 250);
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
 }
 
 .post__title{
@@ -33,7 +28,7 @@
     
 }
 
-@media only screen and (max-width: 1200px){
+/*@media only screen and (max-width: $desktop-breakpoint){
     .post{
         display: flex;
         flex-direction: column;
@@ -41,22 +36,23 @@
 
     }
 
-}
+}*/
 @media only screen and (max-width: $tablet-breakpoint){
     .post{
-        flex-direction: column;
+        width: calc(100svw - (2 * 20px));
+        //flex-direction: column;
     }
-    .post__content{
-        width: 100%;
-        margin: 5px;
-    }
+    //.post__content{
+        //width: 100%;
+        //margin: 5px;
+    //}
     /*.post__sidebar {
         width: 100%;
         margin: 5px;
     }*/
 }
-@media only screen and (max-width: $mobile-breakpoint){
-    .post{
+//@media only screen and (max-width: $mobile-breakpoint){
+    /*.post{
         flex-direction: column;
         width: 90%;
     }
@@ -66,7 +62,7 @@
     /*.post__sidebar {
         width: 100%;
     }*/
-}
+//}
 
 
 

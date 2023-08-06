@@ -9,15 +9,17 @@ $border-radius: 8px;
 /*Main Box Shadow*/
 $box-shadow: 2px 4px 12px rgba(0,0,0,.08);
 /*Main Breakpoints for Media Queries*/
-$wide-desktop-breakpoint: 1620px;
-$desktop-breakpoint: 1025px;
-$laptop-breakpoint: 1024px;
+$wide-desktop-breakpoint: 1600px;
+$desktop-breakpoint: 1300px; //1025px;
+$laptop-breakpoint: 992px;//1024px;
 $tablet-breakpoint: 768px;
-$mobile-breakpoint: 600px;
+$mobile-breakpoint: 450px;
 /*Navbar Background Color*/
 $bg-color-navbar: rgb(255, 255, 255);
 
 
+$bg-color-social-icons:rgb(255, 255, 255);
+$box-shadow-social-icons:2px 4px 12px rgba(0, 0, 0, 0.06);
 
 //----------------- Home  --------------------------
 /*Hero Background Color*/
@@ -29,6 +31,7 @@ $bg-color-content-card: rgb(255, 255, 255);
 //----------------- Courses  --------------------------
 /*Color of the Course Cards*/ 
 $card-color: white;
+$bg-color-sidebar: white;
 
 
 //----------------- Blog  --------------------------

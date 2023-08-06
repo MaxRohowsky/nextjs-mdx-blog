@@ -3,6 +3,7 @@ import '@/styles/globals.scss';
 //import '@/styles/Card.scss'
 //import '@/styles/Courses.scss'
 //import '@/styles/Course.scss';
+//test
 import '@/styles/Sidebar.module.scss';
 import styles from '@/styles/App.module.scss'
 

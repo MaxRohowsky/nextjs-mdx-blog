@@ -64,7 +64,7 @@ export default function Socials(input) {
                 </a>
 
 
-                <a href={`https://github.com/codewmax${githubReference}`} target="_blank" rel="noreferrer"
+                <a href={`https://github.com/maxontech${githubReference}`} target="_blank" rel="noreferrer"
                     className={`${styles.post__socials} ${styles.post__github}`}>
                     <div>
                         <i className="fab fa-github" ></i>

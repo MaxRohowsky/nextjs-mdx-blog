@@ -109,11 +109,19 @@ p{
 
 
 // Code that is written in paragraphs is visually enhanced
-p > code{
+p> code,td > code{
   background: #e5e7eb;
   border-radius: 0.25em;
   padding: 0.1em 0.25em;
   font-size: large;
+}
+
+// Adjust the styling of the Tables that have the class is-style-stripes
+.is-style-stripes {
+  border-bottom: none !important;
+  tbody tr:nth-child(odd) {
+    background-color: #e5e7eb;
+  }
 }
 
 // Remove the line under links

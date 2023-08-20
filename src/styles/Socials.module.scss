@@ -3,7 +3,6 @@
 // ---------------------------CSS for Social Media Icons-------------------------------------
 
 .wrapper {
-    margin-bottom: 10px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -12,8 +11,8 @@
 
 .post__socials {
     display: inline-block;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     margin: 0px 10px;
     overflow: hidden;
     border-radius: 50px;
@@ -28,18 +27,18 @@
 
 .post__socials div {
     display: inline-block;
-    height: 50px;
-    width: 50px;
-    border-radius: 50px;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
     box-sizing: border-box;
-    line-height: 50px;
+    line-height: 40px;
     text-align: center;
     transition: all 0.4s ease-out;
 }
 
 .post__socials div i {
     font-size: 20px;
-    line-height: 50px;
+    line-height: 40px;
 }
 
 .post__socials span {

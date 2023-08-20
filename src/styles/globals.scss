@@ -49,8 +49,10 @@ p{
 }
 
 .hljs{
-  border-radius: 10px;
+  border-left: 5px solid #808095;
   font-size: 16px;
+  background: #e5e7eb !important;
+  padding: 15px !important;
 }
 
 /*Youtube Embed Styling*/
@@ -82,16 +84,27 @@ p{
 .highlight-green{
   background-color: #f0fff0; 
   border-left: 5px solid #008000;
-  padding: 10px;
+  padding: 15px;
 }
 
 /* Sets the Styling for the Table of Content on the Course Pages*/
 .course-table-of-content {
-  border-left: 5px solid #eaeaea; 
+  border-left: 5px solid #aabee8;
+  background-color: #f0f3ff;
+  padding: 15px;
+}
+
+.course-table-of-content__ordered-list {
+  margin: 0px;
+  padding-inline-start: 30px;
+  list-style-type: disc;
+
 }
 
 .course-table-of-content__ordered-list li {
-  margin-bottom: 5px;
+  &::marker{
+    color: rgb(94, 102, 255)
+  };
 }
 
 .course-table-of-content__ordered-list li:hover {

@@ -1,0 +1,16 @@
+@import "_variables.scss";
+
+.breadcrumbs {
+    padding-left: 20px;
+    padding-top: 5px;
+  }
+  
+  .separator {
+    margin: 0 6px;
+    color: rgb(203, 203, 203);
+  }
+
+  .link{
+    color: rgb(203, 203, 203);
+    font-weight: 600;
+  }

@@ -5,11 +5,18 @@ import Sidebar from '@/components/Sidebar';
 import styles from '../../../styles/Course.module.scss'
 import Head from "next/head";
 import parse from "node-html-parser";
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 
 
 export default function Course({ courseData, sidebarData }) {
   let showSidebar = true;
+
+  const crumbs = [
+    { label: 'Home', path: '/' },
+    { label: 'Courses', path: '/courses' },
+    { label: courseData.title , path: courseData.slug },
+  ];
 
   /* Only show sidebar if necessary */
   if (sidebarData.length <= 1) {
@@ -35,6 +42,7 @@ export default function Course({ courseData, sidebarData }) {
 
       <div className={`${styles.post} wp-embed-responsive`} >
         <div className={styles.post__content}>
+        <Breadcrumbs crumbs={crumbs} />
           <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: courseData.title }} />
           <Socials githubReference={courseData.githubRef.githubReference}/>
           <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: courseData.content }} />

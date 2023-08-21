@@ -11,9 +11,9 @@ html, body {
 }
 
 
-  strong {
-    font-weight: bold; 
-  }
+/*strong {
+  font-weight: bold; 
+}*/
 
 
 /*Not optimal. This styling is actually already in the images/styles wordpress library but doesn't work.*/
@@ -43,7 +43,7 @@ h4{
   margin-bottom: 6pt;
 }
 
-p{
+p, li{
   line-height: 26px;
 }
 

@@ -10,6 +10,7 @@
 	margin: 0 1rem;
 	color: $nav-text-color;
 	font-size: larger;
+	font-weight: 600;
 	&:hover {
 		transform: scale(1.1);
 		transition-duration: .1s;
@@ -26,14 +27,14 @@
 .header__txt {
 	color: $nav-text-color;
 	padding-left: 10px;
-	padding-top: 5px;
+	padding-top: 9px;
 	margin: 0px;
-	font-size:x-large;
-	font-weight: 400;
+	font-size: larger;
+	font-weight: 600;
 }
 
 .nav__btn {
-	padding: 5px;
+	padding: 25px;
 	cursor: pointer;
 	background: transparent;
 	border: none;

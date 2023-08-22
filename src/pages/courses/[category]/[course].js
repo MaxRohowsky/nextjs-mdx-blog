@@ -6,7 +6,7 @@ import styles from '../../../styles/Course.module.scss'
 import Head from "next/head";
 import parse from "node-html-parser";
 import Breadcrumbs from '@/components/Breadcrumbs';
-
+import { dateTime } from '@/components/datetime.js';
 
 
 export default function Course({ courseData, sidebarData }) {
@@ -42,8 +42,12 @@ export default function Course({ courseData, sidebarData }) {
 
       <div className={`${styles.post} wp-embed-responsive`} >
         <div className={styles.post__content}>
+        <div className={styles.post__meta}>
         <Breadcrumbs crumbs={crumbs} />
+        <p className={styles.post__date}>Published {dateTime(courseData.date)}</p>
+        </div>
           <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: courseData.title }} />
+          
           <Socials githubReference={courseData.githubRef.githubReference}/>
           <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: courseData.content }} />
         </div>
@@ -88,6 +92,7 @@ export async function getStaticProps({ params = {} } = {}) {
               githubRef {
                 githubReference
               }
+              date
             }
           }
         }

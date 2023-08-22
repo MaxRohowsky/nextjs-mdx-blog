@@ -18,16 +18,30 @@
     
 }
 
+.post__meta{
+    display: flex;
+    padding-top: 5px;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
 .post__title{
     text-align: center;
     margin: 0px;
     padding: 30pt 10pt 20pt 10pt;
 }
 
+.post__date{
+    text-align: center;
+    margin: 0px;
+    color: rgb(203, 203, 203);
+    font-weight: 400;
+}
+
+
 .post__text{
     padding: 15px 15px 15px 15px;
     margin-bottom: 20px;
-    
 }
 
 /*@media only screen and (max-width: $desktop-breakpoint){

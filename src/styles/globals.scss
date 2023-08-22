@@ -7,7 +7,7 @@ html, body {
   margin: 0px;
   padding: 0px;
   //background-color: $bg-color;
-  background-color: #F7F9F9;
+  background-color: $bg-color;
   overflow-x: hidden;
 }
 
@@ -50,6 +50,7 @@ p, li{
 
 .hljs{
   border-left: 5px solid #808095;
+  border-radius: 3px;
   font-size: 16px;
   background: #e5e7eb !important;
   padding: 15px !important;
@@ -86,6 +87,7 @@ p, li{
   background-color: #f0fff0; 
   border-left: 5px solid #008000;
   padding: 15px;
+  border-radius: 3px;
 }
 
 /* Sets the Styling for the Table of Content on the Course Pages*/
@@ -93,6 +95,7 @@ p, li{
   border-left: 5px solid #aabee8;
   background-color: #f0f3ff;
   padding: 15px;
+  border-radius: 3px;
 }
 
 .course-table-of-content__ordered-list {

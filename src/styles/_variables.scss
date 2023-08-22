@@ -7,7 +7,7 @@ $text-color: #000000;
 /*Main Corner Radius*/
 $border-radius: 8px;
 /*Main Box Shadow*/
-$box-shadow: 2px 4px 12px rgba(0,0,0,.08);
+$box-shadow:  rgba(0, 0, 0, 0.06) 0px 3px 5px;
 /*Main Breakpoints for Media Queries*/
 $wide-desktop-breakpoint: 1600px;
 $desktop-breakpoint: 1300px; //1025px;
@@ -16,6 +16,9 @@ $tablet-breakpoint: 768px;
 $mobile-breakpoint: 450px;
 /*Navbar Background Color*/
 $bg-color-navbar: rgb(255, 255, 255);
+$bg-color-footer: rgb(255, 255, 255);
+/*Navbar Text Color*/
+$nav-text-color: rgb(0, 0, 0);
 
 
 $bg-color-social-icons:rgb(255, 255, 255);

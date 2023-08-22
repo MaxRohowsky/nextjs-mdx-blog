@@ -64,11 +64,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: $border-radius;
+  //border-radius: $border-radius;
   box-shadow: $box-shadow;
   //box-shadow: rgb(204, 51, 51) 0px 0px 30px 10px;
-  background-color: $bg-color-navbar;
-  width: calc(100svw - (2 * 20px));
+  background-color: $bg-color-footer;
+  width: 100svw;
+  //width: calc(100svw - (2 * 20px));
   //z-index: 10;
   //flex-shrink: 0;
 }

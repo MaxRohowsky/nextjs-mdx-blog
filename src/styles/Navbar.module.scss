@@ -8,7 +8,7 @@
 
 .nav__link {
 	margin: 0 1rem;
-	color: $text-color;
+	color: $nav-text-color;
 	font-size: larger;
 	&:hover {
 		transform: scale(1.1);
@@ -16,11 +16,20 @@
 	}
 }
 
-.header__logo {
-	color: $text-color;
-	padding-left: 36px;
+.header__brand{
+	text-decoration: 'none';
+	display: flex;
+	padding-left: 15px;
+}
+
+
+.header__txt {
+	color: $nav-text-color;
+	padding-left: 10px;
+	padding-top: 5px;
 	margin: 0px;
-	font-size: larger;
+	font-size:x-large;
+	font-weight: 400;
 }
 
 .nav__btn {

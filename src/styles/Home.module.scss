@@ -10,7 +10,8 @@
 }
 
 .hero__container {
-  padding-top: 35px;
+  padding-top: 25px;
+  padding-bottom: 35px;
   padding-left: 25px;
   padding-right: 25px;
   align-items: flex-end;
@@ -52,16 +53,17 @@
   display: flex;
   width: fit-content;
   // Style
-  background-color: #ffffff;
-  color: #ff0000;
-  border: 2px solid #FF0000;
+
+  color: white;
+  background-color: #e91010;
+  border: 2px solid #e91010;
   border-radius: 8px;
   cursor: pointer;
 
   // Hover
   &:hover {
-    color: white;
-    background-color: #FF0000;
+    background-color: #ffffff;
+    color: #e91010;
   }
 }
 
@@ -86,8 +88,8 @@
   padding: 0px;
   text-align: center;
   // Style
-  background-color: #ffffff;
-  color: #0071e3;
+  color: #fff;
+  background-color: #0071e3;
   border: 2px solid #0071e3;
   border-radius: 8px;
   cursor: pointer;
@@ -97,8 +99,9 @@
 
   // Hover
   &:hover {
-    color: #fff;
-    background-color: #0071e3;
+
+    background-color: #ffffff;
+    color: #0071e3;
   }
 }
 

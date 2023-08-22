@@ -25,7 +25,7 @@ export default function Home({ firstPost, firstCourse, secondPost, secondCourse 
   return (
     <>
       <Head>
-        <title>Max Teaches Tech Homepage</title>
+        <title>max on tech homepage</title>
         <meta name="description" content="Quality Code Tutorials" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -34,8 +34,8 @@ export default function Home({ firstPost, firstCourse, secondPost, secondCourse 
       <div className={styles.hero}>
         <div className={styles.hero__container}>
           <div className={styles.hero__left}>
-            <h1>Simplifying the fundamentals of Finance & Computer Science</h1>
-            <h2>I'm Max. An Engineer with a Ph.D. in Finance. Here, I'll break down 'mission critical' concepts in Finance & Computer Science </h2>
+            <h1>Simplifying the Technologies You Need to Succeed 🚀</h1>
+            <h2>I'm Max. An Engineer with a Ph.D. in Finance. Here, I'll break down 'mission critical' concepts in the Tech. space </h2>
 
             <div className={styles.hero__cta}>
               <Link style={{ textDecoration: 'none' }} href="/courses" >

@@ -15,6 +15,7 @@ export default function Courses({ catedata }) {
       //console.log(catedata[6].categoryImages.categoryImage.sourceUrl)
       items.push(
         <Card
+          key= {i}
           title={catedata[i].name}
           img={catedata[i].categoryImages.categoryImage.sourceUrl}
           body={catedata[i].description}

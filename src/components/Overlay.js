@@ -44,8 +44,6 @@ export default function Overlay() {
     //setGACookie(typeof (Cookies.get('maxteachestech')) !== 'undefined')
     //})
 
-    console.log(cookies)
-
 
     return (
         <>

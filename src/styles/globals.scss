@@ -1,7 +1,8 @@
 @import "_variables.scss";
 
 
-html, body {
+html,
+body {
   //width: 100vw;
   font-family: "Titillium Web", sans-serif;
   margin: 0px;
@@ -18,52 +19,93 @@ html, body {
 
 
 /*Not optimal. This styling is actually already in the images/styles wordpress library but doesn't work.*/
-.aligncenter{
+.aligncenter {
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
 /*Header Styling*/
-h1{
+h1 {
   margin-top: 35pt;
   margin-bottom: 20pt;
 }
 
-h2{
+h2 {
   margin-top: 20pt;
   margin-bottom: 12pt;
 }
 
-h3{
+h3 {
   margin-top: 12pt;
   margin-bottom: 6pt;
 }
 
-h4{
+h4 {
   margin-top: 6pt;
   margin-bottom: 6pt;
 }
 
-p, li{
+p,
+li {
   line-height: 26px;
 }
 
-.hljs{
-  border-left: 5px solid #808095;
+/*Code block Styling*/
+.wp-block-code::before {
+  content: '';
+  position: absolute;
+  top: -11px;
+  left: -10px;
+  width: 25px;
+  height: 21px;
+  z-index: 1;
+  background-color: #808095;
+  -webkit-mask-image: url('../../public/icons/terminal.svg');
+  mask-image: url('../../public/icons/terminal.svg');
+  mask-size: cover;
+
+}
+
+.wp-block-code::after {
+  content: '';
+  background: rgb(255, 255, 255);
+  position: absolute;
+  top: -20px;
+  /* Adjust the position as needed */
+  left: -18px;
+  /* Adjust the position as needed */
+  width: 40px;
+  /* Increase the size of the white circle as needed */
+  height: 40px;
+  /* Increase the size of the white circle as needed */
+  border-radius: 50%;
+  /* Make it a circle */
+  //box-shadow: 0 0 0 3px rgb(227, 227, 227) inset;
+}
+
+.wp-block-code {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.hljs {
+
+  position: relative;
   border-radius: 3px;
   font-size: 16px;
   background: #e5e7eb !important;
-  padding: 15px !important;
+  padding: 25px !important;
   line-height: 26px;
 }
 
 /*Youtube Embed Styling*/
-.course-youtube-video__wrapper{
+.course-youtube-video__wrapper {
   position: relative;
   padding-top: 56.25%;
 }
 
-.course-youtube-video__wrapper iframe{
+.course-youtube-video__wrapper iframe {
   position: absolute;
   top: 0;
   right: 0;
@@ -74,26 +116,97 @@ p, li{
   max-width: 100%;
 }
 
-.youtube-video__caption{
-    color: #555;
-    font-size: 13px;
-    text-align: center;
-    margin-top: 0.5em;
-    margin-bottom: 1em;
+.youtube-video__caption {
+  color: #555;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
 }
 
 /* Highlighting option that can be added by adding the tag ".highlight-green" in wordpress*/
-.highlight-green{
-  background-color: #f0fff0; 
-  border-left: 5px solid #008000;
+.highlight-green::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 6px;
+  width: 25px;
+  height: 25px;
+  margin-left: -20px;
+  z-index: 1;
+  background-color: #6dd06d;
+  -webkit-mask-image: url('../../public/icons/exclamation.svg');
+  mask-image: url('../../public/icons/exclamation.svg');
+  mask-size: cover;
+}
+
+.highlight-green::after {
+  content: '';
+  background: rgb(255, 255, 255);
+  position: absolute;
+  top: -20px;
+  /* Adjust the position as needed */
+  left: -21px;
+  /* Adjust the position as needed */
+  width: 40px;
+  /* Increase the size of the white circle as needed */
+  height: 40px;
+  /* Increase the size of the white circle as needed */
+  border-radius: 50%;
+  /* Make it a circle */
+  //box-shadow: 0 0 0 3px rgb(227, 227, 227) inset;
+}
+
+.highlight-green {
+  position: relative;
+  background-color: #e9ffe9;
+  border-left: 5px solid #6dd06d;
+  margin-top: 30px;
+  margin-bottom: 20px;
   padding: 15px;
   border-radius: 3px;
 }
 
+
 /* Sets the Styling for the Table of Content on the Course Pages*/
+.course-table-of-content::before {
+  content: '';
+  position: absolute;
+  top: -11px;
+  left: 9px;
+  width: 20px;
+  height: 20px;
+  margin-left: -20px;
+  z-index: 1;
+  background-color: #aabee8;
+  -webkit-mask-image: url('../../public/icons/bars.svg');
+  mask-image: url('../../public/icons/bars.svg');
+  mask-size: cover;
+}
+
+.course-table-of-content::after {
+  content: '';
+  background: rgb(255, 255, 255);
+  position: absolute;
+  top: -20px;
+  /* Adjust the position as needed */
+  left: -21px;
+  /* Adjust the position as needed */
+  width: 40px;
+  /* Increase the size of the white circle as needed */
+  height: 40px;
+  /* Increase the size of the white circle as needed */
+  border-radius: 50%;
+  /* Make it a circle */
+  //box-shadow: 0 0 0 3px rgb(227, 227, 227) inset;
+}
+
 .course-table-of-content {
+  position: relative;
   border-left: 5px solid #aabee8;
   background-color: #f0f3ff;
+  margin-top: 30px;
+  margin-bottom: 20px;
   padding: 15px;
   border-radius: 3px;
 }
@@ -105,9 +218,11 @@ p, li{
 }
 
 .course-table-of-content__ordered-list li {
-  &::marker{
-    color: rgb(94, 102, 255)
-  };
+  &::marker {
+    color: #aabee8
+  }
+
+  ;
 }
 
 .course-table-of-content__ordered-list li:hover {
@@ -119,13 +234,16 @@ p, li{
   color: inherit;
 }
 
-.wp-block-heading{
+
+/* Makes sure that navbar does not overlap header when clicking on content anchor*/
+.wp-block-heading {
   scroll-margin-top: 100px;
 }
 
 
 // Code that is written in paragraphs is visually enhanced
-p> code,td > code{
+p>code,
+td>code {
   background: #e5e7eb;
   border-radius: 0.25em;
   padding: 0.1em 0.25em;
@@ -135,13 +253,16 @@ p> code,td > code{
 // Adjust the styling of the Tables that have the class is-style-stripes
 .is-style-stripes {
   border-bottom: none !important;
+
   tbody tr:nth-child(odd) {
     background-color: #e5e7eb;
   }
 }
 
 // Remove the line under links
-a { text-decoration: none; }
+a {
+  text-decoration: none;
+}
 
 // SHOW LANGUAGE
 // This code shows the programming language within the code blocks
@@ -177,4 +298,3 @@ a { text-decoration: none; }
 
 */
 // SHOW LANGUAGE END
-

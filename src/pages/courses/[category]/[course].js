@@ -15,7 +15,7 @@ export default function Course({ courseData, sidebarData }) {
   const crumbs = [
     { label: 'Home', path: '/' },
     { label: 'Courses', path: '/courses' },
-    { label: courseData.title , path: courseData.slug },
+    { label: courseData.title, path: courseData.slug },
   ];
 
   /* Only show sidebar if necessary */
@@ -40,25 +40,30 @@ export default function Course({ courseData, sidebarData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={`${styles.post} wp-embed-responsive`} >
-        <div className={styles.post__content}>
+      <div className={styles.prepost}>
         <div className={styles.post__meta}>
-        <Breadcrumbs crumbs={crumbs} />
-        <p className={styles.post__date}>Published {dateTime(courseData.date)}</p>
+          <Breadcrumbs crumbs={crumbs} />
+          {/*<p className={styles.post__date}>Published {dateTime(courseData.date)}</p>*/}
         </div>
-          <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: courseData.title }} />
-          
-          <Socials githubReference={courseData.githubRef.githubReference}/>
+        <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: courseData.title }} />
+
+        <Socials githubReference={courseData.githubRef.githubReference} />
+      </div>
+
+
+      <div className={`${styles.post} wp-embed-responsive`} >
+        {showSidebar && (
+          //<div className={styles.post__sidebar}>
+          <Sidebar data={sidebarData} />
+          //</div>
+        )}
+
+        <div className={styles.post__content}>
           <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: courseData.content }} />
         </div>
 
-        {showSidebar && (
-          //<div className={styles.post__sidebar}>
-            <Sidebar data={sidebarData} />
-          //</div>
-          )
-        }
-          
+
+
       </div>
     </>
   )

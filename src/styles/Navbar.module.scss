@@ -6,11 +6,12 @@
 	padding-right: 20px;
 }
 
+
 .nav__link {
 	margin: 0 1rem;
 	color: $nav-text-color;
 	font-size: larger;
-	font-weight: 600;
+	font-weight: 400;
 	&:hover {
 		transform: scale(1.1);
 		transition-duration: .1s;

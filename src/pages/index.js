@@ -75,9 +75,7 @@ export default function Home({ firstPost, firstCourse, secondPost, secondCourse 
 
             <Link style={{ textDecoration: 'none' }} className={styles.content__link} href={"/blog" + firstPost.uri}>
               <div className={styles.content__card}>
-                <div className={styles.featured__img}>
-                  <img src={firstPost.featuredImage.node.mediaItemUrl} />
-                </div>
+
                 <div className={styles.featured__text}>
                   <h2 className={styles.featured__title}> {firstPost.title} </h2>
                   <h4 className={styles.featured__date}> Blog | {dateTime(firstPost.date)} </h4>
@@ -90,9 +88,7 @@ export default function Home({ firstPost, firstCourse, secondPost, secondCourse 
 
             <Link style={{ textDecoration: 'none' }} className={styles.content__link} href={"/blog" + secondPost.uri}>
               <div className={styles.content__card}>
-                <div className={styles.featured__img} >
-                  <img src={secondPost.featuredImage.node.mediaItemUrl} />
-                </div>
+
                 <div className={styles.featured__text}>
                   <h2 className={styles.featured__title}> {secondPost.title} </h2>
                   <h4 className={styles.featured__date}> Blog | {dateTime(secondPost.date)} </h4>

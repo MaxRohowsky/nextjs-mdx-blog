@@ -21,11 +21,15 @@
   width: 65%;
 }
 
+
+
+
 .hero__left {
   max-width: 600px;
   align-self: center;
   margin: 0px;
   box-sizing: border-box;
+  z-index: 3;
 
   & h1 {
     margin: 0px;
@@ -46,6 +50,7 @@
   align-items: center;
   padding-top: 5px;
   padding-bottom: 5px;
+
 }
 
 .subCta {
@@ -262,7 +267,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 230px;
+  width: 280px;
   overflow: hidden;
 
   img {

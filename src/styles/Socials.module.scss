@@ -6,16 +6,16 @@
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .post__socials {
     display: inline-block;
-    height: 40px;
-    width: 40px;
+    height: $social-icon-size;
+    width: $social-icon-size;
     margin: 0px 10px;
     overflow: hidden;
-    border-radius: 50px;
+    border-radius: 50px 50px 50px 50px;
     cursor: pointer;
     transition: all 0.4s ease-out;
     border-width: 0px;
@@ -27,18 +27,18 @@
 
 .post__socials div {
     display: inline-block;
-    height: 40px;
-    width: 40px;
-    border-radius: 40px;
+    height: $social-icon-size;
+    width: $social-icon-size;
+    border-radius: $social-icon-size;
     box-sizing: border-box;
-    line-height: 40px;
+    line-height: $social-icon-size;
     text-align: center;
     transition: all 0.4s ease-out;
 }
 
 .post__socials div i {
     font-size: 20px;
-    line-height: 40px;
+    line-height: $social-icon-size;
 }
 
 .post__socials span {

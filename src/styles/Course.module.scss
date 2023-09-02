@@ -1,40 +1,69 @@
 @import "_variables.scss";
 
 
+
+
+.prepost {
+    background-color:rgb(219, 227, 235);//rgb(164, 182, 201);
+    //background: linear-gradient(135deg, rgba(244, 244, 253, 0.3) 0%, rgba(205, 218, 236, 0.399) 100%);
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: -100px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+
+
 .post {
     position: relative;
     display: block;
     width: 650px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; 
 }
 
 .post__content{
-    background-color: rgb(255, 255, 255);
-    //background-color: #ffffff;
-    border-radius: $border-radius;
+    //background-color: rgb(255, 255, 255);
+    //border-radius: $border-radius;
     //box-shadow: rgba(0, 0, 0, 0.01) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;;
-    box-shadow: $box-shadow;
-    
+    //box-shadow: $box-shadow;
 }
+
+
 
 .post__meta{
     display: flex;
     padding-top: 5px;
     justify-content: space-between;
-    padding-right: 20px;
 }
+
+.post__title::before {
+	content: "";
+	position: absolute;
+	bottom: 28px;
+	width: 250px;
+	height: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+	//transform: skew(-12deg);
+	background: rgb(115, 149, 222);
+	z-index: 2;
+
+  }
 
 .post__title{
     text-align: center;
     margin: 0px;
-    padding: 30pt 10pt 20pt 10pt;
+    position: relative;
+    padding: 30pt 10pt 25pt 10pt;
+    color: rgb(0, 0, 0);
 }
 
 .post__date{
     text-align: center;
     margin: 0px;
-    color: rgb(203, 203, 203);
+    color: rgb(0, 0, 0);
     font-weight: 400;
 }
 

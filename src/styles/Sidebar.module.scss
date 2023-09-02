@@ -1,16 +1,35 @@
 @import "_variables.scss";
 
+
+.block::before{
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    background-image: url('../../public/icons/bookmark.png');
+    background-size: cover;
+    z-index: 1000;
+  }
+
+
 .wrap{
     position: absolute;
     left: 670px;
-    top: 130px;
+    top: -5px;
     width: 300px;
+    overflow: visible;
 }
 
 .block{
+    padding-top: 20px;
     height: calc(90vh - 240px);
     overflow-y: auto;
 }
+
+
 
 .sidebar__absolute{
     position: absolute;
@@ -20,7 +39,7 @@
 
 .sidebar__stay{
     position: fixed;
-    top: 120px;
+    top: 250px;
     width: 300px;
     list-style-type: none;
 }
@@ -30,24 +49,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 700;
+    //font-weight: 400;
     padding: 5px;
+    
 }
 
 .sidebar__list {
     list-style-type: none;
     padding: 0;
     margin: 0px;
-    background-color: $bg-color-sidebar;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
+    border-radius: 3px;
+    border-left: 5px solid rgb(219, 227, 235);
+    background-color:  rgba(219, 227, 235, 0.475);
 }
 
 .sidebar__item{
     text-align: left;
     padding: 8px 5px 8px 15px;
-    border-top: 1px solid #ddd;
-
+    border-top: 2px solid rgb(219, 227, 235);
+    
 }
 
 .sidebar__link__active{

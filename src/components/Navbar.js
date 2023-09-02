@@ -31,11 +31,11 @@ function Navbar() {
 
 			</Link>
 			<nav className={styles.header__nav} ref={navRef}>
-				<Link style={{ textDecoration: 'none' }} onClick={showNavbar} href="/"><h4 className={styles.nav__link}>Home</h4></Link>
-				<Link style={{ textDecoration: 'none' }} onClick={showNavbar} href="/courses"><h4 className={styles.nav__link}>Courses</h4></Link>
-				<Link style={{ textDecoration: 'none' }} onClick={showNavbar} href="/blog"><h4 className={styles.nav__link}>Blog</h4></Link>
-				<Link style={{ textDecoration: 'none' }} onClick={showNavbar} href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw" target="_blank" ><h4 className={styles.nav__link}>Youtube</h4></Link>
-				<Link style={{ textDecoration: 'none' }} onClick={showNavbar} href="https://discord.com/invite/JERatQsfY8" target="_blank" ><h4 className={styles.nav__link}>Discord</h4></Link>
+				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="/">Home</Link>
+				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="/courses">Courses</Link>
+				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="/blog">Blog</Link>
+				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw" target="_blank" >Youtube</Link>
+				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="https://discord.com/invite/JERatQsfY8" target="_blank" >Discord</Link>
 				<button
 					className={`${styles.nav__btn} ${styles.nav__closebtn}`}
 					onClick={showNavbar}>

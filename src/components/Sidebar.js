@@ -54,7 +54,7 @@ export default function Sidebar(sidebarData) {
         <div className={styles.wrap} >
         <div className={`${styles.block} ${positionStyle}`}>
             <ul className={styles.sidebar__list}>
-            <span className={styles.sidebar__toc}>Chapters:</span>
+            <span className={styles.sidebar__toc}>Table of Chapters</span>
                 {items}
             </ul>
         </div>

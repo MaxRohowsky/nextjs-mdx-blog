@@ -1,44 +1,114 @@
 @import "_variables.scss";
 
 // -------------- HERO START ---------------------------------------------
+
+.bottomparticles {
+  z-index: -10;
+  position: absolute;
+  top: 500px;
+  left: 0;
+  width: 100svw;
+  z-index: 1;
+
+  .bubble {
+    opacity: 0;
+    position: absolute;
+    color: white;
+    width: 0px;
+    height: 0px;
+
+    // Randomize bubles
+    @for $i from 1 through $particle-count {
+      // random animation speed
+      $speed: random($particle-max-speed) + 0ms;
+
+      @if $speed < $particle-min-speed {
+        $speed: $particle-min-speed + 0ms;
+      }
+
+      &:nth-child(#{$i}) {
+        left: random(100) + 0%;
+        animation: blow $speed infinite;
+        animation-delay: random($particle-max-delay) + 0ms;
+      }
+    }
+  }
+}
+
+@keyframes blow {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(4);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, -$particle-distance) scale(0.1);
+  }
+}
+
+.circle {
+  top: 580px;
+  width: 720px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: auto;
+  z-index: 0;
+  border-width: 100px;
+  border-color: #ffffff00;
+  fill: rgba(87, 135, 198, 0.859);
+}
+
 .hero {
-  background-color: $bg-color-hero;
   display: flex; // block:  starts on new line + takes up the whole width
-  border-radius: 8px;
   justify-content: center;
-  box-shadow: $box-shadow;
+  max-height: 290px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background-color: #081b44;
+  overflow: hidden;
 }
 
 .hero__container {
-  padding-top: 25px;
-  padding-bottom: 35px;
+  max-height: 300px;
+  border-radius: 8px;
+  padding-top: 15px;
+  padding-bottom: 25px;
   padding-left: 25px;
   padding-right: 25px;
   align-items: flex-end;
   display: flex;
   justify-content: space-between;
-  //gap: 20px;
-  width: 65%;
+  z-index: 5;
 }
 
 
-
-
-.hero__left {
-  max-width: 600px;
-  align-self: center;
+.hero__main {
+  position: relative;
+  text-align: center;
   margin: 0px;
-  box-sizing: border-box;
-  z-index: 3;
+  z-index: 500;
+  color: white;
+  bottom: 0px;
+  right: 0px;
 
   & h1 {
     margin: 0px;
+    font-family: 'bricolage';
+    font-weight: bold;
+    font-size: 56px;
   }
 
   & h2 {
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 400;
     line-height: 28px;
+    margin-top: 40px;
     margin-bottom: 32px;
   }
 }
@@ -46,11 +116,10 @@
 .hero__cta {
   display: flex;
   gap: 20px;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   padding-top: 5px;
   padding-bottom: 5px;
-
 }
 
 .subCta {
@@ -104,7 +173,6 @@
 
   // Hover
   &:hover {
-
     background-color: #ffffff;
     color: #0071e3;
   }
@@ -118,70 +186,49 @@
   padding: 5px 30px 5px 25px;
 
   & i {
-
     font-size: 30px;
     padding-right: 15px;
   }
 }
 
-.hero__right {
-  //height: fit-content;
-  display: grid;
-  justify-items: center;
-  position: relative;
-}
-
-.myImage {
-  width: 500px;
-  height: 400px;
-}
-
-@media only screen and (max-width: $desktop-breakpoint) {
-  .hero__container {
-    width: 90%;
-  }
-}
 
 
 @media only screen and (max-width: $laptop-breakpoint) {
-  .hero__container {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  .circle {
+    display: none;
   }
 
-  .myImage {
-    width: 400px;
-    height: 300px;
-  }
-
-  .hero__left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .hero__main {
     & h1 {
-      font-size: 28px;
-      text-align: center;
+      font-size: 40px;
     }
 
     & h2 {
-      font-size: 18px;
-      text-align: center;
+      font-size: 30px;
     }
   }
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {
+  .hero {
+    max-height: 450px;
+  }
+
+  .hero__main {
+    & h1 {
+      font-size: 30px;
+    }
+
+    & h2 {
+      font-size: 20px;
+    }
+  }
 
   .hero__cta {
     flex-direction: column;
-    justify-content: center;
   }
 
-  .myImage {
-    width: 320px;
-    height: 250px;
-  }
+
 }
 
 // -------------- HERO END ---------------------------------------------
@@ -195,6 +242,10 @@
   justify-content: center;
   align-items: center;
   text-align: left;
+  background-color: #e8e8ef;
+  position: relative;
+  z-index: 5;
+  width: 100vw;
 }
 
 .content__container {
@@ -204,6 +255,8 @@
   align-content: center;
   gap: 40px;
   margin: 10px 0px 35px 0px;
+
+
 }
 
 .content__header {

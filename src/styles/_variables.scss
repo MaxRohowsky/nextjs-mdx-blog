@@ -29,6 +29,13 @@ $box-shadow-social-icons:2px 4px 12px rgba(0, 0, 0, 0.06);
 $bg-color-hero: rgb(255, 255, 255);
 /*Hero Card Color*/
 $bg-color-content-card: rgb(255, 255, 255);
+/*Particle Config*/
+$particle-count: 20;
+$particle-size: 10px;
+$particle-distance: 500px;
+$particle-min-speed: 10000;  // ms
+$particle-max-speed: 12000; // ms
+$particle-max-delay: 8000; // ms
 
 
 //----------------- Courses  --------------------------

@@ -6,12 +6,12 @@
 .prepost {
     background-color:rgb(219, 227, 235);//rgb(164, 182, 201);
     //background: linear-gradient(135deg, rgba(244, 244, 253, 0.3) 0%, rgba(205, 218, 236, 0.399) 100%);
-    margin-left: -20px;
-    margin-right: -20px;
+
     margin-top: -100px;
     padding-top: 100px;
     padding-bottom: 50px;
     margin-bottom: 50px;
+    width: 100svw;
 }
 
 
@@ -54,6 +54,7 @@
 
 .post__title{
     text-align: center;
+    font-weight: 600;
     margin: 0px;
     position: relative;
     padding: 30pt 10pt 25pt 10pt;

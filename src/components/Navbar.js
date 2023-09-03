@@ -19,7 +19,7 @@ function Navbar() {
 	};
 
 	return (
-		<>
+		<div className={styles.wrap}>
 			<Link className={styles.header__brand}  href="/">
 				<Image
 					src="/transparent-logo.png" // Path relative to the `public` directory
@@ -48,7 +48,7 @@ function Navbar() {
 			<button className={styles.nav__btn} onClick={showNavbar}>
 				<FaBars />
 			</button>
-		</>
+		</div>
 	);
 }
 

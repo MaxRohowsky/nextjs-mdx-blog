@@ -1,11 +1,31 @@
 @import "_variables.scss";
 
+.wrap{
+	display: flex;
+	width: 80%;
+	justify-content: space-between;
+}
+
+.header__brand{
+	text-decoration: 'none';
+	display: flex;
+	padding-left: 15px;
+}
+
+.header__txt {
+	color: $nav-text-color;
+	padding-left: 10px;
+	padding-top: 9px;
+	margin: 0px;
+	font-size: larger;
+	font-weight: 600;
+}
+
 .header__nav {
 	display: flex;
 	align-items: center;
 	padding-right: 20px;
 }
-
 
 .nav__link {
 	margin: 0 1rem;
@@ -18,57 +38,40 @@
 	}
 }
 
-.header__brand{
-	text-decoration: 'none';
-	display: flex;
-	padding-left: 15px;
-}
-
-
-.header__txt {
-	color: $nav-text-color;
-	padding-left: 10px;
-	padding-top: 9px;
-	margin: 0px;
-	font-size: larger;
-	font-weight: 600;
-}
 
 .nav__btn {
-	padding: 25px;
 	cursor: pointer;
 	background: transparent;
 	border: none;
 	outline: none;
 	color: $text-color;
-	//visibility: hidden;
 	display: none;
 	opacity: 0;
 	font-size: 1.8rem;
 }
 
 
-@media only screen and (max-width: 1024px) {
-	.header{
-		backdrop-filter: none;  //required for mobile navbar to work
+@media only screen and (max-width: $laptop-breakpoint) {
+
+	.wrap{
+		width: 100%;
 	}
 	
 	.nav__btn { //this is the hamburger menu
 		visibility: visible;
 		opacity: 1;
 		display: flex;
+		padding-right: 40px;
+		flex-wrap: wrap; // For align content to have an effect this must be set to wrap
+		align-content: center;
 	}
 
 	// This is the mobile menu
 	.header__nav {
 		position: absolute;
-		//width: calc(100%);
 		top: 100px;
 		right: 10px;
 		left: 10px;
-		//top: 0;
-		//left: 0px;
-		//height: fit-content;
 		padding: 30px 0px 30px 0px;
 		flex-direction: column;
 		align-items: center;
@@ -77,17 +80,11 @@
 		background-color: rgb(255, 255, 255);
 		border-radius: $border-radius;
 		box-shadow: $box-shadow;
-		
-		//transition: opacity 1s ease;
-		//opacity: 0;
-		
 	}
 
 
 	.responsive_nav {
-		//transform: translateY(-100vh);
 		display: none;
-		//opacity: 1;
 	}
 
 	.nav__closebtn {
@@ -96,11 +93,5 @@
 		top: 10px;
 	}
 
-	/*nav a {
-		font-size: 1.5rem;
-	}*/
 }
 
-.seperator {
-	width: 100vw; /* Line under  Navbar*/
-  }

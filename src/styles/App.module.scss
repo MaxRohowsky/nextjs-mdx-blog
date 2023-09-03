@@ -10,50 +10,26 @@
   align-items: center;
 }
 
-//
-.headerBlur{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-
-  /* Change the background color and opacity to control the blur intensity */
-  backdrop-filter: blur(8px); /* Adjust the blur radius as needed */
-  -webkit-backdrop-filter: blur(8px); /* Safari support */
-  z-index: 5; /* Set the z-index lower than the header to make sure it's behind it */
-}
-
 // Container for Header(Navbar)
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 70px;
-  margin: 10px 0px 10px 0px;
-  border-radius: 8px;
   background-color: $bg-color-navbar;
   color: $text-color;
   box-shadow: $box-shadow;
   position: fixed;
-  /* Set the navbar to fixed position */
   top: 0;
-  /* Position the navbar at the top of the page */
-  width: calc(100svw - (2 * 20px));
-  /* Full width minus the margin on each side*/
   z-index: 10;
   flex-shrink: 0;
-  backdrop-filter: blur(4.5px);
-  //-webkit-backdrop-filter: blur(4.5px);
+  width: 100svw;
 }
 
 
 // Container for Content
 .main {
-  padding-top: 100px;
-  width: calc(100svw - (2 * 20px));
-  /* Navbar height 95 px. 95px - 35px (from header) + 10px from padding =approx. 70 minimum*/
-  //padding-bottom: 30px;    /* Footer height */
+  margin-top: 70px; //due to the navbar
 }
 
 
@@ -64,12 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  //border-radius: $border-radius;
   box-shadow: $box-shadow;
-  //box-shadow: rgb(204, 51, 51) 0px 0px 30px 10px;
   background-color: $bg-color-footer;
   width: 100svw;
-  //width: calc(100svw - (2 * 20px));
-  //z-index: 10;
-  //flex-shrink: 0;
 }

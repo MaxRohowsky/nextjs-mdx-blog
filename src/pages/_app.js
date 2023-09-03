@@ -1,8 +1,4 @@
 import '@/styles/globals.scss';
-//import '@/styles/Navbar.module.scss'
-//import '@/styles/Card.scss'
-//import '@/styles/Courses.scss'
-//import '@/styles/Course.scss';
 //test
 import '@/styles/Sidebar.module.scss';
 import styles from '@/styles/App.module.scss'
@@ -21,18 +17,13 @@ import '@wordpress/block-library/build-style/theme.css';
 
 /* Font */
 import '@/styles/titillium.scss';
+import '@/styles/bricolage.scss';
 /* Components */
 import Head from 'next/head';
 import Navbar from "@/components/Navbar";
 import Footer from '@/components/Footer';
 import Overlay from '@/components/Overlay';
-//import ReactGA from 'react-ga';
-/* Other */
-//import Script from 'next/script';
-//import { parse } from 'node-html-parser';
-//import { useEffect } from 'react';
-//import { useState } from 'react';
-//import Cookies from 'js-cookie';
+
 
 
 export default function App({ Component, pageProps }) {
@@ -55,7 +46,7 @@ export default function App({ Component, pageProps }) {
         <header className={styles.header}>
           <Navbar />
         </header>
-        <div className={styles.headerBlur}/>
+
 
         <main className={styles.main}>
           <Component {...pageProps} />

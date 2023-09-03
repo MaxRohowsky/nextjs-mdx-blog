@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { dateTime } from '@/components/datetime.js';
 
 
+
 export default function Course({ courseData, sidebarData }) {
   let showSidebar = true;
 

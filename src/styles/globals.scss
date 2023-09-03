@@ -1,21 +1,18 @@
 @import "_variables.scss";
 
 
+
 html,
 body {
   //width: 100vw;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Titillium Web";
   margin: 0px;
   padding: 0px;
   //background-color: $bg-color;
-  background-color: $bg-color;
+  background-color: #e8e8ef;
   overflow-x: hidden;
 }
 
-
-/*strong {
-  font-weight: bold; 
-}*/
 
 
 /*Not optimal. This styling is actually already in the images/styles wordpress library but doesn't work.*/

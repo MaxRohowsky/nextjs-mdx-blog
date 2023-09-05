@@ -49,7 +49,9 @@ function Navbar() {
 				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="/blog">Blog</Link>
 				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw" target="_blank" >Youtube</Link>
 				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="https://discord.com/invite/JERatQsfY8" target="_blank" >Discord</Link>
-				<button onClick={() => setTheme('light')}>Light Mode</button>
+				<button onClick={() => setTheme('light')}>
+					Light Mode
+				</button>
 				<button onClick={() => setTheme('dark')}>Dark Mode</button>
 				<button
 					className={`${styles.nav__btn} ${styles.nav__closebtn}`}

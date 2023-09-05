@@ -16,7 +16,11 @@
   align-items: center;
   justify-content: center;
   height: 70px;
-  background-color: $bg-color-navbar;
+
+  background-color: var(--bg-color-navbar);
+  transition: background-color 0.3s linear; // this is the holy grail to dark mode trans!
+
+
   color: $text-color;
   box-shadow: $box-shadow;
   position: fixed;

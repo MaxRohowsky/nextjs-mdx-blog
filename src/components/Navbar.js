@@ -4,8 +4,21 @@ import Link from 'next/link';
 import styles from '@/styles/Navbar.module.scss';
 import Image from 'next/image';
 
+
+import { useTheme } from 'next-themes'
+
+
 function Navbar() {
 	const navRef = useRef();
+
+
+
+
+	const { theme, setTheme } = useTheme()
+	
+
+
+
 
 	// Use useEffect to add the 'hidden_nav' class to the navigation element initially
 	useEffect(() => {
@@ -20,7 +33,7 @@ function Navbar() {
 
 	return (
 		<div className={styles.wrap}>
-			<Link className={styles.header__brand}  href="/">
+			<Link className={styles.header__brand} href="/">
 				<Image
 					src="/transparent-logo.png" // Path relative to the `public` directory
 					alt="Transparent Logo"
@@ -36,6 +49,8 @@ function Navbar() {
 				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="/blog">Blog</Link>
 				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw" target="_blank" >Youtube</Link>
 				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="https://discord.com/invite/JERatQsfY8" target="_blank" >Discord</Link>
+				<button onClick={() => setTheme('light')}>Light Mode</button>
+				<button onClick={() => setTheme('dark')}>Dark Mode</button>
 				<button
 					className={`${styles.nav__btn} ${styles.nav__closebtn}`}
 					onClick={showNavbar}>

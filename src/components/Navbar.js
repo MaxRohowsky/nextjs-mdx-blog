@@ -15,8 +15,6 @@ function Navbar() {
 
 
 	const { theme, setTheme } = useTheme()
-	
-
 
 
 
@@ -49,10 +47,12 @@ function Navbar() {
 				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="/blog">Blog</Link>
 				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw" target="_blank" >Youtube</Link>
 				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="https://discord.com/invite/JERatQsfY8" target="_blank" >Discord</Link>
-				<button onClick={() => setTheme('light')}>
-					Light Mode
+
+				<button onClick={() => setTheme(currentTheme => currentTheme === 'light' ? 'dark' : 'light')}>
+					<i className={`fas ${theme === 'light' ? 'fa-moon' : 'fa-sun'}`}></i>
 				</button>
-				<button onClick={() => setTheme('dark')}>Dark Mode</button>
+
+
 				<button
 					className={`${styles.nav__btn} ${styles.nav__closebtn}`}
 					onClick={showNavbar}>

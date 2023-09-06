@@ -1,19 +1,37 @@
 @import "_variables.scss";
 
 
-:root{
-  --bg-color:#f5f5f7 ;//#f5f5f7;
-  --nav-text-color:#f5f5f7;
+:root {
+  /*Light Mode*/
+  /*Main Background Color*/
+  --bg-color: #f5f5f7; //#f5f5f7;
+  /*Main Text Color*/
+  --text-color: #ddb3b3;
+
+  /**/
+  --nav-text-color: #b9b9d0;
   --bg-color-navbar: rgb(184, 26, 26);
-  transition: background-color 0.5s ease, color 0.5s ease;
+  --nav-logo-color: none;
+
+  
+
+
+
 }
 
-[data-theme="dark"]{
-  --bg-color:#000000 ;//#f5f5f7;
-  --nav-text-color:#000000;
+
+[data-theme="dark"] {
+  /*Main Background Color*/
+  --bg-color: #f5f5f7; //#f5f5f7;
+  /*Main Text Color*/
+  --text-color: #000000;
+
+  --nav-text-color: #000000;
   --bg-color-navbar: rgb(28, 74, 255);
-  
-  
+
+  --nav-logo-color: brightness(0) invert(1);
+
+
 }
 
 

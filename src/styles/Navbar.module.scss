@@ -10,6 +10,8 @@
 	text-decoration: 'none';
 	display: flex;
 	padding-left: 15px;
+	filter: var(--nav-logo-color);
+
 }
 
 .header__txt {
@@ -44,7 +46,7 @@
 	background: transparent;
 	border: none;
 	outline: none;
-	color: $text-color;
+	color: var(--text-color);
 	display: none;
 	opacity: 0;
 	font-size: 1.8rem;

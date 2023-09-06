@@ -21,7 +21,7 @@
   transition: background-color 0.3s linear; // this is the holy grail to dark mode trans!
 
 
-  color: $text-color;
+  color: var(--text-color);
   box-shadow: $box-shadow;
   position: fixed;
   top: 0;

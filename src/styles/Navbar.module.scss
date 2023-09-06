@@ -11,7 +11,6 @@
 	display: flex;
 	padding-left: 15px;
 	filter: var(--nav-logo-color);
-
 }
 
 .header__txt {
@@ -79,7 +78,7 @@
 		align-items: center;
 		justify-content: center;
 		gap: 1.5rem;
-		background-color: rgb(255, 255, 255);
+		background-color: var(--nav-mob-bg-color);
 		border-radius: $border-radius;
 		box-shadow: $box-shadow;
 	}

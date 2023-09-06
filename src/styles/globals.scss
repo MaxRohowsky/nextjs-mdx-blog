@@ -1,19 +1,34 @@
 @import "_variables.scss";
 
+*{
+  transition: background-color 0.1s linear, color 0.1s linear; 
+}
 
 :root {
-  /*Light Mode*/
-  /*Main Background Color*/
-  --bg-color: #f5f5f7; //#f5f5f7;
-  /*Main Text Color*/
+  /*Main*/
+  --bg-color: #0707f0; //#f5f5f7;
   --text-color: #ddb3b3;
-
-  /**/
-  --nav-text-color: #b9b9d0;
-  --bg-color-navbar: rgb(184, 26, 26);
+  /*Navbar*/
+  --nav-text-color: #1212d4;
+  --nav-bg-color: rgb(184, 26, 26);
   --nav-logo-color: none;
-
-  
+  --nav-mob-bg-color: #ddb3b3;
+  /*Hero*/
+  --home-float-icons-color:white;
+  --home-circle-fill:rgba(87, 135, 198, 0.859);
+  --home-hero-bg-color: #081b44;
+  --home-hero-text-color: white;
+  --home-hero-sub-cta: rgb(0, 0, 0);            //SubCta
+  --home-hero-sub-cta-border: #b02d2d;          //SubCta
+  --home-hero-sub-cta-bg: #b02d2d;              //SubCta
+  --home-hero-sub-cta-bg-hover: #b02d2d;        //SubCta-hover
+  --home-hero-sub-cta-hover: rgb(0, 0, 0);      //SubCta-hover
+  --home-hero-learn-cta: rgb(0, 0, 0);            //LearnCta
+  --home-hero-learn-cta-border: #302cb6;          //LearnCta
+  --home-hero-learn-cta-bg: #ffffff;              //LearnCta
+  --home-hero-learn-cta-bg-hover: #f6f6f6;        //LearnCta-hover
+  --home-hero-learn-cta-hover: rgb(199, 79, 79);  //LearnCta-hover
+  /*Content*/
 
 
 
@@ -21,15 +36,31 @@
 
 
 [data-theme="dark"] {
-  /*Main Background Color*/
+  /*Main*/
   --bg-color: #f5f5f7; //#f5f5f7;
-  /*Main Text Color*/
   --text-color: #000000;
-
+  /*Navbar*/
   --nav-text-color: #000000;
-  --bg-color-navbar: rgb(28, 74, 255);
-
+  --nav-bg-color: rgb(28, 74, 255);
   --nav-logo-color: brightness(0) invert(1);
+  --nav-mob-bg-color: #000000;
+  /*Hero*/
+  --home-float-icons-color:rgb(181, 52, 52);
+  --home-circle-fill:rgba(115, 134, 159, 0.859);
+  --home-hero-bg-color: #4b6baf;
+  --home-hero-text-color: black;
+  --home-hero-sub-cta-color: white;             //SubCta
+  --home-hero-sub-cta-border: #b02d2d;          //SubCta
+  --home-hero-sub-cta-bg: #b02d2d;              //SubCta
+  --home-hero-sub-cta-bg-hover: #b02d2d;        //SubCta-hover
+  --home-hero-sub-cta-hover: rgb(229, 14, 14);  //SubCta-hover
+  --home-hero-learn-cta: rgb(0, 0, 0);            //LearnCta
+  --home-hero-learn-cta-border: #b02d2d;          //LearnCta
+  --home-hero-learn-cta-bg: #b02d2d;              //LearnCta
+  --home-hero-learn-cta-bg-hover: #b02d2d;        //LearnCta-hover
+  --home-hero-learn-cta-hover: rgb(0, 0, 0);      //LearnCta-hover
+  /*Content*/
+
 
 
 }
@@ -45,6 +76,7 @@ body {
   //background-color: $bg-color;
   //background-color: #e8e8ef;
   overflow-x: hidden;
+  
 }
 
 

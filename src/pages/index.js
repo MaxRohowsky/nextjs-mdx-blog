@@ -8,6 +8,7 @@ import Socials from '@/components/Socials';
 import Link from 'next/link'
 import { dateTime } from '../components/datetime.js';
 //import { subscribe } from 'graphql';
+import Card from "@/components/Card"
 
 //const inter = Inter({ subsets: ['latin'] })
 
@@ -23,10 +24,10 @@ export default function Home({ firstPost, firstCourse, secondPost, secondCourse 
 
   const possibleClasses = ["fab fa-react", "fab fa-js", "fab fa-html5", "fab fa-css3"];
 
-const randomClass = () => {
-  const randomIndex = Math.floor(Math.random() * possibleClasses.length);
-  return possibleClasses[randomIndex];
-};
+  const randomClass = () => {
+    const randomIndex = Math.floor(Math.random() * possibleClasses.length);
+    return possibleClasses[randomIndex];
+  };
 
 
   return (
@@ -42,7 +43,7 @@ const randomClass = () => {
         <div className={styles.hero}>
           <div className={styles.bottomparticles}>
             {Array(20).fill().map((_, index) => (
-              <i  key={index} className={`${styles.bubble} ${randomClass()}`} ></i>
+              <i key={index} className={`${styles.bubble} ${randomClass()}`} ></i>
             ))}
 
 
@@ -50,32 +51,32 @@ const randomClass = () => {
           </div>
           <div className={styles.hero__container}>
             <div className='anotherdiv'>
-            <svg className={styles.circle} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="50" />
-            </svg>
-            <div className={styles.hero__main}>
-            <h1>Simplifying Tech.<br /> Frontend to Backend!</h1>
-              <h2>Free, Fast, and Fun lessons to <br /> level up your font- and backend stack! </h2>
+              <svg className={styles.circle} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+              <div className={styles.hero__main}>
+                <h1>Simplifying Tech.<br /> Frontend to Backend!</h1>
+                <h2>Free, Fast, and Fun lessons to <br /> level up your font- and backend stack! </h2>
 
-              <div className={styles.hero__cta}>
-                <Link style={{ textDecoration: 'none' }} href="/courses" >
-                  <span className={styles.learnCta}>
-                    <span className={styles.learnCta__content}>
-                      <i className="fas fa-graduation-cap" />
-                      Learn
+                <div className={styles.hero__cta}>
+                  <Link style={{ textDecoration: 'none' }} href="/courses" >
+                    <span className={styles.learnCta}>
+                      <span className={styles.learnCta__content}>
+                        <i className="fas fa-graduation-cap" />
+                        Learn
+                      </span>
                     </span>
-                  </span>
-                </Link>
+                  </Link>
 
-                <Link style={{ textDecoration: 'none' }} href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw?sub_confirmation=1" >
-                  <span className={styles.subCta}>
-                    <span className={styles.subCta__content}>
-                      <i className="fab fa-youtube" />
-                      Subscribe
+                  <Link style={{ textDecoration: 'none' }} href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw?sub_confirmation=1" >
+                    <span className={styles.subCta}>
+                      <span className={styles.subCta__content}>
+                        <i className="fab fa-youtube" />
+                        Subscribe
+                      </span>
                     </span>
-                  </span>
-                </Link>
-              </div>
+                  </Link>
+                </div>
               </div>
 
             </div>
@@ -84,12 +85,62 @@ const randomClass = () => {
         </div>
 
         <div className={styles.content}>
+          {/*<svg className={styles.dots} >
+            <pattern id="pattern-circles" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse">
+              <circle id="pattern-circle" cx="10" cy="10" r="1.6257413380501518" fill="#000"></circle>
+            </pattern>
+
+            <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)"></rect>
+          </svg>*/}
           <div className={styles.content__container}>
 
-            <div className={styles.content__left}>
-              <h2 className={styles.content__header}>Latest Opinion</h2>
 
-              <Link style={{ textDecoration: 'none' }} className={styles.content__link} href={"/blog" + firstPost.uri}>
+
+
+            <div className={styles.content__left}>
+              <h2 className={styles.content__header}>🤓 Latest Opinion</h2>
+              <hr className={styles.content__line} />
+
+              <div className={styles.content__wrap}>
+
+
+                      
+<Card
+key= {1}
+title={firstCourse.title}
+img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
+body={ firstCourse.categories.nodes[0].description}
+link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
+/>
+
+<Card
+key= {1}
+title={firstCourse.title}
+img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
+body="{catedata[i].description}"
+link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
+/>
+        <Card
+key= {1}
+title={firstCourse.title}
+img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
+body="{catedata[i].description}"
+link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
+/>
+                <Card
+key= {1}
+title={firstCourse.title}
+img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
+body="{catedata[i].description}"
+link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
+/>
+
+
+
+</div>
+
+
+              {/*<Link style={{ textDecoration: 'none' }} className={styles.content__link} href={"/blog" + firstPost.uri}>
                 <div className={styles.content__card}>
 
                   <div className={styles.featured__text}>
@@ -113,17 +164,69 @@ const randomClass = () => {
                     }} />
                   </div>
                 </div>
-              </Link>
+                  </Link>*/}
 
 
             </div>
 
 
 
-            <div className={styles.content__right}>
-              <h2 className={styles.content__header}>Latest Courses</h2>
 
-              <Link style={{ textDecoration: 'none' }} className={styles.content__link} href={firstCourse.uri}>
+          </div>
+        </div>
+        <div className={styles.content}>
+        
+          <div className={styles.content__container}>
+
+
+
+
+
+
+            <div className={styles.content__right}>
+              <h2 className={styles.content__header}>📖 Latest Courses</h2>
+              <hr className={styles.content__line} />
+                    <div className={styles.content__wrap}>
+
+
+                      
+                    <Card
+          key= {1}
+          title={firstCourse.title}
+          img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
+          body={ firstCourse.categories.nodes[0].description}
+          link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
+        />
+        
+        <Card
+          key= {1}
+          title={firstCourse.title}
+          img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
+          body="{catedata[i].description}"
+          link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
+        />
+                            <Card
+          key= {1}
+          title={firstCourse.title}
+          img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
+          body="{catedata[i].description}"
+          link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
+        />
+                                    <Card
+          key= {1}
+          title={firstCourse.title}
+          img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
+          body="{catedata[i].description}"
+          link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
+        />
+
+
+
+                    </div>
+
+        
+
+              {/*<Link style={{ textDecoration: 'none' }} className={styles.content__link} href={firstCourse.uri}>
                 <div className={styles.content__card}>
                   <div className={styles.featured__img} >
                     <img src={firstCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl} />
@@ -152,7 +255,7 @@ const randomClass = () => {
                     }} />
                   </div>
                 </div>
-              </Link>
+                  </Link>*/}
 
             </div>
           </div>

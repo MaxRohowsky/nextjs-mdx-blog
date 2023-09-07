@@ -16,7 +16,17 @@ export default function Footer() {
         <Link href="/imprint" style={{textDecoration: "none", color: "black"}}>
           Imprint
         </Link>
+
+
+
+
+
+        
       </div>
+
+
+
+
       
   );
 };

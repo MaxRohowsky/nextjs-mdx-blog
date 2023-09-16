@@ -49,11 +49,11 @@ function Navbar() {
 				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={showNavbar} href="https://discord.com/invite/JERatQsfY8" target="_blank" >Discord</Link>
 				
 				{mounted &&theme === 'dark'&&(
-				<button onClick={() => setTheme('light')}>
+				<button className={styles.nav__link} onClick={() => setTheme('light')}>
 					<i className={`fas ${'fa-sun'}`}></i>
 				</button>)}
 				{mounted && (theme === 'light' || theme === 'system')&&(
-				<button onClick={() => setTheme('dark')}>
+				<button className={styles.nav__link} onClick={() => setTheme('dark')}>
 					<i className={`fas ${'fa-moon'}`}></i>
 				</button>)}
 

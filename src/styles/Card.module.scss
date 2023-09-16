@@ -30,11 +30,11 @@
 }
 
 .title__text{
-  color: $text-color;
+  color: var(--text-color);
 }
 
 .card__description{
-  color: $text-color;
+  color: var(--text-color);
   margin: 15px;
   margin-top: 10px;
 }

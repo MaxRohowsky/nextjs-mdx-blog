@@ -10,9 +10,7 @@ export default function Courses({ catedata }) {
 
   // This for loop goes through all the categories
   for (var i = 0; i < catedata.length; i++) {
-
     if (catedata[i].courses.edges.length > 0 && !(catedata[i].name == 'Uncategorized')) { // category > one child and not uncategorized -> create card.
-      //console.log(catedata[6].categoryImages.categoryImage.sourceUrl)
       items.push(
         <Card
           key= {i}
@@ -87,13 +85,12 @@ export async function getStaticProps() {
   });
 
   const catedata = data.data.categories.nodes
-  //const categories = data?.data.categories.edges
-  //const content = data?.data.courses.edges[0].node.content;
 
   return {
     props: {
       catedata
-    }
+    },
+    revalidate: 10,
   }
 }
 

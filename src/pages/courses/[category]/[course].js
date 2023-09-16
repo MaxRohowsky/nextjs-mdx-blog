@@ -4,9 +4,8 @@ import Socials from '@/components/Socials';
 import Sidebar from '@/components/Sidebar';
 import styles from '../../../styles/Course.module.scss'
 import Head from "next/head";
-import parse from "node-html-parser";
+import { parse } from "node-html-parser";
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { dateTime } from '@/components/datetime.js';
 
 
 
@@ -18,6 +17,8 @@ export default function Course({ courseData, sidebarData }) {
     { label: 'Courses', path: '/courses' },
     { label: courseData.title, path: courseData.slug },
   ];
+
+
 
   /* Only show sidebar if necessary */
   if (sidebarData.length <= 1) {
@@ -41,6 +42,8 @@ export default function Course({ courseData, sidebarData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+    
+
       <div className={styles.prepost}>
         <div className={styles.post__meta}>
           <Breadcrumbs crumbs={crumbs} />
@@ -61,6 +64,7 @@ export default function Course({ courseData, sidebarData }) {
 
         <div className={styles.post__content}>
           <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: courseData.content }} />
+
         </div>
 
 

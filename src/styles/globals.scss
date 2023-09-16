@@ -5,35 +5,49 @@
 }
 
 :root {
-  /*Main*/
+  /*Global*/
   --bg-color: #0707f0; //#f5f5f7;
-  --text-color: #ddb3b3;
-  /*Navbar*/
-  --nav-text-color: #1212d4;
-  --nav-bg-color: rgb(184, 26, 26);
-  --nav-logo-color: none;
-  --nav-mob-bg-color: #ddb3b3;
-  /*Hero*/
-  --home-float-icons-color:white;
-  --home-circle-fill:rgba(87, 135, 198, 0.859);
-  --home-hero-bg-color: #081b44;
-  --home-hero-text-color: white;
-  --home-hero-sub-cta: rgb(0, 0, 0);            //SubCta
-  --home-hero-sub-cta-border: #b02d2d;          //SubCta
-  --home-hero-sub-cta-bg: #b02d2d;              //SubCta
-  --home-hero-sub-cta-bg-hover: #b02d2d;        //SubCta-hover
-  --home-hero-sub-cta-hover: rgb(0, 0, 0);      //SubCta-hover
-  --home-hero-learn-cta: rgb(0, 0, 0);            //LearnCta
-  --home-hero-learn-cta-border: #302cb6;          //LearnCta
-  --home-hero-learn-cta-bg: #ffffff;              //LearnCta
-  --home-hero-learn-cta-bg-hover: #f6f6f6;        //LearnCta-hover
-  --home-hero-learn-cta-hover: rgb(199, 79, 79);  //LearnCta-hover
-  /*Content*/
+  --text-color: black;
 
+  /*Navbar*/
+  --nav-text-color: #000000;
+  --nav-bg-color: rgb(255, 255, 255);
+  --nav-logo-color: none;
+  --nav-mob-bg-color: #ffffff;
+
+  /*Index -- Hero*/
+  --home-float-icons-color: none;
+  --home-circle-fill:rgb(255, 255, 255);
+  --home-hero-bg-color: #F8FAFC;
+  --home-hero-text-color: rgb(0, 0, 0);
+  --home-hero-sub-cta: rgb(255, 255, 255);      //SubCta
+  --home-hero-sub-cta-border: #bb2828;          //SubCta
+  --home-hero-sub-cta-bg: #bb2828;              //SubCta
+  --home-hero-sub-cta-bg-hover: #ffffff;        //SubCta-hover
+  --home-hero-sub-cta-hover: #bb2828;           //SubCta-hover
+  --home-hero-sub-cta-pointer: rgb(0, 0, 0);    
+  --home-hero-learn-cta: rgb(255, 255, 255);       //LearnCta
+  --home-hero-learn-cta-border: #468cfd;          //LearnCta
+  --home-hero-learn-cta-bg: #468cfd;              //LearnCta
+  --home-hero-learn-cta-bg-hover: #ffffff;        //LearnCta-hover
+  --home-hero-learn-cta-hover: #468cfd;           //LearnCta-hover
+  /*Index -- Content*/
+  --home-blog-content-bg-color: #ffffff;
+  --home-courses-content-bg-color: #F8FAFC;
+  
+  /*Courses*/
+
+
+  /*Course*/
+  --course-prepost-bg-color: #F8FAFC;
+  --course-prepost-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px;
+  --course-sidebar-bg-color:#F8FAFC;
+  --course-sidebar-border-color:#e7e7e7;
+
+  /*Blog*/
 
 
 }
-// Syntax highlight: https://garbagevalue.com/blog/syntax-highlighting-next-js
 
 [data-theme="dark"] {
   /*Main*/
@@ -159,7 +173,7 @@ li {
   position: relative;
   border-radius: 3px;
   font-size: 16px;
-  background: #e5e7eb !important;
+  background: #282b2e !important;
   padding: 25px !important;
   line-height: 26px;
 }

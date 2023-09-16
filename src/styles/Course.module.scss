@@ -4,55 +4,43 @@
 
 
 .prepost {
-    background-color:rgb(219, 227, 235);//rgb(164, 182, 201);
-    //background: linear-gradient(135deg, rgba(244, 244, 253, 0.3) 0%, rgba(205, 218, 236, 0.399) 100%);
-
+    background-color: var(--course-prepost-bg-color);
     margin-top: -100px;
     padding-top: 100px;
     padding-bottom: 50px;
     margin-bottom: 50px;
     width: 100svw;
+    box-shadow: var(--course-prepost-box-shadow);
 }
-
 
 .post {
     position: relative;
     display: block;
     width: 650px;
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;
 }
 
-.post__content{
-    //background-color: rgb(255, 255, 255);
-    //border-radius: $border-radius;
-    //box-shadow: rgba(0, 0, 0, 0.01) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;;
-    //box-shadow: $box-shadow;
-}
-
-
-
-.post__meta{
+.post__meta {
     display: flex;
     padding-top: 5px;
     justify-content: space-between;
 }
 
 .post__title::before {
-	content: "";
-	position: absolute;
-	bottom: 28px;
-	width: 250px;
-	height: 3px;
+    content: "";
+    position: absolute;
+    bottom: 28px;
+    width: 250px;
+    height: 3px;
     left: 50%;
     transform: translateX(-50%);
-	//transform: skew(-12deg);
-	background: rgb(115, 149, 222);
-	z-index: 2;
+    background: rgb(115, 149, 222);
+    z-index: 2;
 
-  }
+}
 
-.post__title{
+.post__title {
     text-align: center;
     font-weight: 600;
     margin: 0px;
@@ -61,7 +49,7 @@
     color: rgb(0, 0, 0);
 }
 
-.post__date{
+.post__date {
     text-align: center;
     margin: 0px;
     color: rgb(0, 0, 0);
@@ -69,47 +57,14 @@
 }
 
 
-.post__text{
+.post__text {
     padding: 15px 15px 15px 15px;
     margin-bottom: 20px;
 }
 
-/*@media only screen and (max-width: $desktop-breakpoint){
-    .post{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
 
-    }
-
-}*/
-@media only screen and (max-width: $tablet-breakpoint){
-    .post{
+@media only screen and (max-width: $tablet-breakpoint) {
+    .post {
         width: calc(100svw - (2 * 20px));
-        
-        //flex-direction: column;
     }
-    //.post__content{
-        //width: 100%;
-        //margin: 5px;
-    //}
-    /*.post__sidebar {
-        width: 100%;
-        margin: 5px;
-    }*/
 }
-//@media only screen and (max-width: $mobile-breakpoint){
-    /*.post{
-        flex-direction: column;
-        width: 90%;
-    }
-    .post__content{
-        width: 100%;
-    }
-    /*.post__sidebar {
-        width: 100%;
-    }*/
-//}
-
-
-

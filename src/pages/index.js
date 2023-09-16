@@ -1,34 +1,39 @@
 import Head from 'next/head'
-import Image from 'next/image'
-//import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.scss'
 import { gql } from '@apollo/client';
 import { getApolloClient } from '../components/client';
-import Socials from '@/components/Socials';
 import Link from 'next/link'
-import { dateTime } from '../components/datetime.js';
-//import { subscribe } from 'graphql';
 import Card from "@/components/Card"
 
-//const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({ firstPost, firstCourse, secondPost, secondCourse }) {
+export default function Home({ Posts, Courses}) {
 
-  function MyButton(link) {
-    return (
-      <Link style={{ textDecoration: 'none' }} className={styles.cta} href={link}>
-        Start Learning
-      </Link>
-    );
-  }
-
-  const possibleClasses = ["fab fa-react", "fab fa-js", "fab fa-html5", "fab fa-css3"];
-
-  const randomClass = () => {
-    const randomIndex = Math.floor(Math.random() * possibleClasses.length);
-    return possibleClasses[randomIndex];
+  const iconColors = {
+    "fab fa-react": "#61DAFB",
+    "fab fa-js": "#F0DB4F",
+    "fab fa-html5": "#E44D26",
+    "fab fa-css3": "#1572B6",
+    "fab fa-github": "#181717",
+    "fab fa-angular": "#DD0031",
+    "fab fa-java": "#092E20"
   };
 
+  const possibleClasses = [
+    "fab fa-react",
+    "fab fa-js",
+    "fab fa-html5",
+    "fab fa-css3",
+    "fab fa-github",
+    "fab fa-angular",
+    "fab fa-java"
+  ];
+
+  const randomClass = () => {
+    const randomIndex = Math.floor(Math.random() * (possibleClasses.length));
+    const iconClass = possibleClasses[randomIndex];
+    const iconColor = iconColors[iconClass];
+    return { iconClass, iconColor };
+  };
 
   return (
     <>
@@ -42,17 +47,26 @@ export default function Home({ firstPost, firstCourse, secondPost, secondCourse 
       <div className={styles.wrap}>
         <div className={styles.hero}>
           <div className={styles.bottomparticles}>
-            {Array(20).fill().map((_, index) => (
-              <i key={index} className={`${styles.bubble} ${randomClass()}`} ></i>
-            ))}
+            {
+              Array(20).fill().map((_, index) => {
+                const { iconClass, iconColor } = randomClass(); // Store the result
+                return (
+                  <i
+                    key={index}
+                    className={`${styles.bubble} ${iconClass}`}
+                    style={{ color: iconColor }}
+                  ></i>
+                )
+              }
+              )}
 
 
 
           </div>
           <div className={styles.hero__container}>
-            <div className='anotherdiv'>
+            <div className={styles.hero__circle}>
               <svg className={styles.circle} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="50" />
+                <circle cx="50" cy="50" r="48" />
               </svg>
               <div className={styles.hero__main}>
                 <h1>Simplifying Tech.<br /> Frontend to Backend!</h1>
@@ -84,87 +98,30 @@ export default function Home({ firstPost, firstCourse, secondPost, secondCourse 
 
         </div>
 
-        <div className={styles.content}>
-          {/*<svg className={styles.dots} >
-            <pattern id="pattern-circles" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse">
-              <circle id="pattern-circle" cx="10" cy="10" r="1.6257413380501518" fill="#000"></circle>
-            </pattern>
+        <div className={styles.content__blog}>
 
-            <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)"></rect>
-          </svg>*/}
           <div className={styles.content__container}>
 
 
-
-
             <div className={styles.content__left}>
-              <h2 className={styles.content__header}>🤓 Latest Opinion</h2>
+              <h2 className={styles.content__header}>Latest Blog Posts</h2>
               <hr className={styles.content__line} />
 
               <div className={styles.content__wrap}>
 
+                {Posts.edges.map((post, index) => (
+                  <Card
+                    key={index}
+                    title={post.node.title}
+                    img={post.node.featuredImage?.node?.mediaItemUrl ?? ""}
+                    body={post.node.excerpt.replace(/<\/?p>/g, '')}
+                    link={"blog" + post.node.uri}
+                  />
+                ))}
 
-                      
-<Card
-key= {1}
-title={firstCourse.title}
-img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
-body={ firstCourse.categories.nodes[0].description}
-link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
-/>
-
-<Card
-key= {1}
-title={firstCourse.title}
-img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
-body="{catedata[i].description}"
-link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
-/>
-        <Card
-key= {1}
-title={firstCourse.title}
-img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
-body="{catedata[i].description}"
-link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
-/>
-                <Card
-key= {1}
-title={firstCourse.title}
-img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
-body="{catedata[i].description}"
-link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
-/>
+              </div>
 
 
-
-</div>
-
-
-              {/*<Link style={{ textDecoration: 'none' }} className={styles.content__link} href={"/blog" + firstPost.uri}>
-                <div className={styles.content__card}>
-
-                  <div className={styles.featured__text}>
-                    <h2 className={styles.featured__title}> {firstPost.title} </h2>
-                    <h4 className={styles.featured__date}> Blog | {dateTime(firstPost.date)} </h4>
-                    <h3 className={styles.featured__excerpt} dangerouslySetInnerHTML={{
-                      __html: firstPost.excerpt
-                    }} />
-                  </div>
-                </div>
-              </Link>
-
-              <Link style={{ textDecoration: 'none' }} className={styles.content__link} href={"/blog" + secondPost.uri}>
-                <div className={styles.content__card}>
-
-                  <div className={styles.featured__text}>
-                    <h2 className={styles.featured__title}> {secondPost.title} </h2>
-                    <h4 className={styles.featured__date}> Blog | {dateTime(secondPost.date)} </h4>
-                    <h3 className={styles.featured__excerpt} dangerouslySetInnerHTML={{
-                      __html: secondPost.excerpt
-                    }} />
-                  </div>
-                </div>
-                  </Link>*/}
 
 
             </div>
@@ -174,88 +131,26 @@ link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. 
 
           </div>
         </div>
-        <div className={styles.content}>
-        
+        <div className={styles.content__courses}>
           <div className={styles.content__container}>
-
-
-
-
-
-
             <div className={styles.content__right}>
-              <h2 className={styles.content__header}>📖 Latest Courses</h2>
+              <h2 className={styles.content__header}>Latest Courses</h2>
               <hr className={styles.content__line} />
-                    <div className={styles.content__wrap}>
+              <div className={styles.content__wrap}>
 
 
-                      
-                    <Card
-          key= {1}
-          title={firstCourse.title}
-          img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
-          body={ firstCourse.categories.nodes[0].description}
-          link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
-        />
-        
-        <Card
-          key= {1}
-          title={firstCourse.title}
-          img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
-          body="{catedata[i].description}"
-          link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
-        />
-                            <Card
-          key= {1}
-          title={firstCourse.title}
-          img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
-          body="{catedata[i].description}"
-          link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
-        />
-                                    <Card
-          key= {1}
-          title={firstCourse.title}
-          img={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
-          body="{catedata[i].description}"
-          link="{catedata[i].courses.edges[0].node.uri} /"// courses/category/lesson e.g. courses/pycharm/pycharm-basics
-        />
+                {Courses.edges.map((course, index) => (
+                  <Card
+                    key={index}
+                    title={course.node.title}
+                    img={course.node.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
+                    body={course.node.excerpt.replace(/<\/?p>/g, '')}
+                    link={course.node.uri}
+                  />
+                ))}
 
 
-
-                    </div>
-
-        
-
-              {/*<Link style={{ textDecoration: 'none' }} className={styles.content__link} href={firstCourse.uri}>
-                <div className={styles.content__card}>
-                  <div className={styles.featured__img} >
-                    <img src={firstCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl} />
-                  </div>
-
-                  <div className={styles.featured__text}>
-                    <h2 className={styles.featured__title}> {firstCourse.title} </h2>
-                    <h4 className={styles.featured__date}> Courses | {dateTime(firstCourse.date)} </h4>
-                    <h3 className={styles.featured__excerpt} dangerouslySetInnerHTML={{
-                      __html: firstCourse.categories.nodes[0].description
-                    }} />
-                  </div>
-                </div>
-              </Link>
-
-              <Link style={{ textDecoration: 'none' }} className={styles.content__link} href={secondCourse.uri}>
-                <div className={styles.content__card}>
-                  <div className={styles.featured__img} >
-                    <img src={secondCourse.categories.nodes[0].categoryImages.categoryImage.sourceUrl} />
-                  </div>
-                  <div className={styles.featured__text}>
-                    <h2 className={styles.featured__title}> {secondCourse.title} </h2>
-                    <h4 className={styles.featured__date}> Courses | {dateTime(secondCourse.date)} </h4>
-                    <h3 className={styles.featured__excerpt} dangerouslySetInnerHTML={{
-                      __html: secondCourse.categories.nodes[0].description
-                    }} />
-                  </div>
-                </div>
-                  </Link>*/}
+              </div>
 
             </div>
           </div>
@@ -274,7 +169,7 @@ export async function getStaticProps() {
   const data = await apolloClient.query({
     query: gql`
     {
-      posts(first: 2) {
+      posts(first: 4) {
         edges {
           node {
             id
@@ -284,10 +179,11 @@ export async function getStaticProps() {
             title
             date
             excerpt
-                    featuredImage {
-
-          node {
-            mediaItemUrl}}
+            featuredImage {
+              node {
+                mediaItemUrl
+              }
+            }
           }
         }
       }
@@ -298,7 +194,7 @@ export async function getStaticProps() {
   const data2 = await apolloClient.query({
     query: gql`
     {
-      courses(first: 2) {
+      courses(first: 4) {
         edges {
           node {
             categories {
@@ -315,6 +211,7 @@ export async function getStaticProps() {
             date
             uri
             title
+            excerpt
           }
         }
       }
@@ -322,17 +219,17 @@ export async function getStaticProps() {
     `
   });
 
-  const firstPost = { ...data?.data.posts.edges[0].node }
-  const secondPost = { ...data?.data.posts.edges[1].node }
-  const firstCourse = { ...data2?.data.courses.edges[0].node }
-  const secondCourse = { ...data2?.data.courses.edges[1].node }
+  const Posts = { ...data?.data.posts }
+
+  const Courses = { ...data2?.data.courses }
+
+
 
   return {
     props: {
-      firstPost,
-      firstCourse,
-      secondPost,
-      secondCourse
-    }
+      Posts,
+      Courses
+    },
+    revalidate: 10,
   }
 }

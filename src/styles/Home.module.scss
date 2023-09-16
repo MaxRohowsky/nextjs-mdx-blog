@@ -51,6 +51,11 @@
   }
 }
 
+
+.hero__circle{
+  padding: 10px;
+}
+
 .circle {
   top: 580px;
   width: 720px;
@@ -61,6 +66,9 @@
   z-index: 0;
   border-width: 100px;
   fill: var(--home-circle-fill);
+  & circle{    
+    filter: drop-shadow(0px 0px 0.1px rgba(0, 0, 0, 0.3));
+  }
 }
 
 .hero {
@@ -71,6 +79,7 @@
   padding-bottom: 50px;
   background-color: var(--home-hero-bg-color);
   overflow: hidden;
+
 }
 
 .hero__container {
@@ -143,10 +152,10 @@
     position: absolute;
     top: 317px;
     left: 510px;
-    width: 55px;
-    height: 40px;
+    width: 56px;
+    height: 41px;
     z-index: 1;
-    background-color: #ffffff;
+    background-color:var(--home-hero-sub-cta-pointer);
     -webkit-mask-image: url('../../public/arrow_06.svg');
     mask-image: url('../../public/arrow_06.svg');
     transform:scale(-1.1,1.1);
@@ -155,9 +164,9 @@
   &::after {
     content: 'Help me reach 10k!';
     font-family: 'bricolage';
-    color: white;
+    color: var(--home-hero-sub-cta-pointer);
     position: absolute;
-    top: 320px;
+    top: 335px;
     left: 560px;
     width: 100px;
     height: 40px;
@@ -172,7 +181,6 @@
   display: flex;
   align-items: center;
   padding: 5px 20px 5px 15px;
-
   & i {
     font-size: 30px;
     padding-right: 15px;
@@ -198,7 +206,7 @@
 
   // Hover
   &:hover {
-    background-color: var(--home-hero-learn-cta-hover);
+    background-color: var(--home-hero-learn-cta-bg-hover);
     color: var(--home-hero-learn-cta-hover);
   }
 }
@@ -255,15 +263,28 @@
 
 // -------------- CONTENT START ---------------------------------------------
 
-.content {
+.content__blog {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: left;
-  background-color: #e8e8ef;
+  background-color: var(--home-blog-content-bg-color);
+  position: relative;
+  z-index: 5;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.content__courses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  background-color: var(--home-courses-content-bg-color);
   position: relative;
   z-index: 5;
   width: 100vw;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .content__container {
@@ -302,15 +323,9 @@
   width: 80px; 
 }
 
-.content__left {
-  display: flex;
-  flex-direction: column;
-}
 
-.content__right {
-  //display: flex;
-  //flex-direction: column;
-}
+
+
 
 .content__wrap{
   display: grid;
@@ -328,47 +343,9 @@
 
 }
 
-
-
-.content__card {
-  display: flex;
-  align-items: flex-start;
-
-  //justify-content: center;
-  height: 160px;
-
-  margin-top: 20px;
-  background-color: $bg-color-content-card;
-
-  overflow: hidden;
-  justify-content: flex-start;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
-
-
-}
-
-
 .featured__text {
-
   padding: 5px 10px 5px 10px;
   flex: 1 1 auto;
-  /* This adds the scroll bar but it's better to have the truncated ... text
-  overflow-y: auto;
-  //mask-image: linear-gradient(180deg, #000 80%, transparent);
-  &::-webkit-scrollbar {
-    width: 0.5em;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: rgb(168, 168, 168);
-    border-radius: 100vw;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: rgb(226, 215, 215);
-    border-radius: 100vw;
-  }*/
 }
 
 .featured__img {
@@ -407,10 +384,6 @@
   color: black;
   margin-bottom: 10px;
 }
-
-
-
-
 
 @media only screen and (hover: hover) {
   .content__card {

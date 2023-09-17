@@ -34,7 +34,7 @@ export default function BlogEntires({ page, posts }) {
                 <Link className={styles.link} href={post.path}>
                   <div className={styles.card}>
 
-                    {/*<div className={styles.post__image} style={{ backgroundImage: `url(${post.featuredImage.node.mediaItemUrl})` }}></div>*/}
+                    <div className={styles.post__image} style={{ backgroundImage: `url(${post.featuredImage.node.mediaItemUrl})` }}></div>
 
                     <div className={styles.post__description}>
                     <p className={styles.post__date}>{dateTime(post.date)}</p>
@@ -86,6 +86,11 @@ export async function getStaticProps() {
               title
               slug
               date
+              featuredImage{
+                node{
+                  mediaItemUrl
+                }
+              }
 
             }
           }

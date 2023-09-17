@@ -136,7 +136,7 @@ export default function Courses({ catedata, pageData }) {
           title={dataToDisplay[i].name}
           img={dataToDisplay[i].categoryImages.categoryImage.sourceUrl}
           body={dataToDisplay[i].description}
-          link={dataToDisplay[i].courses.edges[0].node.uri} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
+          link={dataToDisplay[i].courses.edges[0].node.uri.replace('/courses/', '/')} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
         />
       )
     }

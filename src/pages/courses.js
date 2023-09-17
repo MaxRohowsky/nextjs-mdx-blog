@@ -3,7 +3,7 @@ import styles from '../styles/Courses.module.scss'
 import { gql } from "@apollo/client";
 import { getApolloClient } from '../components/client';
 import Head from "next/head";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
 
@@ -49,6 +49,7 @@ const GET_POSTS_QUERY_NEW = gql`
 
 export default function Courses({ catedata, pageData }) {
 
+  var items = []
   const first = 8
   const last = 8
 
@@ -58,7 +59,7 @@ export default function Courses({ catedata, pageData }) {
   const [hasNextPage, setHasNextPage] = useState(pageData.hasNextPage);
   const [hasPreviousPage, setHasPreviousPage] = useState(pageData.hasPreviousPage);
 
-  console.log("Initial Data:");
+  /*console.log("Initial Data:");
   console.log(pageData);
   useEffect(() => {
     console.log("-------------------");
@@ -67,69 +68,11 @@ export default function Courses({ catedata, pageData }) {
     console.log("---");
     console.log("hasNextPage =" + hasNextPage);
     console.log("after = " + after);
-  }, [hasPreviousPage, before, hasNextPage, after]);
+  }, [hasPreviousPage, before, hasNextPage, after]);*/
 
 
-
-  async function handlePriorClick() {
-    const apolloClient = getApolloClient();
-    const { data } = await apolloClient.query({
-      query: GET_POSTS_QUERY_NEW, // Use the GET_POSTS_QUERY variable
-      variables: {
-        last: last, // Use the updated first value
-        before: before, // Use the updated before value
-      },
-    });
-    console.log("Previous Page: ");
-    console.log(data);
-
-    setDataToDisplay(data.category.children.nodes)
-    setAfter(data.category.children.pageInfo.endCursor);
-    setHasNextPage(true)
-    setBefore(data.category.children.pageInfo.startCursor);
-    setHasPreviousPage(data.category.children.pageInfo.hasPreviousPage)
-
-    //setCateData(newData.categories.nodes);
-    //setAfter(data.categories.pageInfo.endCursor);
-    //setHasNextPage(true)
-    //setBefore(data.categories.pageInfo.startCursor);
-    //setHasPreviousPage(data.categories.pageInfo.hasPreviousPage)
-
-
-    //console.log(data.categories.pageInfo)
-  }
-
-
-  async function handleNextClick() {
-    const apolloClient = getApolloClient();
-    const { data } = await apolloClient.query({ //needs to be called data!
-      query: GET_POSTS_QUERY_NEW, // Use the GET_POSTS_QUERY variable
-      variables: {
-        first: first, // Use the updated first value
-        after: after, // Use the updated after value i.e., end cursor
-      },
-    });
-    console.log("Next Page: ");
-    console.log(data);
-
-    setDataToDisplay(data.category.children.nodes)
-
-    setAfter(data.category.children.pageInfo.endCursor);
-    setHasNextPage(data.category.children.pageInfo.hasNextPage)
-    setBefore(data.category.children.pageInfo.startCursor);
-    setHasPreviousPage(true)
-
-
-
-
-  }
-
-
-  var items = []
-
-  // This for loop goes through all the categories
   for (var i = 0; i < dataToDisplay.length; i++) {
-    if (dataToDisplay[i].courses.edges.length > 0 && !(catedata[i].name == 'Uncategorized')) { // category > one child and not uncategorized -> create card.
+    if (dataToDisplay[i].courses.edges.length > 0 ) { 
       items.push(
         <Card
           key={i}
@@ -142,6 +85,40 @@ export default function Courses({ catedata, pageData }) {
     }
   }
 
+  async function handlePriorClick() {
+    const apolloClient = getApolloClient();
+    const { data } = await apolloClient.query({
+      query: GET_POSTS_QUERY_NEW, 
+      variables: {
+        last: last, 
+        before: before, 
+      },
+    });
+    
+    setDataToDisplay(data.category.children.nodes)
+    setAfter(data.category.children.pageInfo.endCursor);
+    setHasNextPage(true)
+    setBefore(data.category.children.pageInfo.startCursor);
+    setHasPreviousPage(data.category.children.pageInfo.hasPreviousPage)
+  }
+
+
+  async function handleNextClick() {
+    const apolloClient = getApolloClient();
+    const { data } = await apolloClient.query({ //needs to be called data!
+      query: GET_POSTS_QUERY_NEW, 
+      variables: {
+        first: first, 
+        after: after, 
+      },
+    });
+
+    setDataToDisplay(data.category.children.nodes)
+    setAfter(data.category.children.pageInfo.endCursor);
+    setHasNextPage(data.category.children.pageInfo.hasNextPage)
+    setBefore(data.category.children.pageInfo.startCursor);
+    setHasPreviousPage(true)
+  }
 
 
   return (
@@ -161,15 +138,11 @@ export default function Courses({ catedata, pageData }) {
           {items}
         </div>
       </div>
-      <div>
-        {hasPreviousPage && (<button onClick={handlePriorClick}>Previous Page</button>)}
-        {hasNextPage && (<button onClick={handleNextClick}>Next Page</button>)}
-
+      <div className={styles.pagination}>
+        <button className={styles.button} onClick={handlePriorClick} disabled={!hasPreviousPage}>⬅ Previous Page</button>
+        <button className={styles.button} onClick={handleNextClick} disabled={!hasNextPage}>Next Page ➡</button>
       </div>
-
-
     </>
-
   );
 }
 
@@ -198,6 +171,5 @@ export async function getStaticProps() {
     revalidate: 10,
   }
 }
-
 
 

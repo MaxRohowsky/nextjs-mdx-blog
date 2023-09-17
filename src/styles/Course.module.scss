@@ -62,6 +62,73 @@
     margin-bottom: 20px;
 }
 
+.discord {
+    //Size and Position
+    display: flex;
+    width: fit-content;
+    padding: 0px;
+    text-align: center;
+    // Style
+    color: var(--home-hero-learn-cta);
+    background-color: var(--home-hero-learn-cta-bg);
+    border: 2px solid var(--home-hero-learn-cta-border);
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+  
+    // Hover
+    &:hover {
+      background-color: var(--home-hero-learn-cta-bg-hover);
+      color: var(--home-hero-learn-cta-hover);
+    }
+  }
+
+  .questions {
+    background-color: var(--course-question-discord);
+    border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+  margin: 10px;
+  }
+  
+  .discord__content {
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 5px 30px 5px 25px;
+  
+    & i {
+      font-size: 30px;
+      padding-right: 15px;
+    }
+  }
+  
+
+
+.discord {
+    // Size and Position
+    display: flex;
+    width: fit-content;
+    // Style
+
+    color: var(--home-hero-sub-cta);
+    background-color: var(--home-hero-sub-cta-bg);
+    border: 2px solid var(--home-hero-sub-cta-border);
+    border-radius: 8px;
+    cursor: pointer;
+
+    // Hover
+    &:hover {
+        background-color: var(--home-hero-sub-cta-bg-hover);
+        color: var(--home-hero-sub-cta-hover);
+    }
+}
+
 
 @media only screen and (max-width: $tablet-breakpoint) {
     .post {

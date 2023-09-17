@@ -31,85 +31,23 @@
     margin-bottom: 25px;
 }
 
-.list {
-    list-style: none;
-    padding: 0px;
+.container {
+    //prevents scrollbar from showing when scale hover effect on cards occurs
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
-.link {
-    text-decoration: none;
-}
-
-.card {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    margin: 30px auto;
-    margin-bottom: 1.6%;
-    backdrop-filter: blur(0.5px);
-    //-webkit-backdrop-filter: blur(0.5px);
-    //border: 1px solid rgba(255, 255, 255, 0.23);
-    line-height: 1.4;
-    font-family: sans-serif;
-    border-radius: $border-radius;
-    overflow: hidden;
-    z-index: 1;
-    transition: transform 0.3s ease-in-out;
-    &:hover {
-        transform: scale(1.05);
-        transition-duration: .1s;
-      }
-}
-
-.post__image {
-    position: relative;
-    height: 200px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform .2s;
-    z-index: 2;
-}
-
-.post__title {
-    color: black;
-}
-
-.post__description {
-
-    padding: 1rem;
-    position: relative;
-    z-index: 1;
-    h3 {
-        font-size: larger !important;
-        line-height: 1;
-        margin: 0;
-        font-size: 1.7rem;
-    }
-}
-
-.post__date{
-    color: black;
-    margin-top: 10px;;
-    margin-bottom: 10px;
-    margin-right: 20px;
-}
-
-.post__excerpt {
-    color: black; 
-}
-
-.post_sepparator {
-    height: 5px;
-    background: #5ad67d;
-    width: 45px;
-    top: -0.75rem;
-    border-radius: 3px;
-    border-width: 0px;
-    margin-left: 0;
+.cards {
+    display: grid;
+    row-gap: 50px;
+    column-gap: 30px;
+    /*grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));*/
+    grid-template-columns: repeat(4, minmax(300px, 320px));
+    grid-auto-flow: dense;
+    justify-items: center; // center cards within grid
+    justify-content: center; // center all cards within page
+    width: 80%;
+    margin: auto;
 }
 
 @media only screen and (max-width: 770px ) {

@@ -3,84 +3,140 @@ import styles from '../styles/Courses.module.scss'
 import { gql } from "@apollo/client";
 import { getApolloClient } from '../components/client';
 import Head from "next/head";
-import { useState } from "react";
-
-export default function Courses({ catedata, pageData }) {
-
-  
-  let startCursor = pageData.startCursor
-  //console.log(pageData)
-
-  const first = 4
-  //const [first, setFirst] = useState(4);
-  const [after, setAfter] = useState(pageData.startCursor);
-  const [data, setCateData] = useState(catedata);
+import { useState, useEffect } from "react";
 
 
 
-  async function handleClick() {
-    //setFirst(10);  // Change the value of first
-    const apolloClient = getApolloClient();
-    const { data } = await apolloClient.query({
-      query: gql`
-          query getPosts($after: String, $first: Int = null) {
-            categories(first: $first, after: $after) {
-              pageInfo {
-                endCursor
-                startCursor
-                hasNextPage
-                hasPreviousPage
-              }
-              nodes {
+const GET_POSTS_QUERY_NEW = gql`
+  query getPosts($before: String, $after: String, $first: Int = null, $last: Int = null) {
+    category(id: "dGVybToxNw=") {
+      name
+      children (first: $first, last: $last, before: $before, after: $after){
+        nodes {
+          name
+          slug
+          id
+          description
+          categoryImages {
+            categoryImage {
+              sourceUrl
+            }
+          }
+          courses(where: { orderby: { field: MENU_ORDER, order: ASC } }, first: 1) {
+            edges {
+              node {
                 id
-                name
+                uri
+                title
                 slug
-                description
-                categoryImages {
-                  categoryImage {
-                    sourceUrl
-                  }
-                }
-                courses(where: {orderby: {field: MENU_ORDER, order: ASC}}, first: 1) {
-                  edges {
-                    node {
-                      id
-                      uri
-                      title
-                      slug
-                      menuOrder
-                      link
-                    }
-                  }
-                }
+                menuOrder
+                link
               }
             }
           }
-        `,
+        }
+        pageInfo {
+          endCursor
+          hasNextPage
+          hasPreviousPage
+          startCursor
+        }
+      }
+    }
+  }
+`;
+
+
+export default function Courses({ catedata, pageData }) {
+
+  const first = 8
+  const last = 8
+
+  const [dataToDisplay, setDataToDisplay] = useState(catedata);
+  const [after, setAfter] = useState(pageData.endCursor);
+  const [before, setBefore] = useState(pageData.startCursor);
+  const [hasNextPage, setHasNextPage] = useState(pageData.hasNextPage);
+  const [hasPreviousPage, setHasPreviousPage] = useState(pageData.hasPreviousPage);
+
+  console.log("Initial Data:");
+  console.log(pageData);
+  useEffect(() => {
+    console.log("-------------------");
+    console.log("hasPreviousPage = " + hasPreviousPage);
+    console.log("before = " + before);
+    console.log("---");
+    console.log("hasNextPage =" + hasNextPage);
+    console.log("after = " + after);
+  }, [hasPreviousPage, before, hasNextPage, after]);
+
+
+
+  async function handlePriorClick() {
+    const apolloClient = getApolloClient();
+    const { data } = await apolloClient.query({
+      query: GET_POSTS_QUERY_NEW, // Use the GET_POSTS_QUERY variable
       variables: {
-        first: first, // Use the updated first value
-        after: after, // Use the updated after value
+        last: last, // Use the updated first value
+        before: before, // Use the updated before value
       },
     });
+    console.log("Previous Page: ");
+    console.log(data);
 
-    setAfter(data.categories.pageInfo.endCursor);
-    setCateData(data.categories.nodes);
-    console.log(data.categories)
+    setDataToDisplay(data.category.children.nodes)
+    setAfter(data.category.children.pageInfo.endCursor);
+    setHasNextPage(true)
+    setBefore(data.category.children.pageInfo.startCursor);
+    setHasPreviousPage(data.category.children.pageInfo.hasPreviousPage)
+
+    //setCateData(newData.categories.nodes);
+    //setAfter(data.categories.pageInfo.endCursor);
+    //setHasNextPage(true)
+    //setBefore(data.categories.pageInfo.startCursor);
+    //setHasPreviousPage(data.categories.pageInfo.hasPreviousPage)
+
+
+    //console.log(data.categories.pageInfo)
+  }
+
+
+  async function handleNextClick() {
+    const apolloClient = getApolloClient();
+    const { data } = await apolloClient.query({ //needs to be called data!
+      query: GET_POSTS_QUERY_NEW, // Use the GET_POSTS_QUERY variable
+      variables: {
+        first: first, // Use the updated first value
+        after: after, // Use the updated after value i.e., end cursor
+      },
+    });
+    console.log("Next Page: ");
+    console.log(data);
+
+    setDataToDisplay(data.category.children.nodes)
+
+    setAfter(data.category.children.pageInfo.endCursor);
+    setHasNextPage(data.category.children.pageInfo.hasNextPage)
+    setBefore(data.category.children.pageInfo.startCursor);
+    setHasPreviousPage(true)
+
+
+
+
   }
 
 
   var items = []
 
   // This for loop goes through all the categories
-  for (var i = 0; i < data.length; i++) {
-    if (data[i].courses.edges.length > 0 && !(catedata[i].name == 'Uncategorized')) { // category > one child and not uncategorized -> create card.
+  for (var i = 0; i < dataToDisplay.length; i++) {
+    if (dataToDisplay[i].courses.edges.length > 0 && !(catedata[i].name == 'Uncategorized')) { // category > one child and not uncategorized -> create card.
       items.push(
         <Card
           key={i}
-          title={data[i].name}
-          img={data[i].categoryImages.categoryImage.sourceUrl}
-          body={data[i].description}
-          link={data[i].courses.edges[0].node.uri} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
+          title={dataToDisplay[i].name}
+          img={dataToDisplay[i].categoryImages.categoryImage.sourceUrl}
+          body={dataToDisplay[i].description}
+          link={dataToDisplay[i].courses.edges[0].node.uri} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
         />
       )
     }
@@ -106,7 +162,9 @@ export default function Courses({ catedata, pageData }) {
         </div>
       </div>
       <div>
-        <button onClick={handleClick}>Click me</button>
+        {hasPreviousPage && (<button onClick={handlePriorClick}>Previous Page</button>)}
+        {hasNextPage && (<button onClick={handleNextClick}>Next Page</button>)}
+
       </div>
 
 
@@ -121,49 +179,16 @@ export async function getStaticProps() {
   const apolloClient = getApolloClient();
 
   const data = await apolloClient.query({
-    query: gql`
-    query getPosts($after: String, $first: Int = null) {
-      categories(first: $first, after: $after) {
-        pageInfo {
-          endCursor
-          startCursor
-          hasNextPage
-          hasPreviousPage
-        }
-        nodes {
-          id
-          name
-          slug
-          description
-          categoryImages {
-            categoryImage {
-              sourceUrl
-            }
-          }
-          courses(where: {orderby: {field: MENU_ORDER, order: ASC}}, first: 1) {
-            edges {
-              node {
-                id
-                uri
-                title
-                slug
-                menuOrder
-                link
-              }
-            }
-          }
-        }
-      }
-    }
-    `,
+    query: GET_POSTS_QUERY_NEW, // Use the GET_POSTS_QUERY variable
     variables: {
-      first: 4,
-      after: null
-    }
+      first: 8, // Use the updated first value
+      after: null, // Use the updated after value
+    },
   });
 
-  let catedata = data.data.categories.nodes
-  const pageData = data.data.categories.pageInfo
+  const catedata = data.data.category.children.nodes
+  const pageData = data.data.category.children.pageInfo
+
 
   return {
     props: {

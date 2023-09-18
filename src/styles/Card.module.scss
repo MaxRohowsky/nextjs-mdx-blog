@@ -24,9 +24,18 @@
   max-width: 100%;
 }
 
-.card__title{
+
+.title__text{
   margin: 15px;
-  margin-top: 10px;
+  font-weight: 600;
+
+}
+
+
+.card__date{
+  margin-left: 15px;
+  font-size: smaller;
+  color: black;
 }
 
 .title__text{

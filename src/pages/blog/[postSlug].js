@@ -1,11 +1,10 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { gql } from "@apollo/client";
 import { getApolloClient } from '../../components/client';
 import Socials from '@/components/Socials';
 import styles from '../../styles/Post.module.scss'
 import { parse } from 'node-html-parser';
-
+import Link from 'next/link';
 
 export default function Course({ post, site }) {
 
@@ -19,8 +18,41 @@ export default function Course({ post, site }) {
         <meta name="description" content={excerptText} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className={styles.prepost}>
+        <div className={styles.post__meta}>
+          
+          {/*<Breadcrumbs crumbs={crumbs} /><p className={styles.post__date}>Published {dateTime(courseData.date)}</p>*/}
+        </div>
+        <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: post.title }} />
+        <Socials />
+      </div>
 
-      <main className={styles.post}>
+      <div className={`${styles.post} wp-embed-responsive`} >
+        
+        <div className={styles.post__content}>
+          <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: post.content}} />
+
+          <div className={styles.questions}>
+            <h2><strong>Have a Question?</strong></h2>
+            <Link style={{ textDecoration: 'none' }} href="/courses" >
+              <span className={styles.discord}>
+                <span className={styles.discord__content}>
+                  <i className="fab fa-discord" />
+                  Ask on Discord
+                </span>
+              </span>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      -------------
+
+      {/*<main className={styles.post}>
       <div className={styles.post__content}>
         <h1 className={styles.title}>
           {post.title}
@@ -38,8 +70,8 @@ export default function Course({ post, site }) {
           <Link href="/">
               Back to home
           </Link>
-        </p>*/}
-      </main>
+        </p>
+      </main>*/}
     </div>
   )
 }

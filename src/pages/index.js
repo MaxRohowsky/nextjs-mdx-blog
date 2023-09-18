@@ -3,7 +3,9 @@ import styles from '@/styles/Home.module.scss'
 import { gql } from '@apollo/client';
 import { getApolloClient } from '../components/client';
 import Link from 'next/link'
-import Card from "@/components/Card"
+import Card from "@/components/Card" 
+import { dateTime } from '../components/datetime.js';
+
 
 
 export default function Home({ Posts, Courses}) {
@@ -113,8 +115,9 @@ export default function Home({ Posts, Courses}) {
                   <Card
                     key={index}
                     title={post.node.title}
+                    date={dateTime(post.node.date)}
                     img={post.node.featuredImage?.node?.mediaItemUrl ?? ""}
-                    body={post.node.excerpt.replace(/<\/?p>/g, '')}
+                    body={post.node.excerpt}
                     link={"blog" + post.node.uri}
                   />
                 ))}
@@ -144,7 +147,7 @@ export default function Home({ Posts, Courses}) {
                     key={index}
                     title={course.node.title}
                     img={course.node.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
-                    body={course.node.excerpt.replace(/<\/?p>/g, '')}
+                    body={course.node.excerpt}
                     link={course.node.uri}
                   />
                 ))}

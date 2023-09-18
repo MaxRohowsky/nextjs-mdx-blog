@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { gql } from '@apollo/client';
 import { getApolloClient } from '../components/client';
 import { dateTime } from '../components/datetime.js';

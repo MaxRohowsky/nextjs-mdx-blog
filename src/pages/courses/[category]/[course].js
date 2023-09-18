@@ -54,9 +54,9 @@ export default function Course({ courseData, sidebarData }) {
         )}
         <div className={styles.post__content}>
           <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: courseData.content }} />
-          
+
           <div className={styles.questions}>
-          <h2><strong>Have a Question?</strong></h2>
+            <h2><strong>Have a Question?</strong></h2>
             <Link style={{ textDecoration: 'none' }} href="/courses" >
               <span className={styles.discord}>
                 <span className={styles.discord__content}>

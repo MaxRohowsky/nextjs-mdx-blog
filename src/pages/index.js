@@ -3,12 +3,12 @@ import styles from '@/styles/Home.module.scss'
 import { gql } from '@apollo/client';
 import { getApolloClient } from '../components/client';
 import Link from 'next/link'
-import Card from "@/components/Card" 
+import Card from "@/components/Card"
 import { dateTime } from '../components/datetime.js';
 
 
 
-export default function Home({ Posts, Courses}) {
+export default function Home({ Posts, Courses }) {
 
   const iconColors = {
     "fab fa-react": "#61DAFB",
@@ -100,17 +100,14 @@ export default function Home({ Posts, Courses}) {
 
         </div>
 
-        <div className={styles.content__blog}>
+        <div className={styles.blog}>
 
           <div className={styles.content__container}>
-
-
-            <div className={styles.content__left}>
+            <div>
               <h2 className={styles.content__header}>Latest Blog Posts</h2>
               <hr className={styles.content__line} />
 
-              <div className={styles.content__wrap}>
-
+              <div className={styles.content__grid}>
                 {Posts.edges.map((post, index) => (
                   <Card
                     key={index}
@@ -121,25 +118,29 @@ export default function Home({ Posts, Courses}) {
                     link={"blog" + post.node.uri}
                   />
                 ))}
-
               </div>
 
 
-
+              <Link className={styles.content__button} href="/blog" >
+                <span className={styles.content__button__outer}>
+                  <span className={styles.content__button__inner}>
+                    View More
+                    <i className="fas fa-arrow-right" />
+                  </span>
+                </span>
+              </Link>
 
             </div>
 
 
-
-
           </div>
         </div>
-        <div className={styles.content__courses}>
+        <div className={styles.courses}>
           <div className={styles.content__container}>
             <div className={styles.content__right}>
               <h2 className={styles.content__header}>Latest Courses</h2>
               <hr className={styles.content__line} />
-              <div className={styles.content__wrap}>
+              <div className={styles.content__grid}>
 
 
                 {Courses.edges.map((course, index) => (
@@ -151,9 +152,16 @@ export default function Home({ Posts, Courses}) {
                     link={course.node.uri}
                   />
                 ))}
-
-
               </div>
+
+              <Link className={styles.content__button} href="/courses" >
+                <span className={styles.content__button__outer}>
+                  <span className={styles.content__button__inner}>
+                    View More
+                    <i className="fas fa-arrow-right" />
+                  </span>
+                </span>
+              </Link>
 
             </div>
           </div>

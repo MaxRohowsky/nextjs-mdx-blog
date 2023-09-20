@@ -34,6 +34,8 @@
   /*Index -- Content*/
   --home-blog-content-bg-color: #ffffff;
   --home-courses-content-bg-color: #F8FAFC;
+  --home-content-button: #468cfd;
+  --home-content-button-border: none;
   
   /*Courses*/
   --courses-paging-button-bg-color: #fff;
@@ -47,9 +49,11 @@
   --course-prepost-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px;
   --course-sidebar-bg-color:#F8FAFC;
   --course-sidebar-border-color:#e7e7e7;
-
-  --course-question-discord: #5865F2;
-  
+  --course-question-discord: #ffffff;
+  --course-question-discord-bg: #5865F2;
+  --course-question-discord-border: #5865F2;
+  --course-question-discord-hover: #5865F2;
+  --course-question-discord-bg-hover: #ffffff;
 
 
   /*Blog*/
@@ -101,8 +105,6 @@ body {
   
 }
 
-
-
 /*Not optimal. This styling is actually already in the images/styles wordpress library but doesn't work.*/
 .aligncenter {
   margin-left: auto !important;
@@ -151,7 +153,6 @@ li {
   -webkit-mask-image: url('../../public/icons/terminal.svg');
   mask-image: url('../../public/icons/terminal.svg');
   mask-size: cover;
-
 }
 
 .wp-block-code::after {
@@ -254,7 +255,6 @@ li {
   border-radius: 3px;
 }
 
-
 /* Sets the Styling for the Table of Content on the Course Pages*/
 .course-table-of-content::before {
   content: '';
@@ -306,10 +306,8 @@ li {
 
 .course-table-of-content__ordered-list li {
   &::marker {
-    color: #aabee8
+    color: #aabee8;
   }
-
-  ;
 }
 
 .course-table-of-content__ordered-list li:hover {

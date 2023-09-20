@@ -75,58 +75,53 @@
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
-  
+
     // Hover
     &:hover {
-      background-color: var(--home-hero-learn-cta-bg-hover);
-      color: var(--home-hero-learn-cta-hover);
+        background-color: var(--home-hero-learn-cta-bg-hover);
+        color: var(--home-hero-learn-cta-hover);
     }
-  }
+}
 
-  .questions {
-    background-color: var(--course-question-discord);
+.questions {
+    border-top: 3px dotted #aabee8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+    margin: 10px;
+    & h2{
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+}
+
+.discord {
+    display: flex;
+    width: fit-content;
+    color: var(--course-question-discord);
+    background-color: var(--course-question-discord-bg);
+    border: 2px solid var(--course-question-discord-border);
     border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 30px;
-  margin: 10px;
-  }
-  
-  .discord__content {
+    cursor: pointer;
+    // Hover
+    &:hover {
+        background-color: var(--course-question-discord-bg-hover);
+        color: var(--course-question-discord-hover);
+    }
+}
+
+.discord__content {
     font-size: 20px;
     font-weight: 500;
     display: flex;
     align-items: center;
     padding: 5px 30px 5px 25px;
-  
     & i {
-      font-size: 30px;
-      padding-right: 15px;
-    }
-  }
-  
-
-
-.discord {
-    // Size and Position
-    display: flex;
-    width: fit-content;
-    // Style
-
-    color: var(--home-hero-sub-cta);
-    background-color: var(--home-hero-sub-cta-bg);
-    border: 2px solid var(--home-hero-sub-cta-border);
-    border-radius: 8px;
-    cursor: pointer;
-
-    // Hover
-    &:hover {
-        background-color: var(--home-hero-sub-cta-bg-hover);
-        color: var(--home-hero-sub-cta-hover);
+        font-size: 30px;
+        padding-right: 15px;
     }
 }
-
 
 @media only screen and (max-width: $tablet-breakpoint) {
     .post {

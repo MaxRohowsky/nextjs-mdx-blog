@@ -1,12 +1,9 @@
 @import "_variables.scss";
 
-*{
-  transition: background-color 0.1s linear, color 0.1s linear; 
-}
 
 :root {
   /*Global*/
-  --bg-color: #0707f0; //#f5f5f7;
+  //--bg-color: #0707f0; //#f5f5f7;
   --text-color: black;
 
   /*Navbar*/
@@ -14,12 +11,14 @@
   --nav-bg-color: rgb(255, 255, 255);
   --nav-logo-color: none;
   --nav-mob-bg-color: #ffffff;
+  --nav-filter: none;
 
   /*Index -- Hero*/
   --home-float-icons-color: none;
   --home-circle-fill:rgb(255, 255, 255);
   --home-hero-bg-color: #F8FAFC;
   --home-hero-text-color: rgb(0, 0, 0);
+  --home-hero-text-bg-color: #F8FAFC;
   --home-hero-sub-cta: rgb(255, 255, 255);      //SubCta
   --home-hero-sub-cta-border: #bb2828;          //SubCta
   --home-hero-sub-cta-bg: #bb2828;              //SubCta
@@ -32,10 +31,11 @@
   --home-hero-learn-cta-bg-hover: #ffffff;        //LearnCta-hover
   --home-hero-learn-cta-hover: #468cfd;           //LearnCta-hover
   /*Index -- Content*/
-  --home-blog-content-bg-color: #ffffff;
+  --home-blog-content-bg-color: #F8FAFC;
   --home-courses-content-bg-color: #F8FAFC;
   --home-content-button: #468cfd;
   --home-content-button-border: none;
+  --home-content-card-bg-color: white;
   
   /*Courses*/
   --courses-paging-button-bg-color: #fff;
@@ -58,36 +58,73 @@
 
   /*Blog*/
 
+  /*Footer*/
+  --footer-bg-color: #fff;
+  --footer-text-color: black;
+
 
 }
 
 [data-theme="dark"] {
-  /*Main*/
-  --bg-color: #f5f5f7; //#f5f5f7;
-  --text-color: #000000;
+  /*Global*/
+  //--bg-color: #0707f0; //#f5f5f7;
+  --text-color: rgb(255, 255, 255);
+
   /*Navbar*/
-  --nav-text-color: #000000;
-  --nav-bg-color: rgb(28, 74, 255);
-  --nav-logo-color: brightness(0) invert(1);
-  --nav-mob-bg-color: #000000;
-  /*Hero*/
-  --home-float-icons-color:rgb(181, 52, 52);
-  --home-circle-fill:rgba(115, 134, 159, 0.859);
-  --home-hero-bg-color: #4b6baf;
-  --home-hero-text-color: black;
-  --home-hero-sub-cta-color: white;             //SubCta
-  --home-hero-sub-cta-border: #b02d2d;          //SubCta
-  --home-hero-sub-cta-bg: #b02d2d;              //SubCta
-  --home-hero-sub-cta-bg-hover: #b02d2d;        //SubCta-hover
-  --home-hero-sub-cta-hover: rgb(229, 14, 14);  //SubCta-hover
-  --home-hero-learn-cta: rgb(0, 0, 0);            //LearnCta
-  --home-hero-learn-cta-border: #b02d2d;          //LearnCta
-  --home-hero-learn-cta-bg: #b02d2d;              //LearnCta
-  --home-hero-learn-cta-bg-hover: #b02d2d;        //LearnCta-hover
-  --home-hero-learn-cta-hover: rgb(0, 0, 0);      //LearnCta-hover
-  /*Content*/
+  --nav-text-color: #ffffff;
+  --nav-bg-color:#282c35;
+  --nav-logo-color: white;
+  --nav-mob-bg-color: #ffffff;
+  --nav-filter: brightness(10);
+
+  /*Index -- Hero*/
+  --home-float-icons-color: none;
+  --home-circle-fill:#1b1b1b;
+  --home-hero-bg-color: #181818;
+  --home-hero-text-color: rgb(0, 0, 0);
+  --home-hero-text-bg-color:#181818;
+  --home-hero-sub-cta: rgb(255, 255, 255);      //SubCta
+  --home-hero-sub-cta-border: #bb2828;          //SubCta
+  --home-hero-sub-cta-bg: #bb2828;              //SubCta
+  --home-hero-sub-cta-bg-hover: #282c35;        //SubCta-hover
+  --home-hero-sub-cta-hover: #bb2828;           //SubCta-hover
+  --home-hero-sub-cta-pointer: rgb(0, 0, 0);    
+  --home-hero-learn-cta: rgb(255, 255, 255);       //LearnCta
+  --home-hero-learn-cta-border: #468cfd;          //LearnCta
+  --home-hero-learn-cta-bg: #468cfd;              //LearnCta
+  --home-hero-learn-cta-bg-hover: #282c35;        //LearnCta-hover
+  --home-hero-learn-cta-hover: #468cfd;           //LearnCta-hover
+  /*Index -- Content*/
+  --home-blog-content-bg-color: #181818;
+  --home-courses-content-bg-color: #181818;
+  --home-content-button: #468cfd;
+  --home-content-button-border: none;
+  --home-content-card-bg-color: rgb(35, 35, 35);
+  
+  /*Courses*/
+  --courses-paging-button-bg-color: #fff;
+  --courses-paging-button-border-color: #000;
+  --courses-paging-button-hover-color: #06f;
+  --courses-paging-button-disabled-color: #bdbdbd;
 
 
+  /*Course*/
+  --course-prepost-bg-color: #F8FAFC;
+  --course-prepost-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px;
+  --course-sidebar-bg-color:#F8FAFC;
+  --course-sidebar-border-color:#e7e7e7;
+  --course-question-discord: #ffffff;
+  --course-question-discord-bg: #5865F2;
+  --course-question-discord-border: #5865F2;
+  --course-question-discord-hover: #5865F2;
+  --course-question-discord-bg-hover: #ffffff;
+
+
+  /*Blog*/
+
+  /*Footer*/
+  --footer-text-color: white;
+  --footer-bg-color: #282c35;
 
 }
 
@@ -99,7 +136,6 @@ body {
   font-family: "Titillium Web";
   margin: 0px;
   padding: 0px;
-  //background-color: $bg-color;
   //background-color: #e8e8ef;
   overflow-x: hidden;
   

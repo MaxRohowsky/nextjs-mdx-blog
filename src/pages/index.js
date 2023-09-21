@@ -67,9 +67,9 @@ export default function Home({ Posts, Courses }) {
           </div>
           <div className={styles.hero__container}>
             <div className={styles.hero__circle}>
-              <svg className={styles.circle} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              {/*<svg className={styles.circle} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="50" r="48" />
-              </svg>
+            </svg>*/}
               <div className={styles.hero__main}>
                 <h1>Simplifying Tech.<br /> Frontend to Backend!</h1>
                 <h2>Free, Fast, and Fun lessons to <br /> level up your font- and backend stack! </h2>

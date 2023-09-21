@@ -16,11 +16,7 @@
   align-items: center;
   justify-content: center;
   height: 70px;
-
   background-color: var(--nav-bg-color);
-  //transition: background-color 1.3s linear; // this is the holy grail to dark mode trans!
-
-
   color: var(--text-color);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: fixed;
@@ -30,13 +26,11 @@
   width: 100svw;
 }
 
-
 // Container for Content
 .main {
   margin-top: 70px; //due to the navbar
   width: 100vw;
 }
-
 
 // Container for Footer
 .footer {
@@ -46,7 +40,8 @@
   align-items: center;
   justify-content: center;
   box-shadow: $box-shadow;
-  background-color: $bg-color-footer;
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
   width: 100svw;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }

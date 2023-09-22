@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--bg-color);
 }
 
 // Container for Header(Navbar)
@@ -16,9 +17,9 @@
   align-items: center;
   justify-content: center;
   height: 70px;
-  background-color: $bg-color-navbar;
-  color: $text-color;
-  box-shadow: $box-shadow;
+  background-color: var(--nav-bg-color);
+  color: var(--text-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   z-index: 10;
@@ -26,12 +27,11 @@
   width: 100svw;
 }
 
-
 // Container for Content
 .main {
   margin-top: 70px; //due to the navbar
+  width: 100vw;
 }
-
 
 // Container for Footer
 .footer {
@@ -41,6 +41,8 @@
   align-items: center;
   justify-content: center;
   box-shadow: $box-shadow;
-  background-color: $bg-color-footer;
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
   width: 100svw;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }

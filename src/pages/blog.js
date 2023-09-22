@@ -1,14 +1,31 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { gql } from '@apollo/client';
 import { getApolloClient } from '../components/client';
 import { dateTime } from '../components/datetime.js';
 import styles from '../styles/Blog.module.scss'
-//import Socials from '@/components/Socials';
+import Card from "@/components/Card"
 
 
 export default function BlogEntires({ page, posts }) {
   const { title, description } = page;
+  var items = []
+  console.log(posts[0].featuredImage.node.mediaItemUrl)
+
+  for (var i = 0; i < posts.length; i++) {
+    items.push(
+      <Card
+        key={i}
+        title={posts[i].title}
+        date={dateTime(posts[i].date)}
+        img={posts[i].featuredImage.node.mediaItemUrl}
+        body={posts[i].excerpt}
+        link={posts[i].path} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
+      />
+    )
+  }
+
+
+
   return (
     <div>
 
@@ -26,43 +43,11 @@ export default function BlogEntires({ page, posts }) {
         <h4 className={styles.subtitle}>My Humble Opinion on Tech & Finance</h4>
 
         <hr className={styles.sepparator} />
-
-        <ul className={styles.list}>
-          {posts && posts.length > 0 && posts.map(post => {
-            return (
-              <li key={post.slug}>
-                <Link className={styles.link} href={post.path}>
-                  <div className={styles.card}>
-
-                    {/*<div className={styles.post__image} style={{ backgroundImage: `url(${post.featuredImage.node.mediaItemUrl})` }}></div>*/}
-
-                    <div className={styles.post__description}>
-                    <p className={styles.post__date}>{dateTime(post.date)}</p>
-                      <h3 className={styles.post__title} dangerouslySetInnerHTML={{
-                        __html: post.title
-                      }} /> 
-                      
-                      <hr className={styles.post_sepparator} />
-                      <p className={styles.post__excerpt} dangerouslySetInnerHTML={{
-                        __html: post.excerpt
-                      }} />
-                    </div>
-
-                  </div>
-                </Link>
-              </li>
-
-            );
-          })}
-
-          {!posts || posts.length === 0 && (
-            <li>
-              <p>
-                Oops, no posts found!
-              </p>
-            </li>
-          )}
-        </ul>
+        <div className={styles.container}>
+          <div className={styles.cards}>
+            {items}
+          </div>
+        </div>
       </main>
     </div>
   )
@@ -86,6 +71,11 @@ export async function getStaticProps() {
               title
               slug
               date
+              featuredImage{
+                node{
+                  mediaItemUrl
+                }
+              }
 
             }
           }
@@ -94,13 +84,6 @@ export async function getStaticProps() {
     `,
   });
 
-  /* Removed image from blog
-                featuredImage{
-                node{
-                  mediaItemUrl
-                }
-              }
-  */
 
   const page = {
     ...data?.data.generalSettings
@@ -119,6 +102,7 @@ export async function getStaticProps() {
     props: {
       page,
       posts
-    }
+    },
+    revalidate: 10,
   }
 }

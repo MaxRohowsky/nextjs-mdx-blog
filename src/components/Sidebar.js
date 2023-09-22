@@ -44,7 +44,7 @@ export default function Sidebar(sidebarData) {
 
         items.push(
             <li className={styles.sidebar__item} key={i}>
-                <Link className={`${styles.item__link} ${active}`} href={sortedCourses[i].node.uri}>
+                <Link className={`${styles.item__link} ${active}`} href={sortedCourses[i].node.uri.replace('/courses/', '/')}>
                     {i + 1}. {sortedCourses[i].node.title}
                 </Link>
             </li>

@@ -1,67 +1,52 @@
 @import "_variables.scss";
 
 
-
-
 .prepost {
-    background-color:rgb(219, 227, 235);//rgb(164, 182, 201);
-    //background: linear-gradient(135deg, rgba(244, 244, 253, 0.3) 0%, rgba(205, 218, 236, 0.399) 100%);
-
+    background-color: var(--course-prepost-bg-color);
     margin-top: -100px;
     padding-top: 100px;
     padding-bottom: 50px;
     margin-bottom: 50px;
     width: 100svw;
+    box-shadow: var(--course-prepost-box-shadow);
 }
-
 
 .post {
     position: relative;
     display: block;
     width: 650px;
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;
 }
 
-.post__content{
-    //background-color: rgb(255, 255, 255);
-    //border-radius: $border-radius;
-    //box-shadow: rgba(0, 0, 0, 0.01) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;;
-    //box-shadow: $box-shadow;
-}
-
-
-
-.post__meta{
+.post__meta {
     display: flex;
     padding-top: 5px;
     justify-content: space-between;
 }
 
 .post__title::before {
-	content: "";
-	position: absolute;
-	bottom: 28px;
-	width: 250px;
-	height: 3px;
+    content: "";
+    position: absolute;
+    bottom: 28px;
+    width: 250px;
+    height: 3px;
     left: 50%;
     transform: translateX(-50%);
-	//transform: skew(-12deg);
-	background: rgb(115, 149, 222);
-	z-index: 2;
+    background: rgb(115, 149, 222);
+    z-index: 2;
+}
 
-  }
-
-.post__title{
+.post__title {
     text-align: center;
     font-weight: 600;
     margin: 0px;
     position: relative;
     padding: 30pt 10pt 25pt 10pt;
-    color: rgb(0, 0, 0);
+    color: var(--text-color);
 }
 
-.post__date{
+.post__date {
     text-align: center;
     margin: 0px;
     color: rgb(0, 0, 0);
@@ -69,47 +54,76 @@
 }
 
 
-.post__text{
+.post__text {
     padding: 15px 15px 15px 15px;
     margin-bottom: 20px;
 }
 
-/*@media only screen and (max-width: $desktop-breakpoint){
-    .post{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+.discord {
+    //Size and Position
+    display: flex;
+    width: fit-content;
+    padding: 0px;
+    text-align: center;
+    // Style
+    color: var(--home-hero-learn-cta);
+    background-color: var(--home-hero-learn-cta-bg);
+    border: 2px solid var(--home-hero-learn-cta-border);
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
 
+    // Hover
+    &:hover {
+        background-color: var(--home-hero-learn-cta-bg-hover);
+        color: var(--home-hero-learn-cta-hover);
     }
-
-}*/
-@media only screen and (max-width: $tablet-breakpoint){
-    .post{
-        width: calc(100svw - (2 * 20px));
-        
-        //flex-direction: column;
-    }
-    //.post__content{
-        //width: 100%;
-        //margin: 5px;
-    //}
-    /*.post__sidebar {
-        width: 100%;
-        margin: 5px;
-    }*/
 }
-//@media only screen and (max-width: $mobile-breakpoint){
-    /*.post{
-        flex-direction: column;
-        width: 90%;
+
+.questions {
+    border-top: 3px dotted #aabee8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+    margin: 10px;
+    & h2{
+        margin-top: 25px;
+        margin-bottom: 25px;
     }
-    .post__content{
-        width: 100%;
+}
+
+.discord {
+    display: flex;
+    width: fit-content;
+    color: var(--course-question-discord);
+    background-color: var(--course-question-discord-bg);
+    border: 2px solid var(--course-question-discord-border);
+    border-radius: 8px;
+    cursor: pointer;
+    // Hover
+    &:hover {
+        background-color: var(--course-question-discord-bg-hover);
+        color: var(--course-question-discord-hover);
     }
-    /*.post__sidebar {
-        width: 100%;
-    }*/
-//}
+}
 
+.discord__content {
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 5px 30px 5px 25px;
+    & i {
+        font-size: 30px;
+        padding-right: 15px;
+    }
+}
 
-
+@media only screen and (max-width: $tablet-breakpoint) {
+    .post {
+        width: calc(100svw - (2 * 20px));
+    }
+}

@@ -4,10 +4,9 @@ import Socials from '@/components/Socials';
 import Sidebar from '@/components/Sidebar';
 import styles from '../../../styles/Course.module.scss'
 import Head from "next/head";
-import parse from "node-html-parser";
+import { parse } from "node-html-parser";
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { dateTime } from '@/components/datetime.js';
-
+import Link from 'next/link'
 
 
 export default function Course({ courseData, sidebarData }) {
@@ -31,7 +30,6 @@ export default function Course({ courseData, sidebarData }) {
   const excerptTextPre = doc.querySelector("p");
   const excerptTextPost = excerptTextPre ? excerptTextPre.text : '';
 
-
   return (
     <>
       <Head>
@@ -47,25 +45,32 @@ export default function Course({ courseData, sidebarData }) {
           {/*<p className={styles.post__date}>Published {dateTime(courseData.date)}</p>*/}
         </div>
         <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: courseData.title }} />
-
         <Socials githubReference={courseData.githubRef.githubReference} />
       </div>
 
-
       <div className={`${styles.post} wp-embed-responsive`} >
         {showSidebar && (
-          //<div className={styles.post__sidebar}>
           <Sidebar data={sidebarData} />
-          //</div>
         )}
-
         <div className={styles.post__content}>
           <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: courseData.content }} />
+
+          <div className={styles.questions}>
+            <h2>Have a Question?</h2>
+            <Link style={{ textDecoration: 'none' }} href="/courses" >
+              <span className={styles.discord}>
+                <span className={styles.discord__content}>
+                  <i className="fab fa-discord" />
+                  Ask on Discord
+                </span>
+              </span>
+            </Link>
+          </div>
         </div>
-
-
-
       </div>
+
+
+
     </>
   )
 }

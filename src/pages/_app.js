@@ -23,7 +23,7 @@ import Head from 'next/head';
 import Navbar from "@/components/Navbar";
 import Footer from '@/components/Footer';
 import Overlay from '@/components/Overlay';
-
+import { ThemeProvider } from 'next-themes'
 
 
 export default function App({ Component, pageProps }) {
@@ -42,7 +42,7 @@ export default function App({ Component, pageProps }) {
       <Overlay />
 
       <div className={styles.container} >
-        
+      <ThemeProvider>
         <header className={styles.header}>
           <Navbar />
         </header>
@@ -55,6 +55,7 @@ export default function App({ Component, pageProps }) {
         <footer className={styles.footer}>
           <Footer />
         </footer>
+        </ThemeProvider>
 
       </div>
 

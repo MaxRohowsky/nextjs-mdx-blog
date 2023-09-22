@@ -5,7 +5,7 @@
   overflow: hidden;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border-radius: $border-radius;
-  background-color: $card-color;
+  background-color: var(--home-content-card-bg-color);
   /* Grow and shrink between values*/
   //min-width: 250px;
   //max-width: 325px;
@@ -24,17 +24,26 @@
   max-width: 100%;
 }
 
-.card__title{
+
+.title__text{
   margin: 15px;
-  margin-top: 10px;
+  font-weight: 600;
+
+}
+
+
+.card__date{
+  margin-left: 15px;
+  font-size: smaller;
+  color: var(--text-color);
 }
 
 .title__text{
-  color: $text-color;
+  color: var(--text-color);
 }
 
 .card__description{
-  color: $text-color;
+  color: var(--text-color);
   margin: 15px;
   margin-top: 10px;
 }

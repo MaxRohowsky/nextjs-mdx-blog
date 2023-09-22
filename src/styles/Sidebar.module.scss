@@ -1,6 +1,6 @@
 @import "_variables.scss";
 
-
+/*Chapter Icon*/
 .block::before{
     content: '';
     position: absolute;
@@ -13,7 +13,6 @@
     background-size: cover;
     z-index: 1000;
   }
-
 
 .wrap{
     position: absolute;
@@ -29,27 +28,25 @@
     overflow-y: auto;
 }
 
-
-
+/*Non Sticky Sidebar*/
 .sidebar__absolute{
     position: absolute;
     width: 300px;
     list-style-type: none;
 }
 
+/*Sticky Sidebar*/
 .sidebar__stay{
     position: fixed;
-    top: 250px;
+    top: 220px;
     width: 300px;
     list-style-type: none;
 }
-
 
 .sidebar__toc{
     display: flex;
     justify-content: center;
     align-items: center;
-    //font-weight: 400;
     padding: 5px;
     
 }
@@ -59,14 +56,14 @@
     padding: 0;
     margin: 0px;
     border-radius: 3px;
-    border-left: 5px solid rgb(219, 227, 235);
-    background-color:  rgba(219, 227, 235, 0.475);
+    border-left: 5px solid var(--course-sidebar-border-color);
+    background-color:  var(--course-sidebar-bg-color);
 }
 
 .sidebar__item{
     text-align: left;
     padding: 8px 5px 8px 15px;
-    border-top: 2px solid rgb(219, 227, 235);
+    border-top: 2px solid var(--course-sidebar-border-color);
     
 }
 
@@ -75,11 +72,9 @@
 }
 
 .item__link{
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
 }
-
-
 
 @media only screen and (max-width: $desktop-breakpoint){
     .wrap{
@@ -98,17 +93,6 @@
         left: 50%;
         transform: translate(0px, 0px);
     }
-    /*.post{
-        flex-direction: column;
-    }
-    .post__content{
-        width: 100%;
-        margin: 5px;
-    }*/
-    /*.post__sidebar {
-        width: 100%;
-        margin: 5px;
-    }*/
 }
 
 

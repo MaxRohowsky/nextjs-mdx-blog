@@ -4,10 +4,10 @@ import Link from 'next/link';
 export default function Footer() {
   return (
       <div>
-        <Link href="/sitemap" className={styles.text}>
+        {/*<Link href="/sitemap" className={styles.text}>
           Sitemap
-        </Link>
-        {' | '}
+  </Link>*/}
+
         <Link href="/privacy" className={styles.text}>
           Privacy
         </Link>

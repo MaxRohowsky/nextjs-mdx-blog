@@ -72,7 +72,7 @@ export default function Courses({ catedata, pageData }) {
 
 
   for (var i = 0; i < dataToDisplay.length; i++) {
-    if (dataToDisplay[i].courses.edges.length > 0 ) { 
+    if (dataToDisplay[i].courses.edges.length > 0) {
       items.push(
         <Card
           key={i}
@@ -88,13 +88,13 @@ export default function Courses({ catedata, pageData }) {
   async function handlePriorClick() {
     const apolloClient = getApolloClient();
     const { data } = await apolloClient.query({
-      query: GET_POSTS_QUERY_NEW, 
+      query: GET_POSTS_QUERY_NEW,
       variables: {
-        last: last, 
-        before: before, 
+        last: last,
+        before: before,
       },
     });
-    
+
     setDataToDisplay(data.category.children.nodes)
     setAfter(data.category.children.pageInfo.endCursor);
     setHasNextPage(true)
@@ -106,10 +106,10 @@ export default function Courses({ catedata, pageData }) {
   async function handleNextClick() {
     const apolloClient = getApolloClient();
     const { data } = await apolloClient.query({ //needs to be called data!
-      query: GET_POSTS_QUERY_NEW, 
+      query: GET_POSTS_QUERY_NEW,
       variables: {
-        first: first, 
-        after: after, 
+        first: first,
+        after: after,
       },
     });
 
@@ -133,10 +133,8 @@ export default function Courses({ catedata, pageData }) {
       <h1 className={styles.title}> Courses </h1>
       <h4 className={styles.subtitle}>Tech Tips, Tutorials & How-to Guides</h4>
       <hr className={styles.sepparator} />
-      <div className={styles.container}>
-        <div className={styles.cards}>
-          {items}
-        </div>
+      <div className={styles.cards}>
+        {items}
       </div>
       <div className={styles.pagination}>
         <button className={styles.button} onClick={handlePriorClick} disabled={!hasPreviousPage}>⬅ Previous Page</button>

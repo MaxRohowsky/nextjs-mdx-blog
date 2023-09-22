@@ -67,9 +67,7 @@ export default function Home({ Posts, Courses }) {
           </div>
           <div className={styles.hero__container}>
             <div className={styles.hero__circle}>
-              {/*<svg className={styles.circle} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="48" />
-            </svg>*/}
+
               <div className={styles.hero__main}>
                 <h1>Simplifying Tech.<br /> Frontend to Backend!</h1>
                 <h2>Free, Fast, and Fun lessons to <br /> level up your font- and backend stack! </h2>
@@ -101,70 +99,63 @@ export default function Home({ Posts, Courses }) {
         </div>
 
         <div className={styles.blog}>
-
-          <div className={styles.content__container}>
-            <div>
-              <h2 className={styles.content__header}>Latest Blog Posts</h2>
-              <hr className={styles.content__line} />
-
-              <div className={styles.content__grid}>
-                {Posts.edges.map((post, index) => (
-                  <Card
-                    key={index}
-                    title={post.node.title}
-                    date={dateTime(post.node.date)}
-                    img={post.node.featuredImage?.node?.mediaItemUrl ?? ""}
-                    body={post.node.excerpt}
-                    link={"blog" + post.node.uri}
-                  />
-                ))}
-              </div>
-
-
-              <Link className={styles.content__button} href="/blog" >
-                <span className={styles.content__button__outer}>
-                  <span className={styles.content__button__inner}>
-                    View More
-                    <i className="fas fa-arrow-right" />
-                  </span>
-                </span>
-              </Link>
-
+          <div>
+            <h2 className={styles.content__header}>Latest Blog Posts</h2>
+            <hr className={styles.content__line} />
+            <div className={styles.content__grid}>
+              {Posts.edges.map((post, index) => (
+                <Card
+                  key={index}
+                  title={post.node.title}
+                  date={dateTime(post.node.date)}
+                  img={post.node.featuredImage?.node?.mediaItemUrl ?? ""}
+                  body={post.node.excerpt}
+                  link={"blog" + post.node.uri}
+                />
+              ))}
             </div>
 
 
+            <Link className={styles.content__button} href="/blog" >
+              <span className={styles.content__button__outer}>
+                <span className={styles.content__button__inner}>
+                  View More
+                  <i className="fas fa-arrow-right" />
+                </span>
+              </span>
+            </Link>
+
           </div>
+
+
         </div>
         <div className={styles.courses}>
-          <div className={styles.content__container}>
-            <div className={styles.content__right}>
-              <h2 className={styles.content__header}>Latest Courses</h2>
-              <hr className={styles.content__line} />
-              <div className={styles.content__grid}>
-
-
-                {Courses.edges.map((course, index) => (
-                  <Card
-                    key={index}
-                    title={course.node.title}
-                    img={course.node.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
-                    body={course.node.excerpt}
-                    link={course.node.uri.replace('/courses/', '/')}
-                  />
-                ))}
-              </div>
-
-              <Link className={styles.content__button} href="/courses" >
-                <span className={styles.content__button__outer}>
-                  <span className={styles.content__button__inner}>
-                    View More
-                    <i className="fas fa-arrow-right" />
-                  </span>
-                </span>
-              </Link>
-
+          <div>
+            <h2 className={styles.content__header}>Latest Courses</h2>
+            <hr className={styles.content__line} />
+            <div className={styles.content__grid}>
+              {Courses.edges.map((course, index) => (
+                <Card
+                  key={index}
+                  title={course.node.title}
+                  img={course.node.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
+                  body={course.node.excerpt}
+                  link={course.node.uri.replace('/courses/', '/')}
+                />
+              ))}
             </div>
+
+            <Link className={styles.content__button} href="/courses" >
+              <span className={styles.content__button__outer}>
+                <span className={styles.content__button__inner}>
+                  View More
+                  <i className="fas fa-arrow-right" />
+                </span>
+              </span>
+            </Link>
+
           </div>
+
         </div>
 
       </div>

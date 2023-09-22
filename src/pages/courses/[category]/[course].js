@@ -57,7 +57,7 @@ export default function Course({ courseData, sidebarData }) {
 
           <div className={styles.questions}>
             <h2>Have a Question?</h2>
-            <Link style={{ textDecoration: 'none' }} href="/courses" >
+            <Link style={{ textDecoration: 'none' }} href="https://discord.com/invite/JERatQsfY8" target="_blank" >
               <span className={styles.discord}>
                 <span className={styles.discord__content}>
                   <i className="fab fa-discord" />
@@ -68,7 +68,6 @@ export default function Course({ courseData, sidebarData }) {
           </div>
         </div>
       </div>
-
 
 
     </>

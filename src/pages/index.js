@@ -149,7 +149,7 @@ export default function Home({ Posts, Courses }) {
                     title={course.node.title}
                     img={course.node.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
                     body={course.node.excerpt}
-                    link={course.node.uri}
+                    link={course.node.uri.replace('/courses/', '/')}
                   />
                 ))}
               </div>

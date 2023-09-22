@@ -264,14 +264,14 @@
 .blog {
   @include content;
   background-color: var(--home-blog-content-bg-color);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 5px dotted var(--home-content-border-color);
+  border-bottom: 5px dotted var(--home-content-border-color);
 }
 
 .courses {
   @include content;
   background-color: var(--home-courses-content-bg-color);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
 }
 
 .content__container {

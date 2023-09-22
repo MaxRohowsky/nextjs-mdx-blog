@@ -48,10 +48,6 @@ export default function Course({ post, site }) {
 
 
 
-
-
-      -------------
-
       {/*<main className={styles.post}>
       <div className={styles.post__content}>
         <h1 className={styles.title}>

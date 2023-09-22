@@ -2,20 +2,15 @@
 
 
 :root {
-  /*Global*/
-  //--bg-color: #0707f0; //#f5f5f7;
   --text-color: black;
-
-  /*Navbar*/
+  --code-highlight: #e5e7eb;
+  --bg-color: #F8FAFC;
   --nav-text-color: #000000;
   --nav-bg-color: rgb(255, 255, 255);
   --nav-logo-color: none;
   --nav-mob-bg-color: #ffffff;
   --nav-filter: none;
-
-  /*Index -- Hero*/
   --home-float-icons-color: none;
-  --home-circle-fill:rgb(255, 255, 255);
   --home-hero-bg-color: #F8FAFC;
   --home-hero-text-color: rgb(0, 0, 0);
   --home-hero-text-bg-color: #F8FAFC;
@@ -30,54 +25,41 @@
   --home-hero-learn-cta-bg: #468cfd;              //LearnCta
   --home-hero-learn-cta-bg-hover: #ffffff;        //LearnCta-hover
   --home-hero-learn-cta-hover: #468cfd;           //LearnCta-hover
-  /*Index -- Content*/
   --home-blog-content-bg-color: #F8FAFC;
   --home-courses-content-bg-color: #F8FAFC;
   --home-content-button: #468cfd;
   --home-content-button-border: none;
   --home-content-card-bg-color: white;
-  
-  /*Courses*/
+  --home-content-border-color:rgba(98, 98, 98, 0.15);
   --courses-paging-button-bg-color: #fff;
   --courses-paging-button-border-color: #000;
   --courses-paging-button-hover-color: #06f;
   --courses-paging-button-disabled-color: #bdbdbd;
-
-
-  /*Course*/
-  --course-prepost-bg-color: #F8FAFC;
+  --course-prepost-bg-color: #bac4cf;
   --course-prepost-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px;
-  --course-sidebar-bg-color:#F8FAFC;
+  --course-sidebar-bg-color:#ffffff;
   --course-sidebar-border-color:#e7e7e7;
+  --course-aside-icon-bg-color: rgb(255, 255, 255);
+  --course-aside-exclamation-bg-color: #daffda;
+  --course-aside-contents-bg-color: #dce7fe;
   --course-question-discord: #ffffff;
   --course-question-discord-bg: #5865F2;
   --course-question-discord-border: #5865F2;
   --course-question-discord-hover: #5865F2;
   --course-question-discord-bg-hover: #ffffff;
-
-
-  /*Blog*/
-
-  /*Footer*/
   --footer-bg-color: #fff;
   --footer-text-color: black;
-
-
 }
 
 [data-theme="dark"] {
-  /*Global*/
-  //--bg-color: #0707f0; //#f5f5f7;
   --text-color: rgb(255, 255, 255);
-
-  /*Navbar*/
+  --code-highlight: #303c53;
+  --bg-color: #181818;
   --nav-text-color: #ffffff;
   --nav-bg-color:#282c35;
   --nav-logo-color: white;
   --nav-mob-bg-color: #ffffff;
   --nav-filter: brightness(10);
-
-  /*Index -- Hero*/
   --home-float-icons-color: none;
   --home-circle-fill:#1b1b1b;
   --home-hero-bg-color: #181818;
@@ -94,38 +76,31 @@
   --home-hero-learn-cta-bg: #468cfd;              //LearnCta
   --home-hero-learn-cta-bg-hover: #282c35;        //LearnCta-hover
   --home-hero-learn-cta-hover: #468cfd;           //LearnCta-hover
-  /*Index -- Content*/
   --home-blog-content-bg-color: #181818;
   --home-courses-content-bg-color: #181818;
   --home-content-button: #468cfd;
   --home-content-button-border: none;
-  --home-content-card-bg-color: rgb(35, 35, 35);
-  
-  /*Courses*/
-  --courses-paging-button-bg-color: #fff;
-  --courses-paging-button-border-color: #000;
+  --home-content-card-bg-color: #282c35;
+  --home-content-border-color: rgba(255, 255, 255, 0.1);
+  --courses-paging-button-bg-color: #282c35;
+  --courses-paging-button-border-color: none;
   --courses-paging-button-hover-color: #06f;
-  --courses-paging-button-disabled-color: #bdbdbd;
-
-
-  /*Course*/
-  --course-prepost-bg-color: #F8FAFC;
+  --courses-paging-button-disabled-color: #000000;
+  --course-prepost-bg-color: #252525;
   --course-prepost-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px;
-  --course-sidebar-bg-color:#F8FAFC;
-  --course-sidebar-border-color:#e7e7e7;
+  --course-sidebar-bg-color:#252525;
+  --course-sidebar-border-color:#282c35;
+  --course-aside-icon-bg-color: rgb(48, 48, 48);
+  --course-aside-exclamation-bg-color: #195419;
+  --course-aside-contents-bg-color: #1f1954;
+  --course-aside-contents-bg-color: #371d7c;
   --course-question-discord: #ffffff;
   --course-question-discord-bg: #5865F2;
   --course-question-discord-border: #5865F2;
   --course-question-discord-hover: #5865F2;
   --course-question-discord-bg-hover: #ffffff;
-
-
-  /*Blog*/
-
-  /*Footer*/
   --footer-text-color: white;
   --footer-bg-color: #282c35;
-
 }
 
 
@@ -136,7 +111,6 @@ body {
   font-family: "Titillium Web";
   margin: 0px;
   padding: 0px;
-  //background-color: #e8e8ef;
   overflow-x: hidden;
   
 }
@@ -193,7 +167,7 @@ li {
 
 .wp-block-code::after {
   content: '';
-  background: rgb(255, 255, 255);
+  background: var(--course-aside-icon-bg-color);
   position: absolute;
   top: -20px;
   /* Adjust the position as needed */
@@ -221,6 +195,9 @@ li {
   background: #282b2e !important;
   padding: 25px !important;
   line-height: 26px;
+  & mark{
+    background-color: #25487d !important;
+  }
 }
 
 /*Youtube Embed Styling*/
@@ -241,7 +218,7 @@ li {
 }
 
 .youtube-video__caption {
-  color: #555;
+  color: var(--text-color);
   font-size: 13px;
   text-align: center;
   margin-top: 0.5em;
@@ -266,7 +243,7 @@ li {
 
 .highlight-green::after {
   content: '';
-  background: rgb(255, 255, 255);
+  background: var(--course-aside-icon-bg-color);
   position: absolute;
   top: -20px;
   /* Adjust the position as needed */
@@ -283,7 +260,7 @@ li {
 
 .highlight-green {
   position: relative;
-  background-color: #e9ffe9;
+  background-color: var(--course-aside-exclamation-bg-color);
   border-left: 5px solid #6dd06d;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -309,7 +286,7 @@ li {
 
 .course-table-of-content::after {
   content: '';
-  background: #ffffff;
+  background: var(--course-aside-icon-bg-color);
   position: absolute;
   top: -20px;
   /* Adjust the position as needed */
@@ -327,7 +304,7 @@ li {
 .course-table-of-content {
   position: relative;
   border-left: 5px solid #aabee8;
-  background-color: #f0f3ff;
+  background-color: var(--course-aside-contents-bg-color);
   margin-top: 30px;
   margin-bottom: 20px;
   padding: 15px;
@@ -365,7 +342,7 @@ li {
 // Code that is written in paragraphs is visually enhanced
 p>code,
 td>code {
-  background: #e5e7eb;
+  background: var(--code-highlight);
   border-radius: 0.25em;
   padding: 0.1em 0.25em;
   font-size: large;

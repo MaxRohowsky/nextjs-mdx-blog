@@ -35,7 +35,6 @@
     transform: translateX(-50%);
     background: rgb(115, 149, 222);
     z-index: 2;
-
 }
 
 .post__title {
@@ -44,7 +43,7 @@
     margin: 0px;
     position: relative;
     padding: 30pt 10pt 25pt 10pt;
-    color: rgb(0, 0, 0);
+    color: var(--text-color);
 }
 
 .post__date {

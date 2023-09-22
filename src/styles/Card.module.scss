@@ -5,7 +5,7 @@
   overflow: hidden;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border-radius: $border-radius;
-  background-color: var(  --home-content-card-bg-color);
+  background-color: var(--home-content-card-bg-color);
   /* Grow and shrink between values*/
   //min-width: 250px;
   //max-width: 325px;
@@ -35,7 +35,7 @@
 .card__date{
   margin-left: 15px;
   font-size: smaller;
-  color: black;
+  color: var(--text-color);
 }
 
 .title__text{

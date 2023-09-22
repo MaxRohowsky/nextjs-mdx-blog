@@ -65,7 +65,7 @@
 
     &:disabled {
         color: var(--courses-paging-button-disabled-color) !important ;
-        border: 1px solid var(--courses-paging-button-disabled-color) !important ;
+        border: 1px solid var(--courses-paging-button-border-color) !important ;
     }
 
     &:hover {

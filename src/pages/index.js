@@ -69,8 +69,9 @@ export default function Home({ Posts, Courses }) {
             <div className={styles.hero__circle}>
 
               <div className={styles.hero__main}>
-                <h1>Simplifying Tech.<br /> Frontend to Backend!</h1>
-                <h2>Free, Fast, and Fun lessons to <br /> level up your font- and backend stack! </h2>
+                <h1>Exploring Tech.<br /> Frontend to Backend!</h1>
+                <h2>Hi, I'm Max. I'm a researcher and coder. <br />Here you'll find my blog and tech tutorials.</h2>
+
 
                 <div className={styles.hero__cta}>
                   <Link style={{ textDecoration: 'none' }} href="/courses" >

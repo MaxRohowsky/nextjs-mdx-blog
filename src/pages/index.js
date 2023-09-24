@@ -40,8 +40,8 @@ export default function Home({ Posts, Courses }) {
   return (
     <>
       <Head>
-        <title>max on tech homepage</title>
-        <meta name="description" content="Quality Code Tutorials" />
+        <title>Max On Tech - The Tech you Need to Succeed</title>
+        <meta name="description" content="Fast, Fun, and Free Coding Tutorials" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

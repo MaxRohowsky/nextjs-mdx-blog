@@ -23,7 +23,9 @@ import Head from 'next/head';
 import Navbar from "@/components/Navbar";
 import Footer from '@/components/Footer';
 import Overlay from '@/components/Overlay';
-import { ThemeProvider } from 'next-themes'
+
+import { ThemeProvider } from 'next-themes';
+import { useRouter } from "next/router";
 
 
 export default function App({ Component, pageProps }) {
@@ -31,15 +33,14 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Max on Tech</title>
-        <meta name="description" content="Quality Code Tutorials" />
+        <title>Max On Tech - The Tech you Need to Succeed</title>
+        <meta property="og:title" content="Max On Tech - The Tech you Need to Succeed" />
+        <meta name="description" content="Fast, Fun, and Free Coding Tutorials" />
+        <meta property="og:description" content="Fast, Fun, and Free Coding Tutorials" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
-      <Overlay />
 
       <div className={styles.container} >
       <ThemeProvider>
@@ -50,6 +51,7 @@ export default function App({ Component, pageProps }) {
 
         <main className={styles.main}>
           <Component {...pageProps} />
+          <Overlay />
         </main>
 
         <footer className={styles.footer}>
@@ -58,8 +60,5 @@ export default function App({ Component, pageProps }) {
         </ThemeProvider>
 
       </div>
-
-
     </>
-  )
-}
+  )}

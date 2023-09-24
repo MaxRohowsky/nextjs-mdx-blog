@@ -2,7 +2,7 @@ import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 
 
 let client;
-const API_URL = process.env.WORDPRESS_API_URL
+const API_URL = "https://hosting189589.a2f4e.netcup.net/graphql"
 
 export function _createApolloClient() {
   return new ApolloClient({

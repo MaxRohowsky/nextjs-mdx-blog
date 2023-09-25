@@ -100,65 +100,61 @@ export default function Home({ Posts, Courses }) {
         </div>
 
         <div className={styles.blog}>
-          <div>
+          <div className={styles.prelim}>
             <h2 className={styles.content__header}>Latest Blog Posts</h2>
             <hr className={styles.content__line} />
-            <div className={styles.content__grid}>
-              {Posts.edges.map((post, index) => (
-                <Card
-                  key={index}
-                  title={post.node.title}
-                  date={dateTime(post.node.date)}
-                  img={post.node.featuredImage?.node?.mediaItemUrl ?? ""}
-                  body={post.node.excerpt}
-                  link={"blog" + post.node.uri}
-                />
-              ))}
-            </div>
-
-
-            <Link className={styles.content__button} href="/blog" >
-              <span className={styles.content__button__outer}>
-                <span className={styles.content__button__inner}>
-                  View More
-                  <i className="fas fa-arrow-right" />
-                </span>
-              </span>
-            </Link>
-
+          </div>
+          <div className={styles.content__cards}>
+            {Posts.edges.map((post, index) => (
+              <Card
+                key={index}
+                title={post.node.title}
+                date={dateTime(post.node.date)}
+                img={post.node.featuredImage?.node?.mediaItemUrl ?? ""}
+                body={post.node.excerpt}
+                link={"blog" + post.node.uri}
+              />
+            ))}
           </div>
 
+          <Link className={styles.content__button} href="/blog" >
+            <span className={styles.content__button__outer}>
+              <span className={styles.content__button__inner}>
+                View More
+                <i className="fas fa-arrow-right" />
+              </span>
+            </span>
+          </Link>
 
         </div>
+
+
         <div className={styles.courses}>
-          <div>
+          <div className={styles.prelim}>
             <h2 className={styles.content__header}>Latest Courses</h2>
             <hr className={styles.content__line} />
-            <div className={styles.content__grid}>
-              {Courses.edges.map((course, index) => (
-                <Card
-                  key={index}
-                  title={course.node.title}
-                  img={course.node.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
-                  body={course.node.excerpt}
-                  link={course.node.uri.replace('/courses/', '/')}
-                />
-              ))}
-            </div>
-
-            <Link className={styles.content__button} href="/courses" >
-              <span className={styles.content__button__outer}>
-                <span className={styles.content__button__inner}>
-                  View More
-                  <i className="fas fa-arrow-right" />
-                </span>
-              </span>
-            </Link>
-
+          </div>
+          <div className={styles.content__cards}>
+            {Courses.edges.map((course, index) => (
+              <Card
+                key={index}
+                title={course.node.title}
+                img={course.node.categories.nodes[0].categoryImages.categoryImage.sourceUrl}
+                body={course.node.excerpt}
+                link={course.node.uri.replace('/courses/', '/')}
+              />
+            ))}
           </div>
 
+          <Link className={styles.content__button} href="/courses" >
+            <span className={styles.content__button__outer}>
+              <span className={styles.content__button__inner}>
+                View More
+                <i className="fas fa-arrow-right" />
+              </span>
+            </span>
+          </Link>
         </div>
-
       </div>
 
     </>

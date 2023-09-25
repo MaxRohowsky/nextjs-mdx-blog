@@ -50,11 +50,24 @@
     margin: auto;
 }
 
-@media only screen and (max-width: 770px ) {
-    /*Applies to screens with width below 992 and height below 520*/
-    .card {
-        margin-left: 20px;
-        margin-right: 20px;
+
+@media only screen and (max-width: 1350px) {
+    .cards {
+        grid-template-columns: repeat(3, minmax(300px, 320px));
+        width: 85%;
     }
-  }
-  
+}
+
+@media only screen and (max-width: 1000px) {
+    .cards {
+        grid-template-columns: repeat(2, minmax(300px, 320px));
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+        width: 85%;
+    }
+}

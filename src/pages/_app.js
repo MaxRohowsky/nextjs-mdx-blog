@@ -1,20 +1,7 @@
 import '@/styles/globals.scss';
-//test
-import '@/styles/Sidebar.module.scss';
 import styles from '@/styles/App.module.scss'
-
-/*Use the Wordpress CSS*/
-import '@wordpress/block-library/build-style/style.css';
-import '@wordpress/block-library/build-style/theme.css';
-
-//import '@wordpress/block-library/build-style/image/style.css'
-
-//import '@wordpress/block-library/build-style/common.css'
-//import '@wordpress/block-library/build-style/classic-rtl.css'
-//import '@wordpress/block-library/build-style/classic.css'
-//import '@wordpress/block-library/build-style/common.css'
-//import '@wordpress/block-library/build-style/common.css'
-
+/*Wordpress Block CSS*/
+import '@wordpress/block-library/build-style/style.css'; 
 /* Font */
 import '@/styles/titillium.scss';
 import '@/styles/bricolage.scss';
@@ -23,9 +10,9 @@ import Head from 'next/head';
 import Navbar from "@/components/Navbar";
 import Footer from '@/components/Footer';
 import Overlay from '@/components/Overlay';
-
+/* Dark Mode */
 import { ThemeProvider } from 'next-themes';
-import { useRouter } from "next/router";
+
 
 
 export default function App({ Component, pageProps }) {

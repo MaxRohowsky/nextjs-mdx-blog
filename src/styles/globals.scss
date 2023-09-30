@@ -107,7 +107,6 @@
 
 html,
 body {
-  //width: 100vw;
   font-size: 1.02rem;
   font-family: "Titillium Web";
   margin: 0px;
@@ -116,13 +115,14 @@ body {
   
 }
 
-/*Not optimal. This styling is actually already in the images/styles wordpress library but doesn't work.*/
+/*----------------------------------------------------------Image Styling----------------------------------------------------------*/
+
 .aligncenter {
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/*Header Styling*/
+/*----------------------------------------------------------Header Styling----------------------------------------------------------*/
 h1 {
   margin-top: 35pt;
   margin-bottom: 20pt;
@@ -151,7 +151,7 @@ li {
   line-height: 26px;
 }
 
-/*Code block Styling*/
+/*----------------------------------------------------------Code block Styling----------------------------------------------------------*/
 .wp-block-code::before {
   content: '';
   position: absolute;
@@ -171,16 +171,10 @@ li {
   background: var(--course-aside-icon-bg-color);
   position: absolute;
   top: -20px;
-  /* Adjust the position as needed */
   left: -18px;
-  /* Adjust the position as needed */
   width: 40px;
-  /* Increase the size of the white circle as needed */
   height: 40px;
-  /* Increase the size of the white circle as needed */
   border-radius: 50%;
-  /* Make it a circle */
-  //box-shadow: 0 0 0 3px rgb(227, 227, 227) inset;
 }
 
 .wp-block-code {
@@ -201,7 +195,11 @@ li {
   }
 }
 
-/*Youtube Embed Styling*/
+/*----------------------------------------------------------Youtube Embed Styling----------------------------------------------------------*/
+.course-youtube-video{
+  margin: 0px;
+}
+
 .course-youtube-video__wrapper {
   position: relative;
   padding-top: 56.25%;
@@ -226,7 +224,7 @@ li {
   margin-bottom: 1em;
 }
 
-/* Highlighting option that can be added by adding the tag ".highlight-green" in wordpress*/
+/*----------------------------------------------------------Highlighting option: ".highlight-green"----------------------------------------------------------*/
 .highlight-green::before {
   content: '';
   position: absolute;
@@ -247,16 +245,10 @@ li {
   background: var(--course-aside-icon-bg-color);
   position: absolute;
   top: -20px;
-  /* Adjust the position as needed */
   left: -21px;
-  /* Adjust the position as needed */
   width: 40px;
-  /* Increase the size of the white circle as needed */
   height: 40px;
-  /* Increase the size of the white circle as needed */
   border-radius: 50%;
-  /* Make it a circle */
-  //box-shadow: 0 0 0 3px rgb(227, 227, 227) inset;
 }
 
 .highlight-green {
@@ -269,7 +261,7 @@ li {
   border-radius: 3px;
 }
 
-/* Sets the Styling for the Table of Content on the Course Pages*/
+/* ----------------------------------------------------------Table of Content on Course Pages ----------------------------------------------------------*/
 .course-table-of-content::before {
   content: '';
   position: absolute;
@@ -290,16 +282,10 @@ li {
   background: var(--course-aside-icon-bg-color);
   position: absolute;
   top: -20px;
-  /* Adjust the position as needed */
   left: -21px;
-  /* Adjust the position as needed */
   width: 40px;
-  /* Increase the size of the white circle as needed */
   height: 40px;
-  /* Increase the size of the white circle as needed */
   border-radius: 50%;
-  /* Make it a circle */
-  //box-shadow: 0 0 0 3px rgb(227, 227, 227) inset;
 }
 
 .course-table-of-content {
@@ -334,13 +320,13 @@ li {
 }
 
 
-/* Makes sure that navbar does not overlap header when clicking on content anchor*/
+/* ----------------------------------------------------------Makes sure that navbar does not overlap header when clicking on content anchor----------------------------------------------------------*/
 .wp-block-heading {
   scroll-margin-top: 100px;
 }
 
 
-// Code that is written in paragraphs is visually enhanced
+/* ---------------------------------------------------------- Code in Paragraphs----------------------------------------------------------*/
 p>code,
 td>code {
   background: var(--code-highlight);
@@ -349,7 +335,7 @@ td>code {
   font-size: large;
 }
 
-// Adjust the styling of the Tables that have the class is-style-stripes
+/* ---------------------------------------------------------- Table Styling ----------------------------------------------------------*/
 .is-style-stripes {
   border-bottom: none !important;
 
@@ -358,7 +344,7 @@ td>code {
   }
 }
 
-// Remove the line under links
+/* ---------------------------------------------------------- Remove Line under Links----------------------------------------------------------*/
 a {
   text-decoration: none;
 }

@@ -70,6 +70,35 @@
 		align-content: center;
 	}
 
+	@keyframes explode {
+		0% {
+		  transform: scale(0.5);
+		  opacity: 0; 
+		}
+		50% {
+			opacity: 0; 
+		  }
+		100% {
+		  transform: scale(1);
+		  opacity: 1; 
+		}
+	  }
+	
+	  /*@keyframes implode {
+		0% {
+		  transform: scale(1);
+		  opacity: 1; 
+		}
+		50% {
+			opacity: 0; 
+		  }
+		100% {
+			transform: scale(0);
+			opacity: 0; 
+			//display: none;
+		  }
+	  }*/
+
 	// This is the mobile menu
 	.header__nav {
 		position: absolute;
@@ -84,11 +113,13 @@
 		background-color: var(--nav-mob-bg-color);
 		border-radius: $border-radius;
 		box-shadow: $box-shadow;
+		animation: explode 0.2s ease-in;
 	}
 
 
-	.responsive_nav {
+	.hide {
 		display: none;
+		//animation: implode 0.2s ease-out forwards;
 	}
 
 	.nav__closebtn {

@@ -2,6 +2,8 @@
 
 // -------------- HERO START ---------------------------------------------
 
+// -------------- Particle Logos ---------------------------------------------
+
 .bottomparticles {
   z-index: -10;
   position: absolute;
@@ -51,6 +53,158 @@
   }
 }
 
+// -------------- Title Color switch ---------------------------------------------
+
+.process {
+  display: flex;
+
+  .processsteptitlecontainer {
+    position: relative;
+
+    .processsteptitleoverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: 100%;
+      opacity: 1;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+
+    }
+
+  }
+
+  .processstep1 {
+    .processsteptitle {
+      background-image: var(--text-color);
+      animation: animated-gradient-title-1 8s infinite;
+    }
+
+    .processsteptitleoverlay {
+      background-image: linear-gradient(90deg, var(--gradient-color-1), var(--gradient-color-2));
+      animation: animated-gradient-title-overlay-1 8s infinite;
+    }
+  }
+
+  .processstep2 {
+    .processsteptitle {
+      background-image: var(--text-color);
+      animation: animated-gradient-title-2 8s infinite;
+    }
+
+    .processsteptitleoverlay {
+      background-image: linear-gradient(90deg, var(--gradient-color-2), var(--gradient-color-3));
+      animation: animated-gradient-title-overlay-2 8s infinite;
+    }
+  }
+
+  .processstep3 {
+    .processsteptitle {
+      background-image: var(--text-color);
+      animation: animated-gradient-title-3 8s infinite;
+    }
+
+    .processsteptitleoverlay {
+      background-image: linear-gradient(90deg, var(--gradient-color-3), var(--gradient-color-1));
+      animation: animated-gradient-title-overlay-3 8s infinite;
+    }
+  }
+}
+
+
+@keyframes animated-gradient-title-1 {
+
+  0%,
+  16.667%,
+  100% {
+    opacity: 0;
+  }
+
+  33.333%,
+  83.333% {
+    opacity: 1
+  }
+}
+
+@keyframes animated-gradient-title-2 {
+
+  0%,
+  16.667%,
+  66.667%,
+  100% {
+    opacity: 1
+  }
+
+  33.333%,
+  50% {
+    opacity: 0
+  }
+}
+
+@keyframes animated-gradient-title-3 {
+
+  0%,
+  50%,
+  100% {
+    opacity: 1
+  }
+
+  66.667%,
+  83.333% {
+    opacity: 0
+  }
+}
+
+
+@keyframes animated-gradient-title-overlay-1 {
+
+  0%,
+  16.667%,
+  100% {
+    opacity: 1;
+  }
+
+  33.333%,
+  83.333% {
+    opacity: 0
+  }
+}
+
+
+@keyframes animated-gradient-title-overlay-2 {
+
+  0%,
+  16.667%,
+  66.667%,
+  100% {
+    opacity: 0
+  }
+
+  33.333%,
+  50% {
+    opacity: 1
+  }
+
+}
+
+
+@keyframes animated-gradient-title-overlay-3 {
+
+  0%,
+  50%,
+  100% {
+    opacity: 0
+  }
+
+  66.667%,
+  83.333% {
+    opacity: 1
+  }
+}
+
+
 
 .hero {
   display: flex; // block:  starts on new line + takes up the whole width
@@ -90,7 +244,7 @@
     font-family: 'bricolage';
     font-weight: bold;
     font-size: 56px;
-    background-color: var( --home-hero-text-bg-color);
+    background-color: var(--home-hero-text-bg-color);
     padding: 5px;
   }
 
@@ -100,7 +254,7 @@
     line-height: 28px;
     margin-top: 40px;
     margin-bottom: 32px;
-    background-color: var( --home-hero-text-bg-color);
+    background-color: var(--home-hero-text-bg-color);
     padding: 5px;
   }
 }
@@ -120,15 +274,17 @@
   width: fit-content;
   // Style
   color: var(--home-hero-sub-cta);
-  background-color:var(--home-hero-sub-cta-bg);
+  background-color: var(--home-hero-sub-cta-bg);
   border: 2px solid var(--home-hero-sub-cta-border);
   border-radius: 8px;
   cursor: pointer;
+
   // Hover
   &:hover {
     background-color: var(--home-hero-sub-cta-bg-hover);
     color: var(--home-hero-sub-cta-hover);
   }
+
   /*&::before {
     content: '';
     position: absolute;
@@ -168,6 +324,7 @@
   border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
+
   // Hover
   &:hover {
     background-color: var(--home-hero-learn-cta-bg-hover);
@@ -175,11 +332,12 @@
   }
 }
 
-@mixin cta__content{
+@mixin cta__content {
   font-size: 20px;
   font-weight: 500;
   display: flex;
   align-items: center;
+
   & i {
     font-size: 30px;
     padding-right: 15px;
@@ -201,10 +359,12 @@
   .circle {
     display: none;
   }
+
   .hero__main {
     & h1 {
       font-size: 35px;
     }
+
     & h2 {
       font-size: 25px;
     }
@@ -215,14 +375,17 @@
   .hero {
     max-height: 450px;
   }
+
   .hero__main {
     & h1 {
       font-size: 30px;
     }
+
     & h2 {
       font-size: 20px;
     }
   }
+
   .hero__cta {
     flex-direction: column;
   }
@@ -234,7 +397,7 @@
 
 // -------------- CONTENT START ---------------------------------------------
 
-@mixin content{
+@mixin content {
   //display: flex;
   //justify-content: center;
   //align-items: center;
@@ -260,7 +423,7 @@
 
 .prelim {
   width: 80%;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
 /*.content__container {
@@ -275,16 +438,16 @@
 .content__header {
   margin-top: 25px;
   margin-bottom: 10px;
-  font-family:  'bricolage';
+  font-family: 'bricolage';
   font-size: Xx-large;
 }
 
-.content__line{
+.content__line {
   width: 100%;
   border: none;
   border-bottom: 4px solid #1f14e9;
   margin: 20px 0;
-  width: 80px; 
+  width: 80px;
 }
 
 .content__cards {
@@ -305,7 +468,7 @@
   row-gap: 50px;
   column-gap: 30px;
   /*grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));*/
-  /*grid-template-columns: repeat(4, minmax(300px, 320px));
+/*grid-template-columns: repeat(4, minmax(300px, 320px));
   grid-auto-flow: dense;
   justify-items: center; // center cards within grid
   justify-content: center; // center all cards within page
@@ -335,9 +498,10 @@
   display: flex;
   align-items: center;
   padding: 5px 15px 5px 20px;
+
   & i {
-      font-size: 30px;
-      padding-left: 15px;
+    font-size: 30px;
+    padding-left: 15px;
   }
 }
 
@@ -354,21 +518,21 @@
 
 @media only screen and (max-width: 1350px) {
   .content__cards {
-      grid-template-columns: repeat(3, minmax(300px, 320px));
-      width: 85%;
+    grid-template-columns: repeat(3, minmax(300px, 320px));
+    width: 85%;
   }
 }
 
 @media only screen and (max-width: 1000px) {
   .content__cards {
-      grid-template-columns: repeat(2, minmax(300px, 320px));
-      width: 85%;
+    grid-template-columns: repeat(2, minmax(300px, 320px));
+    width: 85%;
   }
 }
 
 @media only screen and (max-width: 670px) {
   .content__cards {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
-      width: 85%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+    width: 85%;
   }
 }

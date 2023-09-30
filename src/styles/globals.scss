@@ -2,6 +2,10 @@
 
 
 :root {
+  --gradient-color-1: #58a6ff;
+  --gradient-color-2: #6ec3f4;
+  --gradient-color-3: #446aff;
+  --gradient-color-4: #948fef;
   --text-color: black;
   --code-highlight: #e5e7eb;
   --bg-color: #F8FAFC;
@@ -52,6 +56,10 @@
 }
 
 [data-theme="dark"] {
+  --gradient-color-1: #ef008f;
+  --gradient-color-2: #6ec3f4;
+  --gradient-color-3: #7038ff;
+  --gradient-color-4: #c9c9c9;
   --text-color: rgb(255, 255, 255);
   --code-highlight: #303c53;
   --bg-color: #181818;

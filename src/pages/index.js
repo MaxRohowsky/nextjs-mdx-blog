@@ -69,7 +69,38 @@ export default function Home({ Posts, Courses }) {
             <div className={styles.hero__circle}>
 
               <div className={styles.hero__main}>
-                <h1>Exploring Tech.<br /> Frontend to Backend!</h1>
+                <h1>Exploring Tech. </h1>
+
+              
+
+                <div className={styles.process}>
+                <div className={styles.processstep1}>
+                  <div className={styles.processsteptitlecontainer}>
+                    <h1 className={styles.processsteptitle}>Frontend</h1>
+                    <h1 className={styles.processsteptitleoverlay}>Frontend
+                    </h1>
+                  </div>
+                </div>
+                <div className={styles.processstep2}>
+                  <div className={styles.processsteptitlecontainer}>
+                    <h1 className={styles.processsteptitle}>to</h1>
+                    <h1 className={styles.processsteptitleoverlay}>to
+                    </h1>
+                  </div>
+                </div>
+                <div className={styles.processstep3}>
+                  <div className={styles.processsteptitlecontainer}>
+                    <h1 className={styles.processsteptitle}>Backend!</h1>
+                    <h1 className={styles.processsteptitleoverlay}>Backend!
+                    </h1>
+                  </div>
+                </div>
+                </div>
+
+
+
+
+
                 <h2>Hi, I'm Max. I'm a researcher and coder. <br />Here you'll find my blog and tech tutorials.</h2>
 
 

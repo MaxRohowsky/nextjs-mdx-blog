@@ -48,7 +48,7 @@ const GET_POSTS_QUERY_NEW = gql`
 
 
 export default function Courses({ catedata, pageData }) {
-
+  
   var items = []
   const first = 8
   const last = 8
@@ -124,10 +124,19 @@ export default function Courses({ catedata, pageData }) {
   return (
     <>
       <Head>
-        <title>Courses</title>
-        <meta name="description" content="Free Tech Tutorials" />
+        <meta charSet='utf-8' />
+        <title>Max On Tech - Exploring Tech - Courses</title>
+        <meta property="og:title" content="Max On Tech - Exploring Tech - Courses" />
+
+        <meta name="description" content="Fast, Fun, and Free Coding Tutorials"  />
+        <meta property="og:description" content="Fast, Fun, and Free Coding Tutorials"  />
+
+        <meta property="og:image" content="https://www.maxontech.io/transparent-logo.png" />
+        {/*<meta property="og:url" content={currentPage} />*/}
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+
       </Head>
 
       <h1 className={styles.title}> Courses </h1>

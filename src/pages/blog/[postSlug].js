@@ -6,7 +6,9 @@ import styles from '../../styles/Post.module.scss'
 import { parse } from 'node-html-parser';
 import Link from 'next/link';
 
-export default function Course({ post, site }) {
+export default function Course({ post }) {
+
+
 
   const doc = parse(post.excerpt);
   const excerptText = doc.querySelector("p").text;
@@ -14,13 +16,23 @@ export default function Course({ post, site }) {
   return (
     <div className={styles.container}>
       <Head>
+        <meta charSet='utf-8' />
         <title>{post.title}</title>
+        <meta property="og:title" content={post.title} />
+
         <meta name="description" content={excerptText} />
+        <meta property="og:description" content={excerptText} />
+
+        <meta property="og:image" content="https://www.maxontech.io/transparent-logo.png" />
+        {/*<meta property="og:url" content={`${currentPage}`} />*/}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+     
       <div className={styles.prepost}>
         <div className={styles.post__meta}>
-          
+
           {/*<Breadcrumbs crumbs={crumbs} /><p className={styles.post__date}>Published {dateTime(courseData.date)}</p>*/}
         </div>
         <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: post.title }} />
@@ -28,9 +40,9 @@ export default function Course({ post, site }) {
       </div>
 
       <div className={`${styles.post} wp-embed-responsive`} >
-        
+
         <div className={styles.post__content}>
-          <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: post.content}} />
+          <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: post.content }} />
 
           <div className={styles.questions}>
             <h2>Have a Question?</h2>
@@ -83,9 +95,7 @@ export async function getStaticProps({ params = {} } = {}) {
     /* Remember that name = slug */
     query: gql`
       query PostBySlug($slug: String!) {
-        generalSettings {
-          title
-        }
+
         postBy(slug: $slug) {
           id
           content
@@ -108,14 +118,14 @@ export async function getStaticProps({ params = {} } = {}) {
     }
   }
 
-  const site = {
-    ...data?.data.generalSettings
-  }
+  //const site = {
+  //  ...data?.data.generalSettings
+  //}
 
   return {
     props: {
       post,
-      site
+
     }
   }
 

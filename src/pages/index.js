@@ -40,12 +40,20 @@ export default function Home({ Posts, Courses }) {
   return (
     <>
       <Head>
-        <title>Max On Tech - The Tech you Need to Succeed</title>
+        <meta charSet='utf-8' />
+        <title>Max On Tech - Exploring Tech</title>
+        <meta property="og:title" content="Max On Tech - Exploring Tech" />
+
         <meta name="description" content="Fast, Fun, and Free Coding Tutorials" />
+        <meta property="og:description" content="Fast, Fun, and Free Coding Tutorials" />
+
+        <meta property="og:image" content="https://www.maxontech.io/transparent-logo.png" />
+        <meta property="og:url" content="https://www.maxontech.io/" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      
       <div className={styles.wrap}>
         <div className={styles.hero}>
           <div className={styles.bottomparticles}>
@@ -71,30 +79,30 @@ export default function Home({ Posts, Courses }) {
               <div className={styles.hero__main}>
                 <h1>Exploring Tech. </h1>
 
-              
+
 
                 <div className={styles.process}>
-                <div className={styles.processstep1}>
-                  <div className={styles.processsteptitlecontainer}>
-                    <h1 className={styles.processsteptitle}>Frontend</h1>
-                    <h1 className={styles.processsteptitleoverlay}>Frontend
-                    </h1>
+                  <div className={styles.processstep1}>
+                    <div className={styles.processsteptitlecontainer}>
+                      <h1 className={styles.processsteptitle}>Frontend</h1>
+                      <h1 className={styles.processsteptitleoverlay}>Frontend
+                      </h1>
+                    </div>
                   </div>
-                </div>
-                <div className={styles.processstep2}>
-                  <div className={styles.processsteptitlecontainer}>
-                    <h1 className={styles.processsteptitle}>to</h1>
-                    <h1 className={styles.processsteptitleoverlay}>to
-                    </h1>
+                  <div className={styles.processstep2}>
+                    <div className={styles.processsteptitlecontainer}>
+                      <h1 className={styles.processsteptitle}>to</h1>
+                      <h1 className={styles.processsteptitleoverlay}>to
+                      </h1>
+                    </div>
                   </div>
-                </div>
-                <div className={styles.processstep3}>
-                  <div className={styles.processsteptitlecontainer}>
-                    <h1 className={styles.processsteptitle}>Backend!</h1>
-                    <h1 className={styles.processsteptitleoverlay}>Backend!
-                    </h1>
+                  <div className={styles.processstep3}>
+                    <div className={styles.processsteptitlecontainer}>
+                      <h1 className={styles.processsteptitle}>Backend!</h1>
+                      <h1 className={styles.processsteptitleoverlay}>Backend!
+                      </h1>
+                    </div>
                   </div>
-                </div>
                 </div>
 
 

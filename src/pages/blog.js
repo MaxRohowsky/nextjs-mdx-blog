@@ -6,10 +6,11 @@ import styles from '../styles/Blog.module.scss'
 import Card from "@/components/Card"
 
 
-export default function BlogEntires({ page, posts }) {
-  const { title, description } = page;
+export default function BlogEntires({ posts }) {
+  //const router = useRouter();
+  //const currentPage = router.pathname;
+  //const { title, description } = page;
   var items = []
-  console.log(posts[0].featuredImage.node.mediaItemUrl)
 
   for (var i = 0; i < posts.length; i++) {
     items.push(
@@ -30,10 +31,19 @@ export default function BlogEntires({ page, posts }) {
     <div>
 
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <meta charSet='utf-8' />
+        <title>Max On Tech - Exploring Tech - Blog</title>
+        <meta property="og:title" content="Max On Tech - Exploring Tech - Blog" />
+
+        <meta name="description" content="Fast, Fun, and Free Coding Tutorials" />
+        <meta property="og:description" content="Fast, Fun, and Free Coding Tutorials" />
+
+        <meta property="og:image" content="https://www.maxontech.io/transparent-logo.png" />
+        {/*<meta property="og:url" content={`${currentPage}`} />*/}
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+
       </Head>
 
 
@@ -59,11 +69,7 @@ export async function getStaticProps() {
   const data = await apolloClient.query({
     query: gql`
       {
-        generalSettings {
-          title
-          description
-        }
-        posts(first: 10000) {
+        posts(first: 10) {
           edges {
             node {
               id
@@ -85,9 +91,9 @@ export async function getStaticProps() {
   });
 
 
-  const page = {
-    ...data?.data.generalSettings
-  }
+  //const page = {
+  //  ...data?.data.generalSettings
+  //}
 
   const posts = data?.data.posts.edges.map(({ node }) => node).map(post => {
     // The first map creates a new array with node items. The second map returns the posts and path.
@@ -100,7 +106,6 @@ export async function getStaticProps() {
 
   return {
     props: {
-      page,
       posts
     },
     revalidate: 10,

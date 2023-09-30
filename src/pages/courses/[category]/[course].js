@@ -8,8 +8,10 @@ import { parse } from "node-html-parser";
 import Breadcrumbs from '@/components/Breadcrumbs';
 import Link from 'next/link'
 
-
 export default function Course({ courseData, sidebarData }) {
+
+
+
   let showSidebar = true;
 
   const crumbs = [
@@ -32,9 +34,18 @@ export default function Course({ courseData, sidebarData }) {
 
   return (
     <>
+
       <Head>
+        <meta charSet='utf-8' />
         <title>{courseData.title}</title>
-        <meta name="description" content={excerptTextPost} />
+        <meta property="og:title" content={courseData.title} />
+
+        <meta name="description" content={excerptTextPost}  />
+        <meta property="og:description" content={excerptTextPost}  />
+
+        <meta property="og:image" content="https://www.maxontech.io/transparent-logo.png" />
+        {/*<meta property="og:url" content={`${currentPage}`} />*/}
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

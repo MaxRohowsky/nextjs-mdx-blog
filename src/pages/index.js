@@ -255,6 +255,35 @@ export async function getStaticProps() {
       }
     }
     `
+   
+   
+   
+   
+    /*query: gql`
+    {
+      courses(first: 4) {
+        edges {
+          node {
+            categories {
+              nodes {
+                description
+                name
+                categoryImages {
+                  categoryImage {
+                    sourceUrl
+                  }
+                }
+              }
+            }
+            date
+            uri
+            title
+            excerpt
+          }
+        }
+      }
+    }
+    `*/
   });
 
   const Posts = { ...data?.data.posts }
@@ -271,3 +300,27 @@ export async function getStaticProps() {
     revalidate: 10,
   }
 }
+
+
+
+/*
+
+Try getting the 4 most recent categories instead of individual course. - Looks better at bttom of screen
+
+{
+  categories(first: 4) {
+    edges {
+      node {
+        categoryImages {
+          categoryImage {
+            sourceUrl
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+*/

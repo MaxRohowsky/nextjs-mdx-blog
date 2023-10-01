@@ -58,6 +58,7 @@
 .process {
   display: flex;
   background-color: var(--home-hero-bg-color);
+  justify-content: center;
 
   .processsteptitlecontainer {
     position: relative;
@@ -210,17 +211,14 @@
 .hero {
   display: flex; // block:  starts on new line + takes up the whole width
   justify-content: center;
-  max-height: 290px;
-  padding-top: 100px;
-  padding-bottom: 50px;
   background-color: var(--home-hero-bg-color);
   overflow: hidden;
 }
 
 .hero__container {
-  max-height: 300px;
   border-radius: 8px;
-  padding-top: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding-bottom: 5px;
   padding-left: 25px;
   padding-right: 25px;
@@ -259,6 +257,35 @@
     padding: 5px;
   }
 }
+
+.hero__tagline{
+  margin-bottom: 30px !important;
+}
+
+.hero__socialproof{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.hero__avatar{
+  width: 40px;
+  height: 40px;
+  margin-right: -10px;
+}
+
+.avatar{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid var(--bg-color);
+}
+
+.socialproof__text{
+  text-align: left;
+  margin-left: 25px;
+}
+
 
 .hero__cta {
   display: flex;
@@ -373,9 +400,7 @@
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {
-  .hero {
-    max-height: 450px;
-  }
+
 
   .hero__main {
     & h1 {

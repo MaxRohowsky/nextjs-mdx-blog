@@ -130,6 +130,10 @@ body {
   margin-right: auto;
 }
 
+.wp-block-image>img{
+  border-radius: 3px;
+}
+
 /*----------------------------------------------------------Header Styling----------------------------------------------------------*/
 h1 {
   margin-top: 35pt;

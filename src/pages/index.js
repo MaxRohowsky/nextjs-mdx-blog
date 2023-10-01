@@ -53,7 +53,7 @@ export default function Home({ Posts, Courses }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       <div className={styles.wrap}>
         <div className={styles.hero}>
           <div className={styles.bottomparticles}>
@@ -105,11 +105,8 @@ export default function Home({ Posts, Courses }) {
                   </div>
                 </div>
 
+                <h2 className={styles.hero__tagline}>Hi, I'm Max. I'm a researcher and coder. <br />Here you'll learn about SaaS, Bootstrap, & Code.</h2>
 
-
-
-
-                <h2>Hi, I'm Max. I'm a researcher and coder. <br />Here you'll find my blog and tech tutorials.</h2>
 
 
                 <div className={styles.hero__cta}>
@@ -131,6 +128,32 @@ export default function Home({ Posts, Courses }) {
                     </span>
                   </Link>
                 </div>
+
+                <div className={styles.hero__socialproof}>
+                  <div className={styles.hero__avatar}>
+                    <img className={styles.avatar} src="/avatars/1.jpg" />
+                  </div>
+                  <div className={styles.hero__avatar}>
+                    <img className={styles.avatar} src="/avatars/2.jpg" />
+                  </div>
+                  <div className={styles.hero__avatar}>
+                    <img className={styles.avatar} src="/avatars/3.jpg" />
+                  </div>
+                  <div className={styles.hero__avatar}>
+                    <img className={styles.avatar} src="/avatars/4.jpg" />
+                  </div>
+                  <div className={styles.hero__avatar}>
+                    <img className={styles.avatar} src="/avatars/5.jpg" />
+                  </div>
+
+                  <div className={styles.socialproof__text}>
+                    <b>7988</b> are keeping it <b>secret</b><br /> until it's too big to ignore.
+                  </div>
+                </div>
+
+
+
+
               </div>
 
             </div>
@@ -255,10 +278,10 @@ export async function getStaticProps() {
       }
     }
     `
-   
-   
-   
-   
+
+
+
+
     /*query: gql`
     {
       courses(first: 4) {

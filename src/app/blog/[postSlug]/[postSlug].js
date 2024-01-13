@@ -1,10 +1,12 @@
+'use client';
 import Head from 'next/head'
 import { gql } from "@apollo/client";
-import { getApolloClient } from '../../components/client';
+import { getApolloClient } from '../../../components/client';
 import Socials from '@/components/Socials';
 import styles from '../../styles/Post.module.scss'
 import { parse } from 'node-html-parser';
 import Link from 'next/link';
+import { use } from 'react';
 
 export default function Course({ post }) {
 

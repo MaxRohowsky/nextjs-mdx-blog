@@ -1,3 +1,4 @@
+'use client';
 import { useRef, useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from 'next/link';

@@ -1,14 +1,18 @@
-import Head from 'next/head'
+
+import {Metadata} from 'next'
 import styles from '@/styles/Home.module.scss'
 import { gql } from '@apollo/client';
-import { getApolloClient } from '../components/client';
+import { getApolloClient } from '../../src/components/client';
 import Link from 'next/link'
 import Card from "@/components/Card"
-import { dateTime } from '../components/datetime.js';
+import { dateTime } from '../../src/components/datetime.js';
 
 
 
-export default function Home({ Posts, Courses }) {
+export default async function Home() {
+  const Posts = await getPosts();
+  const Courses = await getCourses();
+
 
   const iconColors = {
     "fab fa-react": "#61DAFB",
@@ -39,7 +43,8 @@ export default function Home({ Posts, Courses }) {
 
   return (
     <>
-      <Head>
+    
+      {/*<Head>
         <meta charSet='utf-8' />
         <title>Max On Tech - Exploring Tech</title>
         <meta property="og:title" content="Max On Tech - Exploring Tech" />
@@ -52,7 +57,7 @@ export default function Home({ Posts, Courses }) {
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+  </Head>*/}
 
       <div className={styles.wrap}>
         <div className={styles.hero}>
@@ -107,6 +112,7 @@ export default function Home({ Posts, Courses }) {
 
                 <h2 className={styles.hero__tagline}>Hi, I'm Max. I'm a researcher and coder. <br />Here you'll learn about SaaS, Bootstrap, & Code.</h2>
 
+             
 
 
                 <div className={styles.hero__cta}>
@@ -167,6 +173,7 @@ export default function Home({ Posts, Courses }) {
             <hr className={styles.content__line} />
           </div>
           <div className={styles.content__cards}>
+     
             {Posts.edges.map((post, index) => (
               <Card
                 key={index}
@@ -176,7 +183,12 @@ export default function Home({ Posts, Courses }) {
                 body={post.node.excerpt}
                 link={"blog" + post.node.uri}
               />
-            ))}
+            ))} 
+
+            
+
+
+
           </div>
 
           <Link className={styles.content__button} href="/blog" >
@@ -224,7 +236,7 @@ export default function Home({ Posts, Courses }) {
 }
 
 
-export async function getStaticProps() {
+async function getPosts() {
   const apolloClient = getApolloClient();
 
   const data = await apolloClient.query({
@@ -252,7 +264,17 @@ export async function getStaticProps() {
     `
   });
 
-  const data2 = await apolloClient.query({
+  return { ...data?.data.posts };
+}
+
+
+
+
+
+async function getCourses() {
+  const apolloClient = getApolloClient();
+
+  const data = await apolloClient.query({
     query: gql`
     {
       courses(first: 4) {
@@ -279,50 +301,21 @@ export async function getStaticProps() {
     }
     `
 
-
-
-
-    /*query: gql`
-    {
-      courses(first: 4) {
-        edges {
-          node {
-            categories {
-              nodes {
-                description
-                name
-                categoryImages {
-                  categoryImage {
-                    sourceUrl
-                  }
-                }
-              }
-            }
-            date
-            uri
-            title
-            excerpt
-          }
-        }
-      }
-    }
-    `*/
   });
 
-  const Posts = { ...data?.data.posts }
-
-  const Courses = { ...data2?.data.courses }
-
-
-
-  return {
-    props: {
-      Posts,
-      Courses
-    },
-    revalidate: 10,
-  }
+  return { ...data?.data.courses };
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

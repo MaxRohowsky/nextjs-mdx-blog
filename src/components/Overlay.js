@@ -1,3 +1,4 @@
+'use client';
 import styles from '../styles/Overlay.module.scss'
 import Cookies from 'js-cookie';
 import Link from 'next/link';

@@ -1,3 +1,4 @@
+'use client';
 import { gql } from "@apollo/client";
 import { getApolloClient } from '../../../components/client';
 import Socials from '@/components/Socials';

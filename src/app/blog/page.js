@@ -1,15 +1,16 @@
 import Head from 'next/head'
 import { gql } from '@apollo/client';
-import { getApolloClient } from '../components/client';
-import { dateTime } from '../components/datetime.js';
-import styles from '../styles/Blog.module.scss'
+import { getApolloClient } from '../../components/client';
+import { dateTime } from '../../components/datetime.js';
+import styles from '../../styles/Blog.module.scss'
 import Card from "@/components/Card"
 
 
-export default function BlogEntires({ posts }) {
-  //const router = useRouter();
-  //const currentPage = router.pathname;
-  //const { title, description } = page;
+export default async function BlogEntires() {
+  const posts = await getPosts();
+  console.log(posts);
+
+
   var items = []
 
   for (var i = 0; i < posts.length; i++) {
@@ -63,7 +64,7 @@ export default function BlogEntires({ posts }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getPosts() {
   const apolloClient = getApolloClient();
 
   const data = await apolloClient.query({
@@ -91,11 +92,11 @@ export async function getStaticProps() {
   });
 
 
-  //const page = {
-  //  ...data?.data.generalSettings
-  //}
 
-  const posts = data?.data.posts.edges.map(({ node }) => node).map(post => {
+
+
+
+  return data?.data.posts.edges.map(({ node }) => node).map(post => {
     // The first map creates a new array with node items. The second map returns the posts and path.
     return {
       ...post,
@@ -103,11 +104,4 @@ export async function getStaticProps() {
     }
   });
 
-
-  return {
-    props: {
-      posts
-    },
-    revalidate: 10,
-  }
 }

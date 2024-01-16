@@ -1,13 +1,16 @@
-import {Metadata} from 'next'
-import styles from './Home.module.scss'
+import { Metadata } from 'next'
+import styles from './home.module.scss'
 
 import Link from 'next/link'
 import Card from "@/components/card/card"
 import { dateTime } from '@/components/datetime/datetime.js';
 import Particles from '@/components/particles/particle';
+
+import Grid from '@/components/grid/grid';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
-import {faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import Wordblink from '@/components/wordblink/wordblink';
 
 export default async function Client({ posts, courses }) {
@@ -15,7 +18,7 @@ export default async function Client({ posts, courses }) {
 
   return (
     <>
-    
+
       {/*<Head>
         <meta charSet='utf-8' />
         <title>Max On Tech - Exploring Tech</title>
@@ -31,78 +34,101 @@ export default async function Client({ posts, courses }) {
         <link rel="icon" href="/favicon.ico" />
   </Head>*/}
 
+
+
+
+
+      <div className={styles.container}>
+
+
+        {Array.from({ length: 12*8 }, (_, index) => {
+
+           let x = index % 12 + 1; // Adjust as needed
+           let y = Math.floor((index) / 12) + 1; // Adjust as needed
+           return(
+          <div key={index} className={styles.box} style={{ '--x': x, '--y': y }}></div>)
+        })}
+
+      </div>
+
       <div className={styles.wrap}>
+
+
+
+
+
+
         <div className={styles.hero}>
-          
+
           <div className={styles.hero__container}>
 
 
-              
 
 
 
-              <Particles />
 
-              <div className={styles.hero__main}>
-                <h1>Exploring Tech. </h1>
+            <Particles />
 
-
-                <Wordblink />
-               
-
-                <h2 className={styles.hero__tagline}>Hi, I'm Max. I'm a researcher and coder. <br />Here you'll learn about SaaS, Bootstrap, & Code.</h2>
-
-             
+            <div className={styles.hero__main}>
+              <h1>Exploring Tech. </h1>
 
 
-                <div className={styles.hero__cta}>
-                  <Link style={{ textDecoration: 'none' }} href="/courses" >
-                    <span className={styles.learnCta}>
-                      <span className={styles.learnCta__content}>
-                        <FontAwesomeIcon icon={faGraduationCap} />
-                        Learn
-                      </span>
+              <Wordblink />
+
+
+              <h2 className={styles.hero__tagline}>Hi, I'm Max. I'm a researcher and coder. <br />Here you'll learn about SaaS, Bootstrap, & Code.</h2>
+
+
+
+
+              <div className={styles.hero__cta}>
+                <Link style={{ textDecoration: 'none' }} href="/courses" >
+                  <span className={styles.learnCta}>
+                    <span className={styles.learnCta__content}>
+                      <FontAwesomeIcon icon={faGraduationCap} />
+                      Learn
                     </span>
-                  </Link>
+                  </span>
+                </Link>
 
-                  <Link style={{ textDecoration: 'none' }} href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw?sub_confirmation=1" >
-                    <span className={styles.subCta}>
-                      <span className={styles.subCta__content}>
+                <Link style={{ textDecoration: 'none' }} href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw?sub_confirmation=1" >
+                  <span className={styles.subCta}>
+                    <span className={styles.subCta__content}>
                       <FontAwesomeIcon icon={faYoutube} />
-                        Subscribe
-                      </span>
+                      Subscribe
                     </span>
-                  </Link>
-                </div>
-
-                <div className={styles.hero__socialproof}>
-                  <div className={styles.hero__avatar}>
-                    <img className={styles.avatar} src="/avatars/1.jpg" />
-                  </div>
-                  <div className={styles.hero__avatar}>
-                    <img className={styles.avatar} src="/avatars/2.jpg" />
-                  </div>
-                  <div className={styles.hero__avatar}>
-                    <img className={styles.avatar} src="/avatars/3.jpg" />
-                  </div>
-                  <div className={styles.hero__avatar}>
-                    <img className={styles.avatar} src="/avatars/4.jpg" />
-                  </div>
-                  <div className={styles.hero__avatar}>
-                    <img className={styles.avatar} src="/avatars/5.jpg" />
-                  </div>
-
-                  <div className={styles.socialproof__text}>
-                  
-
-                    <b>7988</b> are keeping it <b>secret</b><br /> until it's too big to ignore.
-                  </div>
-                </div>
-
-
-
-
+                  </span>
+                </Link>
               </div>
+
+              <div className={styles.hero__socialproof}>
+                <div className={styles.hero__avatar}>
+                  <img className={styles.avatar} src="/avatars/1.jpg" />
+                </div>
+                <div className={styles.hero__avatar}>
+                  <img className={styles.avatar} src="/avatars/2.jpg" />
+                </div>
+                <div className={styles.hero__avatar}>
+                  <img className={styles.avatar} src="/avatars/3.jpg" />
+                </div>
+                <div className={styles.hero__avatar}>
+                  <img className={styles.avatar} src="/avatars/4.jpg" />
+                </div>
+                <div className={styles.hero__avatar}>
+                  <img className={styles.avatar} src="/avatars/5.jpg" />
+                </div>
+
+                <div className={styles.socialproof__text}>
+
+
+                  <b>7988</b> are keeping it <b>secret</b><br /> until it's too big to ignore.
+                </div>
+              </div>
+
+
+
+
+            </div>
 
           </div>
 
@@ -114,7 +140,7 @@ export default async function Client({ posts, courses }) {
             <hr className={styles.content__line} />
           </div>
           <div className={styles.content__cards}>
-     
+
             {posts.edges.map((post, index) => (
               <Card
                 key={index}
@@ -124,9 +150,9 @@ export default async function Client({ posts, courses }) {
                 body={post.node.excerpt}
                 link={"blog" + post.node.uri}
               />
-            ))} 
+            ))}
 
-            
+
 
 
 
@@ -137,7 +163,7 @@ export default async function Client({ posts, courses }) {
               <span className={styles.content__button__inner}>
                 View More
                 <FontAwesomeIcon icon={faArrowRight} />
-              
+
               </span>
             </span>
           </Link>

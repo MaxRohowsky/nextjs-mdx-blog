@@ -1,0 +1,116 @@
+@import "@/styles/_variables.scss";
+
+
+.prepost {
+    background-color: var(--course-prepost-bg-color);
+    margin-top: -100px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    width: 100svw;
+    box-shadow: var(--course-prepost-box-shadow);
+}
+
+.post {
+    position: relative;
+    display: block;
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post__meta {
+    display: flex;
+    padding-top: 5px;
+    justify-content: space-between;
+}
+
+.post__title::before {
+    content: "";
+    position: absolute;
+    bottom: 28px;
+    width: 250px;
+    height: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(115, 149, 222);
+    z-index: 2;
+
+}
+
+.post__title {
+    text-align: center;
+    font-weight: 600;
+    margin: 0px;
+    position: relative;
+    padding: 30pt 10pt 25pt 10pt;
+    color: var(--text-color);
+}
+
+.post__date {
+    text-align: center;
+    margin: 0px;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+}
+
+.post__text {
+    padding: 15px 15px 15px 15px;
+    margin-bottom: 20px;
+}
+
+.questions {
+    border-top: 3px dotted #aabee8;
+    //background-color: var(--course-question-discord);
+    //border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+    margin: 10px;
+    & h2{
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+}
+
+.discord__content {
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 5px 30px 5px 25px;
+    & i {
+        font-size: 30px;
+        padding-right: 15px;
+    }
+}
+
+.discord {
+    display: flex;
+    width: fit-content;
+    color: var(--course-question-discord);
+    background-color: var(--course-question-discord-bg);
+    border: 2px solid var(--course-question-discord-border);
+    border-radius: 8px;
+    cursor: pointer;
+
+    // Hover
+    &:hover {
+        background-color: var(--course-question-discord-bg-hover);
+        color: var(--course-question-discord-hover);
+    }
+}
+
+
+@media only screen and (max-width: $tablet-breakpoint) {
+    .post {
+        width: calc(100svw - (2 * 20px));
+    }
+}
+
+@media only screen and (max-width: $tablet-breakpoint){
+    .post{
+        width: calc(100svw - (2 * 20px));
+    }
+}

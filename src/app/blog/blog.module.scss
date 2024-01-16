@@ -1,0 +1,72 @@
+@import "@/styles/_variables.scss";
+
+.main {
+    margin: auto;
+    width: clamp(400px, 60%, 900px);
+    margin-right: auto;
+    width: 100%;
+    max-width: 80ch;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+
+.subtitle {
+    margin-top: 0px;
+    text-align: center;
+    color: rgba(110, 110, 110, 0.69);
+}
+
+.sepparator {
+    height: 3px;
+    background: #555555;
+    width: 45px;
+    border-radius: 3px;
+    border-width: 0px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+
+.container {
+    //prevents scrollbar from showing when scale hover effect on cards occurs
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: grid;
+    row-gap: 50px;
+    column-gap: 30px;
+    grid-template-columns: repeat(4, minmax(300px, 320px));
+    grid-auto-flow: dense;
+    justify-items: center; // center cards within grid
+    justify-content: center; // center all cards within page
+    width: 80%;
+    margin: auto;
+}
+
+
+@media only screen and (max-width: 1350px) {
+    .cards {
+        grid-template-columns: repeat(3, minmax(300px, 320px));
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .cards {
+        grid-template-columns: repeat(2, minmax(300px, 320px));
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+        width: 85%;
+    }
+}

@@ -1,5 +1,8 @@
 @import "_variables.scss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --gradient-color-1: #58a6ff;

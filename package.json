@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.10",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-regular-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@wordpress/block-library": "^8.6.0",
     "eslint-config-next": "^14.0.4",
-    "fa-icons": "^0.2.0",
-    "font-awesome": "^4.7.0",
     "graphql": "^16.6.0",
     "he": "^1.2.0",
     "highcharts": "^11.1.0",
@@ -28,5 +31,10 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.9.0",
     "sass": "^1.59.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1"
   }
 }

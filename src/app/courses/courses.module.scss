@@ -1,0 +1,92 @@
+@import "@/styles/_variables.scss";
+
+.title {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.subtitle {
+    margin-top: 0px;
+    text-align: center;
+    color: rgba(110, 110, 110, 0.69);
+}
+
+.sepparator {
+    height: 3px;
+    background: #555555;
+    width: 45px;
+    border-radius: 3px;
+    border-width: 0px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+
+
+.cards {
+    display: grid;
+    row-gap: 50px;
+    column-gap: 30px;
+    /*grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));*/
+    grid-template-columns: repeat(4, minmax(300px, 320px));
+    grid-auto-flow: dense;
+    justify-items: center; // center cards within grid
+    justify-content: center; // center all cards within page
+    width: 80%;
+    margin: auto;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: var(--courses-paging-button-bg-color);
+    border: 1px solid var(--courses-paging-button-border-color);
+    box-sizing: border-box;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    height: 48px;
+    line-height: 24px;
+    min-width: 200px;
+    padding: 0 17px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    margin: 20px;
+
+    &:disabled {
+        color: var(--courses-paging-button-disabled-color) !important ;
+        border: 1px solid var(--courses-paging-button-border-color) !important ;
+    }
+
+    &:hover {
+        border-color: var(--courses-paging-button-hover-color);
+        color: var(--courses-paging-button-hover-color);
+        fill: var(--courses-paging-button-hover-color);
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    .cards {
+        grid-template-columns: repeat(3, minmax(300px, 320px));
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .cards {
+        grid-template-columns: repeat(2, minmax(300px, 320px));
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+        width: 85%;
+    }
+}

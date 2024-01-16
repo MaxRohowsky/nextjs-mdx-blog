@@ -1,0 +1,339 @@
+@import "@/styles/_variables.scss";
+
+
+// -------------- HERO START ---------------------------------------------
+
+
+
+
+
+
+.hero {
+  display: flex; // block:  starts on new line + takes up the whole width
+  justify-content: center;
+  background-color: var(--home-hero-bg-color);
+  overflow: hidden;
+}
+
+.hero__container {
+  border-radius: 8px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+
+.hero__main {
+  position: relative;
+  text-align: center;
+  margin: 0px;
+  z-index: 500;
+
+  bottom: 0px;
+  right: 0px;
+
+  & h1 {
+    margin: 0px;
+    font-family: 'bricolage';
+    font-weight: bold;
+    font-size: 56px;
+    background-color: var(--home-hero-text-bg-color);
+    padding: 5px;
+  }
+
+  & h2 {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-top: 40px;
+    margin-bottom: 32px;
+    background-color: var(--home-hero-text-bg-color);
+    padding: 5px;
+  }
+}
+
+.hero__tagline{
+  margin-bottom: 30px !important;
+}
+
+.hero__socialproof{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.hero__avatar{
+  width: 40px;
+  height: 40px;
+  margin-right: -10px;
+}
+
+.avatar{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid var(--bg-color);
+}
+
+.socialproof__text{
+  text-align: left;
+  margin-left: 25px;
+}
+
+
+.hero__cta {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.subCta {
+  // Size and Position
+  display: flex;
+  width: fit-content;
+  // Style
+  color: var(--home-hero-sub-cta);
+  background-color: var(--home-hero-sub-cta-bg);
+  border: 2px solid var(--home-hero-sub-cta-border);
+  border-radius: 8px;
+  cursor: pointer;
+
+  // Hover
+  &:hover {
+    background-color: var(--home-hero-sub-cta-bg-hover);
+    color: var(--home-hero-sub-cta-hover);
+  }
+
+
+}
+
+.learnCta {
+  //Size and Position
+  display: flex;
+  width: fit-content;
+  // Style
+  color: var(--home-hero-learn-cta);
+  background-color: var(--home-hero-learn-cta-bg);
+  border: 2px solid var(--home-hero-learn-cta-border);
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+
+  // Hover
+  &:hover {
+    background-color: var(--home-hero-learn-cta-bg-hover);
+    color: var(--home-hero-learn-cta-hover);
+  }
+}
+
+@mixin cta__content {
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+
+  & i {
+    font-size: 30px;
+    padding-right: 15px;
+  }
+}
+
+.subCta__content {
+  @include cta__content();
+  padding: 5px 20px 5px 15px;
+}
+
+.learnCta__content {
+  @include cta__content();
+  padding: 5px 30px 5px 25px;
+}
+
+
+@media only screen and (max-width: $laptop-breakpoint) {
+  .circle {
+    display: none;
+  }
+
+  .hero__main {
+    & h1 {
+      font-size: 35px;
+    }
+
+    & h2 {
+      font-size: 25px;
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+
+
+  .hero__main {
+    & h1 {
+      font-size: 30px;
+    }
+
+    & h2 {
+      font-size: 20px;
+    }
+  }
+
+  .hero__cta {
+    flex-direction: column;
+  }
+}
+
+// -------------- HERO END ---------------------------------------------
+
+
+
+// -------------- CONTENT START ---------------------------------------------
+
+@mixin content {
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+  //text-align: left;
+  position: relative;
+  z-index: 5;
+  padding-bottom: 25px;
+
+
+}
+
+.blog {
+  @include content;
+  background-color: var(--home-blog-content-bg-color);
+  border-top: 5px dotted var(--home-content-border-color);
+  border-bottom: 5px dotted var(--home-content-border-color);
+}
+
+.courses {
+  @include content;
+  background-color: var(--home-courses-content-bg-color);
+}
+
+.prelim {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/*.content__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  width: 65%;
+  align-content: center;
+  gap: 40px;
+  margin: 10px 0px 35px 0px;
+}*/
+
+.content__header {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-family: 'bricolage';
+  font-size: Xx-large;
+}
+
+.content__line {
+  width: 100%;
+  border: none;
+  border-bottom: 4px solid #1f14e9;
+  margin: 20px 0;
+  width: 80px;
+}
+
+.content__cards {
+  display: grid;
+  row-gap: 50px;
+  column-gap: 30px;
+  /*grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));*/
+  grid-template-columns: repeat(4, minmax(300px, 320px));
+  grid-auto-flow: dense;
+  justify-items: center; // center cards within grid
+  justify-content: center; // center all cards within page
+  width: 80%;
+  margin: auto;
+}
+
+/*.content__grid{
+  display: grid;
+  row-gap: 50px;
+  column-gap: 30px;
+  /*grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));*/
+/*grid-template-columns: repeat(4, minmax(300px, 320px));
+  grid-auto-flow: dense;
+  justify-items: center; // center cards within grid
+  justify-content: center; // center all cards within page
+  width: 80%;
+  margin: auto;
+}*/
+
+.content__button {
+  display: block;
+  margin: auto;
+  margin-top: 35px;
+  max-width: 200px;
+}
+
+.content__button__outer {
+  display: flex;
+  width: fit-content;
+  color: var(--home-content-button);
+  border: 2px solid var(--home-content-button-border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.content__button__inner {
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 5px 15px 5px 20px;
+
+  & i {
+    font-size: 30px;
+    padding-left: 15px;
+  }
+}
+
+@media only screen and (hover: hover) {
+  .content__card {
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      transition-duration: .1s;
+    }
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .content__cards {
+    grid-template-columns: repeat(3, minmax(300px, 320px));
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .content__cards {
+    grid-template-columns: repeat(2, minmax(300px, 320px));
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .content__cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+    width: 85%;
+  }
+}

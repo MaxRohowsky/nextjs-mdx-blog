@@ -1,60 +1,55 @@
+.container {
 
-.container{
+  --max-width: 1080px;
+  --min-width: 368px;
+  --guide-width: 1px;
+  --horizontal-margin: 2rem;
+  --grid-system-width: 100vw;
 
-    --max-width: 1080px;
-    --min-width: 368px;
-    --guide-width: 1px;
-    --horizontal-margin: 2rem;
-    --grid-system-width: 100vw;
-  
-    --sm-grid-rows: 5;
-    --md-grid-rows: 8;
-    --sm-grid-columns: 8;
-    --md-grid-columns: 12;
-    --sm-height: calc(var(--width) / var(--grid-columns) * var(--grid-rows));
-    --smd-height: calc(var(--width) / var(--grid-columns) * var(--grid-rows));
-  
-    --width: clamp(calc(var(--min-width) - var(--guide-width)),calc(var(--grid-system-width) - var(--guide-width) - (var(--horizontal-margin) * 2)),calc(var(--max-width) - var(--guide-width)));
-  
-    --height: var(
-      --lg-height,var(--md-height,var(--smd-height,var(--sm-height)))
-    );
-    --grid-rows: var(
-      --lg-grid-rows,var(--md-grid-rows,var(--smd-grid-rows,var(--sm-grid-rows)))
-    );
-    --grid-columns: var(
-      --lg-grid-columns,var(--md-grid-columns,var(--smd-grid-columns,var(--sm-grid-columns)))
-    );
-    --cell-padding: 48px;
-    --grid-divider-gap: calc(140px - var(--cell-padding));
-  
-  
-    margin: 0px auto;
-    //overflow: hidden;
-    padding: 50px;
-    background-color:#fff;
-    display:grid;
-  
-    --column-width: calc(var(--width) / var(--grid-columns));
-    --row-height: calc(var(--height) / var(--grid-rows));
-  
-    grid-template-columns: repeat(var(--grid-columns),var(--column-width));
-    grid-template-rows: repeat(var(--grid-rows),var(--row-height));
-    grid-row: auto auto;
-  
-    .box{
-      border: 0.5px  solid #ffffff;
-      outline: 0.5px  solid #e3e3e3;
-      padding:20px;
-      color:#860f0f;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:40px;
-      font-family:sans-serif;
-      //height: var(--height);
-      //width: var(--width);
-    }
-  
+  --sm-grid-rows: 5;
+  --md-grid-rows: 8;
+  --sm-grid-columns: 8;
+  --md-grid-columns: 12;
+  --sm-height: calc(var(--width) / var(--grid-columns) * var(--grid-rows));
+  --smd-height: calc(var(--width) / var(--grid-columns) * var(--grid-rows));
+
+  --width: clamp(calc(var(--min-width) - var(--guide-width)), calc(var(--grid-system-width) - var(--guide-width) - (var(--horizontal-margin) * 2)), calc(var(--max-width) - var(--guide-width)));
+
+  --height: var(--lg-height, var(--md-height, var(--smd-height, var(--sm-height))));
+  --grid-rows: var(--lg-grid-rows, var(--md-grid-rows, var(--smd-grid-rows, var(--sm-grid-rows))));
+  --grid-columns: var(--lg-grid-columns, var(--md-grid-columns, var(--smd-grid-columns, var(--sm-grid-columns))));
+  --cell-padding: 48px;
+  --grid-divider-gap: calc(140px - var(--cell-padding));
+
+
+  margin: 0px auto;
+  //overflow: hidden;
+  padding: 50px;
+  background-color: #9f2929;
+  display: grid;
+
+  --column-width: calc(var(--width) / var(--grid-columns));
+  --row-height: calc(var(--height) / var(--grid-rows));
+
+  grid-template-columns: repeat(var(--grid-columns), var(--column-width));
+  grid-template-rows: repeat(var(--grid-rows), var(--row-height));
+  grid-row: auto auto;
+
+  .box {
+
+
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-family: sans-serif;
+    //height: var(--height);
+    //width: var(--width);
   }
-  
+
+
+
+
+
+
+
+}

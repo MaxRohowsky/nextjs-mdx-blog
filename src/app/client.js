@@ -1,19 +1,26 @@
+'use client'
 import { Metadata } from 'next'
 import styles from './home.module.scss'
-
+import Image from 'next/image'
 import Link from 'next/link'
 import Card from "@/components/card/card"
 import { dateTime } from '@/components/datetime/datetime.js';
 import Particles from '@/components/particles/particle';
-
+import Logo from '@/components/logo/logo';
 import Grid from '@/components/grid/grid';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import Wordblink from '@/components/wordblink/wordblink';
+import Crosshair from '@/components/crosshair/crosshair';
 
-export default async function Client({ posts, courses }) {
+
+
+
+
+
+export default function Client({ posts, courses }) {
 
 
   return (
@@ -41,15 +48,83 @@ export default async function Client({ posts, courses }) {
       <div className={styles.container}>
 
 
-        {Array.from({ length: 12*8 }, (_, index) => {
 
-           let x = index % 12 + 1; // Adjust as needed
-           let y = Math.floor((index) / 12) + 1; // Adjust as needed
-           return(
-          <div key={index} className={styles.box} style={{ '--x': x, '--y': y }}></div>)
+
+
+
+        <Crosshair x={1} y={1} />
+
+        <Crosshair x={13} y={9} />
+
+
+
+
+
+        
+        <div className={styles.rainbow}></div>
+
+        <div className={styles.anim2}>
+          <Image src="/hero.svg" alt="Hero Outline" width={1200} height={900} />
+        </div>
+
+
+        <div className={styles.anim}> </div>
+
+        {Array.from({ length: 12 * 8 }, (_, index) => {
+
+          let x = index % 12 + 1; // Adjust as needed
+          let y = Math.floor((index) / 12) + 1; // Adjust as needed
+
+          return (
+            <div key={index} className={styles.box} style={{ '--x': x, '--y': y }}></div>
+          )
         })}
 
+
+      <div className={styles.title}>Build Things People Want.</div>
+
+
+        <div className={styles.space}></div>
+
+
+        <Crosshair x={1} y={10} />
+
+        <Crosshair x={13} y={11} />
+
+
+        <div className={styles.about}>
+
+
+
+          
+        <Particles />
+
+
+          <Image src="/aout.png" alt="Hero Outline" width={400} height={400} />
+          
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
+
+
 
       <div className={styles.wrap}>
 
@@ -67,7 +142,7 @@ export default async function Client({ posts, courses }) {
 
 
 
-            <Particles />
+
 
             <div className={styles.hero__main}>
               <h1>Exploring Tech. </h1>

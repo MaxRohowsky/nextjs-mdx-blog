@@ -39,6 +39,7 @@
   padding: 50px;
   background-color:#fff;
   display:grid;
+  position: relative;
 
   --column-width: calc(var(--width) / var(--grid-columns));
   --row-height: calc(var(--height) / var(--grid-rows));
@@ -46,21 +47,137 @@
   grid-template-columns: repeat(var(--grid-columns),var(--column-width));
   grid-template-rows: repeat(var(--grid-rows),var(--row-height));
   grid-row: auto auto;
+  gap: 1px;
 
-  .box{
-    border: 0.5px  solid #ffffff;
-    outline: 0.5px  solid #e3e3e3;
-    padding:20px;
-    color:#860f0f;
-
-    font-family:sans-serif;
-    grid-column-start: var(--x);
-    grid-row-start: var(--y);
-    //height: var(--height);
-    //width: var(--width);
-  }
 
 }
+
+
+.box{
+  background-color: #ffffff00;
+ 
+  outline: 1px  solid #e3e3e373;
+
+
+
+  font-family:sans-serif;
+  grid-column-start: var(--x);
+  grid-row-start: var(--y);
+  //height: var(--height);
+  //width: var(--width);
+
+}
+
+
+
+.title{
+  outline: 1px  solid #ffffff73;
+  padding:20px;
+  text-align: center;
+  overflow: hidden;
+  font-family:sans-serif;
+  grid-column-start: 2;
+  grid-column-end: 12;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  outline: #860f0f;
+  background-color: white;
+  font-family: 'bricolage';
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.anim{
+
+  grid-column-start: 2;
+  grid-column-end: 12;
+  grid-row-start: 2;
+  grid-row-end: 8;
+  background-color: white;
+
+
+}
+
+.anim2{
+
+  grid-column-start: 1;
+  grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 9;
+
+
+}
+
+//https://codepen.io/_helmut/pen/wvGYYEx
+.space{
+  outline:none;
+  //outline: 1px  solid #e3e3e373;
+  grid-column-start: 1;
+  grid-column-end: 13;
+  height: 100px;
+
+}
+
+
+
+.rainbow{
+
+    background-color: #b02626;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 9;
+
+    --yellow: rgba(255,206,32,.8);
+    --red: rgba(232, 65, 65, 0.8);
+    --blue: rgba(70, 135, 195, 0.8);
+    --cyan: rgba(15,255,169,.8);
+    --angle: 180deg;
+    --offset: 60%;
+    background: conic-gradient(from var(--angle) at 50% var(--offset),transparent 0deg,var(--blue) 72.0000010728836deg,var(--cyan) 144.0000021457672deg,var(--yellow) 216.00000858306885deg,var(--red) 288.0000042915344deg,transparent 1turn);
+    background-color: #ffffff;
+
+
+    
+
+
+
+}
+
+
+
+.about{
+  outline: 1px  solid #e3e3e373;
+  background-color: #ffffff;
+  grid-column-start: 1;
+  grid-column-end: 13;
+  height: fit-content;
+  //border-radius: 10px;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

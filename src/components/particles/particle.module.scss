@@ -3,10 +3,10 @@
 
 .bottomparticles {
   z-index: -10;
-  position: absolute;
+  position: relative;
   top: 500px;
   left: 0;
-  width: 100svw;
+  //width: 100svw;
   z-index: 1;
 
   .bubble {

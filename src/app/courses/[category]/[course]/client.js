@@ -2,7 +2,7 @@
 import Socials from '@/components/socials/socials';
 import Sidebar from '@/components/sidebar/sidebar';
 import styles from './course.module.scss'
-import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs'; // Fix the casing of the import statement
+import Breadcrumbs from '@/components/breadcrumbs/breadcrumbs'; // Fix the casing of the import statement
 import Head from "next/head";
 import { parse } from "node-html-parser";
 import Link from 'next/link'

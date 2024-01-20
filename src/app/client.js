@@ -38,7 +38,7 @@ export default function Client({ posts, courses }) {
         <link rel="icon" href="/favicon.ico" />
   </Head>*/}
 
-    <Hero/>
+      <Hero />
 
       <div className={styles.space}></div>
 
@@ -82,7 +82,7 @@ export default function Client({ posts, courses }) {
 
             </p>
 
-            {/*
+            
               Hi Im Justin Welsh. I help internet solopreneurs own their work and life.
 
 
@@ -109,7 +109,7 @@ export default function Client({ posts, courses }) {
 
                   <b>7988</b> are keeping it <b>secret</b><br /> until it's too big to ignore.
                 </div>
-              </div>*/}
+              </div>
 
 
 
@@ -167,59 +167,6 @@ export default function Client({ posts, courses }) {
 
 
 
-        <div>
-
-          <div className={styles.hero__container}>
-
-
-
-
-
-
-
-
-            <div className={styles.hero__main}>
-              <h1>Exploring Tech. </h1>
-
-
-              <Wordblink />
-
-
-              <h2 className={styles.hero__tagline}>Hi, I'm Max. I'm a researcher and coder. <br />Here you'll learn about SaaS, Bootstrap, & Code.</h2>
-
-
-
-
-              <div className={styles.hero__cta}>
-                <Link style={{ textDecoration: 'none' }} href="/courses" >
-                  <span className={styles.learnCta}>
-                    <span className={styles.learnCta__content}>
-                      <FontAwesomeIcon icon={faGraduationCap} />
-                      Learn
-                    </span>
-                  </span>
-                </Link>
-
-                <Link style={{ textDecoration: 'none' }} href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw?sub_confirmation=1" >
-                  <span className={styles.subCta}>
-                    <span className={styles.subCta__content}>
-                      <FontAwesomeIcon icon={faYoutube} />
-                      Subscribe
-                    </span>
-                  </span>
-                </Link>
-              </div>
-
-
-
-
-
-
-            </div>
-
-          </div>
-
-        </div>
 
         <div className={styles.blog}>
           <div className={styles.prelim}>

@@ -5,7 +5,7 @@
 
 
 
-//https://codepen.io/_helmut/pen/wvGYYEx
+
 .space{
   outline:none;
   //outline: 1px  solid #e3e3e373;
@@ -33,6 +33,7 @@
 
 }
 
+
 .aboutflex{
   display: flex;
   z-index: 5;
@@ -42,6 +43,29 @@
 }
 
 
+.hero__socialproof{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.hero__avatar{
+  width: 40px;
+  height: 40px;
+  margin-right: -10px;
+}
+
+.avatar{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid var(--bg-color);
+}
+
+.socialproof__text{
+  text-align: left;
+  margin-left: 25px;
+}
 
 
 
@@ -119,29 +143,6 @@
   margin-bottom: 30px !important;
 }
 
-.hero__socialproof{
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.hero__avatar{
-  width: 40px;
-  height: 40px;
-  margin-right: -10px;
-}
-
-.avatar{
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  border: 5px solid var(--bg-color);
-}
-
-.socialproof__text{
-  text-align: left;
-  margin-left: 25px;
-}
 
 
 .hero__cta {

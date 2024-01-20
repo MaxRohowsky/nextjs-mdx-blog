@@ -4,6 +4,8 @@
 .main {
   margin-top: 70px; //due to the navbar
   //width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -11,7 +13,7 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  //justify-content: center;
   height: 70px;
   background-color: var(--nav-bg-color);
   color: var(--text-color);
@@ -19,7 +21,11 @@
   position: fixed;
   top: 0;
   z-index: 10;
-  width: 100vw;
+  width: calc(var(--width) + var(--grid-columns)*1px + 1px);;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
 }
 
 

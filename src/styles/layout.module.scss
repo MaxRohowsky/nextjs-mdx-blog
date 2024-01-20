@@ -1,15 +1,11 @@
 @import "_variables.scss";
 
-/* Container for Entire site*/
-.container {
-  position: relative;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--bg-color);
+// Container for Content
+.main {
+  margin-top: 70px; //due to the navbar
+  //width: 100vw;
 }
+
 
 // Container for Header(Navbar)
 .header {
@@ -23,15 +19,9 @@
   position: fixed;
   top: 0;
   z-index: 10;
-  flex-shrink: 0;
-  width: 100svw;
-}
-
-// Container for Content
-.main {
-  margin-top: 70px; //due to the navbar
   width: 100vw;
 }
+
 
 // Container for Footer
 .footer {

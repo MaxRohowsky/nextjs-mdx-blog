@@ -4,18 +4,15 @@ import styles from './home.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 import Card from "@/components/card/card"
-import { dateTime } from '@/components/datetime/datetime.js';
-import Particles from '@/components/particles/particle';
-import Logo from '@/components/logo/logo';
-import Grid from '@/components/grid/grid';
+import { dateTime } from '@/components/datetime/datetime';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import Wordblink from '@/components/wordblink/wordblink';
-import Crosshair from '@/components/crosshair/crosshair';
 
 
+import Hero from '@/components/hero/hero';
 
 
 
@@ -41,88 +38,125 @@ export default function Client({ posts, courses }) {
         <link rel="icon" href="/favicon.ico" />
   </Head>*/}
 
+    <Hero/>
 
-
-
-
-      <div className={styles.container}>
-
-
-
-
-
-
-        <Crosshair x={1} y={1} />
-
-        <Crosshair x={13} y={9} />
+      <div className={styles.space}></div>
 
 
 
 
 
-        
-        <div className={styles.rainbow}></div>
+      <div className={styles.about}>
 
-        <div className={styles.anim2}>
-          <Image src="/hero.svg" alt="Hero Outline" width={1200} height={900} />
+        <div className={styles.aboutflex}>
+
+
+
+
+          <div className={styles.abouttext}>
+            <div className={styles.aboutImg}>
+              <Image src="/blob.svg" className={styles.blobImage} width={400} height={400}
+                style={{
+                  position: 'absolute'
+
+                }}
+              />
+
+              <Image src="/aout.png" className={styles.aoutImage} alt="Hero Outline" width={400} height={400}
+              />
+            </div>
+
+          </div>
+
+
+
+
+          <div className={styles.abouttext}>
+
+            <h2>Build Things People Want.</h2>
+
+            <p>
+              Hi Im Justin Welsh. I help internet solopreneurs own their work and life.
+              Hi Im Justin Welsh. I help internet solopreneurs own their work and life.
+              Hi Im Justin Welsh. I help internet solopreneurs own their work and life.
+
+            </p>
+
+            {/*
+              Hi Im Justin Welsh. I help internet solopreneurs own their work and life.
+
+
+
+              <div className={styles.hero__socialproof}>
+                <div className={styles.hero__avatar}>
+                  <img className={styles.avatar} src="/avatars/1.jpg" />
+                </div>
+                <div className={styles.hero__avatar}>
+                  <img className={styles.avatar} src="/avatars/2.jpg" />
+                </div>
+                <div className={styles.hero__avatar}>
+                  <img className={styles.avatar} src="/avatars/3.jpg" />
+                </div>
+                <div className={styles.hero__avatar}>
+                  <img className={styles.avatar} src="/avatars/4.jpg" />
+                </div>
+                <div className={styles.hero__avatar}>
+                  <img className={styles.avatar} src="/avatars/5.jpg" />
+                </div>
+
+                <div className={styles.socialproof__text}>
+
+
+                  <b>7988</b> are keeping it <b>secret</b><br /> until it's too big to ignore.
+                </div>
+              </div>*/}
+
+
+
+
+          </div>
+
         </div>
 
-
-        <div className={styles.anim}> </div>
-
-        {Array.from({ length: 12 * 8 }, (_, index) => {
-
-          let x = index % 12 + 1; // Adjust as needed
-          let y = Math.floor((index) / 12) + 1; // Adjust as needed
-
-          return (
-            <div key={index} className={styles.box} style={{ '--x': x, '--y': y }}></div>
-          )
-        })}
-
-
-      <div className={styles.title}>Build Things People Want.</div>
-
-
-        <div className={styles.space}></div>
-
-
-        <Crosshair x={1} y={10} />
-
-        <Crosshair x={13} y={11} />
-
-
-        <div className={styles.about}>
-
-
-
-          
-        <Particles />
-
-
-          <Image src="/aout.png" alt="Hero Outline" width={400} height={400} />
-          
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        {/*<Particles />*/}
 
 
       </div>
+
+      <div className={styles.content}>
+      </div>
+
+      <div className={styles.space}></div>
+
+
+
+
+
+
+
+
+      {/*<Particles />*/}
+
+
+
+
+      <div className={styles.content}>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -133,7 +167,7 @@ export default function Client({ posts, courses }) {
 
 
 
-        <div className={styles.hero}>
+        <div>
 
           <div className={styles.hero__container}>
 
@@ -176,29 +210,7 @@ export default function Client({ posts, courses }) {
                 </Link>
               </div>
 
-              <div className={styles.hero__socialproof}>
-                <div className={styles.hero__avatar}>
-                  <img className={styles.avatar} src="/avatars/1.jpg" />
-                </div>
-                <div className={styles.hero__avatar}>
-                  <img className={styles.avatar} src="/avatars/2.jpg" />
-                </div>
-                <div className={styles.hero__avatar}>
-                  <img className={styles.avatar} src="/avatars/3.jpg" />
-                </div>
-                <div className={styles.hero__avatar}>
-                  <img className={styles.avatar} src="/avatars/4.jpg" />
-                </div>
-                <div className={styles.hero__avatar}>
-                  <img className={styles.avatar} src="/avatars/5.jpg" />
-                </div>
 
-                <div className={styles.socialproof__text}>
-
-
-                  <b>7988</b> are keeping it <b>secret</b><br /> until it's too big to ignore.
-                </div>
-              </div>
 
 
 

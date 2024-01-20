@@ -6,7 +6,6 @@ import '@wordpress/block-library/build-style/style.css';
 import '@/styles/titillium.scss';
 import '@/styles/bricolage.scss';
 /* Components */
-import Head from 'next/head';
 import Navbar from "@/components/navbar/navbar";
 import Footer from '@/components/footer/footer';
 import Overlay from '@/components/overlay/overlay';

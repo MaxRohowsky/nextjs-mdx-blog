@@ -2,14 +2,14 @@
 
 .wrap{
 	display: flex;
-	width: 70%;
+	width: var(--width);
 	justify-content: space-between;
 }
 
 .header__brand{
 	text-decoration: 'none';
 	display: flex;
-	padding-left: 15px;
+	//padding-left: 15px;
 	filter: var(--nav-filter);
 }
 
@@ -25,7 +25,7 @@
 .header__nav {
 	display: flex;
 	align-items: center;
-	padding-right: 20px;
+	//padding-right: 20px;
 }
 
 .nav__link {

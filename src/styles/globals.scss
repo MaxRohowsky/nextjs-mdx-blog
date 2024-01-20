@@ -5,6 +5,70 @@
 @tailwind utilities;
 
 :root {
+
+
+  --max-width: 1080px;
+  --min-width: 368px;
+  --guide-width: 1px;
+  --horizontal-margin: 2rem;
+  --grid-system-width: 100vw;
+
+  --sm-grid-rows: 5;
+  --md-grid-rows: 8;
+  --sm-grid-columns: 8;
+  --md-grid-columns: 12;
+  --sm-height: calc(var(--width) / var(--grid-columns) * var(--grid-rows));
+  --smd-height: calc(var(--width) / var(--grid-columns) * var(--grid-rows));
+
+  --width: clamp(calc(var(--min-width) - var(--guide-width)),calc(var(--grid-system-width) - var(--guide-width) - (var(--horizontal-margin) * 2)),calc(var(--max-width) - var(--guide-width)));
+
+  --height: var(
+    --lg-height,var(--md-height,var(--smd-height,var(--sm-height)))
+  );
+  --grid-rows: var(
+    --lg-grid-rows,var(--md-grid-rows,var(--smd-grid-rows,var(--sm-grid-rows)))
+  );
+  --grid-columns: var(
+    --lg-grid-columns,var(--md-grid-columns,var(--smd-grid-columns,var(--sm-grid-columns)))
+  );
+  --cell-padding: 48px;
+  --grid-divider-gap: calc(140px - var(--cell-padding));
+
+
+  --column-width: calc(var(--width) / var(--grid-columns));
+  --row-height: calc(var(--height) / var(--grid-rows));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   --gradient-color-1: #58a6ff;
   --gradient-color-2: #6ec3f4;
   --gradient-color-3: #446aff;
@@ -124,6 +188,7 @@ body {
   padding: 0px;
   overflow-x: hidden;
   color: var(--text-color);
+  background-color: #f4f4f4;
 }
 
 /*----------------------------------------------------------Image Styling----------------------------------------------------------*/

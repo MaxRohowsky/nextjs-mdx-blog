@@ -32,3 +32,4 @@ function Card({ title, date, img, body, link }) {
 }
 
 export default Card;
+

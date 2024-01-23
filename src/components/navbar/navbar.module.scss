@@ -1,9 +1,35 @@
 @import "@/styles/_variables.scss";
 
-.wrap{
+
+
+// Container for Header(Navbar)
+.header {
 	display: flex;
-	width: var(--width);
+	align-items: center;
+	justify-content: center;
+	//justify-content: center;
+	height: 70px;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	width: calc(var(--width) + var(--grid-columns)*1px + 1px);;
+	border-radius: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-top: 10px;
+	transition: background-color 0.3s ease, box-shadow 0.5s ease;
+}
+
+.scrolled{
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header__wrap{
+	display: flex;
 	justify-content: space-between;
+	width: 100%;
+	padding: 10px;
 }
 
 .header__brand{
@@ -14,7 +40,6 @@
 }
 
 .header__txt {
-	color: var(--nav-text-color);
 	padding-left: 10px;
 	padding-top: 9px;
 	margin: 0px;
@@ -30,7 +55,6 @@
 
 .nav__link {
 	margin: 0 1rem;
-	color: var(--nav-text-color);
 	font-size: larger;
 	font-weight: 400;
 	border: none;

@@ -1,4 +1,4 @@
-'use client'
+
 import Head from 'next/head'
 import { gql } from "@apollo/client";
 import { getApolloClient } from '../../../components/client';
@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 export default function Client({post}) {
 
-    console.log(post.title);
+    //console.log(post);
   //const doc = parse(post.excerpt);
   //const excerptText = doc.querySelector("p").text;
 

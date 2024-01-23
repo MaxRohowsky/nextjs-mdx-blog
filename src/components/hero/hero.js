@@ -5,14 +5,15 @@ import Image from 'next/image';
 import Crosshair from '@/components/crosshair/crosshair';
 
 
-export default function Footer() {
+
+export default function Hero() {
     return (
 
         <div className={styles.hero}>
 
             <Crosshair x={3} y={3} />
-            <Crosshair x={11} y={5} />
-            
+            <Crosshair x={11} y={7} />
+
             <div className={styles.hero__rainbow} />
 
             <div className={styles.hero__overlay}>
@@ -20,9 +21,54 @@ export default function Footer() {
             </div>
 
 
+
             <div className={styles.hero__main} />
 
 
+            <div className={styles.hero__title}>
+                <h1>Build Your <u> Dream Project</u>. It's Time.</h1>
+
+                <h2>
+                    Simple strategy and tech advice to turn your <br />
+                    dream project profitable
+                </h2>
+
+
+                <div>
+                    <div className={styles.form} >
+                        <form className={styles.form} action="/register" method="post">
+                            <input type="email" name="email" placeholder="Email" id="email" />
+                            <button>Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div className={styles.hero__socialproof}>
+                    <div className={styles.hero__avatar}>
+                        <img className={styles.avatar} src="/avatars/1.jpg" />
+                    </div>
+                    <div className={styles.hero__avatar}>
+                        <img className={styles.avatar} src="/avatars/2.jpg" />
+                    </div>
+                    <div className={styles.hero__avatar}>
+                        <img className={styles.avatar} src="/avatars/3.jpg" />
+                    </div>
+                    <div className={styles.hero__avatar}>
+                        <img className={styles.avatar} src="/avatars/4.jpg" />
+                    </div>
+                    <div className={styles.hero__avatar}>
+                        <img className={styles.avatar} src="/avatars/5.jpg" />
+                    </div>
+
+                    <div className={styles.socialproof__text}>
+                        Join the community of 10k+
+                    </div>
+                </div>
+
+
+
+            </div>
             {Array.from({ length: 12 * 8 }, (_, index) => {
 
                 let borderRadiusStyle = {
@@ -51,7 +97,8 @@ export default function Footer() {
             })}
 
 
-            <div className={styles.title}>Build Things People Want.</div>
+
+
 
 
         </div>

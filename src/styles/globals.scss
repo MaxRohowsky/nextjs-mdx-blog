@@ -5,8 +5,6 @@
 @tailwind utilities;
 
 :root {
-
-
   --max-width: 1080px;
   --min-width: 368px;
   --guide-width: 1px;
@@ -14,169 +12,44 @@
   --grid-system-width: 100vw;
 
   --sm-grid-rows: 5;
-  --md-grid-rows: 8;
   --sm-grid-columns: 8;
-  --md-grid-columns: 12;
-  --sm-height: calc(var(--width) / var(--grid-columns) * var(--grid-rows));
-  --smd-height: calc(var(--width) / var(--grid-columns) * var(--grid-rows));
 
-  --width: clamp(calc(var(--min-width) - var(--guide-width)),calc(var(--grid-system-width) - var(--guide-width) - (var(--horizontal-margin) * 2)),calc(var(--max-width) - var(--guide-width)));
 
-  --height: var(
-    --lg-height,var(--md-height,var(--smd-height,var(--sm-height)))
-  );
-  --grid-rows: var(
-    --lg-grid-rows,var(--md-grid-rows,var(--smd-grid-rows,var(--sm-grid-rows)))
-  );
-  --grid-columns: var(
-    --lg-grid-columns,var(--md-grid-columns,var(--smd-grid-columns,var(--sm-grid-columns)))
-  );
-  --cell-padding: 48px;
-  --grid-divider-gap: calc(140px - var(--cell-padding));
+  @media screen and (min-width: 600px) {
+    --md-grid-rows: 8;
+    --md-grid-columns: 12;
+  }
 
+  --height: calc(var(--width) / var(--grid-columns) * var(--grid-rows));
+  --width: clamp(calc(var(--min-width) - var(--guide-width)), calc(var(--grid-system-width) - var(--guide-width) - (var(--horizontal-margin) * 2)), calc(var(--max-width) - var(--guide-width)));
+
+  --grid-rows: var(--lg-grid-rows, var(--md-grid-rows, var(--smd-grid-rows, var(--sm-grid-rows))));
+  --grid-columns: var(--lg-grid-columns, var(--md-grid-columns, var(--smd-grid-columns, var(--sm-grid-columns))));
 
   --column-width: calc(var(--width) / var(--grid-columns));
   --row-height: calc(var(--height) / var(--grid-rows));
 
 
+  --cell-padding: 48px;
+  --grid-divider-gap: calc(140px - var(--cell-padding));
 
 
+  --primary-color: #468cfd;
+  --secondary-color: #bb2828;
+  --tertiary-color: #f2f2f2;
+  --quaternary-color: #f8f8f8;
 
+  --discord-color: #5865F2;
+  --facebook-color: #3b5998;
+  --twitter-color: #1da1f2;
+  --youtube-color: #ff0000;
 
+  --text-color:black;
+  --border-radius: 3px;
+  --box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  --gradient-color-1: #58a6ff;
-  --gradient-color-2: #6ec3f4;
-  --gradient-color-3: #446aff;
-  --gradient-color-4: #948fef;
-  --text-color: black;
-  --code-highlight: #e5e7eb;
-  --bg-color: #F8FAFC;
-  --nav-text-color: #000000;
-  --nav-bg-color: rgb(255, 255, 255);
-  --nav-logo-color: none;
-  --nav-mob-bg-color: #ffffff;
-  --nav-filter: none;
-  --home-float-icons-color: none;
-  --home-hero-bg-color: #F8FAFC;
-  --home-hero-text-color: rgb(0, 0, 0);
-  --home-hero-text-bg-color: #F8FAFC;
-  --home-hero-sub-cta: rgb(255, 255, 255);      //SubCta
-  --home-hero-sub-cta-border: #bb2828;          //SubCta
-  --home-hero-sub-cta-bg: #bb2828;              //SubCta
-  --home-hero-sub-cta-bg-hover: #ffffff;        //SubCta-hover
-  --home-hero-sub-cta-hover: #bb2828;           //SubCta-hover
-  --home-hero-sub-cta-pointer: rgb(0, 0, 0);    
-  --home-hero-learn-cta: rgb(255, 255, 255);       //LearnCta
-  --home-hero-learn-cta-border: #468cfd;          //LearnCta
-  --home-hero-learn-cta-bg: #468cfd;              //LearnCta
-  --home-hero-learn-cta-bg-hover: #ffffff;        //LearnCta-hover
-  --home-hero-learn-cta-hover: #468cfd;           //LearnCta-hover
-  --home-blog-content-bg-color: #F8FAFC;
-  --home-courses-content-bg-color: #F8FAFC;
-  --home-content-button: #468cfd;
-  --home-content-button-border: none;
-  --home-content-card-bg-color: white;
-  --home-content-border-color:rgba(98, 98, 98, 0.15);
-  --courses-paging-button-bg-color: #fff;
-  --courses-paging-button-border-color: #000;
-  --courses-paging-button-hover-color: #06f;
-  --courses-paging-button-disabled-color: #bdbdbd;
-  --course-prepost-bg-color: #cceaff;;
-  --course-prepost-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px;
-  --course-sidebar-bg-color:#ffffff;
-  --course-sidebar-border-color:#e7e7e7;
-  --course-aside-icon-bg-color: rgb(255, 255, 255);
-  --course-aside-exclamation-bg-color: #daffda;
-  --course-aside-contents-bg-color: #dce7fe;
-  --course-question-discord: #ffffff;
-  --course-question-discord-bg: #5865F2;
-  --course-question-discord-border: #5865F2;
-  --course-question-discord-hover: #5865F2;
-  --course-question-discord-bg-hover: #ffffff;
-  --footer-bg-color: #fff;
-  --footer-text-color: black;
 }
 
-[data-theme="dark"] {
-  --gradient-color-1: #ef008f;
-  --gradient-color-2: #6ec3f4;
-  --gradient-color-3: #7038ff;
-  --gradient-color-4: #c9c9c9;
-  --text-color: rgb(238, 238, 238);
-  --code-highlight: #303c53;
-  --bg-color: #181818;
-  --nav-text-color: #ffffff;
-  --nav-bg-color:#282c35;
-  --nav-logo-color: white;
-  --nav-mob-bg-color: #282c35;
-  --nav-filter: brightness(10);
-  --home-float-icons-color: none;
-  --home-circle-fill:#1b1b1b;
-  --home-hero-bg-color: #181818;
-  --home-hero-text-color: rgb(0, 0, 0);
-  --home-hero-text-bg-color:#181818;
-  --home-hero-sub-cta: rgb(255, 255, 255);      //SubCta
-  --home-hero-sub-cta-border: #bb2828;          //SubCta
-  --home-hero-sub-cta-bg: #bb2828;              //SubCta
-  --home-hero-sub-cta-bg-hover: #282c35;        //SubCta-hover
-  --home-hero-sub-cta-hover: #bb2828;           //SubCta-hover
-  --home-hero-sub-cta-pointer: rgb(0, 0, 0);    
-  --home-hero-learn-cta: rgb(255, 255, 255);       //LearnCta
-  --home-hero-learn-cta-border: #468cfd;          //LearnCta
-  --home-hero-learn-cta-bg: #468cfd;              //LearnCta
-  --home-hero-learn-cta-bg-hover: #282c35;        //LearnCta-hover
-  --home-hero-learn-cta-hover: #468cfd;           //LearnCta-hover
-  --home-blog-content-bg-color: #181818;
-  --home-courses-content-bg-color: #181818;
-  --home-content-button: #468cfd;
-  --home-content-button-border: none;
-  --home-content-card-bg-color: #282c35;
-  --home-content-border-color: rgba(255, 255, 255, 0.1);
-  --courses-paging-button-bg-color: #282c35;
-  --courses-paging-button-border-color: none;
-  --courses-paging-button-hover-color: #06f;
-  --courses-paging-button-disabled-color: #000000;
-  --course-prepost-bg-color: #252525;
-  --course-prepost-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px;
-  --course-sidebar-bg-color:#252525;
-  --course-sidebar-border-color:#282c35;
-  --course-aside-icon-bg-color: rgb(48, 48, 48);
-  --course-aside-exclamation-bg-color: #195419;
-  --course-aside-contents-bg-color: #1f1954;
-  --course-aside-contents-bg-color: #371d7c;
-  --course-question-discord: #ffffff;
-  --course-question-discord-bg: #5865F2;
-  --course-question-discord-border: #5865F2;
-  --course-question-discord-hover: #5865F2;
-  --course-question-discord-bg-hover: #ffffff;
-  --footer-text-color: white;
-  --footer-bg-color: #282c35;
-}
 
 
 
@@ -188,7 +61,9 @@ body {
   padding: 0px;
   overflow-x: hidden;
   color: var(--text-color);
-  background-color: #f4f4f4;
+  background:  linear-gradient(176deg, #f8f8f8 50%, #ffffff 100%);
+  min-height: 100vh;
+  background-attachment: fixed;
 }
 
 /*----------------------------------------------------------Image Styling----------------------------------------------------------*/
@@ -198,7 +73,7 @@ body {
   margin-right: auto;
 }
 
-.wp-block-image>img{
+.wp-block-image>img {
   border-radius: 3px;
 }
 
@@ -212,7 +87,7 @@ h1 {
 h2 {
   margin-top: 28pt;
   margin-bottom: 12pt;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 h3 {
@@ -270,13 +145,14 @@ li {
   background: #282b2e !important;
   padding: 25px !important;
   line-height: 26px;
-  & mark{
+
+  & mark {
     background-color: #25487d !important;
   }
 }
 
 /*----------------------------------------------------------Youtube Embed Styling----------------------------------------------------------*/
-.course-youtube-video{
+.course-youtube-video {
   margin: 0px;
 }
 

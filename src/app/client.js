@@ -11,7 +11,7 @@ import { faArrowRight, faGraduationCap } from '@fortawesome/free-solid-svg-icons
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import Wordblink from '@/components/wordblink/wordblink';
 
-
+import Content from '@/components/content/content';
 import Hero from '@/components/hero/hero';
 
 
@@ -40,13 +40,26 @@ export default function Client({ posts, courses }) {
 
       <Hero />
 
-      <div className={styles.space}></div>
+
+      <Content posts={posts} courses={courses} />
+
+   
 
 
 
 
 
-      <div className={styles.about}>
+
+
+
+
+
+
+
+
+
+
+      {/*<div className={styles.about}>
 
         <div className={styles.aboutflex}>
 
@@ -71,6 +84,9 @@ export default function Client({ posts, courses }) {
 
 
 
+
+
+
           <div className={styles.abouttext}>
 
             <h2>Build Things People Want.</h2>
@@ -82,34 +98,34 @@ export default function Client({ posts, courses }) {
 
             </p>
 
-            
-              Hi Im Justin Welsh. I help internet solopreneurs own their work and life.
+
+            Hi Im Justin Welsh. I help internet solopreneurs own their work and life.
 
 
 
-              <div className={styles.hero__socialproof}>
-                <div className={styles.hero__avatar}>
-                  <img className={styles.avatar} src="/avatars/1.jpg" />
-                </div>
-                <div className={styles.hero__avatar}>
-                  <img className={styles.avatar} src="/avatars/2.jpg" />
-                </div>
-                <div className={styles.hero__avatar}>
-                  <img className={styles.avatar} src="/avatars/3.jpg" />
-                </div>
-                <div className={styles.hero__avatar}>
-                  <img className={styles.avatar} src="/avatars/4.jpg" />
-                </div>
-                <div className={styles.hero__avatar}>
-                  <img className={styles.avatar} src="/avatars/5.jpg" />
-                </div>
-
-                <div className={styles.socialproof__text}>
-
-
-                  <b>7988</b> are keeping it <b>secret</b><br /> until it's too big to ignore.
-                </div>
+            <div className={styles.hero__socialproof}>
+              <div className={styles.hero__avatar}>
+                <img className={styles.avatar} src="/avatars/1.jpg" />
               </div>
+              <div className={styles.hero__avatar}>
+                <img className={styles.avatar} src="/avatars/2.jpg" />
+              </div>
+              <div className={styles.hero__avatar}>
+                <img className={styles.avatar} src="/avatars/3.jpg" />
+              </div>
+              <div className={styles.hero__avatar}>
+                <img className={styles.avatar} src="/avatars/4.jpg" />
+              </div>
+              <div className={styles.hero__avatar}>
+                <img className={styles.avatar} src="/avatars/5.jpg" />
+              </div>
+
+              <div className={styles.socialproof__text}>
+
+
+                <b>7988</b> are keeping it <b>secret</b><br /> until it's too big to ignore.
+              </div>
+            </div>
 
 
 
@@ -118,15 +134,13 @@ export default function Client({ posts, courses }) {
 
         </div>
 
-        {/*<Particles />*/}
 
 
-      </div>
 
-      <div className={styles.content}>
-      </div>
+      </div> */}
 
-      <div className={styles.space}></div>
+
+
 
 
 
@@ -140,8 +154,6 @@ export default function Client({ posts, courses }) {
 
 
 
-      <div className={styles.content}>
-      </div>
 
 
 
@@ -158,13 +170,8 @@ export default function Client({ posts, courses }) {
 
 
 
-
-
+      {/* 
       <div className={styles.wrap}>
-
-
-
-
 
 
 
@@ -232,6 +239,7 @@ export default function Client({ posts, courses }) {
           </Link>
         </div>
       </div>
+      */}
 
     </>
   )

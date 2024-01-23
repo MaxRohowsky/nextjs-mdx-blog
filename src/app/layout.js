@@ -1,5 +1,5 @@
 import '@/styles/globals.scss';
-import styles from '@/styles/layout.module.scss'
+import styles from './layout.module.scss'
 /*Wordpress Block CSS*/
 import '@wordpress/block-library/build-style/style.css';
 /* Font */
@@ -17,31 +17,28 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 
 //import { ThemeProvider } from 'next-themes';
 
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
 
-    
+
       <body>
 
-      <main className={styles.main}>
+        <main className={styles.main}>
 
-        <header className={styles.header}>
           <Navbar />
-          
-        </header>
-        
 
-        {children}
+          {children}
 
-        <Overlay />
+          <Overlay />
 
-        <footer className={styles.footer}>
+          <footer className={styles.footer}>
+            <Footer />
+          </footer>
 
-          <Footer />
-        </footer>
-
-      </main>
+        </main>
 
       </body>
 

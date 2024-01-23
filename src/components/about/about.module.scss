@@ -1,0 +1,63 @@
+.about {
+    justify-content: center;
+    padding: 50px;
+    display: flex;
+    font-family: "Open Sans", "system-ui", "Trebuchet MS", Arial, Helvetica, Verdana;
+    gap: 100px;
+    margin-top: 50px;
+  
+    // Posts
+  
+    .about__image {
+      width: calc((var(--width) / 2) - 50px);
+      overflow: hidden;
+  
+      .content__post{
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+  
+      h2 {
+        font-size: 35px;
+        font-weight: 700;
+      }
+  
+      .post__title {
+        font-weight: bold;
+      }
+  
+      p {
+        margin-bottom: 0px;
+      }
+  
+  
+    }
+  
+    // Courses
+  
+    .about__text  {
+      width: calc((var(--width) / 2) - 50px);
+  
+      .content__course{
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+  
+      h2 {
+        font-size: 35px;
+        font-weight: 700;
+      }
+  
+      .course__title {
+        font-weight: bold;
+      }
+  
+      p {
+        margin-bottom: 0px;
+      }
+    }
+  
+  
+  
+  
+  }

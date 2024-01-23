@@ -13,7 +13,7 @@ import Wordblink from '@/components/wordblink/wordblink';
 
 import Content from '@/components/content/content';
 import Hero from '@/components/hero/hero';
-
+import About from '@/components/about/about';
 
 
 
@@ -42,6 +42,11 @@ export default function Client({ posts, courses }) {
 
 
       <Content posts={posts} courses={courses} />
+
+
+
+      <About />
+
 
    
 

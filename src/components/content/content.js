@@ -1,11 +1,9 @@
-
-
 import styles from './content.module.scss';
 import { dateTime } from '@/components/datetime/datetime';
 import Link from 'next/link';
 
 export default function Content({ posts, courses }) {
-    console.log(posts)
+
     return (
 
         <section className={styles.content}>

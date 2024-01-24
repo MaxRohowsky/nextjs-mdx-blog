@@ -22,6 +22,7 @@
 
   --height: calc(var(--width) / var(--grid-columns) * var(--grid-rows));
   --width: clamp(calc(var(--min-width) - var(--guide-width)), calc(var(--grid-system-width) - var(--guide-width) - (var(--horizontal-margin) * 2)), calc(var(--max-width) - var(--guide-width)));
+  --width-container: calc(var(--width) + var(--grid-columns)*1px);
 
   --grid-rows: var(--lg-grid-rows, var(--md-grid-rows, var(--smd-grid-rows, var(--sm-grid-rows))));
   --grid-columns: var(--lg-grid-columns, var(--md-grid-columns, var(--smd-grid-columns, var(--sm-grid-columns))));
@@ -56,7 +57,7 @@
 html,
 body {
   font-size: 1.02rem;
-  font-family: "Titillium Web";
+  font-family: "Open Sans", "system-ui", "Trebuchet MS", Arial, Helvetica, Verdana;
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;

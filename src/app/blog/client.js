@@ -24,7 +24,7 @@ export default function Client({ posts }) {
 
     return (
 
-        <div>
+        <>
 
             {/*<Head>
                 
@@ -42,15 +42,11 @@ export default function Client({ posts }) {
 
             </Head>*/}
 
-            <main className={styles.main}>
+            <div className={styles.container}>
 
                 <h1 className={styles.title}> Blog </h1>
 
-                <h4 className={styles.subtitle}>My Humble Opinion on Tech & Finance</h4>
-
-                <hr className={styles.sepparator} />
-
-                <div className={styles.container}>
+                <h4 className={styles.subtitle}>Strategy and Tech Tips for your Projects</h4>
 
                     <div className={styles.cards}>
                         
@@ -58,10 +54,9 @@ export default function Client({ posts }) {
                         
                     </div>
 
-                </div>
+            </div>
 
-            </main>
-        </div>
+        </>
     )
 }
 

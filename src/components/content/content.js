@@ -3,6 +3,8 @@ import { dateTime } from '@/components/datetime/datetime';
 import Link from 'next/link';
 
 export default function Content({ posts, courses }) {
+    console.log(posts);
+    console.log(courses);
 
     return (
 
@@ -14,7 +16,7 @@ export default function Content({ posts, courses }) {
 
                 {posts.edges.map((post, index) => (
 
-                    <Link style={{ textDecoration: 'none' }} key={index} href={post.node.uri.replace('/courses/', '/')}>
+                    <Link style={{ textDecoration: 'none' }} key={index} href={post.node.uri.replace('/', '/blog/')}>
 
                         <div className={styles.content__post} >
 
@@ -30,7 +32,7 @@ export default function Content({ posts, courses }) {
 
                 ))}
 
-                <p>View more</p>
+                <Link style={{ fontWeight: 'bold' }} href="/blog">View more →</Link>
 
             </div>
 
@@ -55,7 +57,7 @@ export default function Content({ posts, courses }) {
                     </Link>
                 ))}
 
-                <p>View more</p>
+                <Link style={{ fontWeight: 'bold' }} href="/courses">View more →</Link>
 
             </div>
 

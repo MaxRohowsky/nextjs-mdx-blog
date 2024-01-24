@@ -1,16 +1,4 @@
 'use client'
-import { Metadata } from 'next'
-import styles from './home.module.scss'
-import Image from 'next/image'
-import Link from 'next/link'
-import Card from "@/components/card/card"
-import { dateTime } from '@/components/datetime/datetime';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
-import { faYoutube } from '@fortawesome/free-brands-svg-icons'
-import Wordblink from '@/components/wordblink/wordblink';
-
 import Content from '@/components/content/content';
 import Hero from '@/components/hero/hero';
 import About from '@/components/about/about';
@@ -42,7 +30,6 @@ export default function Client({ posts, courses }) {
 
 
       <Content posts={posts} courses={courses} />
-
 
 
       <About />

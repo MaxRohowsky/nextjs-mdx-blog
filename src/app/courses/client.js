@@ -46,13 +46,19 @@ export default function Client({ courses, pageInfo }) {
 
             </Head>*/}
 
-            <h1 className={styles.title}> Courses </h1>
-            <h4 className={styles.subtitle}>Tech Tips, Tutorials & How-to Guides</h4>
-            <hr className={styles.sepparator} />
-            <div className={styles.cards}>
-                {items}
-            </div>
+            <div className={styles.container}>
 
+                <h1 className={styles.title}> Courses. </h1>
+
+                <h2 className={styles.subtitle}>Tech Tips, Tutorials & How-to Guides</h2>
+
+                <div className={styles.cards}>
+
+                    {items}
+
+                </div>
+
+            </div>
 
         </>
 

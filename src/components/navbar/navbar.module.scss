@@ -12,7 +12,7 @@
 	position: fixed;
 	top: 0;
 	z-index: 10;
-	width: calc(var(--width) + var(--grid-columns)*1px + 1px);;
+	width: var(--width-container);
 	border-radius: 10px;
 	left: 50%;
 	transform: translateX(-50%);

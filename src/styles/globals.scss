@@ -61,7 +61,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-  color: var(--text-color);
+  color: black;
   background:  linear-gradient(176deg, #f8f8f8 50%, #ffffff 100%);
   min-height: 100vh;
   background-attachment: fixed;
@@ -116,7 +116,7 @@ li {
   width: 25px;
   height: 21px;
   z-index: 1;
-  background-color: #808095;
+  background-color: #000000;
   -webkit-mask-image: url('../../public/icons/terminal.svg');
   mask-image: url('../../public/icons/terminal.svg');
   mask-size: cover;
@@ -124,7 +124,7 @@ li {
 
 .wp-block-code::after {
   content: '';
-  background: var(--course-aside-icon-bg-color);
+  background: #f8f8f8;
   position: absolute;
   top: -20px;
   left: -18px;
@@ -199,7 +199,7 @@ li {
 
 .highlight-green::after {
   content: '';
-  background: var(--course-aside-icon-bg-color);
+  background: #f8f8f8;
   position: absolute;
   top: -20px;
   left: -21px;
@@ -210,7 +210,7 @@ li {
 
 .highlight-green {
   position: relative;
-  background-color: var(--course-aside-exclamation-bg-color);
+  background-color: #daffda;
   border-left: 5px solid #6dd06d;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -236,7 +236,7 @@ li {
 
 .course-table-of-content::after {
   content: '';
-  background: var(--course-aside-icon-bg-color);
+  background: #f8f8f8;
   position: absolute;
   top: -20px;
   left: -21px;
@@ -248,7 +248,7 @@ li {
 .course-table-of-content {
   position: relative;
   border-left: 5px solid #aabee8;
-  background-color: var(--course-aside-contents-bg-color);
+  background-color: #dce7fe;
   margin-top: 30px;
   margin-bottom: 20px;
   padding: 15px;

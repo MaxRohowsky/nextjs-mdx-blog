@@ -2,13 +2,11 @@
 
 
 .prepost {
-    background-color: var(--course-prepost-bg-color);
+    background-color: #ffffff;
     margin-top: -100px;
     padding-top: 100px;
     padding-bottom: 50px;
     margin-bottom: 50px;
-    width: 100svw;
-    box-shadow: var(--course-prepost-box-shadow);
 }
 
 .post {
@@ -21,8 +19,9 @@
 
 .post__meta {
     display: flex;
-    padding-top: 5px;
-    justify-content: space-between;
+    padding-top: 25px; 
+    width: var(--width-container);
+    margin: auto;
 }
 
 .post__title::before {
@@ -39,6 +38,7 @@
 
 .post__title {
     text-align: center;
+    font-size: 30px;
     font-weight: 600;
     margin: 0px;
     position: relative;

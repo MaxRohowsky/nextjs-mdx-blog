@@ -1,19 +1,19 @@
 @import "@/styles/_variables.scss";
 
 .breadcrumbs {
-    padding-left: 30px;
-    font-weight: 400;
+    font-size: 12px;
   }
   
   .separator {
     margin: 0 6px;
-    color: rgb(0, 0, 0);
-    color: var(--text-color);
+    color: rgb(207, 207, 207);
+    font-weight: 600;
   }
 
   .link{
     color: rgb(0, 0, 0);
     font-weight: 600;
     font-weight: 400;
-    color: var(--text-color);
+    color: rgb(207, 207, 207);
+    font-weight: 600;
   }

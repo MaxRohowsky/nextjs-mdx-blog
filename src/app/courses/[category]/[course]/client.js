@@ -53,35 +53,54 @@ export default function Client({ courseData, sidebarData }) {
 
 
       <div className={styles.prepost}>
+
         <div className={styles.post__meta}>
+
           <Breadcrumbs crumbs={crumbs} />
           {/*<p className={styles.post__date}>Published {dateTime(courseData.date)}</p>*/}
         </div>
+
         <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: courseData.title }} />
+
         <Socials githubReference={courseData.githubRef.githubReference} />
+
       </div>
 
       <div className={`${styles.post} wp-embed-responsive`} >
+
         {showSidebar && (
           <Sidebar data={sidebarData} />
         )}
+
         <div className={styles.post__content}>
+
           <div className={styles.post__text} dangerouslySetInnerHTML={{ __html: courseData.content }} />
 
           <div className={styles.questions}>
-            <h2>Have a Question?</h2>
-            <Link style={{ textDecoration: 'none' }} href="https://discord.com/invite/JERatQsfY8" target="_blank" >
-              <span className={styles.discord}>
-                <span className={styles.discord__content}>
-                  <FontAwesomeIcon icon={faDiscord} />
-                  Ask on Discord
-                </span>
-              </span>
-            </Link>
-          </div>
-        </div>
-      </div>
 
+            <h2>Have a Question?</h2>
+
+            <Link style={{ textDecoration: 'none' }} href="https://discord.com/invite/JERatQsfY8" target="_blank" >
+              
+              <span className={styles.discord}>
+
+                <span className={styles.discord__content}>
+
+                  <FontAwesomeIcon icon={faDiscord} />
+
+                  Ask on Discord
+
+                </span>
+
+              </span>
+
+            </Link>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </>
   )

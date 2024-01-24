@@ -18,7 +18,7 @@ function Navbar() {
 
 	useEffect(() => {
 		window.addEventListener('scroll', () => {
-			setScroll(window.scrollY > 1);
+			setScroll(false); // window.scrollY > 1 
 		});
 
 	}, []);	

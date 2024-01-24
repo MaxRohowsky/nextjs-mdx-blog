@@ -1,7 +1,7 @@
 'use server'
 import Client from './client';
 import { gql } from "@apollo/client";
-import { getApolloClient } from '../../../../components/client';
+import { getApolloClient } from '@/components/client';
 
 
 export async function getCourse(params) {

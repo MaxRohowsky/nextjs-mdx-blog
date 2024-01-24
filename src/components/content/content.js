@@ -14,9 +14,9 @@ export default function Content({ posts, courses }) {
 
                 {posts.edges.map((post, index) => (
 
-                    <Link style={{ textDecoration: 'none' }} href={post.node.uri.replace('/courses/', '/')}>
+                    <Link style={{ textDecoration: 'none' }} key={index} href={post.node.uri.replace('/courses/', '/')}>
 
-                        <div className={styles.content__post} key={index}>
+                        <div className={styles.content__post} >
 
                             <p className={styles.post__title}>{post.node.title}</p>
 
@@ -40,9 +40,9 @@ export default function Content({ posts, courses }) {
 
                 {courses.edges.map((course, index) => (
 
-                    <Link style={{ textDecoration: 'none' }} href={course.node.uri.replace('/courses/', '/')}>
+                    <Link style={{ textDecoration: 'none' }} key={index} href={course.node.uri.replace('/courses/', '/')}>
 
-                        <div className={styles.content__course} key={index}>
+                        <div className={styles.content__course} >
 
                             <p className={styles.course__title}>{course.node.title}</p>
 

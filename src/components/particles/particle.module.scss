@@ -2,12 +2,11 @@
 
 
 .bottomparticles {
-  z-index: -10;
   position: relative;
   //top: 500px;
   //left: 0;
   //width: 100svw;
-  z-index: 0;
+  z-index: 1;
 
   .bubble {
     opacity: 0;
@@ -15,6 +14,7 @@
     color: var(--home-float-icons-color);
     width: 0px;
     height: 0px;
+
 
     // Randomize bubles
     @for $i from 1 through $particle-count {
@@ -29,6 +29,7 @@
         left: random(100) + 0%;
         animation: blow $speed infinite;
         animation-delay: random($particle-max-delay) + 0ms;
+        z-index: 1;
       }
     }
   }
@@ -42,6 +43,10 @@
 
   20% {
     opacity: 1;
+  }
+
+  65% {
+    opacity: 0.001;
   }
 
   100% {

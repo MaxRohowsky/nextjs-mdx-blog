@@ -2,6 +2,7 @@
 import styles from './particle.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faNodeJs, faHtml5, faCss3, faGithub, faAngular, faJava } from '@fortawesome/free-brands-svg-icons'
+import { useEffect, useState } from 'react';
 
 
 export default function Particles() {
@@ -23,20 +24,28 @@ export default function Particles() {
         return { iconClass, iconColor };
     };
 
+    const [particles, setParticles] = useState([]);
+
+    useEffect(() => {
+        const newParticles = Array(20).fill().map((_, index) => {
+            const { iconClass, iconColor } = randomClass(); // Store the result
+            return (
+                <div key={index} className={`${styles.bubble}`} style={{ color: iconColor, }}>
+                    <FontAwesomeIcon icon={iconClass} />
+                </div>
+            )
+        })
+
+        setParticles(newParticles);
+    }, []);
 
     return (
 
         <div className={styles.bottomparticles}>
-            {
-                Array(20).fill().map((_, index) => {
-                    const { iconClass, iconColor } = randomClass(); // Store the result
-                    return (
-                        <div key={index} className={`${styles.bubble}`} style={{ color: iconColor, }}>
-                            <FontAwesomeIcon icon={iconClass} />
-                        </div>
-                    )
-                })
-            }
+
+
+            {particles}
+
         </div>
 
     )

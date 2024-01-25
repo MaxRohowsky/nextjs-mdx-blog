@@ -10,7 +10,7 @@ export default function Signup() {
 
         <form action="https://quantviz.us14.list-manage.com/subscribe/post?u=e197cd3bfb5c5e0d7568df688&amp;id=078b92d61c&amp;f_id=00a285e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_self" noValidate>
 
-          <div id="mc_embed_signup_scroll">
+          <div id="mc_embed_signup_scroll" className={styles.wrap}>
 
             <div className="mc-field-group">
               {/*<label htmlFor="mce-EMAIL">Email Address </label>*/}

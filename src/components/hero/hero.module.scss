@@ -61,7 +61,7 @@
     color: rgb(0, 0, 0);
     font-size: 22px;
     font-weight: 400;
-    margin: 25px;
+    margin: 10px;
     font-family: "Open Sans", "system-ui", "Trebuchet MS", Arial, Helvetica, Verdana;
   }
 
@@ -118,7 +118,9 @@
 .hero__socialproof {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 20px;
+  font-size: 15px;
+  align-items: center; 
 }
 
 .hero__avatar {
@@ -140,5 +142,28 @@
 }
 
 
+@media only screen and (max-width: 1140px) {
+  .hero__title {
+    h1{
+      font-size: 30px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 960px) {
+  .hero__title {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    grid-column-start: 2;
+    grid-column-end: 12;
+    grid-row-start: 2;
+    grid-row-end: 8;
+    background-color: white;
+    outline: none;
+  }  
+}
 
 

@@ -1,40 +1,38 @@
 'use client'
-
 import styles from './hero.module.scss';
 import Image from 'next/image';
 import Crosshair from '@/components/crosshair/crosshair';
 import Signup from '../signup/signup';
 
 
-
 export default function Hero() {
-
-
 
     return (
 
         <div className={styles.hero}>
 
             <Crosshair x={3} y={3} />
+
             <Crosshair x={11} y={7} />
 
             <div className={styles.hero__rainbow} />
 
             <div className={styles.hero__overlay}>
+
                 <Image src="/hero-overlay.svg" alt="Hero Outline" width={1200} height={900} />
+
             </div>
-
-
 
             <div className={styles.hero__main} />
 
 
             <div className={styles.hero__title}>
+
                 <h1>Build Your <u> Dream Project</u>. It's Time.</h1>
 
                 <h2>
-                    Simple strategy and tech advice to turn your <br />
-                    dream project profitable
+                    Simple strategy and tech tips <br/> to build and monetize 
+                    your projects
                 </h2>
 
 
@@ -47,7 +45,7 @@ export default function Hero() {
                             <button>Subscribe</button>
                         </form>
                     </div>
-    </div>*/}
+                </div>*/}
 
 
                 <div className={styles.hero__socialproof}>
@@ -68,7 +66,7 @@ export default function Hero() {
                     </div>
 
                     <div className={styles.socialproof__text}>
-                        Join the community of 10k+
+                        Join a community of <br /> 10k+ subscibers
                     </div>
                 </div>
 

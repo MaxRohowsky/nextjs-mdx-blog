@@ -45,34 +45,85 @@ async function getCourses() {
   const data = await apolloClient.query({
     query: gql`
     {
-      courses(first: 4) {
+      categories(where: {childOf: 17, name: ["ChatGPT", "PyCharm", "Django", "PyGame"]}) {
         edges {
           node {
-            categories {
-              nodes {
-                description
-                name
-                categoryImages {
-                  categoryImage {
-                    sourceUrl
-                  }
+            id
+            name
+            slug
+            uri
+            description
+            courses(first: 1) {
+              edges {
+                node {
+                  id
+                  date
+                  title
                 }
               }
             }
-            date
-            uri
-            title
-            excerpt
+            count
           }
         }
-      }
+      } 
     }
     `
 
   });
 
-  return { ...data?.data.courses };
+  return { ...data?.data.categories };
 }
+
+
+/*
+query NewQuery {
+  categories(where: {childOf: 17, name: ["ChatGPT", "PyCharm"]}) {
+    edges {
+      node {
+        id
+        name
+        slug
+        uri
+        description
+        courses(first: 1) {
+          edges {
+            node {
+              id
+              date
+              title
+            }
+          }
+        }
+        count
+      }
+    }
+  }
+}
+
+courses(first: 4) {
+  edges {
+    node {
+      categories {
+        nodes {
+          description
+          name
+          categoryImages {
+            categoryImage {
+              sourceUrl
+            }
+          }
+        }
+      }
+      date
+      uri
+      title
+      excerpt
+    }
+  }
+}
+
+*/
+
 
 
 

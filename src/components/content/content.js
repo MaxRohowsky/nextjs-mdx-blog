@@ -3,7 +3,7 @@ import { dateTime } from '@/components/datetime/datetime';
 import Link from 'next/link';
 
 export default function Content({ posts, courses }) {
-
+    console.log(courses.edges[0].node.courses.edges[0].node.date)
 
     return (
 
@@ -23,7 +23,7 @@ export default function Content({ posts, courses }) {
 
                             <div dangerouslySetInnerHTML={{ __html: post.node.excerpt }}></div>
 
-                            <p>{dateTime(post.node.date)}</p>
+                            <p className={styles.date}>{dateTime(post.node.date)}</p>
 
                         </div>
 
@@ -45,11 +45,11 @@ export default function Content({ posts, courses }) {
 
                         <div className={styles.content__course} >
 
-                            <p className={styles.course__title}>{course.node.title}</p>
+                            <p className={styles.course__title}>{course.node.name}</p>
 
-                            <div dangerouslySetInnerHTML={{ __html: course.node.excerpt }}></div>
+                            <div dangerouslySetInnerHTML={{ __html: course.node.description }}></div>
 
-                            <p>{dateTime(course.node.date)}</p>
+                             <p className={styles.date}>{dateTime(course.node.courses.edges[0].node.date)}</p>
 
                         </div>
 

@@ -3,10 +3,14 @@
 import styles from './hero.module.scss';
 import Image from 'next/image';
 import Crosshair from '@/components/crosshair/crosshair';
+import Signup from '../signup/signup';
 
 
 
 export default function Hero() {
+
+
+
     return (
 
         <div className={styles.hero}>
@@ -34,14 +38,16 @@ export default function Hero() {
                 </h2>
 
 
-                <div>
+                <Signup />
+
+                {/*<div>
                     <div className={styles.form} >
                         <form className={styles.form} action="/register" method="post">
                             <input type="email" name="email" placeholder="Email" id="email" />
                             <button>Subscribe</button>
                         </form>
                     </div>
-                </div>
+    </div>*/}
 
 
                 <div className={styles.hero__socialproof}>

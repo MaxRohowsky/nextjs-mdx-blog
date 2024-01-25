@@ -3,8 +3,7 @@ import { dateTime } from '@/components/datetime/datetime';
 import Link from 'next/link';
 
 export default function Content({ posts, courses }) {
-    console.log(posts);
-    console.log(courses);
+
 
     return (
 

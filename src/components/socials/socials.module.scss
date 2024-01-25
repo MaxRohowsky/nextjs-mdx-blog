@@ -36,10 +36,11 @@
     transition: all 0.4s ease-out;
 }
 
+/*
 .post__socials div i {
     font-size: 20px;
     line-height: $social-icon-size;
-}
+} 
 
 .post__socials span {
     display: inline-block;
@@ -48,14 +49,14 @@
     width: 110px;
     text-align: center;
 
-}
+}*/
 
 /* Color switch on hover is only on if device support hover */
 @media (hover: hover) {
     .post__facebook:hover>div {
         background-color: #4267B2;
 
-        & i {
+        .facebook {
             color: white
         }
     }
@@ -63,7 +64,7 @@
     .post__linkedin:hover>div {
         background-color: #0072b1;
 
-        & i {
+        .linkedin {
             color: white
         }
     }
@@ -71,7 +72,7 @@
     .post__twitter:hover>div {
         background-color: #1DA1F2;
 
-        & i {
+        .twitter {
             color: white
         }
     }
@@ -79,7 +80,7 @@
     .post__github:hover>div {
         background-color: #171515;
 
-        & i {
+        .github {
             color: white
         }
     }
@@ -87,7 +88,7 @@
     .post__youtube:hover>div {
         background-color: #FF0000;
 
-        & i {
+        .youtube {
             color: white
         }
     }
@@ -95,7 +96,7 @@
     .post__copy:hover>div {
         background-color: #171515;
 
-        & i {
+        .link {
             color: white
         }
     }
@@ -114,21 +115,21 @@
 }
 
 
-/* Icons only expand if device supports hover and width is larger than tablet breakpoint */
+/* Icons only expand if device supports hover and width is larger than tablet breakpoint 
 @media only screen and (hover: hover) and (min-width: $tablet-breakpoint) {
     .post__socials:hover {
         width: 170px;
     }
-}
+}*/
 
-/* If width is smaller than $tablet-breakpoint, Icons remain at width 50px */
+/* If width is smaller than $tablet-breakpoint, Icons remain at width 50px 
 @media only screen and (max-width: $tablet-breakpoint) {
     .post__socials {
         width: 50px;
         background: none;
         box-shadow: none;
     }
-}
+}*/
 
 
 @media only screen and (max-width: $mobile-breakpoint) {

@@ -28,7 +28,7 @@ export default function Hero() {
 
             <div className={styles.hero__title}>
 
-                <h1>Build Your <u> Dream Project</u>. It's Time.</h1>
+                <h1>Build Your <u> Dream Project</u></h1>
 
                 <h2>
                     Simple strategy and tech tips <br/> to build and monetize 

@@ -52,7 +52,7 @@ function Navbar() {
 					width={50} // Set your desired width
 					height={50} // Set your desired height
 				/>
-				<h3 className={styles.header__txt}>max.gg</h3>
+				<h3 className={styles.header__txt}>max on tech</h3>
 			</Link>
 			
 			<nav className={`${styles.header__nav} ${!showMobileNav && styles.hide}`} >

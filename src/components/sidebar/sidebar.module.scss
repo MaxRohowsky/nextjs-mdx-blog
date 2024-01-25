@@ -1,6 +1,6 @@
 @import "@/styles/_variables.scss";
 
-/*Chapter Icon*/
+/*Chapter Icon
 .block::before{
     content: '';
     position: absolute;
@@ -12,7 +12,7 @@
     background-image: url('../../../public/icons/bookmark.png');
     background-size: cover;
     z-index: 1000;
-  }
+  }*/
 
 .wrap{
     position: absolute;
@@ -45,10 +45,10 @@
 
 .sidebar__toc{
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 5px;
-    
+    padding-left: 15px;
+    padding-bottom: 10px;
+    font-weight: bold;
 }
 
 .sidebar__list {
@@ -62,7 +62,7 @@
 
 .sidebar__item{
     text-align: left;
-    padding: 8px 5px 8px 15px;
+    padding: 0px 5px 0px 15px;
     border-top: 2px solid var(--course-sidebar-border-color);
     
 }

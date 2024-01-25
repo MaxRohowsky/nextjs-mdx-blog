@@ -48,7 +48,20 @@
     }
   }
 
+  .wrapper {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .icon{
+    padding: 15px;
+  }
+
 }
+
+
 
 
 @media only screen and (max-width: 960px) {

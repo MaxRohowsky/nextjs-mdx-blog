@@ -40,28 +40,28 @@ export default function Socials(input) {
 
                 <a href={facebookShareUrl} target="_blank" rel="noreferrer" className={`${styles.post__socials} ${styles.post__facebook}`}>
                     <div>
-                        <FontAwesomeIcon icon={faFacebook} />
+                        <FontAwesomeIcon className={styles.facebook} icon={faFacebook} />
                     </div>
                     <span>Facebook</span>
                 </a>
 
                 <a href={linkedinShareUrl} target="_blank" rel="noreferrer" className={`${styles.post__socials} ${styles.post__linkedin}`}>
                     <div>
-                        <FontAwesomeIcon icon={faLinkedin} />
+                        <FontAwesomeIcon className={styles.linkedin} icon={faLinkedin} />
                     </div>
                     <span>LinkedIn</span>
                 </a>
 
                 <a href={twitterShareUrl} target="_blank" rel="noreferrer" className={`${styles.post__socials} ${styles.post__twitter}`}>
                     <div>
-                        <FontAwesomeIcon icon={faTwitter} />
+                        <FontAwesomeIcon className={styles.twitter} icon={faTwitter} />
                     </div>
                     <span>Twitter</span>
                 </a>
 
                 <a href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw?sub_confirmation=1" target="_blank" rel="noreferrer" className={`${styles.post__socials} ${styles.post__youtube}`}>
                     <div>
-                        <FontAwesomeIcon icon={faYoutube} />
+                        <FontAwesomeIcon className={styles.youtube} icon={faYoutube} />
                     </div>
                     <span>Subscribe</span>
                 </a>
@@ -70,14 +70,14 @@ export default function Socials(input) {
                 <a href={`https://github.com/maxontech${githubReference}`} target="_blank" rel="noreferrer"
                     className={`${styles.post__socials} ${styles.post__github}`}>
                     <div>
-                        <FontAwesomeIcon icon={faGithub} />
+                        <FontAwesomeIcon className={styles.github} icon={faGithub} />
                     </div>
                     <span>Get Code</span>
                 </a>
 
                 <div onClick={() => CopyUrl()} className={`${styles.post__socials} ${styles.post__copy}`}>
                     <div>
-                        <FontAwesomeIcon icon={faLink} />
+                        <FontAwesomeIcon className={styles.link} icon={faLink} />
                     </div>
                     <span className={styles.getlink}>Get Link</span>
                     <span className={styles.copied}>Copied!</span>

@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { dateTime } from '../../components/datetime/datetime.js';
 import styles from './blog.module.scss'
 import Card from "@/components/card/card.js"
-
+import Link from 'next/link';
 
 export default function Client({ posts }) {
 
@@ -48,11 +48,34 @@ export default function Client({ posts }) {
 
                 <h4 className={styles.subtitle}>Strategy and Tech Tips for your Projects</h4>
 
-                    <div className={styles.cards}>
-                        
-                        {items}
-                        
-                    </div>
+                <div className={styles.cards}>
+
+                    {items}
+
+                </div>
+
+                <div className={styles.list}>
+
+                    {posts.map((post, index) => (
+
+                        <Link style={{ textDecoration: 'none' }} key={index} href={post.path}>
+                           {console.log(post.path)} 
+
+                            <div className={styles.content__post} >
+
+                                <p className={styles.post__title}>{post.title}</p>
+
+                                <div dangerouslySetInnerHTML={{ __html: post.excerpt }}></div>
+
+                                <p className={styles.date}>{dateTime(post.date)}</p>
+
+                            </div>
+
+                        </Link>
+
+                    ))}
+
+                </div>
 
             </div>
 

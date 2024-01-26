@@ -33,28 +33,48 @@
     margin: auto;
 }
 
-.pagination{
-    display: flex;
-    justify-content: center;
+.list{
+    display: none;
 }
+
 
 @media only screen and (max-width: 1350px) {
     .cards {
         grid-template-columns: repeat(3, minmax(300px, 320px));
-
     }
 }
 
 @media only screen and (max-width: 1000px) {
     .cards {
         grid-template-columns: repeat(2, minmax(300px, 320px));
-
     }
 }
 
 @media only screen and (max-width: 670px) {
     .cards {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
-
+        //grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+        display: none;
     }
+
+    .list {
+        display: block;
+        //width: calc((var(--width) / 2) - 50px);
+
+        .content__course {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .course__title {
+            font-weight: bold;
+        }
+
+        p {
+            padding-bottom: 5px;
+            margin-bottom: 0px;
+        }
+    }
+
+
 }

@@ -3,8 +3,6 @@ import Socials from '@/components/socials/socials';
 import Sidebar from '@/components/sidebar/sidebar';
 import styles from './course.module.scss'
 import Breadcrumbs from '@/components/breadcrumbs/breadcrumbs'; // Fix the casing of the import statement
-import Head from "next/head";
-import { parse } from "node-html-parser";
 import Link from 'next/link'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -29,10 +27,10 @@ export default function Client({ courseData, sidebarData }) {
     showSidebar = true;
   }
 
-  /* Get the description from the course - but only what's within the p tag */
+  /* Get the description from the course - but only what's within the p tag 
   const doc = parse(courseData.excerpt);
   const excerptTextPre = doc.querySelector("p");
-  const excerptTextPost = excerptTextPre ? excerptTextPre.text : '';
+  const excerptTextPost = excerptTextPre ? excerptTextPre.text : '';*/
 
   return (
     <>
@@ -86,7 +84,7 @@ export default function Client({ courseData, sidebarData }) {
 
                 <span className={styles.discord__content}>
 
-                  <FontAwesomeIcon icon={faDiscord} />
+                  <FontAwesomeIcon className={styles.discord__icon} icon={faDiscord} />
 
                   Ask on Discord
 

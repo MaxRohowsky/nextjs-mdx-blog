@@ -2,13 +2,11 @@
 
 
 .prepost {
-    background-color: var(--course-prepost-bg-color);
+    background-color: #ffffff;
     margin-top: -100px;
     padding-top: 100px;
     padding-bottom: 50px;
     margin-bottom: 50px;
-    width: 100svw;
-    box-shadow: var(--course-prepost-box-shadow);
 }
 
 .post {
@@ -21,8 +19,9 @@
 
 .post__meta {
     display: flex;
-    padding-top: 5px;
-    justify-content: space-between;
+    padding-top: 25px; 
+    width: var(--width-container);
+    margin: auto;
 }
 
 .post__title::before {
@@ -35,11 +34,11 @@
     transform: translateX(-50%);
     background: rgb(115, 149, 222);
     z-index: 2;
-
 }
 
 .post__title {
     text-align: center;
+    font-size: 30px;
     font-weight: 600;
     margin: 0px;
     position: relative;
@@ -74,17 +73,6 @@
     }
 }
 
-.discord__content {
-    font-size: 20px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    padding: 5px 30px 5px 25px;
-    & i {
-        font-size: 30px;
-        padding-right: 15px;
-    }
-}
 
 .discord {
     display: flex;
@@ -94,11 +82,22 @@
     border: 2px solid var(--course-question-discord-border);
     border-radius: 8px;
     cursor: pointer;
-
     // Hover
     &:hover {
         background-color: var(--course-question-discord-bg-hover);
         color: var(--course-question-discord-hover);
+    }
+}
+
+.discord__content {
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 5px 30px 5px 25px;
+    .discord__icon {
+        font-size: 30px;
+        padding-right: 15px;
     }
 }
 

@@ -33,6 +33,9 @@
     margin: auto;
 }
 
+.list{
+    display: none;
+}
 
 @media only screen and (max-width: 1350px) {
     .cards {
@@ -48,6 +51,27 @@
 
 @media only screen and (max-width: 670px) {
     .cards {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+        //grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+        display: none;
+    }
+
+    .list {
+        display: block;
+        //width: calc((var(--width) / 2) - 50px);
+
+        .content__post {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .post__title {
+            font-weight: bold;
+        }
+
+        p {
+            padding-bottom: 5px;
+            margin-bottom: 0px;
+        }
     }
 }

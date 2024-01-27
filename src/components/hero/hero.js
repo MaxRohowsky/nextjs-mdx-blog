@@ -7,16 +7,10 @@ import Signup from '../signup/signup';
 
 export default function Hero() {
 
-    let numColumns;
-    let numRows;
+    let numColumns = 12;
+    let numRows = 8;
 
-    if (window.innerWidth >= 600) {
-        numColumns = 12;
-        numRows = 8;
-    } else {
-        numColumns = 8;
-        numRows = 5;
-    }
+
 
     return (
 

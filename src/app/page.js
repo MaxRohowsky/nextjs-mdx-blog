@@ -53,10 +53,11 @@ async function getCourses() {
             slug
             uri
             description
-            courses(first: 1) {
+            courses(where: { orderby: { field: MENU_ORDER, order: ASC } },first: 1) {
               edges {
                 node {
                   id
+                  uri
                   date
                   title
                 }

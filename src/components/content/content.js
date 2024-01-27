@@ -3,7 +3,6 @@ import { dateTime } from '@/components/datetime/datetime';
 import Link from 'next/link';
 
 export default function Content({ posts, courses }) {
-    console.log(courses.edges[0].node.courses)
 
     return (
 
@@ -41,7 +40,7 @@ export default function Content({ posts, courses }) {
 
                 {courses.edges.map((course, index) => (
 
-                    <Link style={{ textDecoration: 'none' }} key={index} href={course.node.uri.replace('/courses/', '/')}>
+                    <Link style={{ textDecoration: 'none' }} key={index} href={course.node.courses.edges[0].node.uri.replace('/courses/', '/')}>
 
                         <div className={styles.content__course} >
 

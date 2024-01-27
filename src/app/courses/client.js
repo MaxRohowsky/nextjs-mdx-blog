@@ -6,12 +6,13 @@ import Link from 'next/link';
 
 export default function Client({ courses, pageInfo }) {
 
-    let items = [];
+    let cardItems = [];
+    let listItems = [];
 
 
     for (var i = 0; i < courses.length; i++) {
         if (courses[i].courses.edges.length > 0) {
-            items.push(
+            cardItems.push(
                 <Card
                     key={i}
                     title={courses[i].name}
@@ -24,6 +25,22 @@ export default function Client({ courses, pageInfo }) {
     }
 
 
+    for (var i = 0; i < courses.length; i++) {
+        if (courses[i].courses.edges.length > 0) {
+            listItems.push(
+                <Link style={{ textDecoration: 'none' }} key={i} href={courses[i].courses.edges[0].node.uri.replace('/courses/', '/')}>
+
+                    <div className={styles.content__course} >
+
+                        <p className={styles.course__title}>{courses[i].name}</p>
+
+                        <p dangerouslySetInnerHTML={{ __html: courses[i].description }}></p>
+
+                    </div>
+                </Link>
+            )
+        }
+    }
 
 
 
@@ -53,28 +70,13 @@ export default function Client({ courses, pageInfo }) {
 
                 <div className={styles.cards}>
 
-                    {items}
+                    {cardItems}
 
                 </div>
 
                 <div className={styles.list}>
 
-                    {courses.map((course, index) => (
-
-                        <Link style={{ textDecoration: 'none' }} key={index} href={"/"}>
-
-                            <div className={styles.content__course} >
-
-                                <p className={styles.course__title}>{course.name}</p>
-
-                                <p dangerouslySetInnerHTML={{ __html: course.description }}></p>
-
-
-                            </div>
-
-                        </Link>
-
-                    ))}
+                    {listItems}
 
                 </div>
 

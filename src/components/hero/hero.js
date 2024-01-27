@@ -7,13 +7,22 @@ import Signup from '../signup/signup';
 
 export default function Hero() {
 
+    let numColumns;
+    let numRows;
+
+    if (window.innerWidth >= 600) {
+        numColumns = 12;
+        numRows = 8;
+    } else {
+        numColumns = 8;
+        numRows = 5;
+    }
+
     return (
 
         <div className={styles.hero}>
 
-            <Crosshair x={3} y={3} />
 
-            <Crosshair x={11} y={7} />
 
             <div className={styles.hero__rainbow} />
 
@@ -73,7 +82,7 @@ export default function Hero() {
 
 
             </div>
-            {Array.from({ length: 12 * 8 }, (_, index) => {
+            {Array.from({ length: numColumns * numRows }, (_, index) => {
 
                 let borderRadiusStyle = {
                     borderTopLeftRadius: '0',
@@ -82,17 +91,17 @@ export default function Hero() {
                     borderTopRightRadius: '0',
                 };
 
-                let x = index % 12 + 1; // Adjust as needed
-                let y = Math.floor((index) / 12) + 1; // Adjust as needed
+                let x = index % numColumns + 1; // Adjust as needed
+                let y = Math.floor((index) / numColumns) + 1; // Adjust as needed
 
 
                 if (x === 1 && y === 1) {
                     borderRadiusStyle.borderTopLeftRadius = '10px';
-                } else if (x === 12 && y === 1) {
+                } else if (x === numColumns && y === 1) {
                     borderRadiusStyle.borderTopRightRadius = '10px';
-                } else if (x === 1 && y === 8) {
+                } else if (x === 1 && y === numRows) {
                     borderRadiusStyle.borderBottomLeftRadius = '10px';
-                } else if (x === 12 && y === 8) {
+                } else if (x === numColumns && y === numRows) {
                     borderRadiusStyle.borderBottomRightRadius = '10px';
                 }
                 return (

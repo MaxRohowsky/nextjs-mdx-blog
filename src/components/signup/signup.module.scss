@@ -1,4 +1,4 @@
-.wrap{
+.wrap {
     display: flex;
     justify-content: center;
 }
@@ -24,4 +24,10 @@
     padding: 10px 10px 10px 10px;
     border-radius: 4px 4px 4px 4px;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 440px) {
+    .emailInput {
+        padding: 10px 50px 10px 10px;
+    }
 }

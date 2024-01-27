@@ -167,3 +167,23 @@
 }
 
 
+@media only screen and (max-width: 800px) {
+  .hero{
+    display: flex;
+    padding: 10px;
+    .box {
+      display: none;
+    }
+    .hero__overlay {
+      display: none;
+    }
+    .hero__main {
+      display: none;
+    }
+    .hero__title {
+      width: 100%;
+      background-color: #f8f8f8;
+    }
+  }
+}
+

@@ -12,7 +12,7 @@ export default function Signup() {
 
           <div id="mc_embed_signup_scroll" className={styles.wrap}>
 
-            <div className="mc-field-group">
+            <div className={styles.mcfieldgroup}>
               {/*<label htmlFor="mce-EMAIL">Email Address </label>*/}
               <input type="email" name="EMAIL" className={styles.emailInput} id="mce-EMAIL" placeholder="E-Mail" required  />
 

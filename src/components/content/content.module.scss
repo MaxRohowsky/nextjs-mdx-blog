@@ -67,3 +67,36 @@
 
 
 }
+
+
+
+
+
+@media (max-width: 992px) {
+  .content {
+    gap: 30px;
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .content {
+    flex-direction: column;
+    margin-top: 10px;
+    justify-content: center;
+    
+    
+    .content__posts,
+    .content__courses {
+        width: 100svw;
+        padding: 20px;
+
+        h2{
+          font-size: 30px;
+          width: fit-content;
+          margin: auto;
+        }
+    }
+  }
+}

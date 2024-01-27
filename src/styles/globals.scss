@@ -179,7 +179,7 @@ li {
 }
 
 .youtube-video__caption {
-  color: var(--text-color);
+  color: rgb(126, 126, 126);
   font-size: 13px;
   text-align: center;
   margin-top: 0.5em;
@@ -291,10 +291,9 @@ li {
 /* ---------------------------------------------------------- Code in Paragraphs----------------------------------------------------------*/
 p>code,
 td>code {
-  background: var(--code-highlight);
+  background: rgb(219, 219, 230);
   border-radius: 0.25em;
   padding: 0.1em 0.25em;
-  font-size: large;
 }
 
 /* ---------------------------------------------------------- Table Styling ----------------------------------------------------------*/

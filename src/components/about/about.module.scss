@@ -64,8 +64,30 @@
 
 
 
-@media only screen and (max-width: 960px) {
 
+@media (max-width: 992px) {
+  .about {
+    gap: 30px;
+    padding: 10px;
+  }
 }
 
+
+@media (max-width: 760px) {
+  .about{
+    flex-direction: column;
+
+    .about__image,
+    .about__text {
+      width: 100%;
+      padding: 30px;
+
+      h2{
+        font-size: 30px;
+        width: fit-content;
+        margin: auto;
+      }
+    }
+  }
+}
 

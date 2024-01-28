@@ -1,0 +1,156 @@
+@import "@/styles/_variables.scss";
+
+
+
+// Container for Header(Navbar)
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 70px;
+	//position: fixed;
+	top: 0;
+	z-index: 10;
+	width: var(--width-container);
+	border-radius: 10px;
+	margin: auto;
+	//left: 50%;
+	//transform: translateX(-50%);
+	margin-top: 10px;
+	transition: background-color 0.3s ease, box-shadow 0.5s ease;
+}
+
+.scrolled{
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header__wrap{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding: 10px;
+}
+
+.header__brand{
+	text-decoration: 'none';
+	display: flex;
+	//padding-left: 15px;
+	filter: var(--nav-filter);
+}
+
+.header__txt {
+	padding-left: 10px;
+	padding-top: 9px;
+	margin: 0px;
+	font-size: larger;
+	font-weight: 600;
+}
+
+.header__nav {
+	display: flex;
+	align-items: center;
+	//padding-right: 20px;
+}
+
+.nav__link {
+	margin: 0 1rem;
+	font-size: larger;
+	font-weight: 400;
+	border: none;
+	background-color: transparent;
+	outline: none;
+	&:hover {
+		transform: scale(1.1);
+		transition-duration: .1s;
+	}
+}
+
+
+.nav__btn {
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--text-color);
+	display: none;
+	opacity: 0;
+	font-size: 1.8rem;
+}
+
+
+@media only screen and (max-width: $laptop-breakpoint) {
+
+	.wrap{
+		width: 100%;
+	}
+	
+	.nav__btn { //this is the hamburger menu
+		visibility: visible;
+		opacity: 1;
+		display: flex;
+		padding-right: 40px;
+		flex-wrap: wrap; // For align content to have an effect this must be set to wrap
+		align-content: center;
+	}
+
+	@keyframes explode {
+		0% {
+		  transform: scale(0.5);
+		  opacity: 0; 
+		}
+		50% {
+			opacity: 0; 
+		  }
+		100% {
+		  transform: scale(1);
+		  opacity: 1; 
+		}
+	  }
+	
+	  /*@keyframes implode {
+		0% {
+		  transform: scale(1);
+		  opacity: 1; 
+		}
+		50% {
+			opacity: 0; 
+		  }
+		100% {
+			transform: scale(0);
+			opacity: 0; 
+			//display: none;
+		  }
+	  }*/
+
+	// This is the mobile menu
+	.header__nav {
+		position: absolute;
+		top: 100px;
+		right: 10px;
+		left: 10px;
+		padding: 30px 0px 30px 0px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: white;
+		border-radius: $border-radius;
+		box-shadow: $box-shadow;
+		animation: explode 0.2s ease-in;
+	}
+
+
+	.hide {
+		display: none;
+		//animation: implode 0.2s ease-out forwards;
+	}
+
+	.nav__closebtn {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+
+}
+

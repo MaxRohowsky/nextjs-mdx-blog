@@ -1,0 +1,33 @@
+.wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.emailInput {
+    margin: 10px 10px;
+    background-color: #e2e2e2;
+    border: none;
+    outline: none;
+    padding: 10px 100px 10px 10px;
+    border-radius: 4px 4px 4px 4px;
+
+}
+
+.subButton {
+    margin: 10px 0;
+    background-color: #4796ff;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    border-radius: 4px 4px 4px 4px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 440px) {
+    .emailInput {
+        padding: 10px 50px 10px 10px;
+    }
+}

@@ -1,0 +1,57 @@
+@import "@/styles/_variables.scss";
+
+
+.bottomparticles {
+  position: relative;
+  //top: 500px;
+  //left: 0;
+  //width: 100svw;
+  z-index: 1;
+
+  .bubble {
+    opacity: 0;
+    position: absolute;
+    color: var(--home-float-icons-color);
+    width: 0px;
+    height: 0px;
+
+
+    // Randomize bubles
+    @for $i from 1 through $particle-count {
+      // random animation speed
+      $speed: random($particle-max-speed) + 0ms;
+
+      @if $speed < $particle-min-speed {
+        $speed: $particle-min-speed + 0ms;
+      }
+
+      &:nth-child(#{$i}) {
+        left: random(100) + 0%;
+        animation: blow $speed infinite;
+        animation-delay: random($particle-max-delay) + 0ms;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+@keyframes blow {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(2);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 0.001;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, -$particle-distance) scale(2);
+  }
+}
+

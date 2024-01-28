@@ -1,0 +1,28 @@
+.cross{
+    grid-column-start: var(--x);
+    grid-row-start: var(--y);
+    inset: 5px;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    inset: -10px;
+    
+  }
+
+  .crossline1{
+    width: 10px;
+    height: 5px;
+    border-right-width: 1px;
+    position: absolute;
+    border: 1px solid rgb(0, 0, 0);
+    border-width: 0px;
+  } 
+
+  .crossline2{
+    width: 5px;
+    height: 10px;
+    border-right-width: 1px;
+    position: absolute;
+    border: 1px solid rgb(0, 0, 0);
+    border-width: 0px;
+  } 

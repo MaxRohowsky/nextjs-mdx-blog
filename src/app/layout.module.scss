@@ -1,0 +1,27 @@
+@import "@/styles/_variables.scss";
+
+// Container for Content
+.main {
+  //margin-top: 70px; //due to the navbar (only if sticky)
+  //width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+// Container for Footer
+.footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $box-shadow;
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  width: 100svw;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}

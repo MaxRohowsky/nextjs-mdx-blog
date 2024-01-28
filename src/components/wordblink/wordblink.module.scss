@@ -1,0 +1,153 @@
+@import "@/styles/_variables.scss";
+
+
+.process {
+  display: flex;
+  background-color: var(--home-hero-bg-color);
+  justify-content: center;
+
+  .processsteptitlecontainer {
+    position: relative;
+
+    .processsteptitleoverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: 100%;
+      opacity: 1;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+
+    }
+
+  }
+
+  .processstep1 {
+    .processsteptitle {
+      background-image: var(--text-color);
+      animation: animated-gradient-title-1 8s infinite;
+    }
+
+    .processsteptitleoverlay {
+      background-image: linear-gradient(90deg, var(--gradient-color-1), var(--gradient-color-2));
+      animation: animated-gradient-title-overlay-1 8s infinite;
+    }
+  }
+
+  .processstep2 {
+    .processsteptitle {
+      background-image: var(--text-color);
+      animation: animated-gradient-title-2 8s infinite;
+    }
+
+    .processsteptitleoverlay {
+      background-image: linear-gradient(90deg, var(--gradient-color-2), var(--gradient-color-3));
+      animation: animated-gradient-title-overlay-2 8s infinite;
+    }
+  }
+
+  .processstep3 {
+    .processsteptitle {
+      background-image: var(--text-color);
+      animation: animated-gradient-title-3 8s infinite;
+    }
+
+    .processsteptitleoverlay {
+      background-image: linear-gradient(90deg, var(--gradient-color-3), var(--gradient-color-1));
+      animation: animated-gradient-title-overlay-3 8s infinite;
+    }
+  }
+}
+
+
+@keyframes animated-gradient-title-1 {
+
+  0%,
+  16.667%,
+  100% {
+    opacity: 0;
+  }
+
+  33.333%,
+  83.333% {
+    opacity: 1
+  }
+}
+
+@keyframes animated-gradient-title-2 {
+
+  0%,
+  16.667%,
+  66.667%,
+  100% {
+    opacity: 1
+  }
+
+  33.333%,
+  50% {
+    opacity: 0
+  }
+}
+
+@keyframes animated-gradient-title-3 {
+
+  0%,
+  50%,
+  100% {
+    opacity: 1
+  }
+
+  66.667%,
+  83.333% {
+    opacity: 0
+  }
+}
+
+
+@keyframes animated-gradient-title-overlay-1 {
+
+  0%,
+  16.667%,
+  100% {
+    opacity: 1;
+  }
+
+  33.333%,
+  83.333% {
+    opacity: 0
+  }
+}
+
+
+@keyframes animated-gradient-title-overlay-2 {
+
+  0%,
+  16.667%,
+  66.667%,
+  100% {
+    opacity: 0
+  }
+
+  33.333%,
+  50% {
+    opacity: 1
+  }
+
+}
+
+
+@keyframes animated-gradient-title-overlay-3 {
+
+  0%,
+  50%,
+  100% {
+    opacity: 0
+  }
+
+  66.667%,
+  83.333% {
+    opacity: 1
+  }
+}

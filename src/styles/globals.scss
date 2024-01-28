@@ -1,8 +1,10 @@
 @import "_variables.scss";
 
+/* Adding Tailwind messes with the CSS e.g. bullets not showing in courses
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+*/
 
 :root {
   --max-width: 1080px;
@@ -111,6 +113,8 @@ li {
   font-weight: 400;
   font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
+
+
 
 /*----------------------------------------------------------Code block Styling----------------------------------------------------------*/
 .wp-block-code::before {
@@ -308,6 +312,7 @@ td>code {
 /* ---------------------------------------------------------- Remove Line under Links----------------------------------------------------------*/
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 // SHOW LANGUAGE

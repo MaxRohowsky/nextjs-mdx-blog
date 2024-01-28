@@ -3,10 +3,12 @@ import React from "react";
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react';
 import styles from './sidebar.module.scss'
+import { usePathname } from 'next/navigation'
 
 
 export default function Sidebar(sidebarData) {
     const router = useRouter()
+    const path = usePathname()
     let [isFixed, setIsFixed] = useState(false);
     var items = []
 
@@ -38,7 +40,9 @@ export default function Sidebar(sidebarData) {
 
     for (var i = 0; i < sidebarData.data.length; i++) {
         let active = ""
-        if (router.course === sortedCourses[i].node.slug) {
+        console.log("path" + path)
+        console.log("slug" + sortedCourses[i].node.slug)
+        if (path === sortedCourses[i].node.slug) {
             active = styles.sidebar__link__active
         }
 

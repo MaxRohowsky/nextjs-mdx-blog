@@ -1,16 +1,18 @@
 .content {
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   padding: 50px;
   display: flex;
   font-family: "Open Sans", "system-ui", "Trebuchet MS", Arial, Helvetica, Verdana;
   gap: 100px;
   margin-top: 50px;
+  
 
   // Posts
 
   .content__posts {
     width: calc((var(--width) / 2) - 50px);
+    
 
     .content__post{
       margin-top: 30px;
@@ -86,11 +88,9 @@
     margin-top: 10px;
     justify-content: center;
     
-    
     .content__posts,
     .content__courses {
-        width: 100svw;
-        padding: 20px;
+      width: 100%;
 
         h2{
           font-size: 30px;

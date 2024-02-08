@@ -187,3 +187,33 @@
   }
 }
 
+.hero__subscribe {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  border: 0;
+  padding: 15px 30px;
+  border-radius: 0.3125rem;
+  box-shadow: 0.1875rem 0.1875rem #031346;
+  background-color: #E21010;
+  color: #fff;
+  transition: all 0.2s ease;
+  user-select: none;
+  display: inline-block;
+  margin: 10px;
+
+  span{
+    color: #ffffff;
+    padding-left: 5px;
+  }
+}
+
+.hero__subscribe:hover {
+  cursor: pointer;
+}
+
+.hero__subscribe:active {
+  box-shadow: 0 0;
+  transform: translate(0.1875rem, 0.1875rem);
+  background-color: #C00808;
+}

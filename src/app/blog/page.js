@@ -1,10 +1,14 @@
-'use server'
 import { gql } from '@apollo/client';
 import { getApolloClient } from '../../components/client';
 import Client from './client.js';
 
 
-export async function getPosts() {
+export const metadata = {
+  title: "Blog",
+  description:  "Blog posts about tech, programming, and entrepreneurship."
+}
+
+async function getPosts() {
 
     const apolloClient = getApolloClient();
   

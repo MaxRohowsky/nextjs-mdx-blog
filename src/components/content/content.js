@@ -10,7 +10,7 @@ export default function Content({ posts, courses }) {
 
             <div className={styles.content__posts}>
 
-                <h2>Latest Posts</h2>
+                <h2>Latest Letters</h2>
 
                 {posts.edges.map((post, index) => (
 
@@ -36,7 +36,7 @@ export default function Content({ posts, courses }) {
 
             <div className={styles.content__courses}>
 
-                <h2>Courses</h2>
+                <h2>Learnings</h2>
 
                 {courses.edges.map((course, index) => (
 
@@ -47,7 +47,9 @@ export default function Content({ posts, courses }) {
                             <p className={styles.course__title}>{course.node.name}</p>
 
                             <div>
+
                                 <p dangerouslySetInnerHTML={{ __html: course.node.description }}></p>
+
                             </div>
 
                              <p className={styles.date}>{dateTime(course.node.courses.edges[0].node.date)}</p>

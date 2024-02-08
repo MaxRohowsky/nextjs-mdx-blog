@@ -6,6 +6,7 @@ import { faTwitter, faGithub, faYoutube, faLinkedin } from '@fortawesome/free-br
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
+
 export default function About() {
 
     return (
@@ -30,13 +31,11 @@ export default function About() {
 
                 <p> Hi, I'm Max, a Finance Ph.D. with a background in Industrial Engineering.
                     I work as a consultant in the finance & tech space and have a profound interest in
-                    building products that 'stick'. </p>
+                    building projects and products that 'stick'. </p>
 
-                <p> Throughout my career, I've worked closely with startups and early-stage ventures.
-                    I've witnessed firsthand the emotional turmoil tied to the entrepreneurial rollercoaster.</p>
-
-                <p> In this blog, I simplify the strategy and tech that helps you build
-                    things that people actually want. </p>
+                <p> In this blog, I simplify the tech that helps you build
+                    your dream projects. Besides that, it's also my programming playground 
+                    - it might be broken sometimes 😁.</p>
 
                 <div className={styles.wrapper}>
 
@@ -44,21 +43,21 @@ export default function About() {
                         <div>
                             <FontAwesomeIcon className={styles.icon} icon={faLinkedin} />
                         </div>
-            
+
                     </a>
 
                     <a href="https://twitter.com/max_on_tech" target="_blank" rel="noreferrer" className={`${styles.post__socials} ${styles.post__twitter}`}>
                         <div>
                             <FontAwesomeIcon className={styles.icon} icon={faTwitter} />
                         </div>
-                      
+
                     </a>
 
                     <a href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw?sub_confirmation=1" target="_blank" rel="noreferrer" className={`${styles.post__socials} ${styles.post__youtube}`}>
                         <div>
                             <FontAwesomeIcon className={styles.icon} icon={faYoutube} />
                         </div>
-                      
+
                     </a>
 
                     <a href={`https://github.com/maxontech`} target="_blank" rel="noreferrer"
@@ -66,7 +65,7 @@ export default function About() {
                         <div>
                             <FontAwesomeIcon className={styles.icon} icon={faGithub} />
                         </div>
-                       
+
                     </a>
 
                 </div>

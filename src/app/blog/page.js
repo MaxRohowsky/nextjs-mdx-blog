@@ -8,7 +8,7 @@ export const metadata = {
   description:  "Blog posts about tech, programming, and entrepreneurship."
 }
 
-export async function getPosts() {
+async function getPosts() {
 
     const apolloClient = getApolloClient();
   

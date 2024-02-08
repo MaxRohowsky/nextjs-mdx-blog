@@ -4,8 +4,7 @@ import Client from './client';
 
 
 
-
-export async function getPost(params) {
+async function getPost(params) {
   const { postSlug } = params;
 
   const response = await fetch("https://hosting189589.a2f4e.netcup.net/graphql", {

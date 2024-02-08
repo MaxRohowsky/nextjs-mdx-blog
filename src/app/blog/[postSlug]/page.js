@@ -44,12 +44,6 @@ export default async function Post({ params }) {
 
   const { post, status } = await getPost(params);
 
-  console.log(status);
-
-  if (status === 404 || post === null) {
-    notFound();
-  }
-
   return (
 
     <Client post={post} />

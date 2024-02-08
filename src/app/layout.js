@@ -9,14 +9,22 @@ import '@/styles/bricolage.scss';
 import Navbar from "@/components/navbar/navbar";
 import Footer from '@/components/footer/footer';
 import Overlay from '@/components/overlay/overlay';
-/* Dark Mode */
+
 
 import { config } from '@fortawesome/fontawesome-svg-core'; config.autoAddCss = false;
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 
-//import { ThemeProvider } from 'next-themes';
 
+export const metadata = {
+  title: {
+    default: "Max on Tech",
+    template: "%s | Max on Tech",
+  },
+  description: {
+    default: "Max on Tech is a personal blog about tech, programming, and entrepreneurship."
+  }
+}
 
 
 export default function RootLayout({ children }) {

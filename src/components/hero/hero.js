@@ -3,7 +3,8 @@ import styles from './hero.module.scss';
 import Image from 'next/image';
 import Crosshair from '@/components/crosshair/crosshair';
 import Signup from '../signup/signup';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faYoutube, faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
 
 export default function Hero() {
 
@@ -34,12 +35,18 @@ export default function Hero() {
                 <h1>Build Your <u> Dream Project</u></h1>
 
                 <h2>
-                    Simple strategy and tech tips <br/> to build and monetize 
+                    Simple tech tips and tutorials <br /> to build and monetize
                     your projects
                 </h2>
 
 
-                <Signup />
+                {/*<Signup />*/}
+                <button className={styles.hero__subscribe}>
+                    <FontAwesomeIcon className={styles.icon} icon={faYoutube} />
+                    <span>Subscribe</span>
+                </button>
+
+
 
                 {/*<div>
                     <div className={styles.form} >

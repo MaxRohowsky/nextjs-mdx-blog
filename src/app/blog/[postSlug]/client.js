@@ -14,7 +14,7 @@ export default function Client({post}) {
     { label: 'Blog', path: '/blog' },
     { label: post.title, path: post.slug },
   ];
-
+  
 
   return (
 

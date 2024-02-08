@@ -41,11 +41,14 @@ export default function Hero() {
 
 
                 {/*<Signup />*/}
-                <button className={styles.hero__subscribe}>
-                    <FontAwesomeIcon className={styles.icon} icon={faYoutube} />
-                    <span>Subscribe</span>
-                </button>
 
+
+                <a href="https://www.youtube.com/@maxontech/?sub_confirmation=1" target="_blank" rel="noreferrer">
+                    <button className={styles.hero__subscribe}>
+                        <FontAwesomeIcon className={styles.icon} icon={faYoutube} />
+                        <span>Subscribe</span>
+                    </button>
+                </a>
 
 
                 {/*<div>

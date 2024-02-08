@@ -9,7 +9,7 @@ import { gql } from "@apollo/client";
 import { getApolloClient } from '../../components/client';
 
 
-export async function getCourses() {
+async function getCourses() {
 
   const apolloClient = getApolloClient();
 

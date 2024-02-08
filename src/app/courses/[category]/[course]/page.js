@@ -4,7 +4,7 @@ import { gql } from "@apollo/client";
 import { getApolloClient } from '@/components/client';
 
 
-export async function getCourse(params) {
+async function getCourse(params) {
 
   const { category, course } = params || {};
   

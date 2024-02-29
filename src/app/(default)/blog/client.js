@@ -1,6 +1,6 @@
 'use client'
 import Head from 'next/head'
-import { dateTime } from '../../components/datetime/datetime.js';
+import { dateTime } from '../../../components/datetime/datetime.js';
 import styles from './blog.module.scss'
 import Card from "@/components/card/card.js"
 import Link from 'next/link';

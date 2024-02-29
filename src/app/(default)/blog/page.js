@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-import { getApolloClient } from '../../components/client';
+import { getApolloClient } from '../../../components/client.js';
 import Client from './client.js';
 
 

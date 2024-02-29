@@ -3,7 +3,7 @@ import styles from './ClickToCopy.module.scss';
 export default function ClickToCopy() {
     return (
         <div className={styles.container}>
-            <div className={styles.flexBox}>
+
                 <div>
                     <img src="/misc/add-to-chrome.gif" alt="description" className={styles.image} />
                 </div>
@@ -25,7 +25,7 @@ export default function ClickToCopy() {
                     <p>Code and Documentation <a href="https://github.com/maxontech/click-to-copy" className={styles.link}>linked here.</a></p>
                     <p className={styles.signature}>Made by <a href="https://maxontech.io" className={styles.link}> maxontech</a></p>
                 </div>
-            </div>
+
         </div>
     );
 }

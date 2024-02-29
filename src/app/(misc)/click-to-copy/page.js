@@ -1,15 +1,29 @@
+import styles from './ClickToCopy.module.scss';
 
 export default function ClickToCopy() {
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-            <div style={{ display: 'flex' }}>
-                <img src="/misc/pin-click-to-copy.png" alt="description" style={{ width: '100%', height: 'auto', marginRight: '20px' }} />
+        <div className={styles.container}>
+            <div className={styles.flexBox}>
                 <div>
-                    <h1>Get started with "Click to Copy" in two simple steps:</h1>
-                    <p>1- Pin "Click to Copy" to the Chrome toolbar for easy access 📌</p>
-                    <p>Click on the puzzle icon, then the pin button.</p>
-                    <p>2- Open "Click to Copy" in any page by clicking the icon!</p>
-                    <p>Code is available here: https://github.com/maxontech/click-to-copy</p>
+                    <img src="/misc/add-to-chrome.gif" alt="description" className={styles.image} />
+                </div>
+                <div>
+                    <div className={styles.header}>
+                        <h1 className={styles.title}>Click to Copy</h1>
+                        <img src="/misc/icon.png" className={styles.icon} />
+                    </div>
+                    <p className={styles.subtitle}>Get started in two simple steps:</p>
+                    <ol>
+                        <li>
+                            <p>Pin "Click to Copy" to the Chrome toolbar:</p>
+                            <p>Click on the puzzle icon, then the pin button.</p>
+                        </li>
+                        <li>
+                            <p>Open "Click to Copy" in any page by clicking the icon!</p>
+                        </li>
+                    </ol>
+                    <p>Code and Documentation <a href="https://github.com/maxontech/click-to-copy" className={styles.link}>linked here.</a></p>
+                    <p className={styles.signature}>Made by <a href="https://maxontech.io" className={styles.link}> maxontech</a></p>
                 </div>
             </div>
         </div>

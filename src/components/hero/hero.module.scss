@@ -43,12 +43,11 @@
       &::before {
         content: '';
         position: absolute;
-        bottom: .02em;
+        bottom: -0.15em;
         width: 100%;
         height: .15em;
         transform: skew(-35deg, .2deg) rotate(.1deg);
         background-color: #6adaf7;
-        z-index: 5;
         pointer-events: none;
       }
 

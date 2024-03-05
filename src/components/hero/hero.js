@@ -32,7 +32,7 @@ export default function Hero() {
 
             <div className={styles.hero__title}>
 
-                <h1>Build Your <u> Dream Project</u></h1>
+                <h1>Build <u> Awesome Projects</u></h1>
 
                 <h2>
                     Simple tech tips and tutorials <br /> to build and monetize

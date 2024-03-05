@@ -45,6 +45,7 @@
 	margin: 0px;
 	font-size: larger;
 	font-weight: 600;
+	color: black;
 }
 
 .header__nav {
@@ -60,6 +61,7 @@
 	border: none;
 	background-color: transparent;
 	outline: none;
+	color: black;
 	&:hover {
 		transform: scale(1.1);
 		transition-duration: .1s;

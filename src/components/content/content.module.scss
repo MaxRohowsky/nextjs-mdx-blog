@@ -57,10 +57,16 @@
       font-weight: bold;
     }
 
+    .course__title:hover~.projectImage {
+      opacity: 1;
+      transform: scale(1);
+    }
+
     p {
       margin-bottom: 0px;
       color: black;
     }
+
   }
 
 
@@ -72,17 +78,12 @@
 
   .projectImage {
     position: absolute;
-    width: 100px; /* Adjust as needed */
-    transition: transform 0.2s;
-    display: none;
-    pointer-events: none; /* Ignore mouse events on the image */
-  }
-
-  :hover .projectImage {
-    display: block;
-    /* Show the image on hover */
-    transform: scale(1.1);
-    /* Zoom in the image */
+    transition: transform 0.5s, opacity 0.5s; /* Add transition for opacity */
+    opacity: 0; /* Make the image invisible */
+    pointer-events: none;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transform: scale(0); /* Start from small size */
+    /* Ignore mouse events on the image */
   }
 
 

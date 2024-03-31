@@ -49,7 +49,7 @@ export default function Content({ posts, courses }) {
                         text='Google Chrome Extension that Enables 𝗕𝗼𝗹𝗱, 𝐼𝑡𝑎𝑙𝑖𝑐, and U̲n̲d̲e̲r̲l̲i̲n̲e̲d̲ Fonts on Twitter X Posts by making use of Unicode characters.'
                         date='16 March 2024'
                         url='https://github.com/maxontech/twitter-font-editor'
-                        imgSrc='/preview/x-font-editor.png'
+                        imgSrc='/previews/x-font-editor.png'
                     />
 
 
@@ -58,7 +58,7 @@ export default function Content({ posts, courses }) {
                         text='Google Chrome Extension that allows you to selectively Copy Text, Urls, and CSS with one Click.'
                         date='10 March 2024'
                         url='https://chromewebstore.google.com/detail/click-to-copy/fonpjogfddpklefillfepifbcikebelh'
-                        imgSrc='/preview/click-to-copy.png'
+                        imgSrc='/previews/click-to-copy.png'
                     />
 
                     <ProjectSnippet
@@ -66,7 +66,7 @@ export default function Content({ posts, courses }) {
                         text='Showcase website for unique and beautiful GitHub profiles that is fully automated using GitHub Actions.'
                         date='15 February 2024'
                         url='https://maxontech.github.io/best-github-profile-readme/'
-                        imgSrc='/preview/gitpro.png'
+                        imgSrc='/previews/gitpro.png'
                     />
 
 
@@ -75,7 +75,7 @@ export default function Content({ posts, courses }) {
                         text='Neuroevolution with Fixed Topologies (NEFT) implemented in the Flappy Bird without using any Machine Learning Libraries.'
                         date='10 January 2023'
                         url='https://github.com/maxontech/neft-flappy-bird'
-                        imgSrc='/preview/neft-flappy-bird.png'
+                        imgSrc='/previews/neft-flappy-bird.png'
                     />
 
 
@@ -130,7 +130,7 @@ function ProjectSnippet({ title, text, date, url, imgSrc }) {
             <p className={styles.date}>{date}</p>
             <div className={styles.projectImage} style={{ position: 'absolute', left: mousePosition.x, top: mousePosition.y }}>
                 <Image
-                    src="/previews/imgsample.png" // Path relative to the `public` directory
+                    src={imgSrc} // Path relative to the `public` directory
                     alt="Transparent Logo"
                     width={320} // Set your desired width
                     height={180} // Set your desired height

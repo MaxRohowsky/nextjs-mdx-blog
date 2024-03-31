@@ -50,6 +50,13 @@
     }
 }
 
+@media only screen and (max-width: 1000px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+    }
+}
+
+/*
 @media only screen and (max-width: 670px) {
     .cards {
         //grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
@@ -78,3 +85,4 @@
 
 
 }
+*/

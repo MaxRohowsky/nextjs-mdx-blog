@@ -35,8 +35,8 @@ export default function Hero() {
                 <h1>Build <u> Awesome Projects</u></h1>
 
                 <h2>
-                    Simple tech tips and lessons <br /> on building and monetizing
-                    projects
+                    Simple tech tips and learnings <br /> on building and monetizing
+                    products
                 </h2>
 
 

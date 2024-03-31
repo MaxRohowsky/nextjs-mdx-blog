@@ -15,10 +15,10 @@ export default function Client({ courses, pageInfo }) {
             key={1}
             title={"Twitter (X) Font Editor"}
             tags={[
-                { tag: '#HTML', color: '#E34C26' }, 
-                { tag: '#JS', color: '#F7DF1E' }, 
-                { tag: '#CSS', color: '#1F73B8' }, 
-                { tag: '#MV3', color: '#000000' }
+                { tag: '#HTML', color: 'black' }, 
+                { tag: '#JS', color: 'black' }, 
+                { tag: '#CSS', color: 'black' }, 
+                { tag: '#MV3', color: 'black' }
             ]}
             img={"/previews/x-font-editor.png"}
             body={"Google Chrome Extension that Enables 𝗕𝗼𝗹𝗱, 𝐼𝑡𝑎𝑙𝑖𝑐, and U̲n̲d̲e̲r̲l̲i̲n̲e̲d̲ Fonts on Twitter X Posts by making use of Unicode characters"}
@@ -29,10 +29,10 @@ export default function Client({ courses, pageInfo }) {
             key={2}
             title={"Click to Copy"}
             tags={[
-                { tag: '#HTML', color: '#E34C26' }, 
-                { tag: '#CSS', color: '#1F73B8' }, 
-                { tag: '#JQuery', color: '#0769AD' }, 
-                { tag: '#MV3', color: '#000000' }
+                { tag: '#HTML', color: 'black' }, 
+                { tag: '#CSS', color: 'black' }, 
+                { tag: '#JQuery', color: 'black' }, 
+                { tag: '#MV3', color: 'black' }
             ]}
             img={"/previews/click-to-copy.png"}
             body={"Google Chrome Extension that allows you to selectively Copy Text, Urls, and CSS with one Click"}
@@ -43,10 +43,10 @@ export default function Client({ courses, pageInfo }) {
             key={3}
             title={"GitPro"}
             tags={[
-                { tag: '#HTML', color: '#E34C26' }, 
-                { tag: '#TailwindCSS', color: '#38B2AC' }, 
-                { tag: '#JS', color: '#F7DF1E' }, 
-                { tag: '#GitHubActions', color: '#2088FF' }, 
+                { tag: '#HTML', color: 'black' }, 
+                { tag: '#TailwindCSS', color: 'black' }, 
+                { tag: '#JS', color: 'black' }, 
+                { tag: '#GitHubActions', color: 'black' }, 
             ]}
             img={"/previews/gitpro.png"}
             body={"Showcase website for unique and beautiful GitHub profiles that is fully automated using GitHub Actions"}
@@ -57,10 +57,10 @@ export default function Client({ courses, pageInfo }) {
             key={4}
             title={"LinkedIn Font Editor"}
             tags={[
-                { tag: '#HTML', color: '#E34C26' }, 
-                { tag: '#CSS', color: '#F7DF1E' }, 
-                { tag: '#JS', color: '#F7DF1E' }, 
-                { tag: '#JQuery', color: '#2088FF' }, 
+                { tag: '#HTML', color: 'black' }, 
+                { tag: '#CSS', color: 'black' }, 
+                { tag: '#JS', color: 'black' }, 
+                { tag: '#JQuery', color: 'black' }, 
             ]}
             img={"/previews/linkedin-font-editor.png"}
             body={"Google Chrome Extension that Enables 𝗕𝗼𝗹𝗱, 𝐼𝑡𝑎𝑙𝑖𝑐, and U̲n̲d̲e̲r̲l̲i̲n̲e̲d̲ Fonts on LinkedIn Posts"}
@@ -71,9 +71,9 @@ export default function Client({ courses, pageInfo }) {
             key={5}
             title={"LandingHero"}
             tags={[
-                { tag: '#React', color: '#61DAFB' }, 
-                { tag: '#JSX', color: '#F7DF1E' }, 
-                { tag: '#Puppeteer', color: '#40B5A6' },
+                { tag: '#React', color: 'black' }, 
+                { tag: '#JSX', color: 'black' }, 
+                { tag: '#Puppeteer', color: 'black' },
             ]}
             img={"/previews/landinghero.png"}
             body={"Automated Website to Showcase Beautiful Landing Pages for Startups and Businesses"}
@@ -84,8 +84,8 @@ export default function Client({ courses, pageInfo }) {
             key={6}
             title={"NEFT Flappy Bird"}
             tags={[
-                { tag: '#Python', color: '#3776AB' },
-                { tag: '#PyGame', color: '#40B5A6' }
+                { tag: '#Python', color: 'black' },
+                { tag: '#PyGame', color: 'black' }
             ]}
             img={"/previews/neft-flappy-bird.png"}
             body={"Neuroevolution with Fixed Topologies (NEFT) implemented in the Flappy Bird without using any Machine Learning Libraries"}
@@ -96,8 +96,8 @@ export default function Client({ courses, pageInfo }) {
             key={7}
             title={"Drive AI"}
             tags={[
-                { tag: '#Python', color: '#3776AB' },
-                { tag: '#PyGame', color: '#40B5A6' }
+                { tag: '#Python', color: 'black' },
+                { tag: '#PyGame', color: 'black' }
             ]}
             img={"/previews/drive-ai.png"}
             body={"Neuroevolution with Augmenting Topologies (NEFT) implemented in a Self-Driving Car Simulation"}
@@ -108,8 +108,8 @@ export default function Client({ courses, pageInfo }) {
             key={8}
             title={"NEAT Chrome Dinosaur"}
             tags={[
-                { tag: '#Python', color: '#3776AB' },
-                { tag: '#PyGame', color: '#40B5A6' }
+                { tag: '#Python', color: 'black' },
+                { tag: '#PyGame', color: 'black' }
             ]}
             img={"/previews/neat-chrome-dinosaur.png"}
             body={"Neuroevolution with Augmenting Topologies (NEAT) implemented in Chrome Dinosaur Game"}
@@ -120,8 +120,8 @@ export default function Client({ courses, pageInfo }) {
             key={9}
             title={"Dijkstra Pathfinding Visualizer"}
             tags={[
-                { tag: '#Python', color: '#3776AB' },
-                { tag: '#PyGame', color: '#40B5A6' }
+                { tag: '#Python', color: 'black' },
+                { tag: '#PyGame', color: 'black' }
             ]}
             img={"/previews/dijkstra-pathfinding.png"}
             body={"Simple Pathfinding Visualizer using Dijkstra's Algorithm"}
@@ -132,7 +132,7 @@ export default function Client({ courses, pageInfo }) {
             key={10}
             title={"Programming Courses"}
             tags={[
-                { tag: '#Diverse', color: '#61DAFB' }, 
+                { tag: '#Diverse', color: 'black' }, 
             ]}
             img={"/previews/programming-courses.png"}
             body={"Programming tutorial write ups to teach myself and others about Python, JavaScript, and more"}

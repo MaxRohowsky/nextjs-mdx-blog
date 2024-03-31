@@ -1,16 +1,29 @@
 'use client'
 import styles from './hero.module.scss';
 import Image from 'next/image';
-import Crosshair from '@/components/crosshair/crosshair';
-import Signup from '../signup/signup';
+//import Crosshair from '@/components/crosshair/crosshair';
+//import Signup from '../signup/signup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
+import React, { useState, useEffect } from 'react';
 
 export default function Hero() {
 
     let numColumns = 12;
     let numRows = 8;
 
+    const [windowWidth, setWindowWidth] = useState(0);
+
+    useEffect(() => {
+        setWindowWidth(window.innerWidth);
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
 
     return (
@@ -23,7 +36,11 @@ export default function Hero() {
 
             <div className={styles.hero__overlay}>
 
-                <Image src="/hero-overlay.svg" alt="Hero Outline" width={1200} height={900} />
+            {windowWidth < 1000 ? (
+                    <Image src="/hero-overlay-sm.svg" alt="Hero Outline" width={1200} height={900} />
+                ) : (
+                    <Image src="/hero-overlay.svg" alt="Hero Outline" width={1200} height={900} />
+                )}
 
             </div>
 
@@ -35,8 +52,8 @@ export default function Hero() {
                 <h1>Build <u> Awesome Projects</u></h1>
 
                 <h2>
-                    Simple tech tips and lessons <br /> on building and monetizing
-                    projects
+                    Simple tech tips and learnings <br /> on building and monetizing
+                    products
                 </h2>
 
 

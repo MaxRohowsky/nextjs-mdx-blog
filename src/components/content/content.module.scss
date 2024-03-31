@@ -6,15 +6,15 @@
   font-family: "Open Sans", "system-ui", "Trebuchet MS", Arial, Helvetica, Verdana;
   gap: 100px;
   margin-top: 50px;
-  
+
 
   // Posts
 
   .content__posts {
     width: calc((var(--width) / 2) - 50px);
-    
 
-    .content__post{
+
+    .content__post {
       margin-top: 30px;
       margin-bottom: 30px;
     }
@@ -42,7 +42,7 @@
   .content__courses {
     width: calc((var(--width) / 2) - 50px);
 
-    .content__course{
+    .content__course {
       margin-top: 30px;
       margin-bottom: 30px;
     }
@@ -64,10 +64,25 @@
   }
 
 
-  .date{
+  .date {
     font-size: 12px;
     font-weight: bold;
     color: #616465;
+  }
+
+  .projectImage {
+    position: absolute;
+    width: 100px; /* Adjust as needed */
+    transition: transform 0.2s;
+    display: none;
+    pointer-events: none; /* Ignore mouse events on the image */
+  }
+
+  :hover .projectImage {
+    display: block;
+    /* Show the image on hover */
+    transform: scale(1.1);
+    /* Zoom in the image */
   }
 
 
@@ -91,16 +106,16 @@
     flex-direction: column;
     margin-top: 10px;
     justify-content: center;
-    
+
     .content__posts,
     .content__courses {
       width: 100%;
 
-        h2{
-          font-size: 30px;
-          width: fit-content;
-          margin: auto;
-        }
+      h2 {
+        font-size: 30px;
+        width: fit-content;
+        margin: auto;
+      }
     }
   }
 }

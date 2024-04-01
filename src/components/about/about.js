@@ -17,7 +17,11 @@ export default function About() {
 
                 <div className={styles.image__container}>
 
-                    <Image src="/about.png" alt="Hero Outline" width={400} height={360} />
+                    <Image 
+                    src="/about.png" 
+                    alt="Hero Outline" 
+                    layout='fill'
+                    />
 
                 </div>
 

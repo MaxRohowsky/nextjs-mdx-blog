@@ -21,7 +21,7 @@ export default function ClickToCopy() {
                             <p>Make your Twitter (X) Posts stand out!</p>
                         </li>
                     </ul>
-                    <p>Code and Documentation <a href="https://github.com/maxontech/x-font-editor" className={styles.link}>linked here.</a></p>
+                    <p>Code and Documentation <a href="https://github.com/maxontech/twitter-font-editor" className={styles.link}>linked here.</a></p>
                     <p className={styles.signature}>Made by <a href="https://maxontech.io" className={styles.link}> maxontech</a></p>
                 </div>
 

@@ -20,11 +20,13 @@
       position: relative;
       z-index: 2;
       justify-content: center;
+      height: calc((1061 / 1170) * 380px);
+      width: 380px;
+      margin: auto;
     }
 
   }
 
-  // Courses
 
   .about__text {
     width: calc((var(--width) / 2) - 50px);
@@ -35,7 +37,7 @@
     }
 
     h2 {
-      font-size: 35px;
+      font-size: 30px;
       font-weight: 700;
     }
 
@@ -65,23 +67,25 @@
 
 
 
-
+/*
 @media (max-width: 992px) {
   .about {
     gap: 30px;
     padding: 10px;
   }
-}
+}*/
 
 
 @media (max-width: 760px) {
   .about{
     flex-direction: column;
+    gap: 10px;
 
     .about__image,
     .about__text {
       width: 100%;
       padding: 30px;
+
 
       h2{
         font-size: 30px;
@@ -92,3 +96,19 @@
   }
 }
 
+
+
+@media (max-width: 450px) {
+  .about {
+    .about__image {
+
+      .image__container {
+
+        height: calc((1061 / 1170) * 250px);
+        width: 250px;
+        margin: auto;
+      }
+  
+    }
+  }
+}

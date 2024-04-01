@@ -11,38 +11,38 @@ export default function Content({ posts, courses }) {
 
         <section className={styles.content}>
 
-            <div className={styles.content__posts}>
+            <div className={styles.content__wrap}>
 
-                <h2>Latest Letters</h2>
+                <div className={styles.content__posts}>
 
-                {posts.edges.map((post, index) => (
+                    <h2><span className={styles.content__emoji}>✉️</span> Latest Letters</h2>
 
-                    <Link style={{ textDecoration: 'none' }} key={index} href={post.node.uri.replace('/', '/blog/')}>
+                    {posts.edges.map((post, index) => (
 
-                        <div className={styles.content__post} >
+                        <Link style={{ textDecoration: 'none' }} key={index} href={post.node.uri.replace('/', '/blog/')}>
 
-                            <p className={styles.post__title}>{post.node.title}</p>
+                            <div className={styles.content__post} >
 
-                            <div dangerouslySetInnerHTML={{ __html: post.node.excerpt }}></div>
+                                <p className={styles.post__title}>{post.node.title}</p>
 
-                            <p className={styles.date}>{dateTime(post.node.date)}</p>
+                                <div dangerouslySetInnerHTML={{ __html: post.node.excerpt }}></div>
 
-                        </div>
+                                <p className={styles.date}>{dateTime(post.node.date)}</p>
 
-                    </Link>
+                            </div>
 
-                ))}
+                        </Link>
 
-                <Link style={{ fontWeight: 'bold' }} href="/blog">View more →</Link>
+                    ))}
 
-            </div>
+                    <Link style={{ fontWeight: 'bold' }} href="/blog">View more →</Link>
 
-            <div className={styles.content__courses}>
+                </div>
 
-                <h2>Featured Projects</h2>
+                <div className={styles.content__courses}>
 
+                    <h2><span className={styles.content__emoji}>🛠️</span> Featured Projects</h2>
 
-                <div className={styles.content__course} >
 
                     <ProjectSnippet
                         title='Twitter (X) Font Editor'
@@ -79,16 +79,16 @@ export default function Content({ posts, courses }) {
                     />
 
 
+                    <Link style={{ fontWeight: 'bold' }} href="/projects">View more →</Link>
+
+
+
 
 
 
                 </div>
 
-                <Link style={{ fontWeight: 'bold' }} href="/projects">View more →</Link>
-
             </div>
-
-
 
 
 

@@ -24,10 +24,33 @@
   max-width: 100%;
 }
 
+.card__tags{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tag{
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin: 3px;
+  border-radius: 5px;
+  background-color: var(--tag-bg-color);
+  color: var(--tag-text-color);
+  font-size: smaller;
+  background-color: rgba(140, 194, 255, 0.534);
+}
+
 
 .title__text{
+  padding: 0px;
   margin: 15px;
   font-weight: 600;
+  color: var(--text-color);
 }
 
 
@@ -37,14 +60,12 @@
   color: var(--text-color);
 }
 
-.title__text{
-  color: var(--text-color);
-}
+
 
 .card__description{
   color: var(--text-color);
   margin: 15px;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 /*.card__button {

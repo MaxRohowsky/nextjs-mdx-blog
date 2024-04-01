@@ -6,15 +6,15 @@
   font-family: "Open Sans", "system-ui", "Trebuchet MS", Arial, Helvetica, Verdana;
   gap: 100px;
   margin-top: 50px;
-  
+
 
   // Posts
 
   .content__posts {
     width: calc((var(--width) / 2) - 50px);
-    
 
-    .content__post{
+
+    .content__post {
       margin-top: 30px;
       margin-bottom: 30px;
     }
@@ -42,7 +42,7 @@
   .content__courses {
     width: calc((var(--width) / 2) - 50px);
 
-    .content__course{
+    .content__course {
       margin-top: 30px;
       margin-bottom: 30px;
     }
@@ -57,17 +57,33 @@
       font-weight: bold;
     }
 
+    .course__title:hover~.projectImage {
+      opacity: 1;
+      transform: scale(1);
+    }
+
     p {
       margin-bottom: 0px;
       color: black;
     }
+
   }
 
 
-  .date{
+  .date {
     font-size: 12px;
     font-weight: bold;
     color: #616465;
+  }
+
+  .projectImage {
+    position: absolute;
+    transition: transform 0.5s, opacity 0.5s; /* Add transition for opacity */
+    opacity: 0; /* Make the image invisible */
+    pointer-events: none;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transform: scale(0); /* Start from small size */
+    /* Ignore mouse events on the image */
   }
 
 
@@ -91,16 +107,16 @@
     flex-direction: column;
     margin-top: 10px;
     justify-content: center;
-    
+
     .content__posts,
     .content__courses {
       width: 100%;
 
-        h2{
-          font-size: 30px;
-          width: fit-content;
-          margin: auto;
-        }
+      h2 {
+        font-size: 30px;
+        width: fit-content;
+        margin: auto;
+      }
     }
   }
 }

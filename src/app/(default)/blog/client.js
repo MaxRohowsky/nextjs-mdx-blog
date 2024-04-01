@@ -58,7 +58,7 @@ export default function Client({ posts }) {
 
                     {posts.map((post, index) => (
 
-                        <Link style={{ textDecoration: 'none' }} key={index} href={post.path}>
+                        <Link style={{ textDecoration: 'none', color: "black" }} key={index} href={post.path}>
                            {console.log(post.path)} 
 
                             <div className={styles.content__post} >

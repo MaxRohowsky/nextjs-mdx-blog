@@ -151,7 +151,7 @@ li {
 .hljs {
   position: relative;
   border-radius: 3px;
-  font-size: 16px;
+  font-size: 18px;
   background: #282b2e !important;
   padding: 25px !important;
   line-height: 26px;
@@ -297,7 +297,8 @@ p>code,
 td>code {
   background: rgb(219, 219, 230);
   border-radius: 0.25em;
-  padding: 0.1em 0.25em;
+  padding: 0.01em 0.25em;
+  font-size: 20px;
 }
 
 /* ---------------------------------------------------------- Table Styling ----------------------------------------------------------*/

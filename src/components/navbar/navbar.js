@@ -57,8 +57,8 @@ function Navbar() {
 			
 			<nav className={`${styles.header__nav} ${!showMobileNav && styles.hide}`} >
 				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={handleShowMobileNavbar} href="/">Home</Link>
-				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={handleShowMobileNavbar} href="/courses">Courses</Link>
 				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={handleShowMobileNavbar} href="/blog">Blog</Link>
+				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={handleShowMobileNavbar} href="/projects">Projects</Link>
 				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={handleShowMobileNavbar} href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw" target="_blank" >Youtube</Link>
 				<Link className={styles.nav__link} style={{ textDecoration: 'none' }} onClick={handleShowMobileNavbar} href="https://discord.com/invite/JERatQsfY8" target="_blank" >Discord</Link>
 

@@ -17,7 +17,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 
 
 
-export const metadata = {
+/*export const metadata = {
   title: {
     default: "Max on Tech",
     template: "%s | Max on Tech",
@@ -25,7 +25,7 @@ export const metadata = {
   description: {
     default: "Max on Tech is a personal blog about tech, programming, and entrepreneurship."
   }
-}
+}*/
 
 
 export default function RootLayout({ children }) {

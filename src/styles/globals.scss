@@ -1,8 +1,20 @@
-@import "_variables.scss";
+//@import "_variables.scss";
 
 
 
 :root {
+  --border-radius: 8px;
+  --box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px;
+  --social-icon-size: 40px;
+
+  --wide-desktop-breakpoint: 1600px;
+  --desktop-breakpoint: 1300px;
+  --laptop-breakpoint: 992px;
+  --tablet-breakpoint: 768px;    //
+  --mobile-breakpoint: 450px;
+
+
+
   --max-width: 1080px;
   --min-width: 368px;
   --guide-width: 1px;
@@ -54,13 +66,12 @@
 
 html,
 body {
-  font-size: 1.0rem;
   font-family: "Open Sans", "system-ui", "Trebuchet MS", Arial, Helvetica, Verdana;
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
   color: black;
-  background:  linear-gradient(176deg, #f8f8f8 50%, #ffffff 100%);
+  background: linear-gradient(176deg, #f8f8f8 50%, #ffffff 100%);
   min-height: 100vh;
   background-attachment: fixed;
 }
@@ -286,4 +297,3 @@ td>code {
 a {
   text-decoration: none;
 }
-

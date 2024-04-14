@@ -1,4 +1,4 @@
-@import "@/styles/_variables.scss";
+//@import "@/styles/_variables.scss";
 
 
 .prepost {
@@ -86,13 +86,13 @@
 }
 
 
-@media only screen and (max-width: $tablet-breakpoint) {
+@media only screen and (max-width: var(--tablet-breakpoint)) {
     .post {
         width: calc(100svw - (2 * 20px));
     }
 }
 
-@media only screen and (max-width: $tablet-breakpoint){
+@media only screen and (max-width: var(--tablet-breakpoint)){
     .post{
         width: calc(100svw - (2 * 20px));
     }

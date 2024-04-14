@@ -1,10 +1,10 @@
-@import "@/styles/_variables.scss";
+
 
 .card{
   margin: 0px; // Margin between Card and Grid Border
   overflow: hidden;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
   background-color: var(--home-content-card-bg-color);
   /* Grow and shrink between values*/
   //min-width: 250px;

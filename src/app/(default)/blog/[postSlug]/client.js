@@ -40,7 +40,9 @@ export default function Client({ post }) {
       <div className={styles.prepost}>
 
         <div className={styles.post__meta}>
+
           <Breadcrumbs crumbs={crumbs} />
+          
         </div>
 
         <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: post.title }} />

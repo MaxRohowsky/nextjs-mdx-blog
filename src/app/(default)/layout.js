@@ -1,14 +1,15 @@
 import '@/styles/globals.scss';
 import styles from './layout.module.scss'
+
 /*Wordpress Block CSS*/
 import '@wordpress/block-library/build-style/style.css';
-/* Font */
-import '@/styles/titillium.scss';
-import '@/styles/bricolage.scss';
+
 /* Components */
 import Navbar from "@/components/navbar/navbar";
 import Footer from '@/components/footer/footer';
 import Overlay from '@/components/overlay/overlay';
+
+/* Highlight.js */
 import 'highlight.js/styles/srcery.css';
 
 import { config } from '@fortawesome/fontawesome-svg-core'; config.autoAddCss = false;

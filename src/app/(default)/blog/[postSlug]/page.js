@@ -7,7 +7,7 @@ import Client from './client';
 async function getPost(params) {
   const { postSlug } = params;
 
-  const response = await fetch("https://hosting189589.a2f4e.netcup.net/graphql", {
+  const response = await fetch(process.env.WORDPRESS_API, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

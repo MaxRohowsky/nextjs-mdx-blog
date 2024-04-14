@@ -13,20 +13,21 @@
   width: var(--width);
 
   .content__posts,
-  .content__courses {
+  .content__projects {
     width: calc((var(--width) / 2) - 50px);
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
     align-items: stretch;
+ 
 
     .content__post,
-    .content__course {
+    .content__project {
       flex: 1;
       display: flex;
       flex-direction: column;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      padding: 10px 0px 10px 0px;
+      min-height: 230px;
     }
 
     h2 {
@@ -36,7 +37,7 @@
     }
 
     .post__title,
-    .course__title {
+    .project__title {
       font-weight: bold;
     }
 
@@ -46,8 +47,8 @@
     }
   }
 
-  .content__courses {
-    .course__title:hover~.projectImage {
+  .content__projects {
+    .projects__title:hover~.projectImage {
       opacity: 1;
       transform: scale(1);
     }
@@ -55,9 +56,7 @@
 
 
   .date {
-    font-size: 12px;
-    font-weight: bold;
-    color: #616465;
+    color: #909090 !important;
   }
 
   .projectImage {

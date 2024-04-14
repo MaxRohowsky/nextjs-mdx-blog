@@ -1,8 +1,7 @@
 import styles from './content.module.scss';
 import { dateTime } from '@/components/datetime/datetime';
 import Link from 'next/link';
-import { useRef } from 'react';
-import React from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 export default function Content({ posts, courses }) {
@@ -39,7 +38,7 @@ export default function Content({ posts, courses }) {
 
                 </div>
 
-                <div className={styles.content__courses}>
+                <div className={styles.content__projects}>
 
                     <h2><span className={styles.content__emoji}>🛠️</span> Featured Projects</h2>
 
@@ -99,9 +98,9 @@ export default function Content({ posts, courses }) {
 
 
 const useMousePosition = () => {
-    const [mousePosition, setMousePosition] = React.useState({ x: null, y: null });
+    const [mousePosition, setMousePosition] = useState({ x: null, y: null });
 
-    React.useEffect(() => {
+    useEffect(() => {
         const updateMousePosition = ev => {
             setMousePosition({ x: ev.pageX - 160, y: ev.pageY - 200 });
         };
@@ -118,12 +117,9 @@ const useMousePosition = () => {
 
 function ProjectSnippet({ title, text, date, url, imgSrc }) {
     const mousePosition = useMousePosition();
-
-
-
     return (
-        <a href={url} className={styles.content__course} >
-            <p className={styles.course__title}>{title}</p>
+        <a href={url} className={styles.content__project} >
+            <p className={styles.project__title}>{title}</p>
             <div>
                 <p>{text}</p>
             </div>

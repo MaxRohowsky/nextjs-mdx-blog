@@ -1,7 +1,6 @@
 'use client'
 import Card from "@/components/card/card"
 import styles from './courses.module.scss'
-//import Head from "next/head"; //depreciated
 import Link from 'next/link';
 
 export default function Client({ courses, pageInfo }) {
@@ -46,21 +45,6 @@ export default function Client({ courses, pageInfo }) {
 
     return (
         <>
-            {/*<Head>
-                <meta charSet='utf-8' />
-                <title>Max On Tech - Exploring Tech - Courses</title>
-                <meta property="og:title" content="Max On Tech - Exploring Tech - Courses" />
-
-                <meta name="description" content="Fast, Fun, and Free Coding Tutorials" />
-                <meta property="og:description" content="Fast, Fun, and Free Coding Tutorials" />
-
-                <meta property="og:image" content="https://www.maxontech.io/transparent-logo.png" />
-
-
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
-
-            </Head>*/}
 
             <div className={styles.container}>
 

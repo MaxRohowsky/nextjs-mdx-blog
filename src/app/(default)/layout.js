@@ -12,20 +12,9 @@ import Overlay from '@/components/overlay/overlay';
 /* Highlight.js */
 import 'highlight.js/styles/srcery.css';
 
+/* Font Awesome */
 import { config } from '@fortawesome/fontawesome-svg-core'; config.autoAddCss = false;
 import '@fortawesome/fontawesome-svg-core/styles.css';
-
-
-
-/*export const metadata = {
-  title: {
-    default: "Max on Tech",
-    template: "%s | Max on Tech",
-  },
-  description: {
-    default: "Max on Tech is a personal blog about tech, programming, and entrepreneurship."
-  }
-}*/
 
 
 export default function RootLayout({ children }) {

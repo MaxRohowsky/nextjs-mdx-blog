@@ -1,10 +1,6 @@
 @import "_variables.scss";
 
-/* Adding Tailwind messes with the CSS e.g. bullets not showing in courses
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-*/
+
 
 :root {
   --max-width: 1080px;
@@ -117,30 +113,6 @@ li {
 
 
 /*----------------------------------------------------------Code block Styling----------------------------------------------------------*/
-.wp-block-code::before {
-  content: '';
-  position: absolute;
-  top: -11px;
-  left: -10px;
-  width: 25px;
-  height: 21px;
-  z-index: 1;
-  background-color: #000000;
-  -webkit-mask-image: url('../../public/icons/terminal.svg');
-  mask-image: url('../../public/icons/terminal.svg');
-  mask-size: cover;
-}
-
-.wp-block-code::after {
-  content: '';
-  background: #f8f8f8;
-  position: absolute;
-  top: -20px;
-  left: -18px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
 
 .wp-block-code {
   position: relative;
@@ -153,7 +125,7 @@ li {
   border-radius: 3px;
   font-size: 18px;
   background: #282b2e !important;
-  padding: 25px !important;
+  padding: 12px !important;
   line-height: 26px;
 
   & mark {
@@ -315,37 +287,3 @@ a {
   text-decoration: none;
 }
 
-// SHOW LANGUAGE
-// This code shows the programming language within the code blocks
-// See https://github.com/westonruter/syntax-highlighting-code-block/wiki/Advanced-Usage
-// Problem is the language is not always correct
-/*
-.wp-block-code {
-	position: relative;
-}
-
-.wp-block-code .shcb-language {
-	clip: initial;
-	width: auto;
-	height: auto;
-	margin: auto;
-	clip-path: none;
-
-	bottom: 6px;
-	right: 6px;
-	line-height: 1em;
-	white-space: normal;
-	//font-family: sans-serif;
-	font-size: 12px;
-	//font-weight: bold;
-  
-}
-
-.wp-block-code .shcb-language__label,
-.wp-block-code .shcb-language__paren,  // yes, paren is correct :D
-.wp-block-code .shcb-language__slug {
-	display: none;
-}
-
-*/
-// SHOW LANGUAGE END

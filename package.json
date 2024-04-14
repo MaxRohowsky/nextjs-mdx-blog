@@ -38,7 +38,6 @@
   "devDependencies": {
     "@types/node": "20.11.13",
     "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.33",
-    "tailwindcss": "^3.4.1"
+    "postcss": "^8.4.33"
   }
 }

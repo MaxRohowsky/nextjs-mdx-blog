@@ -9,7 +9,7 @@ import '@/styles/bricolage.scss';
 import Navbar from "@/components/navbar/navbar";
 import Footer from '@/components/footer/footer';
 import Overlay from '@/components/overlay/overlay';
-
+import 'highlight.js/styles/srcery.css';
 
 import { config } from '@fortawesome/fontawesome-svg-core'; config.autoAddCss = false;
 import '@fortawesome/fontawesome-svg-core/styles.css';

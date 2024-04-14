@@ -21,6 +21,7 @@
     "graphql": "^16.6.0",
     "he": "^1.2.0",
     "highcharts": "^11.1.0",
+    "highlight.js": "^11.9.0",
     "js-cookie": "^3.0.5",
     "next": "^14.0.4",
     "next-themes": "^0.2.1",

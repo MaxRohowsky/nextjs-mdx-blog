@@ -1,6 +1,5 @@
 'use client'
-import Head from 'next/head'
-import { dateTime } from '../../../components/datetime/datetime.js';
+import { dateTime } from '@/components/datetime/datetime.js';
 import styles from './blog.module.scss'
 import Card from "@/components/card/card.js"
 import Link from 'next/link';
@@ -26,40 +25,25 @@ export default function Client({ posts }) {
 
         <>
 
-            {/*<Head>
-                
-                <meta charSet='utf-8' />
-                <title>Max On Tech - Exploring Tech - Blog</title>
-                <meta property="og:title" content="Max On Tech - Exploring Tech - Blog" />
-
-                <meta name="description" content="Fast, Fun, and Free Coding Tutorials" />
-                <meta property="og:description" content="Fast, Fun, and Free Coding Tutorials" />
-
-                <meta property="og:image" content="https://www.maxontech.io/transparent-logo.png" />
-
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
-
-            </Head>*/}
-
             <div className={styles.container}>
 
                 <h1 className={styles.title}> Blog </h1>
 
                 <h4 className={styles.subtitle}>Strategy and Tech Tips for your Projects</h4>
-
+                
+                {/** Desktop */}
                 <div className={styles.cards}>
 
                     {items}
 
                 </div>
 
+                {/** Mobile */}
                 <div className={styles.list}>
 
                     {posts.map((post, index) => (
 
-                        <Link style={{ textDecoration: 'none', color: "black" }} key={index} href={post.path}>
-                           {console.log(post.path)} 
+                        <Link key={index} href={post.path}>
 
                             <div className={styles.content__post} >
 

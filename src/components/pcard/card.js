@@ -9,7 +9,7 @@ import styles from './card.module.scss'
 function Card({ title, tags, img, body, link }) {
 
     return (
-        <Link style={{ textDecoration: 'none' }} href={link}>
+        <Link style={{ textDecoration: 'none', color: 'black'}}  href={link}>
             <div className={styles.card}>
                 <div className={styles.card__item}>
                     <img className={styles.card__image} src={img} alt='' loading="lazy" />

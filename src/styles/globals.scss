@@ -1,20 +1,17 @@
-//@import "_variables.scss";
-
-
 
 :root {
-  --border-radius: 8px;
+  --border-radius: 3px;
   --box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px;
   --social-icon-size: 40px;
 
-  --wide-desktop-breakpoint: 1600px;
-  --desktop-breakpoint: 1300px;
-  --laptop-breakpoint: 992px;
-  --tablet-breakpoint: 768px;    //
+  --wide-desktop-breakpoint: 1536px;
+  --desktop-breakpoint: 1280px;
+  --laptop-breakpoint: 1024px;
+  --tablet-breakpoint: 768px;    
   --mobile-breakpoint: 450px;
 
 
-
+  //  Grid System
   --max-width: 1080px;
   --min-width: 368px;
   --guide-width: 1px;
@@ -23,7 +20,6 @@
 
   --sm-grid-rows: 5;
   --sm-grid-columns: 8;
-
 
   @media screen and (min-width: 600px) {
     --md-grid-rows: 8;
@@ -40,24 +36,13 @@
   --column-width: calc(var(--width) / var(--grid-columns));
   --row-height: calc(var(--height) / var(--grid-rows));
 
-
   --cell-padding: 48px;
   --grid-divider-gap: calc(140px - var(--cell-padding));
 
 
-  --primary-color: #468cfd;
-  --secondary-color: #bb2828;
-  --tertiary-color: #f2f2f2;
-  --quaternary-color: #f8f8f8;
 
-  --discord-color: #5865F2;
-  --facebook-color: #3b5998;
-  --twitter-color: #1da1f2;
-  --youtube-color: #ff0000;
 
-  --text-color:black;
-  --border-radius: 3px;
-  --box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+
 
 }
 

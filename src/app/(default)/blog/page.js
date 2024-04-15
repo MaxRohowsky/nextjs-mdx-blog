@@ -36,7 +36,7 @@ async function getPosts() {
   });
 
   const data = await response.json();
-
+  
   return data?.data?.posts?.edges.map(({ node }) => node).map(post => {
     // The first map creates a new array with node items. The second map returns the posts and path.
     return {

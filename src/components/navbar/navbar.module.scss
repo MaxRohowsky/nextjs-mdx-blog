@@ -15,11 +15,6 @@
 	transition: background-color 0.3s ease, box-shadow 0.5s ease;
 }
 
-.scrolled{
-	background-color: rgb(255, 255, 255);
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
 .header__wrap{
 	display: flex;
 	justify-content: space-between;
@@ -74,7 +69,7 @@
 }
 
 
-@media only screen and (max-width: var(--laptop-breakpoint)) {
+@media only screen and (max-width: 1024px) {
 
 	.wrap{
 		width: 100%;

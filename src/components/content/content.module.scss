@@ -48,7 +48,7 @@
   }
 
   .content__projects {
-    .projects__title:hover~.projectImage {
+    .project__title:hover~.projectImage {
       opacity: 1;
       transform: scale(1);
     }

@@ -4,7 +4,7 @@ import Client from './client.js';
 
 export const metadata = {
   title: "Blog",
-  description: "Blog posts about tech, programming, and entrepreneurship."
+  description: "Blog posts about Modern Full Stack Development"
 }
 
 async function getPosts() {

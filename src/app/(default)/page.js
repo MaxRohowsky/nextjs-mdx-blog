@@ -1,10 +1,9 @@
-'use server'
 import Client from './client';
 
 
+
+
 async function getPosts() {
-
-
   const response = await fetch(process.env.WORDPRESS_API, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

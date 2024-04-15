@@ -8,8 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
 
 
-
-
 export default function Client({ post }) {
 
   const crumbs = [
@@ -22,20 +20,6 @@ export default function Client({ post }) {
   return (
 
     <>
-      {/*<Head>
-        <meta charSet='utf-8' />
-        <title>{post.title}</title>
-        <meta property="og:title" content={post.title} />
-
-        <meta name="description" content={excerptText} />
-        <meta property="og:description" content={excerptText} />
-
-        <meta property="og:image" content="https://www.maxontech.io/transparent-logo.png" />
-       
-
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>*/}
 
       <div className={styles.prepost}>
 

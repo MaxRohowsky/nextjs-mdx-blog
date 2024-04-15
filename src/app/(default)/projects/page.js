@@ -1,5 +1,9 @@
-'use server'
 import Client from './client';
+
+export const metadata = {
+  title: "Projects",
+  description: "Portfolio Projects by Max on Tech"
+}
 
 
 async function getCourses() {

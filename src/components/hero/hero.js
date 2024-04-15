@@ -1,11 +1,9 @@
 'use client'
 import styles from './hero.module.scss';
 import Image from 'next/image';
-//import Crosshair from '@/components/crosshair/crosshair';
-//import Signup from '../signup/signup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faYoutube, faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
-import React, { useState, useEffect } from 'react';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { useState, useEffect } from 'react';
 
 export default function Hero() {
 
@@ -49,15 +47,12 @@ export default function Hero() {
 
             <div className={styles.hero__title}>
 
-                <h1>Build <u> Awesome Projects</u></h1>
+                <h1> Modern <u>Full-Stack Development</u></h1>
 
                 <h2>
-                    Simple tech tips and learnings <br /> on building and monetizing
-                    products
+                    Learn in-demand Dev skills
+                     <br /> to build awesome software or get promoted
                 </h2>
-
-
-                {/*<Signup />*/}
 
 
                 <a href="https://www.youtube.com/@maxontech/?sub_confirmation=1" target="_blank" rel="noreferrer">
@@ -66,16 +61,6 @@ export default function Hero() {
                         <span>Subscribe</span>
                     </button>
                 </a>
-
-
-                {/*<div>
-                    <div className={styles.form} >
-                        <form className={styles.form} action="/register" method="post">
-                            <input type="email" name="email" placeholder="Email" id="email" />
-                            <button>Subscribe</button>
-                        </form>
-                    </div>
-                </div>*/}
 
 
                 <div className={styles.hero__socialproof}>

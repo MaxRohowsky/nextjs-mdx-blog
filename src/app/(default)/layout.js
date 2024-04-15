@@ -17,6 +17,14 @@ import { config } from '@fortawesome/fontawesome-svg-core'; config.autoAddCss = 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 
+export const metadata = {
+  title: {
+    default: 'Max on Tech | Modern Full-Stack Development',
+    template: '%s | Max on Tech'
+  },
+  description: 'A Blog on Modern Full-Stack Development by Max on Tech',
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

@@ -20,17 +20,17 @@
 .post__meta {
     display: flex;
     padding-top: 25px; 
-    width: var(--width-container);
+    width: 650px;
     margin: auto;
 }
 
 
 .post__title {
-    text-align: center;
     font-size: 40px;
-    margin: 0px;
+    width: 650px;
+    margin: auto;
     position: relative;
-    padding: 50pt 10pt 50pt 10pt;
+    padding: 20pt 10pt 20pt 10pt;
 }
 
 .post__date {
@@ -87,12 +87,14 @@
 
 
 @media only screen and (max-width: var(--tablet-breakpoint)) {
+    .post__title,
     .post {
         width: calc(100svw - (2 * 20px));
     }
 }
 
 @media only screen and (max-width: var(--tablet-breakpoint)){
+    .post__title,
     .post{
         width: calc(100svw - (2 * 20px));
     }

@@ -1,5 +1,5 @@
-import { database } from '@/lib/firebase';
-import { getDatabase, get, ref, child, onValue } from "firebase/database";
+//import { database } from '@/lib/firebase';
+//import { getDatabase, get, ref, child, onValue } from "firebase/database";
 
 //export async function GET() {
 
@@ -13,7 +13,7 @@ return new Response(dbRef)
 
 //}
 
-
+/*
 export async function GET(req, res) {
   try {
     const db = getDatabase();
@@ -27,7 +27,7 @@ export async function GET(req, res) {
 
   if (snapshot.exists()) {
     res.status(200).send("hello");
-  }
+  }*/
 //curl 'https://max-on-ttps://max-on-tech-default-rtdb.europe-west1.fe.app/views.jsirebasedatabase.app/views.json'
 
 
@@ -36,8 +36,6 @@ export async function GET(req, res) {
     const data = snapshot.val();
     res.status(200).json(data);
   })*/
-}
-
 
 
 /*

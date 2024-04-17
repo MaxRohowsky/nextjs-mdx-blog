@@ -52,7 +52,11 @@
 
     .about__image,
     .about__text {
-      width: var(--width);
+      width: inherit;
+      
+      p {
+        padding: 20px;
+      };
 
       h2 {
         font-size: 30px;

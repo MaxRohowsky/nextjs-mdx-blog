@@ -1,7 +1,7 @@
 import Client from './client';
 import he from 'he';
 
-export async function generateMetadata({ params }) {
+async function generateMetadata({ params }) {
   const { postSlug } = params;
   const response = await fetch(process.env.WORDPRESS_API, {
     method: 'POST',
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }) {
 }
 
 
-export async function getPost(params) {
+async function getPost(params) {
   const { postSlug } = params;
 
   const response = await fetch(process.env.WORDPRESS_API, {

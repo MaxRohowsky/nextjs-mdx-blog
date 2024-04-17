@@ -5,3 +5,4 @@
 - Viewcount to posts
 - Make a nice footer.
 - Imrrove the cookie opt in.
+- Make the mob menu nice.

@@ -52,7 +52,7 @@
 
     .about__image,
     .about__text {
-      width: 100%;
+      width: var(--width);
 
       h2 {
         font-size: 30px;

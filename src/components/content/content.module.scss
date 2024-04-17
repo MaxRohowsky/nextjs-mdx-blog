@@ -5,20 +5,13 @@
 }
 
 .content__wrap {
-  padding: 50px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 100px;
-  margin-top: 50px;
   width: var(--width);
 
   .content__posts,
   .content__projects {
-    width: calc((var(--width) / 2) - 50px);
-    display: flex;
-    flex: 1 0 auto;
-    flex-direction: column;
-    align-items: stretch;
  
 
     .content__post,
@@ -27,12 +20,12 @@
       display: flex;
       flex-direction: column;
       padding: 10px 0px 10px 0px;
-      min-height: 230px;
+      min-height: 220px;
     }
 
     h2 {
       font-size: 30px;
-      font-weight: 700;
+      font-weight: bold;
       color: black;
     }
 
@@ -45,6 +38,12 @@
       margin-bottom: 0px;
       color: black;
     }
+
+    .date {
+      color: #909090 !important;
+      //margin-top: auto; puts the date at the bottom
+      
+    }
   }
 
   .content__projects {
@@ -54,10 +53,6 @@
     }
   }
 
-
-  .date {
-    color: #909090 !important;
-  }
 
   .projectImage {
     position: absolute;

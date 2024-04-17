@@ -19,6 +19,8 @@
     "dat.gui": "^0.7.9",
     "dotenv": "^16.4.5",
     "eslint-config-next": "^14.0.4",
+    "firebase": "^10.11.0",
+    "firebase-admin": "^12.1.0",
     "graphql": "^16.6.0",
     "he": "^1.2.0",
     "highcharts": "^11.1.0",

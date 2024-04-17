@@ -23,7 +23,7 @@ export default function Client({ post }) {
 
       <div className={styles.prepost}>
 
-        <div className={styles.post__meta}>
+        <div className={styles.meta}>
 
           <Breadcrumbs crumbs={crumbs} />
           

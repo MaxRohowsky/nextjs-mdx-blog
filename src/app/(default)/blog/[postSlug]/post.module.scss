@@ -7,6 +7,14 @@
     padding-top: 50px;
     padding-bottom: 50px;
     margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.meta {
+    display: flex;
+    padding-top: 25px;
+    width: 650px;
+    margin: auto;
 }
 
 .post {
@@ -15,13 +23,6 @@
     width: 650px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.post__meta {
-    display: flex;
-    padding-top: 25px; 
-    width: 650px;
-    margin: auto;
 }
 
 
@@ -86,16 +87,15 @@
 }
 
 
-@media only screen and (max-width: var(--tablet-breakpoint)) {
+@media only screen and (max-width: 768px) {
+    .post__title {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .meta,
     .post__title,
     .post {
-        width: calc(100svw - (2 * 20px));
-    }
-}
-
-@media only screen and (max-width: var(--tablet-breakpoint)){
-    .post__title,
-    .post{
         width: calc(100svw - (2 * 20px));
     }
 }

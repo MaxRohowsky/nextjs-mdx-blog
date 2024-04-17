@@ -16,6 +16,13 @@ import 'highlight.js/styles/srcery.css';
 import { config } from '@fortawesome/fontawesome-svg-core'; config.autoAddCss = false;
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
+import { Open_Sans } from 'next/font/google'
+
+const openSans = Open_Sans({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata = {
   title: {
@@ -27,12 +34,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={openSans.className}>
 
 
-      <body>
+      <body className={styles.body}>
 
-        <main className={styles.main}>
 
           <Navbar />
 
@@ -44,7 +50,7 @@ export default function RootLayout({ children }) {
             <Footer />
           </footer>
 
-        </main>
+
 
       </body>
 

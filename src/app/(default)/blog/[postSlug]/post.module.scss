@@ -1,12 +1,20 @@
-@import "@/styles/_variables.scss";
+//@import "@/styles/_variables.scss";
 
 
 .prepost {
     background-color: #ffffff;
-    margin-top: -100px;
-    padding-top: 100px;
+    margin-top: 20px;
+    padding-top: 50px;
     padding-bottom: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.meta {
+    display: flex;
+    padding-top: 25px;
+    width: 650px;
+    margin: auto;
 }
 
 .post {
@@ -17,33 +25,13 @@
     margin-right: auto;
 }
 
-.post__meta {
-    display: flex;
-    padding-top: 25px; 
-    width: var(--width-container);
-    margin: auto;
-}
-
-.post__title::before {
-    content: "";
-    position: absolute;
-    bottom: 28px;
-    width: 250px;
-    height: 3px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgb(115, 149, 222);
-    z-index: 2;
-}
 
 .post__title {
-    text-align: center;
-    font-size: 30px;
-    font-weight: 600;
-    margin: 0px;
+    font-size: 40px;
+    width: 650px;
+    margin: auto;
     position: relative;
-    padding: 30pt 10pt 25pt 10pt;
-    color: var(--text-color);
+    padding: 20pt 10pt 20pt 10pt;
 }
 
 .post__date {
@@ -54,14 +42,11 @@
 }
 
 .post__text {
-    padding: 15px 15px 15px 15px;
     margin-bottom: 20px;
 }
 
 .questions {
     border-top: 3px dotted #aabee8;
-    //background-color: var(--course-question-discord);
-    //border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,14 +87,15 @@
 }
 
 
-@media only screen and (max-width: $tablet-breakpoint) {
-    .post {
-        width: calc(100svw - (2 * 20px));
+@media only screen and (max-width: 768px) {
+    .post__title {
+        padding-left: 0px;
+        padding-right: 0px;
     }
-}
 
-@media only screen and (max-width: $tablet-breakpoint){
-    .post{
+    .meta,
+    .post__title,
+    .post {
         width: calc(100svw - (2 * 20px));
     }
 }

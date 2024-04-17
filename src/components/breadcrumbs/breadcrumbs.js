@@ -14,7 +14,7 @@ export default function Breadcrumbs({ crumbs }) {
           ) : (
             <span>{crumb.label}</span>
           )}
-          {index < crumbs.length - 1 && <span className={styles.separator}> | </span>}
+          {index < crumbs.length - 1 && <span className={styles.separator}> / </span>}
         </span>
       ))}
     </nav>

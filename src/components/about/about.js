@@ -41,25 +41,25 @@ export default function About() {
                     your dream projects. Besides that, it's also my programming playground 
                     - it might be broken sometimes 😁.</p>
 
-                <div className={styles.wrapper}>
+                <div className={styles.about__socials}>
 
                     <a href="https://www.linkedin.com/in/maxrohowsky/" target="_blank" rel="noreferrer" className={`${styles.post__socials} ${styles.post__linkedin}`}>
                         <div>
-                            <FontAwesomeIcon className={styles.icon} icon={faLinkedin} />
+                            <FontAwesomeIcon className={styles.about__socialIcon} icon={faLinkedin} />
                         </div>
 
                     </a>
 
                     <a href="https://twitter.com/max_on_tech" target="_blank" rel="noreferrer" className={`${styles.post__socials} ${styles.post__twitter}`}>
                         <div>
-                            <FontAwesomeIcon className={styles.icon} icon={faTwitter} />
+                            <FontAwesomeIcon className={styles.about__socialIcon} icon={faTwitter} />
                         </div>
 
                     </a>
 
                     <a href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw?sub_confirmation=1" target="_blank" rel="noreferrer" className={`${styles.post__socials} ${styles.post__youtube}`}>
                         <div>
-                            <FontAwesomeIcon className={styles.icon} icon={faYoutube} />
+                            <FontAwesomeIcon className={styles.about__socialIcon} icon={faYoutube} />
                         </div>
 
                     </a>
@@ -67,7 +67,7 @@ export default function About() {
                     <a href={`https://github.com/maxontech`} target="_blank" rel="noreferrer"
                         className={`${styles.post__socials} ${styles.post__github}`}>
                         <div>
-                            <FontAwesomeIcon className={styles.icon} icon={faGithub} />
+                            <FontAwesomeIcon className={styles.about__socialIcon} icon={faGithub} />
                         </div>
 
                     </a>

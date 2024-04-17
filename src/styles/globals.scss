@@ -1,12 +1,17 @@
-@import "_variables.scss";
-
-/* Adding Tailwind messes with the CSS e.g. bullets not showing in courses
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-*/
 
 :root {
+  --border-radius: 3px;
+  --box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px;
+  --social-icon-size: 40px;
+
+  --wide-desktop-breakpoint: 1536px;
+  --desktop-breakpoint: 1280px;
+  --laptop-breakpoint: 1024px;
+  --tablet-breakpoint: 768px;    
+  --mobile-breakpoint: 450px;
+
+
+  //  Grid System
   --max-width: 1080px;
   --min-width: 368px;
   --guide-width: 1px;
@@ -15,7 +20,6 @@
 
   --sm-grid-rows: 5;
   --sm-grid-columns: 8;
-
 
   @media screen and (min-width: 600px) {
     --md-grid-rows: 8;
@@ -32,24 +36,8 @@
   --column-width: calc(var(--width) / var(--grid-columns));
   --row-height: calc(var(--height) / var(--grid-rows));
 
-
   --cell-padding: 48px;
   --grid-divider-gap: calc(140px - var(--cell-padding));
-
-
-  --primary-color: #468cfd;
-  --secondary-color: #bb2828;
-  --tertiary-color: #f2f2f2;
-  --quaternary-color: #f8f8f8;
-
-  --discord-color: #5865F2;
-  --facebook-color: #3b5998;
-  --twitter-color: #1da1f2;
-  --youtube-color: #ff0000;
-
-  --text-color:black;
-  --border-radius: 3px;
-  --box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -58,13 +46,12 @@
 
 html,
 body {
-  font-size: 1.0rem;
-  font-family: "Open Sans", "system-ui", "Trebuchet MS", Arial, Helvetica, Verdana;
+  //font-family: "Open Sans", "system-ui", "Trebuchet MS", Arial, Helvetica, Verdana;
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
   color: black;
-  background:  linear-gradient(176deg, #f8f8f8 50%, #ffffff 100%);
+  background: linear-gradient(176deg, #f8f8f8 50%, #ffffff 100%);
   min-height: 100vh;
   background-attachment: fixed;
 }
@@ -85,79 +72,64 @@ h1 {
   margin-top: 35pt;
   margin-bottom: 20pt;
   font-size: 25px;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 h2 {
   margin-top: 28pt;
   margin-bottom: 12pt;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 h3 {
   margin-top: 12pt;
   margin-bottom: 6pt;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 h4 {
   margin-top: 6pt;
   margin-bottom: 6pt;
+  font-weight: normal;
 }
 
 p,
 li {
   line-height: 28px;
   margin-bottom: 10px;
-  font-weight: 400;
-  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+
+  /*@media (max-width: 450px) {
+    font-size: 16px;
+  }*/
 }
 
 
 
 /*----------------------------------------------------------Code block Styling----------------------------------------------------------*/
-.wp-block-code::before {
-  content: '';
-  position: absolute;
-  top: -11px;
-  left: -10px;
-  width: 25px;
-  height: 21px;
-  z-index: 1;
-  background-color: #000000;
-  -webkit-mask-image: url('../../public/icons/terminal.svg');
-  mask-image: url('../../public/icons/terminal.svg');
-  mask-size: cover;
-}
-
-.wp-block-code::after {
-  content: '';
-  background: #f8f8f8;
-  position: absolute;
-  top: -20px;
-  left: -18px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
 
 .wp-block-code {
   position: relative;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .hljs {
   position: relative;
   border-radius: 3px;
-  font-size: 18px;
   background: #282b2e !important;
-  padding: 25px !important;
+  padding: 12px !important;
   line-height: 26px;
 
   & mark {
     background-color: #25487d !important;
+  }
+
+  @media (max-width: 450px) {
+    line-height: 20px;
+    font-size: 14px;
   }
 }
 
@@ -295,10 +267,10 @@ li {
 /* ---------------------------------------------------------- Code in Paragraphs----------------------------------------------------------*/
 p>code,
 td>code {
-  background: rgb(219, 219, 230);
+  background: rgb(203, 225, 252);
   border-radius: 0.25em;
   padding: 0.01em 0.25em;
-  font-size: 20px;
+
 }
 
 /* ---------------------------------------------------------- Table Styling ----------------------------------------------------------*/
@@ -314,38 +286,3 @@ td>code {
 a {
   text-decoration: none;
 }
-
-// SHOW LANGUAGE
-// This code shows the programming language within the code blocks
-// See https://github.com/westonruter/syntax-highlighting-code-block/wiki/Advanced-Usage
-// Problem is the language is not always correct
-/*
-.wp-block-code {
-	position: relative;
-}
-
-.wp-block-code .shcb-language {
-	clip: initial;
-	width: auto;
-	height: auto;
-	margin: auto;
-	clip-path: none;
-
-	bottom: 6px;
-	right: 6px;
-	line-height: 1em;
-	white-space: normal;
-	//font-family: sans-serif;
-	font-size: 12px;
-	//font-weight: bold;
-  
-}
-
-.wp-block-code .shcb-language__label,
-.wp-block-code .shcb-language__paren,  // yes, paren is correct :D
-.wp-block-code .shcb-language__slug {
-	display: none;
-}
-
-*/
-// SHOW LANGUAGE END

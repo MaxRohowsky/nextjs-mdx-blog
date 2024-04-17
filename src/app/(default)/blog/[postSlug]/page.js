@@ -1,13 +1,46 @@
-import { notFound } from 'next/navigation';
 import Client from './client';
+import he from 'he';
 
+async function generateMetadata({ params }) {
+  const { postSlug } = params;
+  const response = await fetch(process.env.WORDPRESS_API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      query: `
+        query PostBySlug($slug: String!) {
+          postBy(slug: $slug) {
+            title
+            excerpt
+          }
+        }
+      `,
+      variables: {
+        slug: postSlug,
+      },
+    }),
 
+  });
+
+  const data = await response.json();
+  const title =  data?.data?.postBy?.title;
+  
+  // Remove the HTML tags from the excerpt
+  let description = data?.data?.postBy?.excerpt;
+  description = he.decode(description);
+  description = description.replace(/<[^>]+>/g, '');
+  
+  return {
+    title,
+    description,
+  }
+}
 
 
 async function getPost(params) {
   const { postSlug } = params;
 
-  const response = await fetch("https://hosting189589.a2f4e.netcup.net/graphql", {
+  const response = await fetch(process.env.WORDPRESS_API, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -26,7 +59,7 @@ async function getPost(params) {
         slug: postSlug,
       },
     }),
-    
+
   });
 
   const data = await response.json();

@@ -1,11 +1,15 @@
-@import "@/styles/_variables.scss";
 
+/*Particle Config*/
+$particle-count: 8;
+$particle-size: 10px;
+$particle-distance: 500px;
+$particle-min-speed: 9000;  // ms
+$particle-max-speed: 10000; // ms
+$particle-max-delay: 10000; // ms
 
 .bottomparticles {
   position: relative;
-  //top: 500px;
-  //left: 0;
-  //width: 100svw;
+
   z-index: 1;
 
   .bubble {

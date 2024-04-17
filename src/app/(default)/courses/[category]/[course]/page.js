@@ -1,81 +1,85 @@
 'use server'
 import Client from './client';
-import { gql } from "@apollo/client";
-import { getApolloClient } from '@/components/client';
 
 
 async function getCourse(params) {
-
   const { category, course } = params || {};
-  
-  const apolloClient = getApolloClient();
 
-  const raw_course_data = await apolloClient.query({
-    query: gql`
-      query GetCourseData($slug: String!){
-        courses(where: {name: $slug}) {
-            edges {
-            node {
-              slug
-              title
-              content
-              excerpt
-              id
-              categories{
-                nodes{
-                  id
-                  name
-                  categoryId
-                  uri
+  const courseResponse = await fetch(process.env.WORDPRESS_API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      query: `
+        query GetCourseData($slug: String!){
+          courses(where: {name: $slug}) {
+              edges {
+              node {
+                slug
+                title
+                content
+                excerpt
+                id
+                categories{
+                  nodes{
+                    id
+                    name
+                    categoryId
+                    uri
+                  }
                 }
+                githubRef {
+                  githubReference
+                }
+                date
               }
-              githubRef {
-                githubReference
-              }
-              date
             }
           }
         }
-      }
       `,
-    variables: {
-      slug: course
-    }
+      variables: {
+        slug: course,
+      },
+    }),
   });
 
-  const raw_sidebar_data = await apolloClient.query({
-    query: gql`
-    query GetSidebarData($slug: [String]){
-      categories(where: {slug: $slug}){
-          nodes {
-              courses(first: 50) {
-                  edges {
-                      node {
-                          id
-                          title
-                          slug
-                          menuOrder
-                          uri
-                          link
-                      }
-                  } 
+  const sidebarResponse = await fetch(process.env.WORDPRESS_API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      query: `
+        query GetSidebarData($slug: [String]){
+          categories(where: {slug: $slug}){
+              nodes {
+                  courses(first: 50) {
+                      edges {
+                          node {
+                              id
+                              title
+                              slug
+                              menuOrder
+                              uri
+                              link
+                          }
+                      } 
+                  }
               }
           }
       }
-  }
       `,
-    variables: {
-      slug: category
-    }
+      variables: {
+        slug: category,
+      },
+    }),
   });
 
-  const courseData = raw_course_data?.data.courses.edges[0].node
+  const raw_course_data = await courseResponse.json();
+  const raw_sidebar_data = await sidebarResponse.json();
 
-  const sidebarData = raw_sidebar_data?.data.categories.nodes[0].courses.edges
+  const courseData = raw_course_data?.data?.courses?.edges[0]?.node;
+  const sidebarData = raw_sidebar_data?.data?.categories?.nodes[0]?.courses?.edges;
 
-  return { courseData, sidebarData }
+  return { courseData, sidebarData };
 }
-
 
 export default async function Course({params}) {
 

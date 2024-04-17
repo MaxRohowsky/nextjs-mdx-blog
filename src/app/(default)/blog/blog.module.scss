@@ -1,9 +1,9 @@
 .container {
     width: var(--width-container);
     justify-content: center;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin: 20px auto 20px auto; 
+    padding: 0 5px; 
+    box-sizing: border-box;
 }
 
 .title {
@@ -33,6 +33,13 @@
     margin: auto;
 }
 
+.content__post {
+    color: black;
+    .post__title{
+        font-weight: bold;
+    }
+}
+
 .list{
     display: none;
 }
@@ -60,18 +67,11 @@
         //width: calc((var(--width) / 2) - 50px);
 
         .content__post {
-            margin-top: 30px;
-            margin-bottom: 30px;
+            margin-top: 40px;
+            margin-bottom: 40px;
             border-bottom: 1px solid #eaeaea;
         }
 
-        .post__title {
-            font-weight: bold;
-        }
 
-        p {
-            padding-bottom: 5px;
-            margin-bottom: 0px;
-        }
     }
 }

@@ -1,0 +1,8 @@
+- Add nice commit history to your websit: https://stackoverflow.com/questions/67986923/how-to-display-the-name-of-the-latest-commit-on-github-to-my-website
+- Open Source the website safely
+- Add Sitemap to website
+- The social proof images are img and not next Image. Improve that.
+- Viewcount to posts
+- Make a nice footer.
+- Imrrove the cookie opt in.
+- Make the mob menu nice.

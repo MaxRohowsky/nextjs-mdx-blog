@@ -3,6 +3,7 @@ import styles from './hero.module.scss';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 
 export default function Hero() {
 
@@ -29,13 +30,12 @@ export default function Hero() {
 
             <div className={styles.hero__title}>
 
-                <h1> Modern <u>Full-Stack</u> Development</h1>
+                <h1> Modern <RoughNotation type="highlight" show={true} color='#abe2ff' >Full-Stack</RoughNotation> Development</h1>
 
                 <h2>
                     Learn in-demand Dev skills
-                     <br /> to build awesome software or get promoted
+                    <br /> to build awesome software and advance your career
                 </h2>
-
 
                 <a href="https://www.youtube.com/@maxontech/?sub_confirmation=1" target="_blank" rel="noreferrer">
                     <button className={styles.hero__subscribe}>
@@ -63,7 +63,7 @@ export default function Hero() {
                     </div>
 
                     <div className={styles.socialproof__text}>
-                        Join a community of <br /> 10k+ subscibers
+                        Join my community of <br /> 11k+ subscibers
                     </div>
                 </div>
 

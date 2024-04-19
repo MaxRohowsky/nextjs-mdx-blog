@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Particles from '../particles/particle';
 import { faTwitter, faGithub, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 
 
 export default function About() {
@@ -17,10 +17,10 @@ export default function About() {
 
                 <div className={styles.image__container}>
 
-                    <Image 
-                    src="/about.png" 
-                    alt="Hero Outline" 
-                    layout='fill'
+                    <Image
+                        src="/about.png"
+                        alt="Hero Outline"
+                        layout='fill'
                     />
 
                 </div>
@@ -33,13 +33,17 @@ export default function About() {
 
                 <h2>About Me</h2>
 
-                <p> Hi, I'm Max, a Finance Ph.D. with a background in Industrial Engineering.
-                    I work as a consultant in the finance & tech space and have a profound interest in
-                    building projects and products that 'stick'. </p>
+                <p> Hi, I'm Max,
+                    a Finance Ph.D. with a background in
+                    Industrial Engineering.
+                    I work as a consultant in the finance & tech space
+                    and have a profound interest in
+                    building awesome software and
+                    products that 'stick'. </p>
 
                 <p> In this blog, I simplify the tech that helps you build
-                    your dream projects. Besides that, it's also my programming playground 
-                    - it might be broken sometimes 😁.</p>
+                    your dream projects. Besides that, it's also my programming playground
+                    and might be broken sometimes. Since life is short, I force push to main on save.</p>
 
                 <div className={styles.about__socials}>
 

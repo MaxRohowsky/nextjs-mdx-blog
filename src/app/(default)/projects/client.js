@@ -10,14 +10,27 @@ export default function Client({ courses, pageInfo }) {
     let cardItems = [];
 
     cardItems.push(
+        <Card
+            key={11}
+            title={"Webframe"}
+            tags={[
+                { tag: '#HTML', color: 'black' },
+                { tag: '#JS', color: 'black' },
+                { tag: '#CSS', color: 'black' },
+                { tag: '#MV3', color: 'black' }
+            ]}
+            img={"/previews/webframe.png"}
+            body={"Extension that outlines HTML elements without affecting the layout to inspect websites and debug CSS"}
+            link={"https://github.com/maxontech/outline-html-elements"} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
+        />,
 
         <Card
-            key={1}
+            key={10}
             title={"Twitter (X) Font Editor"}
             tags={[
-                { tag: '#HTML', color: 'black' }, 
-                { tag: '#JS', color: 'black' }, 
-                { tag: '#CSS', color: 'black' }, 
+                { tag: '#HTML', color: 'black' },
+                { tag: '#JS', color: 'black' },
+                { tag: '#CSS', color: 'black' },
                 { tag: '#MV3', color: 'black' }
             ]}
             img={"/previews/x-font-editor.png"}
@@ -26,12 +39,12 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={2}
+            key={9}
             title={"Click to Copy"}
             tags={[
-                { tag: '#HTML', color: 'black' }, 
-                { tag: '#CSS', color: 'black' }, 
-                { tag: '#JQuery', color: 'black' }, 
+                { tag: '#HTML', color: 'black' },
+                { tag: '#CSS', color: 'black' },
+                { tag: '#JQuery', color: 'black' },
                 { tag: '#MV3', color: 'black' }
             ]}
             img={"/previews/click-to-copy.png"}
@@ -40,13 +53,13 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={3}
+            key={8}
             title={"GitPro"}
             tags={[
-                { tag: '#HTML', color: 'black' }, 
-                { tag: '#TailwindCSS', color: 'black' }, 
-                { tag: '#JS', color: 'black' }, 
-                { tag: '#GitHubActions', color: 'black' }, 
+                { tag: '#HTML', color: 'black' },
+                { tag: '#TailwindCSS', color: 'black' },
+                { tag: '#JS', color: 'black' },
+                { tag: '#GitHubActions', color: 'black' },
             ]}
             img={"/previews/gitpro.png"}
             body={"Showcase website for unique and beautiful GitHub profiles that is fully automated using GitHub Actions"}
@@ -54,13 +67,13 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={4}
+            key={7}
             title={"LinkedIn Font Editor"}
             tags={[
-                { tag: '#HTML', color: 'black' }, 
-                { tag: '#CSS', color: 'black' }, 
-                { tag: '#JS', color: 'black' }, 
-                { tag: '#JQuery', color: 'black' }, 
+                { tag: '#HTML', color: 'black' },
+                { tag: '#CSS', color: 'black' },
+                { tag: '#JS', color: 'black' },
+                { tag: '#JQuery', color: 'black' },
             ]}
             img={"/previews/linkedin-font-editor.png"}
             body={"Google Chrome Extension that Enables 𝗕𝗼𝗹𝗱, 𝐼𝑡𝑎𝑙𝑖𝑐, and U̲n̲d̲e̲r̲l̲i̲n̲e̲d̲ Fonts on LinkedIn Posts"}
@@ -68,11 +81,11 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={5}
+            key={6}
             title={"LandingHero"}
             tags={[
-                { tag: '#React', color: 'black' }, 
-                { tag: '#JSX', color: 'black' }, 
+                { tag: '#React', color: 'black' },
+                { tag: '#JSX', color: 'black' },
                 { tag: '#Puppeteer', color: 'black' },
             ]}
             img={"/previews/landinghero.png"}
@@ -81,7 +94,7 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={6}
+            key={5}
             title={"NEFT Flappy Bird"}
             tags={[
                 { tag: '#Python', color: 'black' },
@@ -93,7 +106,7 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={7}
+            key={4}
             title={"Drive AI"}
             tags={[
                 { tag: '#Python', color: 'black' },
@@ -105,7 +118,7 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={8}
+            key={3}
             title={"NEAT Chrome Dinosaur"}
             tags={[
                 { tag: '#Python', color: 'black' },
@@ -117,7 +130,7 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={9}
+            key={2}
             title={"Dijkstra Pathfinding Visualizer"}
             tags={[
                 { tag: '#Python', color: 'black' },
@@ -129,10 +142,10 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={10}
+            key={1}
             title={"Programming Courses"}
             tags={[
-                { tag: '#Diverse', color: 'black' }, 
+                { tag: '#Diverse', color: 'black' },
             ]}
             img={"/previews/programming-courses.png"}
             body={"Programming tutorial write ups to teach myself and others about Python, JavaScript, and more"}

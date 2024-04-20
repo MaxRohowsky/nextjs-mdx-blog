@@ -30,7 +30,7 @@ export default function Hero() {
 
             <div className={styles.hero__title}>
 
-                <h1> Modern <RoughNotation type="highlight" show={true} color='#abe2ff' >Full-Stack</RoughNotation> Development</h1>
+                <h1> Modern <RoughNotation type="highlight" show={true} color='#abe2ff' >Web</RoughNotation> Development</h1>
 
                 <h2>
                     Learn in-demand Dev skills

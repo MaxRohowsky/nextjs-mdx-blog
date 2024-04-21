@@ -43,7 +43,7 @@ export default function About() {
 
                 <p> In this blog, I simplify the tech that helps you build
                     your dream projects. Besides that, it's also my programming playground
-                    and might be broken sometimes. Since life is short, I force push to main on save.</p>
+                    and might be broken sometimes - I force push to main on save.</p>
 
                 <div className={styles.about__socials}>
 

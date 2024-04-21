@@ -8,8 +8,10 @@
   background-color: var(--home-content-card-bg-color);
   transition: 0.5s;
   animation: ease-in;
-  &:hover{
-    transform: scale(1.05);
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
 

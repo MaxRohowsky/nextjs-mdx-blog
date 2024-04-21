@@ -47,9 +47,11 @@
   }
 
   .content__projects {
-    .project__title:hover~.projectImage {
-      opacity: 1;
-      transform: scale(1);
+    @media (hover: hover) {
+      .project__title:hover~.projectImage {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   }
 
@@ -63,10 +65,7 @@
     transform: scale(0);
   }
 
-
-
 }
-
 
 
 

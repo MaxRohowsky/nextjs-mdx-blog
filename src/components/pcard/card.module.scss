@@ -1,5 +1,4 @@
-
-.card{
+.card {
   margin: 0px; // Margin between Card and Grid Border
   overflow: hidden;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -12,18 +11,21 @@
   /* Card Hover*/
   transition: 0.5s;
   animation: ease-in;
-  &:hover{
-    transform: scale(1.05);
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
 
-.card__image{
+.card__image {
   overflow: hidden;
   /* Scale image to parent div*/
   max-width: 100%;
 }
 
-.card__tags{
+.card__tags {
   display: flex;
   flex-wrap: wrap;
   margin: 15px;
@@ -31,7 +33,7 @@
   margin-bottom: 10px;
 }
 
-.tag{
+.tag {
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 2px;
@@ -45,7 +47,7 @@
 }
 
 
-.title__text{
+.title__text {
   padding: 0px;
   margin: 15px;
   font-weight: 600;
@@ -53,7 +55,7 @@
 }
 
 
-.card__date{
+.card__date {
   margin-left: 15px;
   font-size: smaller;
   color: var(--text-color);
@@ -61,7 +63,7 @@
 
 
 
-.card__description{
+.card__description {
   color: var(--text-color);
   margin: 15px;
   margin-top: 0px;

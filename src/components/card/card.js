@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import styles from './card.module.scss'
 import he from 'he';
-import { color } from 'highcharts';
+
 
 
 function Card({ title, date, img, body, link }) {

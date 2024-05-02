@@ -24,7 +24,7 @@ function Card({ title, date, img, body, link }) {
                         <h3 className={styles.title__text}>{title}</h3>
 
                     <div className={styles.card__description}>
-                        <p >{he.decode(body).replace(/<\/?[^>]+(>|$)/g, "")}</p>
+                        <p className={styles.card__text}>{he.decode(body).replace(/<\/?[^>]+(>|$)/g, "")}</p>
                     </div>
                 </div>
             </div>

@@ -35,7 +35,7 @@ function Card({ title, tags, img, body, link }) {
                     <h3 className={styles.title__text}>{title}</h3>
 
                     <div className={styles.card__description}>
-                        {body}
+                        <p className={styles.card__text}>{body}</p>
                     </div>
                 </div>
             </div>

@@ -26,10 +26,10 @@ const openSans = Open_Sans({
 
 export const metadata = {
   title: {
-    default: 'Max on Tech | Modern Full-Stack Development',
+    default: 'Max on Tech | Modern Web Development',
     template: '%s | Max on Tech'
   },
-  description: 'A Blog on Modern Full-Stack Development by Max on Tech',
+  description: 'A Blog on Modern Web Development by Max on Tech',
 }
 
 export default function RootLayout({ children }) {

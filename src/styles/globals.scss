@@ -77,14 +77,14 @@ h1 {
 
 h2 {
   margin-top: 28pt;
-  margin-bottom: 12pt;
+  margin-bottom: 18pt;
   font-size: 30px;
   font-weight: normal;
 }
 
 h3 {
-  margin-top: 12pt;
-  margin-bottom: 6pt;
+  margin-top: 16pt;
+  margin-bottom: 10pt;
   font-weight: normal;
 }
 
@@ -94,14 +94,21 @@ h4 {
   font-weight: normal;
 }
 
-p,
-li {
+p {
   line-height: 35px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   font-weight: normal;
   font-size: 20px;
+  /*@media (max-width: 450px) {
+    font-size: 16px;
+  }*/
+}
 
+li {
+  line-height: 35px;
+  font-weight: normal;
+  font-size: 20px;
   /*@media (max-width: 450px) {
     font-size: 16px;
   }*/
@@ -266,6 +273,7 @@ li {
 
 
 /* ---------------------------------------------------------- Code in Paragraphs----------------------------------------------------------*/
+li>code,
 p>code,
 td>code {
   background: rgb(203, 225, 252);

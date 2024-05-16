@@ -1,14 +1,23 @@
 'use client'
 import { dateTime } from '@/components/datetime/datetime.js';
 import styles from './blog.module.scss'
-import Card from "@/components/card/card.js"
+import Card from "@/components/vcard/card.js"
 import Link from 'next/link';
 
-export default function Client({ posts }) {
+export default function Client({ posts, ana }) {
+    const paths = posts.map(post => post.path);
+    console.log(paths)
+    console.log(ana)
 
     var items = []
 
     for (var i = 0; i < posts.length; i++) {
+        // Find the corresponding ana item
+        const anaItem = ana.find(item => item.slug === posts[i].path);
+
+        // If an ana item was found, use its views, otherwise use a default value
+        const views = anaItem ? anaItem.views : "N/A";
+
         items.push(
             <Card
                 key={i}
@@ -17,6 +26,7 @@ export default function Client({ posts }) {
                 img={posts[i].featuredImage.node.mediaItemUrl}
                 body={posts[i].excerpt}
                 link={posts[i].path} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
+                views={views}
             />
         )
     }

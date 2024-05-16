@@ -1,6 +1,8 @@
 
 import Client from './client.js';
+import supabase from '@/lib/supabase/public'
 
+export const revalidate = 5
 
 export const metadata = {
   title: "Blog",
@@ -36,24 +38,36 @@ async function getPosts() {
   });
 
   const data = await response.json();
+
+  const slugs = data?.data?.posts?.edges.map(({ node }) => node.slug);
+
+
+  let { data: ana, error } = await supabase
+    .from('ana')
+    .select('slug, views')
+
+  console.log(ana)
   
-  return data?.data?.posts?.edges.map(({ node }) => node).map(post => {
-    // The first map creates a new array with node items. The second map returns the posts and path.
+  const posts = data?.data?.posts?.edges.map(({ node }) => node).map(post => {
     return {
       ...post,
       path: `/blog/${post.slug}`,
     };
   });
+
+  // Return both posts and ana
+  return { posts, ana };
 }
 
 
 export default async function BlogEntires() {
 
-  const posts = await getPosts();
+  const { posts, ana } = await getPosts();
+
 
   return (
 
-    <Client posts={posts} />
+    <Client posts={posts} ana={ana} />
 
 
   )

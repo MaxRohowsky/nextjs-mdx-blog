@@ -1,18 +1,18 @@
-'use client'
+
 // https://www.youtube.com/watch?v=6Sb8R1PYhTY
 import supabase from '@/lib/supabase/public'
 import { createClient } from '@supabase/supabase-js'
-
+import Client from './client.js'
 //import {createBrowserClient}  from "@supabase/ssr";
-import { useEffect, useState } from 'react'
+//import { useEffect, useState } from 'react'
 
 //import supabase from '@/lib/supabase/private'
-
+export const revalidate = 5
 // https://maxleiter.com/blog/supabase-next-analytics
 export default async function Component() {
   // You may want to pass in an initial value for views if you're using getStaticPaths or similar.
   // That way, it won't start at 0 when the client loads.
-  const [views, setViews] = useState(0)
+  //const [views, setViews] = useState(0)
 
   // Subscribe to view updates.
   // Note that `id` is something I store manually on page creation so I can associate
@@ -83,20 +83,20 @@ export default async function Component() {
   let { data: ana, error } = await supabase
     .from('ana')
     .select('views')
-    .eq('slug', '/example');
+    .eq('slug', '/example')
 
-  useEffect(() => {
+  //useEffect(() => {
     
-
+  console.log(ana)
   console.log("Data: ", ana[0].views)
 
-  setViews(ana[0].views)
+  //setViews(ana[0].views)
 
   
 
-  }
+  //}
   
-  , [])
+  //, [])
 
 
   
@@ -110,7 +110,7 @@ useEffect(() => {
   }
   getViews()
 }, [])
-
+<pre>{JSON.stringify(ana, null, 2)}</pre>  {views} {views.length === 1 ? 'view' : 'views'}
 
 
 console.log("Data: ", data)*/
@@ -119,8 +119,8 @@ console.log("Data: ", data)*/
 
   return (
     <div>
+      <Client />
 
-<pre>{JSON.stringify(ana, null, 2)}</pre>  {views} {views.length === 1 ? 'view' : 'views'}
       {/*  <pre>{JSON.stringify(posts, null, 2)}</pre>  {views} {views.length === 1 ? 'view' : 'views'}*/}
     </div>
   )

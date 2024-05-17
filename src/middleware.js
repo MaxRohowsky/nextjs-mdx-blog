@@ -25,8 +25,6 @@ export const config = {
 
 export async function middleware(req, event) {
 
-
-
     const pathname = req.nextUrl.pathname
     const PUBLIC_FILE = /\.(.*)$/
 

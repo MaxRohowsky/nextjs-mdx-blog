@@ -6,7 +6,7 @@ export const revalidate = 5
 
 export const metadata = {
   title: "Blog",
-  description: "Blog posts about Modern Full Stack Development"
+  description: "Blog posts about Modern Web Development"
 }
 
 async function getPosts() {

@@ -26,6 +26,8 @@ function Card({ title, date, img, body, link, views }) {
                         </div>
                     )}
 
+
+
                     <h3 className={styles.title__text}>{title}</h3>
 
                     <div className={styles.card__description}>

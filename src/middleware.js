@@ -1,27 +1,18 @@
 // middleware runs code before request is completed
 import { NextResponse } from 'next/server';
 
-/*
-export function middleware() {
-  return NextResponse.json(
-    { message: 'Hello from middleware!' },
-  );
-}*/
-
-const PUBLIC_FILE = /\.(.*)$/
 
 export async function middleware(req, event) {
-  //console.log("Middleware test")
+
   const pathname = req.nextUrl.pathname
-  // we ignore running this middleware when the request is to a serverless function or a file in public/.
-  // This is purely optional.
+  const PUBLIC_FILE = /\.(.*)$/
+
+  // Check if the request is for a page, not a static file or API route
   const isPageRequest =
     !PUBLIC_FILE.test(pathname) && !pathname.startsWith('/api')
 
   const sendAnalytics = async () => {
     const slug = pathname.slice(pathname.indexOf('/')) || '/'
-    //console.log("Slug: ", slug)
-    // Change your production URL!
     const URL =
       process.env.NODE_ENV === 'production'
         ? 'https://maxontech.io/api/view'
@@ -37,7 +28,6 @@ export async function middleware(req, event) {
     })
 
     if (res.status !== 200) {
-      //console.error('Failed to send analytics', res)
     }
   }
 

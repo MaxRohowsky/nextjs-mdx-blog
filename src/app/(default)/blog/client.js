@@ -39,7 +39,7 @@ export default function Client({ posts, ana }) {
 
                 <h1 className={styles.title}> Blog </h1>
 
-                <h4 className={styles.subtitle}>Strategy and Tech Tips for your Projects</h4>
+                <h4 className={styles.subtitle}>Things that I'm Thinking About</h4>
                 
                 {/** Desktop */}
                 <div className={styles.cards}>

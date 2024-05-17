@@ -15,6 +15,13 @@ export default function Client() {
     return (
 
         <>
+        <div>hi</div>
+
+        <div>eye</div>
+        
+        <div id="eye">
+
+        </div>
 
            
 

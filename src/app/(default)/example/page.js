@@ -19,6 +19,7 @@ export default async function Component() {
   
   return (
     <div>
+      <Client/>
  
 
       {/*  <pre>{JSON.stringify(posts, null, 2)}</pre>  {views} {views.length === 1 ? 'view' : 'views'}*/}

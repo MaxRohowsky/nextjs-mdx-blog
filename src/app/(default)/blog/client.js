@@ -6,8 +6,7 @@ import Link from 'next/link';
 
 export default function Client({ posts, ana }) {
     const paths = posts.map(post => post.path);
-    console.log(paths)
-    console.log(ana)
+
 
     var items = []
 

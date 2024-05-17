@@ -27,8 +27,16 @@
 }
 
 
-.card__date{
+.card__meta{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__date,
+.card__views 
+{
   margin-left: 15px;
+  margin-right: 15px;
   font-size: smaller;
   color: var(--text-color);
 }

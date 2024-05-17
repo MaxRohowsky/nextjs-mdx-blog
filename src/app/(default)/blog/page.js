@@ -39,14 +39,10 @@ async function getPosts() {
 
   const data = await response.json();
 
-  const slugs = data?.data?.posts?.edges.map(({ node }) => node.slug);
-
-
-  let { data: ana, error } = await supabase
+  const { data: views, error } = await supabase
     .from('ana')
     .select('slug, views')
 
-  console.log(ana)
   
   const posts = data?.data?.posts?.edges.map(({ node }) => node).map(post => {
     return {
@@ -56,18 +52,18 @@ async function getPosts() {
   });
 
   // Return both posts and ana
-  return { posts, ana };
+  return { posts, views };
 }
 
 
 export default async function BlogEntires() {
 
-  const { posts, ana } = await getPosts();
+  const { posts, views } = await getPosts();
 
 
   return (
 
-    <Client posts={posts} ana={ana} />
+    <Client posts={posts} ana={views} />
 
 
   )

@@ -4,6 +4,8 @@ import Link from 'next/link'
 import styles from './card.module.scss'
 import he from 'he';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-regular-svg-icons';
 
 
 function Card({ title, date, img, body, link, views }) {
@@ -15,16 +17,19 @@ function Card({ title, date, img, body, link, views }) {
                     <img className={styles.card__image} src={img} alt='' loading="lazy" />
                 </div>
                 <div className={styles.card__item}>
+                    <div className={styles.card__meta}>
                     {date && (
                         <div className={styles.card__date} >
                             <span >{date}</span>
                         </div>
                     )}
+                    
                     {views && (
-                        <div className={styles.card__date} >
-                            <span >{views}</span>
+                        <div className={styles.card__views} >
+                            <span > <FontAwesomeIcon icon={faEye} color="gray" /> {views} </span>
                         </div>
                     )}
+                    </div>
 
 
 

@@ -35,12 +35,9 @@ export async function middleware(req, event) {
     // Send a POST request to the /api/view route
     const sendAnalytics = async () => {
 
-      console.log("req.headers.referer")
-      //console.log(req.headers)
-
       // Get the slug from the URL
       const slug = pathname.slice(pathname.indexOf('/')) || '/'
-      console.log("hi")
+
       const URL =
         process.env.NODE_ENV === 'production'
           ? 'https://maxontech.io/api/view'
@@ -65,7 +62,6 @@ export async function middleware(req, event) {
     // it won't wait for sendAnalytics() to finish before continuing the response,
     // so we avoid delaying the user.
     if (isBlogPageRequest) {
-      console.log("isBlogPageRequest")
       event.waitUntil(sendAnalytics())
     }
 

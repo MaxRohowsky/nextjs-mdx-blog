@@ -1,8 +1,9 @@
 
 import Client from './client.js';
 import supabase from '@/lib/supabase/public'
+import getViews from '@/lib/supabase/getViews.js'
 
-export const revalidate = 5
+export const revalidate = 10
 
 export const metadata = {
   title: "Blog",
@@ -39,11 +40,17 @@ async function getPosts() {
 
   const data = await response.json();
 
-  const { data: views, error } = await supabase
+  const initViews = await getViews();
+  /*
+  let { data: views, error } = await supabase
     .from('ana')
-    .select('slug, views')
+    .select('slug, views', { 'cache': false })
 
-  
+
+  if (error) {
+    views = []
+  }*/
+
   const posts = data?.data?.posts?.edges.map(({ node }) => node).map(post => {
     return {
       ...post,
@@ -52,18 +59,33 @@ async function getPosts() {
   });
 
   // Return both posts and ana
-  return { posts, views };
+  return { posts, initViews };
 }
 
 
 export default async function BlogEntires() {
 
-  const { posts, views } = await getPosts();
+  const { posts, initViews } = await getPosts();
+  console.log("posts")
+  console.log(posts)
+  console.log("views")
+  console.log(initViews)
+  /*
+  const channels = supabase.channel('custom-update-channel')
+    .on(
+      'postgres_changes',
+      { event: 'UPDATE', schema: 'public', table: 'ana' },
+      (payload) => {
+        //console.log('Change received!', payload)
+      }
+    )
+    .subscribe()
 
+    console.log(channels)*/
 
   return (
 
-    <Client posts={posts} ana={views} />
+    <Client posts={posts} initViews={initViews} />
 
 
   )

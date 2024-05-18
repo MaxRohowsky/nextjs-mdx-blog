@@ -2,7 +2,7 @@
 import Client from './client.js';
 import getViews from '@/lib/supabase/getViews.js'
 
-
+export const revalidate = 5;
 
 export const metadata = {
   title: "Blog",

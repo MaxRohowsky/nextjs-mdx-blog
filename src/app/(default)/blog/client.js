@@ -5,8 +5,6 @@ import Card from "@/components/vcard/card.js"
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import getViews from '@/lib/supabase/getViews.js'
-
-//import supabase from '@/lib/supabase/public'
 import publicClient from '@/lib/supabase/public'
 
 
@@ -19,7 +17,7 @@ export default function Client({ posts, initViews }) {
 
     // Subscribe to changes on the ana table and stop the subscription when the component is unmounted
     useEffect(() => {
-        //const supabase = createClient('https://bekowpfzavpgpymlsdgp.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJla293cGZ6YXZwZ3B5bWxzZGdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU0NjAwOTUsImV4cCI6MjAzMTAzNjA5NX0.JWJWrKdA1o_1gcB4LZbqRid4nJjRrK_gGPJQjbuzqgA')
+       
         const supabase = publicClient
 
         const channels = supabase.channel('custom-update-channel')
@@ -27,7 +25,7 @@ export default function Client({ posts, initViews }) {
                 'postgres_changes',
                 { event: 'UPDATE', schema: 'public', table: 'ana', columns: ['viewcount'] },
                 async (payload) => {
-                    console.log('Change received!', payload)
+                    //console.log('Change received!', payload)
                     let newViews = await getViews();
                     setViews(newViews)
                 }

@@ -83,8 +83,7 @@ async function getPost(params) {
 export default async function Post({ params }) {
 
   const { post, status, initViews } = await getPost(params);
-  //console.log(initViews)
-  //console.log(post.slug)
+
   const obj = initViews.find(view => view.slug === "/blog/"+post.slug);
 
 

@@ -6,9 +6,10 @@ import Socials from '@/components/socials/socials';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
+import { faEye } from '@fortawesome/free-regular-svg-icons';
 
 
-export default function Client({ post }) {
+export default function Client({ post, views }) {
 
   const crumbs = [
     { label: 'Home', path: '/' },
@@ -26,8 +27,16 @@ export default function Client({ post }) {
         <div className={styles.meta}>
 
           <Breadcrumbs crumbs={crumbs} />
-          
+
+          <span className={styles.views}>
+            <FontAwesomeIcon icon={faEye} className={styles.icon} color="gray" />
+            {views+1}
+          </span>
+
+
         </div>
+
+
 
         <h1 className={styles.post__title} dangerouslySetInnerHTML={{ __html: post.title }} />
 

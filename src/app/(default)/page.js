@@ -1,6 +1,6 @@
+
+'use server'
 import Client from './client';
-
-
 
 
 async function getPosts() {
@@ -43,8 +43,9 @@ async function getPosts() {
 
 
 export default async function Home() {
-
+ 
   const posts = await getPosts();
+
 
   return (
     <>
@@ -54,4 +55,5 @@ export default async function Home() {
     </>
   )
 }
+
 

@@ -1,6 +1,7 @@
+
 import Client from './client';
 import he from 'he';
-
+import getViews from '@/lib/supabase/getViews.js'
 
 export async function generateMetadata( params ) {
   const { params: { postSlug } } = params;
@@ -69,28 +70,28 @@ async function getPost(params) {
 
   const post = data?.data?.postBy;
 
+  const initViews = await getViews();
+
   return {
     post,
     status: response.status,
+    initViews
   };
 }
-/*
-export const metadata = {
-  title: "TEST",
-  description: "TEST"
-}*/
+
 
 export default async function Post({ params }) {
 
-  const { post, status } = await getPost(params);
-  //const { title, description } = await generateMetadata(params);
+  const { post, status, initViews } = await getPost(params);
+  //console.log(initViews)
+  //console.log(post.slug)
+  const obj = initViews.find(view => view.slug === "/blog/"+post.slug);
 
-  
-  
+
 
   return (
 
-    <Client post={post} />
+    <Client post={post} views={obj?.views} />
 
   )
 }

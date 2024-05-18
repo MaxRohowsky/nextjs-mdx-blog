@@ -1,0 +1,51 @@
+
+
+.card{
+  margin: 0px; // Margin between Card and Grid Border
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  background-color: var(--home-content-card-bg-color);
+  transition: 0.5s;
+  animation: ease-in;
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+
+.title__text{
+  margin: 15px;
+  font-weight: 600;
+}
+
+
+.card__meta{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__date,
+.card__views 
+{
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: smaller;
+  color: var(--text-color);
+}
+
+.title__text{
+  color: var(--text-color);
+}
+
+.card__description{
+  color: var(--text-color);
+  margin: 15px;
+  margin-top: 10px;
+}
+
+.card__text{
+  line-height: 28px;
+}

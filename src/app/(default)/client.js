@@ -5,7 +5,7 @@ import About from '@/components/about/about';
 
 
 
-export default function Client({ posts, courses }) {
+export default function Client({ posts, courses    }) {
 
 
   return (

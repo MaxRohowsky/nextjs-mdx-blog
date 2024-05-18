@@ -1,10 +1,12 @@
 
 import Client from './client.js';
+import getViews from '@/lib/supabase/getViews.js'
+
 
 
 export const metadata = {
   title: "Blog",
-  description: "Blog posts about Modern Full Stack Development"
+  description: "Blog posts about Modern Web Development"
 }
 
 async function getPosts() {
@@ -36,24 +38,30 @@ async function getPosts() {
   });
 
   const data = await response.json();
-  
-  return data?.data?.posts?.edges.map(({ node }) => node).map(post => {
-    // The first map creates a new array with node items. The second map returns the posts and path.
+
+  const initViews = await getViews();
+
+
+  const posts = data?.data?.posts?.edges.map(({ node }) => node).map(post => {
     return {
       ...post,
       path: `/blog/${post.slug}`,
     };
   });
+
+  // Return both posts and ana
+  return { posts, initViews };
 }
 
 
 export default async function BlogEntires() {
 
-  const posts = await getPosts();
+  const { posts, initViews } = await getPosts();
+
 
   return (
 
-    <Client posts={posts} />
+    <Client posts={posts} initViews={initViews} />
 
 
   )

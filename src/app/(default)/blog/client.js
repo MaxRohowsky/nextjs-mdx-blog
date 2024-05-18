@@ -3,11 +3,12 @@ import { dateTime } from '@/components/datetime/datetime.js';
 import styles from './blog.module.scss'
 import Card from "@/components/vcard/card.js"
 import Link from 'next/link';
-import { createClient } from '@supabase/supabase-js';
-import { useEffect } from 'react';
-//import supabase from '@/lib/supabase/public'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import getViews from '@/lib/supabase/getViews.js'
+
+//import supabase from '@/lib/supabase/public'
+import publicClient from '@/lib/supabase/public'
+
 
 export default function Client({ posts, initViews }) {
     //const paths = posts.map(post => post.path);
@@ -16,10 +17,10 @@ export default function Client({ posts, initViews }) {
 
 
 
-    
+    // Subscribe to changes on the ana table and stop the subscription when the component is unmounted
     useEffect(() => {
-        const supabase = createClient('https://bekowpfzavpgpymlsdgp.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJla293cGZ6YXZwZ3B5bWxzZGdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU0NjAwOTUsImV4cCI6MjAzMTAzNjA5NX0.JWJWrKdA1o_1gcB4LZbqRid4nJjRrK_gGPJQjbuzqgA')
-
+        //const supabase = createClient('https://bekowpfzavpgpymlsdgp.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJla293cGZ6YXZwZ3B5bWxzZGdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU0NjAwOTUsImV4cCI6MjAzMTAzNjA5NX0.JWJWrKdA1o_1gcB4LZbqRid4nJjRrK_gGPJQjbuzqgA')
+        const supabase = publicClient
 
         const channels = supabase.channel('custom-update-channel')
             .on(
@@ -27,17 +28,15 @@ export default function Client({ posts, initViews }) {
                 { event: 'UPDATE', schema: 'public', table: 'ana', columns: ['viewcount'] },
                 async (payload) => {
                     console.log('Change received!', payload)
-                    
-                    const newViews = await getViews();
+                    let newViews = await getViews();
                     setViews(newViews)
-
                 }
             )
             .subscribe()
         return () => {
             channels.unsubscribe()
         }
-    }, []) 
+    }, [])
 
 
 
@@ -84,7 +83,12 @@ export default function Client({ posts, initViews }) {
                 {/** Mobile */}
                 <div className={styles.list}>
 
-                    {posts.map((post, index) => (
+                    {posts.map((post, index) =>{
+                                const anaItem = views.find(item => item.slug === posts[index].path);
+                                const uiViews = anaItem ? anaItem.views : "N/A";
+
+                    return (
+
 
                         <Link key={index} href={post.path}>
 
@@ -94,13 +98,15 @@ export default function Client({ posts, initViews }) {
 
                                 <div dangerouslySetInnerHTML={{ __html: post.excerpt }}></div>
 
-                                <p className={styles.date}>{dateTime(post.date)}</p>
+                                <p className={styles.date}>{dateTime(post.date)} • {uiViews + " views"} </p>
 
                             </div>
 
                         </Link>
 
-                    ))}
+                    )}
+                    )
+                    }
 
                 </div>
 

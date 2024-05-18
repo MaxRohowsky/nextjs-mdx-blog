@@ -9,6 +9,6 @@ export default async function getViews() {
     if (error) {
       views = [];
     }
-    //console.log(views)
+
     return views;
   }

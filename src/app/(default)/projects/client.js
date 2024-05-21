@@ -150,7 +150,20 @@ export default function Client({ courses, pageInfo }) {
             img={"/previews/programming-courses.png"}
             body={"Programming tutorial write ups to teach myself and others about Python, JavaScript, and more"}
             link={"/courses/"} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
-        />
+        />,
+
+        <Card
+        key={0}
+        title={"Space Game"}
+        tags={[
+            { tag: '#Unity', color: 'black' },
+        ]}
+        img={"/previews/space-game.png"}
+        body={"A nice game I made in Unity using C# to learn about game development"}
+        link={"https://www.youtube.com/watch?v=9E7egB7CXJY"} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
+    />
+
+        
 
     )
 

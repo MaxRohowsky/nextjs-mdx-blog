@@ -11,7 +11,7 @@ export default function Client({ courses, pageInfo }) {
 
     cardItems.push(
         <Card
-            key={11}
+            key={12}
             title={"Webframe"}
             tags={[
                 { tag: '#HTML', color: 'black' },
@@ -25,7 +25,7 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={10}
+            key={11}
             title={"Twitter (X) Font Editor"}
             tags={[
                 { tag: '#HTML', color: 'black' },
@@ -39,7 +39,7 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={9}
+            key={10}
             title={"Click to Copy"}
             tags={[
                 { tag: '#HTML', color: 'black' },
@@ -53,7 +53,7 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={8}
+            key={9}
             title={"GitPro"}
             tags={[
                 { tag: '#HTML', color: 'black' },
@@ -67,7 +67,7 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={7}
+            key={8}
             title={"LinkedIn Font Editor"}
             tags={[
                 { tag: '#HTML', color: 'black' },
@@ -81,7 +81,7 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={6}
+            key={7}
             title={"LandingHero"}
             tags={[
                 { tag: '#React', color: 'black' },
@@ -94,7 +94,7 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={5}
+            key={6}
             title={"NEFT Flappy Bird"}
             tags={[
                 { tag: '#Python', color: 'black' },
@@ -106,7 +106,7 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={4}
+            key={5}
             title={"Drive AI"}
             tags={[
                 { tag: '#Python', color: 'black' },
@@ -118,7 +118,7 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={3}
+            key={4}
             title={"NEAT Chrome Dinosaur"}
             tags={[
                 { tag: '#Python', color: 'black' },
@@ -130,19 +130,19 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-            key={2}
-            title={"Dijkstra Pathfinding Visualizer"}
+            key={3}
+            title={"Pathfinding Visualizer"}
             tags={[
                 { tag: '#Python', color: 'black' },
                 { tag: '#PyGame', color: 'black' }
             ]}
             img={"/previews/dijkstra-pathfinding.png"}
-            body={"Simple Pathfinding Visualizer using Dijkstra's Algorithm"}
-            link={"https://github.com/maxontech/dijkstra-pathfinding"} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
+            body={"Simple Pathfinding Visualizer using the BFS Algorithm"}
+            link={"https://github.com/maxontech/breadth-first-search"} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
         />,
 
         <Card
-            key={1}
+            key={2}
             title={"Programming Courses"}
             tags={[
                 { tag: '#Diverse', color: 'black' },
@@ -153,17 +153,28 @@ export default function Client({ courses, pageInfo }) {
         />,
 
         <Card
-        key={0}
-        title={"Space Game"}
-        tags={[
-            { tag: '#Unity', color: 'black' },
-        ]}
-        img={"/previews/space-game.png"}
-        body={"A nice game I made in Unity using C# to learn about game development"}
-        link={"https://www.youtube.com/watch?v=9E7egB7CXJY"} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
-    />
+            key={1}
+            title={"Space Game"}
+            tags={[
+                { tag: '#Unity', color: 'black' },
+            ]}
+            img={"/previews/space-game.png"}
+            body={"A nice game I made in Unity using C# to learn about game development"}
+            link={"https://www.youtube.com/watch?v=9E7egB7CXJY"} // courses/category/lesson e.g. courses/pycharm/pycharm-basics
+        />,
 
-        
+        <Card
+            key={0}
+            title={"Ph.D. Thesis"}
+            tags={[
+                { tag: '#University', color: 'black' },
+            ]}
+            img={"/previews/phd-thesis.png"}
+            body={"Analysis of infromation acquisition and financial reporting in a setting where a manager attempts to meet analysts' expectations"}
+            link={"https://depositonce.tu-berlin.de/items/8c88bfbe-b338-42b7-a6fa-ab5093f59dc4"} 
+        />
+
+
 
     )
 

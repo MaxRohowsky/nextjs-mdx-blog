@@ -15,6 +15,16 @@
 }
 
 
+.hero__main {
+  grid-column-start: 2;
+  grid-column-end: 12;
+  grid-row-start: 2;
+  grid-row-end: 8;
+  background-color: white;
+  overflow: hidden;
+}
+
+
 .hero__title {
   text-align: center;
   grid-column-start: 3;
@@ -71,16 +81,6 @@
 
 }
 
-
-.hero__main {
-  grid-column-start: 2;
-  grid-column-end: 12;
-  grid-row-start: 2;
-  grid-row-end: 8;
-  background-color: white;
-  overflow: hidden;
-
-}
 
 .hero__overlay {
   border-radius: 10px;

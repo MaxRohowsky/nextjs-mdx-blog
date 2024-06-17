@@ -1,11 +1,11 @@
-import styles from './privacy.module.scss'
+import styles from './imprint.module.scss'
 
 export default function Imprint() {
 
 
     return (
         <>  
-        <div className={styles.privacy}>
+        <div className={styles.imprint}>
             <h1 className={styles.header}>Impressum</h1>
             <h2>Angaben gemäß § 5 TMG:</h2>
             <p>Max Rohowsky<br />

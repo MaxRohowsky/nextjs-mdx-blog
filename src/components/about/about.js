@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Particles from '../particles/particle';
 import { faTwitter, faGithub, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 
 
 export default function About() {

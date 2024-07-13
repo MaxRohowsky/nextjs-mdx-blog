@@ -15,9 +15,15 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.2.5",
     "@supabase/ssr": "^0.3.0",
     "@supabase/supabase-js": "^2.43.1",
+    "@types/mdx": "^2.0.13",
     "@wordpress/block-library": "^8.6.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "dat.gui": "^0.7.9",
     "dotenv": "^16.4.5",
     "eslint-config-next": "^14.0.4",
@@ -28,6 +34,7 @@
     "highcharts": "^11.1.0",
     "highlight.js": "^11.9.0",
     "js-cookie": "^3.0.5",
+    "lucide-react": "^0.408.0",
     "next": "^14.0.4",
     "next-themes": "^0.2.1",
     "node-html-parser": "^6.1.5",
@@ -39,11 +46,14 @@
     "react-mdr": "^0.1.5",
     "react-rough-notation": "^1.0.5",
     "react-router-dom": "^6.9.0",
-    "sass": "^1.59.3"
+    "sass": "^1.59.3",
+    "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
     "@types/node": "20.11.13",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.33"
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4",
+    "tailwindcss-animate": "^1.0.7"
   }
 }

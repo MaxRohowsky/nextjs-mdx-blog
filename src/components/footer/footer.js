@@ -6,11 +6,11 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <div>
-      <Link href="/privacy" className={styles.text}>
+      <Link href="/privacy" className="bg-black">
         Privacy
       </Link>
       {' | '}
-      <Link href="/imprint" className={styles.text}>
+      <Link href="/imprint" className="text-red-800">
         Imprint
       </Link>
     </div>

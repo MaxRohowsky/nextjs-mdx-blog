@@ -1,8 +1,5 @@
-import '@/styles/globals.scss';
+import '@/styles/globals.css';
 import styles from './layout.module.scss'
-
-/*Wordpress Block CSS*/
-import '@wordpress/block-library/build-style/style.css';
 
 /* Components */
 import Navbar from "@/components/navbar/navbar";

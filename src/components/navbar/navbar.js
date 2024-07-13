@@ -64,7 +64,7 @@ function DesktopMenu({ pathname }) {
 		<div className={`hidden md:block`}>
 			<nav className=" flex items-center gap-4 transition-all" id="navbar-default">
 				<Button asChild
-					className={cn(pathname === '/' ? 'bg-neutral-50' : '', '')}
+					className={cn(pathname === '/' ? 'bg-neutral-50 dark:bg-neutral-800' : '', '')}
 					variant={'ghost'}
 				>
 					<Link href="/">
@@ -74,7 +74,7 @@ function DesktopMenu({ pathname }) {
 				</Button>
 
 				<Button asChild
-					className={cn(pathname === '/blog' ? 'bg-neutral-50' : '', '')}
+					className={cn(pathname === '/blog' ? 'bg-neutral-50 dark:bg-neutral-800' : '', '')}
 					variant={'ghost'}
 				>
 					<Link href="/blog">
@@ -83,7 +83,7 @@ function DesktopMenu({ pathname }) {
 				</Button>
 
 				<Button asChild
-					className={cn(pathname === '/projects' ? 'bg-neutral-50' : '', '')}
+					className={cn(pathname === '/projects' ? 'bg-neutral-50 dark:bg-neutral-800' : '', '')}
 					variant={'ghost'}
 				>
 					<Link href="/projects">
@@ -91,6 +91,7 @@ function DesktopMenu({ pathname }) {
 					</Link>
 				</Button>
 
+				<Separator orientation="vertical" className="mx-4 h-5" />
 
 				<DropdownMenu >
 					<DropdownMenuTrigger asChild>
@@ -113,6 +114,19 @@ function DesktopMenu({ pathname }) {
 
 						<DropdownMenuSeparator />
 
+						<DropdownMenuItem className="group flex justify-center px-6 py-2" asChild>
+							<a href="https://www.github.com/maxontech">
+								<span className=" mr-2">
+									<FontAwesomeIcon icon={faGithub} />
+								</span>
+								<span className="mr-2">
+									GitHub
+								</span>
+							</a>
+						</DropdownMenuItem>
+
+						<DropdownMenuSeparator />
+
 						<DropdownMenuItem className="group flex justify-center px-6 py-2">
 							<a href="https://discord.com/invite/JERatQsfY8">
 								<span className="text-indigo-500  mr-2">
@@ -127,23 +141,27 @@ function DesktopMenu({ pathname }) {
 						<DropdownMenuSeparator />
 
 						<DropdownMenuItem className="group flex justify-center px-6 py-2">
-							<span className="text-blue-500  mr-2">
-								<FontAwesomeIcon icon={faLinkedin} />
-							</span>
-							<span className=" mr-2">
-								LinkedIn
-							</span>
+							<a href="https://www.linkedin.com/in/maxrohowsky/">
+								<span className="text-blue-500  mr-2">
+									<FontAwesomeIcon icon={faLinkedin} />
+								</span>
+								<span className=" mr-2">
+									LinkedIn
+								</span>
+							</a>
 						</DropdownMenuItem>
 
 						<DropdownMenuSeparator />
 
 						<DropdownMenuItem className="group flex justify-center px-6 py-2">
-							<span className="  mr-2">
-								<FontAwesomeIcon icon={faXTwitter} />
-							</span>
-							<span className=" mr-2">
-								Twitter
-							</span>
+							<a href="https://twitter.com/max_on_tech">
+								<span className="  mr-2">
+									<FontAwesomeIcon icon={faXTwitter} />
+								</span>
+								<span className=" mr-2">
+									Twitter
+								</span>
+							</a>
 						</DropdownMenuItem>
 
 					</DropdownMenuContent>
@@ -211,19 +229,19 @@ function MobileMenu() {
 
 
 					<span className="flex flex-wrap justify-between w-full px-6">
-						<a href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw">
+						<a href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw" target="_blank" rel="noopener noreferrer">
 							<FontAwesomeIcon icon={faYoutube} className="text-red-500 size-8 hover:bg-gray-100 p-2 rounded-full" />
 						</a>
-						<a href="https://github.com">
+						<a href="https://github.com/maxontech" target="_blank" rel="noopener noreferrer">
 							<FontAwesomeIcon icon={faGithub} className="size-8 hover:bg-gray-100 p-2 rounded-full" />
 						</a>
-						<a href="https://discord.com/invite/JERatQsfY8">
+						<a href="https://discord.com/invite/JERatQsfY8" target="_blank" rel="noopener noreferrer">
 							<FontAwesomeIcon icon={faDiscord} className="text-indigo-500 size-8 hover:bg-gray-100 p-2 rounded-full" />
 						</a>
-						<a href="https://www.linkedin.com">
+						<a href="https://www.linkedin.com/in/maxrohowsky/" target="_blank" rel="noopener noreferrer">
 							<FontAwesomeIcon icon={faLinkedin} className="text-blue-500 size-8 hover:bg-gray-100 p-2 rounded-full" />
 						</a>
-						<a href="https://twitter.com">
+						<a href="https://twitter.com/max_on_tech" target="_blank" rel="noopener noreferrer">
 							<FontAwesomeIcon icon={faXTwitter} className="size-8 hover:bg-gray-100 p-2 rounded-full " />
 						</a>
 					</span>

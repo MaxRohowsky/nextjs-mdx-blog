@@ -32,7 +32,7 @@ export default function Hero() {
 
                 <h1> Modern <RoughNotation type="highlight" show={true} color='#abe2ff' >Web</RoughNotation> Development</h1>
 
-                <h2 className="bg-red-600">
+                <h2>
                     Learn in-demand Dev skills
                     <br /> to build awesome software and advance your career
                 </h2>

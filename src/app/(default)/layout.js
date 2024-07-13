@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={openSans.className}>
 
 
-      <body className="">
+      <body className="max-w-screen-lg mx-auto">
 
 
           <Navbar />

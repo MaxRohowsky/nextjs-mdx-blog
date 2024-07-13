@@ -30,11 +30,13 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  
+
   return (
     <html lang="en" className={openSans.className}>
 
 
-      <body className={styles.body}>
+      <body className="">
 
 
           <Navbar />
@@ -43,7 +45,7 @@ export default function RootLayout({ children }) {
 
           <Overlay />
 
-          <footer className={styles.footer}>
+          <footer className="dark:bg-slate-300">
             <Footer />
           </footer>
 

@@ -15,7 +15,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { Open_Sans } from 'next/font/google'
 
 const openSans = Open_Sans({
-  weight: '500',
+  weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
   display: 'swap',
 })
@@ -29,26 +29,26 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  
+
 
   return (
     <html lang="en" className={openSans.className}>
 
 
-      <body className="flex flex-col align-middle max-w-screen-lg ">
+      <body>
+        <div className='flex justify-center w-full  !min-w-full'>
+          <div className="max-w-screen-lg ">
 
+            <Navbar />
 
-          <Navbar />
+            {children}
 
-          {children}
+            <footer className="">
+              <Footer />
+            </footer>
 
-          
-
-          <footer className="">
-            <Footer />
-          </footer>
-
-
+          </div>
+        </div>
 
       </body>
 

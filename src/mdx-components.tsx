@@ -1,3 +1,7 @@
+/**
+ * This file is required to use MDX with App Router and will not work without it.
+ * https://nextjs.org/docs/app/building-your-application/configuring/mdx
+ */
 
 import Image, { ImageProps } from 'next/image'
 import type { MDXComponents } from 'mdx/types'

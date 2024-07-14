@@ -76,9 +76,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
     //pre: Code,
     //YouTube,
   //};
-
+  
   const components = {
-    Example
+    //Example
   };
 
 
@@ -86,7 +86,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <article className="prose prose-lg md:prose-lg lg:prose-lg mx-auto">
        <h1>{props.frontMatter.title}</h1>
- 
+      {/*https://github.com/owolfdev/simple-mdx-blog/blob/main/app/blog/%5Bslug%5D/page.tsx*/}
       <MDXRemote source={props.content} components={components} />
 
     </article>

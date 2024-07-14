@@ -39,10 +39,9 @@ import {
 
 export default function Navbar() {
 	const pathname = usePathname();
-	const buttonVariant = pathname === '/' ? 'primary' : 'ghost';
 
 	return (
-		<header className="max-w-screen-xl mx-auto">
+		<header className="max-w-screen-xl ">
 			<div className="flex align-middle justify-between items-center m-4 pb-2 border-b">
 
 				<span className="font-sans flex gap-2">

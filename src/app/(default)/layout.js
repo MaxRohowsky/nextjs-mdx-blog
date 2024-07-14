@@ -1,5 +1,4 @@
 import '@/styles/globals.css';
-import styles from './layout.module.scss'
 
 /* Components */
 import Navbar from "@/components/navbar/navbar";
@@ -16,7 +15,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { Open_Sans } from 'next/font/google'
 
 const openSans = Open_Sans({
-  weight: '400',
+  weight: '500',
   subsets: ['latin'],
   display: 'swap',
 })
@@ -36,16 +35,16 @@ export default function RootLayout({ children }) {
     <html lang="en" className={openSans.className}>
 
 
-      <body className="max-w-screen-lg mx-auto">
+      <body className="flex flex-col align-middle max-w-screen-lg ">
 
 
           <Navbar />
 
           {children}
 
-          <Overlay />
+          
 
-          <footer className="dark:bg-slate-300">
+          <footer className="">
             <Footer />
           </footer>
 

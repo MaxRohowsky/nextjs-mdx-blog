@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import "@/styles/highlight-js/github-dark-dimmed.css";
 
 export const metadata = {
   title: 'Next.js',
@@ -12,7 +13,7 @@ export default function MdxLayout({
 }) {
   return (
     <html lang="en">
-      <body className=" bg-red-800">{children}</body>
+      <body >{children}</body>
     </html>
   )
 }

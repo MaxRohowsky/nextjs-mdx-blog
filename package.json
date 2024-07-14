@@ -52,6 +52,7 @@
     "react-mdr": "^0.1.5",
     "react-rough-notation": "^1.0.5",
     "react-router-dom": "^6.9.0",
+    "rehype-highlight": "^7.0.0",
     "sass": "^1.59.3",
     "simple-icons": "^13.1.0",
     "tailwind-merge": "^2.4.0"

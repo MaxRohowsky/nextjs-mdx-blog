@@ -41,8 +41,8 @@ export default function Navbar() {
 	const pathname = usePathname();
 
 	return (
-		<header className="max-w-screen-xl ">
-			<div className="flex align-middle justify-between items-center m-4 pb-2 border-b">
+		<header className="">
+			<div className="flex align-middle justify-between items-center pt-2 pb-2 w-full mb-6">
 
 				<span className="font-sans flex gap-2">
 					<FishSymbol className="text-blue-400 dark:text-white" />
@@ -182,7 +182,7 @@ function DesktopMenu({ pathname }) {
 function MobileMenu() {
 	return (
 		<Dialog >
-			<DialogTrigger asChild className="md:hidden">
+			<DialogTrigger asChild className="md:hidden mx-8">
 				<Button variant="outline"><FaBars /></Button>
 			</DialogTrigger>
 			<DialogContent className="sm:max-w-md">

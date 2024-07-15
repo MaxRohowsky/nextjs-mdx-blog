@@ -2,7 +2,6 @@
 .particles {
   position: absolute;
   top: 50%;
-  right: 90px;
   animation: spin 60s linear infinite;
 }
 
@@ -10,7 +9,6 @@
   position: absolute;
   width: 2px;
   height: 2px;
-  background-color: white;
   border-radius: 50%;
 }
 

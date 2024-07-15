@@ -1,5 +1,9 @@
+'use client'
 
-
-export default function Example () {
-    return <div>Example</div>
-}  
+export function Example() {
+    const handleClick = () => {
+      alert('Clicked!');
+    };
+  
+    return <div onClick={handleClick}>Example</div>;
+  }

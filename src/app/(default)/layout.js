@@ -36,8 +36,8 @@ export default function RootLayout({ children }) {
 
 
       <body>
-        <div className='flex justify-center w-full  !min-w-full'>
-          <div className="max-w-screen-lg ">
+        <div className='max-w-screen-lg flex flex-wrap items-center mx-auto'>
+          <div className='w-full px-4'>
 
             <Navbar />
 

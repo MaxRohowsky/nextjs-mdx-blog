@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import Transition from '@/components/transition';
 
 /* Components */
 import Navbar from "@/components/navbar/navbar";

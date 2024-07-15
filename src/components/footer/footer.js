@@ -1,6 +1,7 @@
 
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
+import Image from 'next/image';
 
 
 export default function Footer() {
@@ -9,9 +10,10 @@ export default function Footer() {
 
     <div className="flex align-middle justify-between items-center m-4 pt-2 border-t">
 
-      <span className="font-sans flex gap-2">
+      <span className="font-sans flex items-center gap-2">
 
-        <span className='text-slate-300'> made by max</span>
+        <span className='text-slate-300'> made by max    </span>
+        <Image className=' right-0 top-0' src='/eyes.webp' alt='hero' height='30' width='30' />
       </span>
 
       <div className='flex items-center gap-4 transition-all'>

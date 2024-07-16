@@ -1,56 +1,25 @@
-
-import Particles from '@/components/dots/particles';
-
-
-import fs from 'fs';
-import path from 'path';
 import Link from 'next/link';
-import matter from 'gray-matter';
-import Image from 'next/image';
-
-const ignoreList = ['layout.tsx', 'page.tsx'];
-const blogDirectory = path.join(process.cwd(), "src/app/(default)/blog");
+import Particles from '@/components/dots/particles';
+import {sortItemsByDate } from '@/lib/utils';
+import { getFilteredBlogFrontMatter } from '@/lib/server-actions';
 
 export const metadata = {
   title: "Next Blog",
   description: "Next.js static mdx blog starter template",
 };
 
-const fileNames = fs.readdirSync(blogDirectory)
-  .filter((fileName) => !ignoreList.includes(fileName));
-
-const blogs = fileNames.map((fileName) => {
-  const slug = fileName.replace(".mdx", "");
-  const fullPath = path.join(blogDirectory, fileName, "page.mdx");
-
-
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-
-  console.log("fileContents", fileContents)
-
-  const { data: frontMatter } = matter(fileContents);
-
-  const date = new Date(frontMatter.date);
-  const formattedDate = date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-  return {
-    slug,
-    formattedDate,
-    meta: frontMatter,
-  };
-});
 
 
 
+export default async function Overview() {
 
-export default function Overview() {
+  const frontMatter = await getFilteredBlogFrontMatter()
+  const blogs = sortItemsByDate(frontMatter);
+
   return (
     <>
 
-      <div className='relative -z-10 w-0 h-0  top-[87px] left-[127px]'>
+      <div className='relative -z-10 w-0 h-0 top-[87px] left-[127px]'>
         <Particles numberOfParticles={10} radius={60} opacity={0.2} color='black' left={0} />
         <Particles numberOfParticles={30} radius={300} opacity={0.3} color='black' left={0} />
         <Particles numberOfParticles={40} radius={380} opacity={0.2} color='black' left={0} />
@@ -73,11 +42,11 @@ export default function Overview() {
 
           <div key={blog.slug} className=" p-2 rounded-xl  w-full h-full bg-white dark:bg-slate-800">
             <Link href={`/blog/${blog.slug}`} className="flex flex-col justify-between border border-gray-200 rounded-lg hover:shadow-lg transition-shadow duration-300 p-6 w-full h-full">
-              <h3 className="font-bold text-xl mb-2">{blog.meta.title}</h3>
-              <p className="text-sm text-gray-500">{blog.meta.publishedOn}</p>
-              <p className="py-4">{blog.meta.abstract}</p>
+              <h3 className="font-bold text-xl mb-2">{blog.title}</h3>
+              <p className="text-sm text-gray-500">{blog.publishedOn}</p>
+              <p className="py-4">{blog.abstract}</p>
               <div className='flex flex-wrap gap-2 mb-4'>
-                {blog.meta.tags.map((tag) => (
+                {blog.tags.map((tag) => (
                   <span key={tag} className="bg-gray-200 text-gray-800 text-xs font-semibold px-2 py-1.5 rounded dark:bg-gray-700 dark:text-gray-300">
                     {tag}
                   </span>

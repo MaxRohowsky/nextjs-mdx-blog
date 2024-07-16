@@ -1,8 +1,5 @@
-
-//import { projects } from '@/components/projects';
 'use client'
 
-import Particles from '@/components/dots/particles';
 import { getFilteredProjects, getProjectTags } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { ListFilter } from 'lucide-react';
@@ -10,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { ScrollArea } from "@/components/ui/scroll-area"
 import Card from '@/components/card/card';
 import { Checkbox } from "@/components/ui/checkbox"
+import Title from '@/components/title/title';
 
 import {
   Popover,
@@ -40,7 +38,6 @@ export default function Projects() {
     } else {
       setSelectedTags([...selectedTags, tag]);
     }
-
   }
 
   const handleResetFilters = () => {
@@ -57,13 +54,11 @@ export default function Projects() {
   return (
     <>
 
-      <Background />
-
-      <Header />
+      <Title titles={['Projects', 'Projets', '프로젝트', '项目', 'Проект']} top='108px' left='95px' />
 
       <Filter allTags={allTags} selectedTags={selectedTags} handleResetFilters={handleResetFilters} handleTagSelection={handleTagSelection} />
 
-      <div className='grid gap-1 grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] '>
+      <div className='grid gap-7 grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] '>
         {projects.map((project) => (
 
          <Card key={project.slug} item={project} />  
@@ -85,33 +80,6 @@ export default function Projects() {
 
 
 
-function Background() {
-  return (
-    <>
-      <div className='relative -z-10 w-0 h-0  top-[87px] left-[217px]'>
-        <Particles numberOfParticles={10} radius={60} opacity={0.2} color='black' left={0} />
-        <Particles numberOfParticles={30} radius={300} opacity={0.3} color='black' left={0} />
-        <Particles numberOfParticles={40} radius={380} opacity={0.2} color='black' left={0} />
-        <Particles numberOfParticles={50} radius={460} opacity={0.1} color='black' left={0} />
-        <Particles numberOfParticles={60} radius={540} opacity={0.05} color='black' left={0} />
-      </div>
-    </>
-  )
-}
-
-function Header() {
-  return (
-    <>
-      <div className='flex justify-between whitespace-nowrap text-slate-600 dark:text-slate-300 w-full lg:h-40 text-3xl lg:text-5xl p-4 mb-6 overflow-hidden md::mt-8'  >
-        <span className="opacity-100 font-bold">Projects. </span>
-        <span className="opacity-10 hidden sm:block" >Projets. </span>
-        <span className="opacity-10 hidden sm:block">프로젝트. </span>
-        <span className="opacity-10 hidden sm:block">项目. </span>
-        <span className="opacity-10 hidden sm:block">Проект. </span>
-      </div>
-    </>
-  )
-}
 
 function Filter({ allTags, selectedTags, handleResetFilters, handleTagSelection }) {
   return (
@@ -119,7 +87,7 @@ function Filter({ allTags, selectedTags, handleResetFilters, handleTagSelection 
 
       <Popover>
         <PopoverTrigger asChild>
-          <Button variant="outline" size="sm" className="h-8 lg:flex gap-2 m-2">
+          <Button variant="outline" size="sm" className="h-8 lg:flex gap-2 my-4">
             <ListFilter /> Filter
           </Button>
           </PopoverTrigger>
@@ -160,16 +128,4 @@ function Filter({ allTags, selectedTags, handleResetFilters, handleTagSelection 
 
 }
 
-
-interface ProjectCardProps {
-  project: {
-    slug: string;
-    title: string;
-    date: string;
-    description: string;
-    tags: string[];
-    img: string;
-    link: string;
-  };
-}
 

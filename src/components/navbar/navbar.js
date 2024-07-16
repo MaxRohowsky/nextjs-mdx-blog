@@ -39,8 +39,8 @@ export default function Navbar() {
 	const pathname = usePathname();
 
 	return (
-		<header className="transition-all">
-			<div className="flex align-middle justify-between items-center pt-2 pb-2 w-full border-b">
+		<header>
+			<div className="flex align-middle justify-between items-center pt-2 pb-2 w-full border-b border-neutral-100 ">
 
 				<span className="font-sans flex gap-2">
 					<FishSymbol className="text-blue-400 dark:text-white" />

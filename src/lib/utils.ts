@@ -1,8 +1,8 @@
 
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { BlogFrontMatter } from '@/lib/server-actions';
-import { projects, Project } from '@/components/projects';
+/* import { BlogFrontMatter } from '@/lib/server-actions'; */
+import { projects} from '@/components/projects';
 
 
 export function cn(...inputs: ClassValue[]) {
@@ -40,13 +40,6 @@ export function sortBlogsByDate(items: BlogFrontMatter[], ascending: boolean = f
 
 
 
-interface ProjectOptions {
-  published?: boolean;
-  featured?: boolean;
-  active?: boolean;
-  monetized?: boolean;
-  tags?: Array<string>;
-}
 
 /**
  * Get filtered projects based on the provided filtering options. Be aware that if you want to get all projects
@@ -97,5 +90,13 @@ export function getFilteredProjects(options: ProjectOptions = {}): Project[] {
  */
 export function getProjectTags(): Array<string> {
   const allTags = projects.flatMap(project => project.tags);
+  return Array.from(new Set(allTags));
+}
+
+
+
+
+export function getBlogTags( frontMatter: BlogFrontMatter[] ): Array<string> {
+  const allTags = frontMatter.flatMap(blog => blog.tags);
   return Array.from(new Set(allTags));
 }

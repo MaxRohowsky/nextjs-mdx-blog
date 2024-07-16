@@ -1,17 +1,4 @@
-export interface Project {
-    date: string;
-    published: boolean;
-    featured: boolean;
-    slug: string;
-    title: string;
-    tags: string[];
-    description: string;
-    img: string;
-    link: string;
-    active: boolean;
-    monetized: boolean;
-}
-
+ 
 export const projects = [
     {
         "date": "2024-06-01",

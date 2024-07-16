@@ -18,20 +18,6 @@ export async function checkFs() {
  * Get the blog front matter of all blog posts.
  * @returns The front matter of all blog posts in an array.
  */
-
-export interface BlogFrontMatter {
-    title: string;
-    seoTitle: string;
-    abstract: string;
-    isPublished: boolean;
-    publishedOn?: string;
-    layout: string;
-    featured?: boolean;
-    featuredImage?: string;
-    tags: string[];
-    slug: string;
-}
-
 export async function getBlogFrontMatter(): Promise<BlogFrontMatter[]> {
     const dir = path.join(process.cwd(), 'src/app/(default)/blog/(posts)');
     const dirItems = fs.readdirSync(dir);
@@ -62,21 +48,11 @@ export async function getBlogFrontMatter(): Promise<BlogFrontMatter[]> {
 }
 
 
-
-
 /**
  * Get the blog front matter based on the provided filters. Upper and lower case are ignored.
  * @param options The filter options e.g. { featured: true, tag: 'personal', layout: 'Article' }.
  * @returns The front matter of the filtered blog posts in an array.
  */
-
-interface FrontMatterOptions {
-    featured?: boolean;
-    tag?: Array<string>;
-    layout?: string;
-    isPublished?: boolean;
-}
-
 export async function getFilteredBlogFrontMatter(options: FrontMatterOptions = {}): Promise<BlogFrontMatter[]> {
     const frontMatter = await getBlogFrontMatter();
 
@@ -102,7 +78,6 @@ export async function getFilteredBlogFrontMatter(options: FrontMatterOptions = {
 
     return filteredFrontMatter as BlogFrontMatter[];
 }
-
 
 
 

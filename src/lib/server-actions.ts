@@ -72,7 +72,7 @@ export async function getBlogFrontMatter(): Promise<BlogFrontMatter[]> {
 
 interface FrontMatterOptions {
     featured?: boolean;
-    tag?: string;
+    tag?: Array<string>;
     layout?: string;
     isPublished?: boolean;
 }
@@ -85,7 +85,7 @@ export async function getFilteredBlogFrontMatter(options: FrontMatterOptions = {
             return false;
         }
 
-        if (options.tag && !fm.tags.map(tag => tag.toLowerCase()).includes(options.tag.toLowerCase())) {
+        if (options.tag && !options.tag.every(optionTag => fm.tags.map(tag => tag.toLowerCase()).includes(optionTag.toLowerCase()))) {
             return false;
         }
 
@@ -102,6 +102,8 @@ export async function getFilteredBlogFrontMatter(options: FrontMatterOptions = {
 
     return filteredFrontMatter as BlogFrontMatter[];
 }
+
+
 
 
 

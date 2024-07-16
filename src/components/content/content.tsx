@@ -1,5 +1,5 @@
 'use client'
-import { dateTime } from '@/components/datetime/datetime';
+
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -74,7 +74,7 @@ export default function Content({blogs}) {
                         <ProjectSnippet
                             title={project.title}
                             text={project.description}
-                            date={dateTime(project.date)}
+                            date={project.date}
                             url={project.link}
                             imgSrc={project.img}
                         />

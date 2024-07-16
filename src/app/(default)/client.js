@@ -1,4 +1,4 @@
-import {sortItemsByDate } from '@/lib/utils';
+import {sortBlogsByDate } from '@/lib/utils';
 import { getFilteredBlogFrontMatter } from '@/lib/server-actions';
 
 
@@ -10,7 +10,7 @@ import About from '@/components/about/about';
 export default async function Client() {
 
   const frontMatter = await getFilteredBlogFrontMatter()
-  const blogs = sortItemsByDate(frontMatter).slice(0, 2);
+  const blogs = sortBlogsByDate(frontMatter).slice(0, 2);
 
   //console.log({blogs})
 

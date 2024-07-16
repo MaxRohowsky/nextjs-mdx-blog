@@ -2,17 +2,17 @@
 
 import { FaBars } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-import { Sun, FishSymbol } from "lucide-react";
+import { Sun, Moon, FishSymbol } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Separator } from "@/components/ui/separator";
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from "@/lib/utils";
+import { Toggle } from "@/components/ui/toggle"
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
-	DropdownMenuLabel,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
@@ -20,7 +20,6 @@ import {
 	Dialog,
 	DialogClose,
 	DialogContent,
-	DialogDescription,
 	DialogFooter,
 	DialogHeader,
 	DialogTitle,
@@ -36,17 +35,16 @@ import {
 
 
 
-
 export default function Navbar() {
 	const pathname = usePathname();
 
 	return (
-		<header className="">
-			<div className="flex align-middle justify-between items-center pt-2 pb-2 w-full mb-6">
+		<header className="transition-all">
+			<div className="flex align-middle justify-between items-center pt-2 pb-2 w-full border-b">
 
 				<span className="font-sans flex gap-2">
 					<FishSymbol className="text-blue-400 dark:text-white" />
-					<span> Maximilian Rohowsky, Ph.D.</span>
+					<span className=""> Maximilian Rohowsky, Ph.D.</span>
 				</span>
 
 				<MobileMenu />
@@ -63,7 +61,7 @@ function DesktopMenu({ pathname }) {
 		<div className={`hidden md:block`}>
 			<nav className=" flex items-center gap-4 transition-all" id="navbar-default">
 				<Button asChild
-					className={cn(pathname === '/' ? 'bg-neutral-50 dark:bg-neutral-800' : '', '')}
+					className={cn(pathname === '/' ? 'bg-neutral-100 dark:bg-neutral-600' : '', '')}
 					variant={'ghost'}
 				>
 					<Link href="/">
@@ -73,7 +71,7 @@ function DesktopMenu({ pathname }) {
 				</Button>
 
 				<Button asChild
-					className={cn(pathname === '/blog' ? 'bg-neutral-50 dark:bg-neutral-800' : '', '')}
+					className={cn(pathname === '/blog' ? 'bg-neutral-100 dark:bg-neutral-600' : '', '')}
 					variant={'ghost'}
 				>
 					<Link href="/blog">
@@ -82,7 +80,7 @@ function DesktopMenu({ pathname }) {
 				</Button>
 
 				<Button asChild
-					className={cn(pathname === '/projects' ? 'bg-neutral-50 dark:bg-neutral-800' : '', '')}
+					className={cn(pathname === '/projects' ? 'bg-neutral-100 dark:bg-neutral-600' : '', '')}
 					variant={'ghost'}
 				>
 					<Link href="/projects">
@@ -168,11 +166,10 @@ function DesktopMenu({ pathname }) {
 
 				<Separator orientation="vertical" className="mx-4 h-5" />
 
-				<Button
-					onClick={() => { document.documentElement.classList.toggle('dark'); }}
-					variant="label">
-					<Sun />
+				<Button variant="label" className="relative" aria-label="Toggle theme" onClick={() => { document.documentElement.classList.toggle('dark'); }}>
+					<Moon className="hidden dark:block" />  <Sun className="dark:hidden block" />
 				</Button>
+
 			</nav>
 		</div>
 
@@ -249,10 +246,8 @@ function MobileMenu() {
 
 
 
-					<Button
-						onClick={() => { document.documentElement.classList.toggle('dark'); }}
-						variant="label">
-						<Sun />
+					<Button variant="label" className="relative" aria-label="Toggle theme" onClick={() => { document.documentElement.classList.toggle('dark'); }}>
+						<Moon className="hidden dark:block" />  <Sun className="dark:hidden block" />
 					</Button>
 				</nav>
 				<DialogFooter className="sm:justify-start">

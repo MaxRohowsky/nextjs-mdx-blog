@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 const initialTodos = [
   { id: 1, text: 'Optimise spacing on Landing page so that it is consistent.', completed: false },
   { id: 2, text: 'Add links to the items under "popular content".', completed: false },
-  { id: 3, text: 'Socials dropdown causes layout shift. Unf**k it.', completed: false },
+  { id: 3, text: 'Socials dropdown causes layout shift. Unf**k it.', completed: true },
   { id: 4, text: 'Add filter to blog tags.', completed: false },
   { id: 5, text: 'Bonus: when i filter for a tag, that tag should turn green.', completed: false },
   { id: 6, text: 'Add a decode effect: https://codepen.io/theodore-q/pen/mJqVZo to something because it\'s cool.', completed: false },
@@ -28,6 +28,9 @@ const initialTodos = [
   { id: 23, text: 'Add the page not found page.', completed: false },
   { id: 24, text: 'Add a possibility for people to subscribe to updates.', completed: false },
   { id: 25, text: 'Add transitions between routes.', completed: false },
+  { id: 26, text: 'Add a sitemap.', completed: false },
+  { id: 27, text: 'Make a breadcrumbs path.', completed: false },
+  { id: 28, text: "Understand import fs from 'node:fs/promises'mentioned here: https://mdxjs.com/guides/frontmatter/", completed: false },
 ];
 
 export default function TodoList() {

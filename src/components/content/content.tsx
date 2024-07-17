@@ -14,7 +14,7 @@ export default function Content({ blogs }) {
 
         <section className="flex justify-center items-center">
 
-            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-3 pt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 pt-4">
 
                 <div className='flex flex-col '>
 
@@ -33,7 +33,7 @@ export default function Content({ blogs }) {
                     <div className='flex flex-col md:mb-8'>
                         <h2 className='  text-rose-red text-xl mt-8 mb-4'>Popular Content</h2>
                   
-                            <ul className='space-y-5 cursor-pointer font-semibold mt-4 '>
+                            <ul className='space-y-5 cursor-pointer font-semibold text-lg mt-4 '>
                                 <li className="flex align-middle hover:pl-2 transition-all"><ArrowRight className='mx-2 text-blue-500' /><span>Building a LinkedIn Post Scheduler</span></li>
                                 <li className="flex align-middle hover:pl-2 transition-all"><ArrowRight className='mx-2 text-blue-500' /><span>How does the Internet Work?</span></li>
                                 <li className="flex align-middle hover:pl-2 transition-all"><ArrowRight className='mx-2 text-blue-500' /><span>An Introduction to PyCharm</span></li> {/* https://www.youtube.com/watch?v=HHcZbXsZtm0 */}

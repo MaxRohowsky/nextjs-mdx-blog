@@ -31,6 +31,13 @@ import {
 	faDiscord,
 	faGithub
 } from "@fortawesome/free-brands-svg-icons";
+import {
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
+} from "@/components/ui/popover"
+
+
 
 
 
@@ -89,15 +96,15 @@ function DesktopMenu({ pathname }) {
 
 				<Separator orientation="vertical" className="mx-4 h-5" />
 
-				<DropdownMenu >
-					<DropdownMenuTrigger asChild>
+				<Popover>
+					<PopoverTrigger asChild>
 						<Button variant="ghost">Socials</Button>
 
-					</DropdownMenuTrigger>
-					<DropdownMenuContent className="mt-3">
+					</PopoverTrigger>
+					<PopoverContent className="mt-3 p-0 w-32">
 
 
-						<DropdownMenuItem className="group flex justify-center px-6 py-2" asChild>
+						<Button variant="link" className="group flex justify-center px-6 py-2" asChild>
 							<a href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw">
 								<span className="text-red-500 mr-2">
 									<FontAwesomeIcon icon={faYoutube} />
@@ -106,11 +113,11 @@ function DesktopMenu({ pathname }) {
 									YouTube
 								</span>
 							</a>
-						</DropdownMenuItem>
+						</Button>
 
-						<DropdownMenuSeparator />
+						<Separator />
 
-						<DropdownMenuItem className="group flex justify-center px-6 py-2" asChild>
+						<Button variant="link" className="group flex justify-center px-6 py-2" asChild>
 							<a href="https://www.github.com/maxontech">
 								<span className=" mr-2">
 									<FontAwesomeIcon icon={faGithub} />
@@ -119,11 +126,11 @@ function DesktopMenu({ pathname }) {
 									GitHub
 								</span>
 							</a>
-						</DropdownMenuItem>
+						</Button>
 
-						<DropdownMenuSeparator />
+						<Separator />
 
-						<DropdownMenuItem className="group flex justify-center px-6 py-2">
+						<Button variant="link" className="group flex justify-center px-6 py-2" asChild>
 							<a href="https://discord.com/invite/JERatQsfY8">
 								<span className="text-indigo-500  mr-2">
 									<FontAwesomeIcon icon={faDiscord} />
@@ -132,11 +139,11 @@ function DesktopMenu({ pathname }) {
 									Discord
 								</span>
 							</a>
-						</DropdownMenuItem>
+						</Button>
 
-						<DropdownMenuSeparator />
+						<Separator />
 
-						<DropdownMenuItem className="group flex justify-center px-6 py-2">
+						<Button variant="link" className="group flex justify-center px-6 py-2" asChild>
 							<a href="https://www.linkedin.com/in/maxrohowsky/">
 								<span className="text-blue-500  mr-2">
 									<FontAwesomeIcon icon={faLinkedin} />
@@ -145,11 +152,11 @@ function DesktopMenu({ pathname }) {
 									LinkedIn
 								</span>
 							</a>
-						</DropdownMenuItem>
+						</Button>
 
-						<DropdownMenuSeparator />
+						<Separator />
 
-						<DropdownMenuItem className="group flex justify-center px-6 py-2">
+						<Button variant="link" className="group flex justify-center px-6 py-2" asChild>
 							<a href="https://twitter.com/max_on_tech">
 								<span className="  mr-2">
 									<FontAwesomeIcon icon={faXTwitter} />
@@ -158,10 +165,10 @@ function DesktopMenu({ pathname }) {
 									Twitter
 								</span>
 							</a>
-						</DropdownMenuItem>
+						</Button>
 
-					</DropdownMenuContent>
-				</DropdownMenu>
+					</PopoverContent>
+				</Popover>
 
 				<Separator orientation="vertical" className="mx-4 h-5" />
 

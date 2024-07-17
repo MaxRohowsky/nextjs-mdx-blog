@@ -14,7 +14,7 @@ import { format } from 'date-fns';
  */
 export async function getBlogFrontMatter(): Promise<BlogFrontMatter[]> {
     const dir = path.join(process.cwd(), 'src/app/(default)/blog/(posts)');
-    const dirItems = fs.readdirSync(dir);
+    const dirItems = fs.readdirSync(dir).filter(item => item !== 'layout.tsx');
     const frontMatter = dirItems.map((fileName) => {
         
         const fullPath = path.join(dir, fileName, "page.mdx");

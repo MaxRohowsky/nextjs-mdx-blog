@@ -9,14 +9,27 @@ export default function Footer() {
 
 
     <div className="flex align-middle justify-between items-center mt-7 py-2 border-t border-neutral-100">
+      <div className='flex flex-row gap-2'>
+        <span className="font-sans flex items-center gap-2">
 
-      <span className="font-sans flex items-center gap-2">
+          <span className='text-slate-300'> made by max    </span>
+          <Image className=' right-0 top-0' src='/eyes.webp' alt='hero' height='30' width='30' />
 
-        <span className='text-slate-300'> made by max    </span>
-        <Image className=' right-0 top-0' src='/eyes.webp' alt='hero' height='30' width='30' />
-      </span>
+        </span>
+        <Button asChild
+          className=""
+          variant={'ghost'}
+        >
+          <Link href="/todos">
+            todos
+          </Link>
+        </Button>
+      </div>
 
       <div className='flex items-center gap-4 transition-all'>
+
+
+
         <Button asChild
           className=""
           variant={'ghost'}

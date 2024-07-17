@@ -10,12 +10,12 @@ export default function Card({ item }: { item: Item }) {
     // Use item.description or item.abstract for blogs, item.date or item.publishedOn for blogs
     const description = 'description' in item ? item.description : item.abstract;
     const date = 'date' in item ? item.date : item.publishedOn;
-    const link = 'link' in item ? item.link : undefined;
+    const link = 'link' in item ? item.link : 'blog/' + item.slug;
 
     return (
         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
             <div className="rounded-sm w-full h-full group cursor-pointer ">
-                <a href={link} className="flex flex-col relative justify-between border bg-white dark:bg-background  border-gray-200 dark:border-neutral-800 rounded-lg hover:shadow-md transition-shadow duration-300 py-3 p-3 md:p-6 w-full h-full">
+                <a href={link} onClick={() => console.log(link)} className="flex flex-col relative justify-between border bg-white dark:bg-background  border-gray-200 dark:border-neutral-800 rounded-lg hover:shadow-md transition-shadow duration-300 py-3 p-3 md:p-6 w-full h-full">
                     
                     {item.slug === 'linkedin-post-scheduler' && (
                         <Image src="/icons/new.png" alt='new project icon' width={50} height={50} className="absolute right-0 top-0" />

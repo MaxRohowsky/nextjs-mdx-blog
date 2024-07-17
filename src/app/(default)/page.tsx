@@ -19,7 +19,7 @@ export default async function Home() {
         <div className='absolute text-white text-sm bottom-0 m-4'>
           <p className='text-lg md:pb-1 sm:text-2xl'>Hi, I'm Max.</p>
           <p className='w-2/3 sm:text-lg font-light'>
-            Welcome to my corner of the internet. I write about web development and indie hacking.
+            Welcome to my corner of the internet. I write about software engineering and indie hacking.
           </p>
 
 

@@ -5,13 +5,7 @@ import matter from 'gray-matter';
 import { format } from 'date-fns';
 
 
-// example to check if fs works
-export async function checkFs() {
 
-    const blogDirectory = path.join(process.cwd(), 'src/app/(default)/blog/(posts)');
-    const readDirectory = fs.readdirSync(blogDirectory);
-    console.log(readDirectory);
-}
 
 
 /**

@@ -15,27 +15,29 @@ export default function Title({ titles, top, left }: { titles: string[]; top: st
 
     return (
         <>
-            <div className="relative -z-10 w-0 h-0 dark:hidden" style={{ top, left }}>
-                <Particles numberOfParticles={10} radius={70} opacity={0.3} color='black' left={0} />
-                <Particles numberOfParticles={30} radius={300} opacity={0.2} color='black' left={0} />
-                <Particles numberOfParticles={40} radius={380} opacity={0.15} color='black' left={0} />
-                <Particles numberOfParticles={50} radius={460} opacity={0.1} color='black' left={0} />
-                <Particles numberOfParticles={60} radius={540} opacity={0.05} color='black' left={0} />
-            </div>
-
-            <div className="relative -z-10 w-0 h-0 dark:blo" style={{ top, left }}>
-                <Particles numberOfParticles={10} radius={70} opacity={0.8} color='white' left={0} />
-                <Particles numberOfParticles={30} radius={300} opacity={0.4} color='white' left={0} />
-                <Particles numberOfParticles={40} radius={380} opacity={0.3} color='white' left={0} />
-                <Particles numberOfParticles={50} radius={460} opacity={0.2} color='white' left={0} />
-                <Particles numberOfParticles={60} radius={540} opacity={0.1} color='white' left={0} />
-            </div>
-
-
-            <div className='flex justify-between items-center whitespace-nowrap w-full h-40 text-5xl py-4 my-6 overflow-hidden'>
+            <div className='flex justify-between relative items-center whitespace-nowrap h-40 text-5xl py-4 my-6 overflow-hidden'>
                 {titles.map((title, index) => (
                     <span key={title} className={opacityClasses[index % opacityClasses.length]}>{title}</span>
                 ))}
+
+
+
+{/*                 <div className="absolute block -z-10 w-0 h-0 dark:hidden " style={{ top, left }}>
+                    <Particles numberOfParticles={60} radius={130} opacity={0.3} color='black' left={0} />
+                    <Particles numberOfParticles={80} radius={170} opacity={0.2} color='black' left={0} />
+                    <Particles numberOfParticles={100} radius={210} opacity={0.15} color='black' left={0} />
+                    <Particles numberOfParticles={50} radius={460} opacity={0.1} color='black' left={0} />
+                    <Particles numberOfParticles={60} radius={540} opacity={0.05} color='black' left={0} />
+                </div>
+
+                <div className="absolute hidden -z-10 w-0 h-0 dark:block " style={{ top, left }}>
+                    <Particles numberOfParticles={10} radius={70} opacity={0.8} color='white' left={0} />
+                    <Particles numberOfParticles={30} radius={300} opacity={0.4} color='white' left={0} />
+                    <Particles numberOfParticles={40} radius={380} opacity={0.3} color='white' left={0} />
+                    <Particles numberOfParticles={50} radius={460} opacity={0.2} color='white' left={0} />
+                    <Particles numberOfParticles={60} radius={540} opacity={0.1} color='white' left={0} />
+                </div> */}
+
             </div>
         </>
     );

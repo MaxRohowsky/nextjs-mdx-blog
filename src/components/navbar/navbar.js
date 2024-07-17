@@ -8,7 +8,6 @@ import { Separator } from "@/components/ui/separator";
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from "@/lib/utils";
-import { Toggle } from "@/components/ui/toggle"
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -43,8 +42,8 @@ export default function Navbar() {
 			<div className="flex align-middle justify-between items-center pt-2 pb-2 w-full border-b border-neutral-100 ">
 
 				<span className="font-sans flex gap-2">
-					<FishSymbol className="text-blue-400 dark:text-white" />
-					<span className=""> Maximilian Rohowsky, Ph.D.</span>
+					<FishSymbol className="text-blue-400 dark:text-white hidden sm:block" />
+					<span className=""> Max Rohowsky, Ph.D.</span>
 				</span>
 
 				<MobileMenu />
@@ -179,7 +178,7 @@ function DesktopMenu({ pathname }) {
 function MobileMenu() {
 	return (
 		<Dialog >
-			<DialogTrigger asChild className="md:hidden mx-8">
+			<DialogTrigger asChild className="md:hidden mx-1">
 				<Button variant="outline"><FaBars /></Button>
 			</DialogTrigger>
 			<DialogContent className="sm:max-w-md">

@@ -1,4 +1,4 @@
-import {sortBlogsByDate } from '@/lib/utils';
+import { sortBlogsByDate } from '@/lib/utils';
 import { getFilteredBlogFrontMatter } from '@/lib/server-actions';
 
 
@@ -12,20 +12,18 @@ export default async function Client() {
   const frontMatter = await getFilteredBlogFrontMatter()
   const blogs = sortBlogsByDate(frontMatter).slice(0, 2);
 
-  //console.log({blogs})
-
 
   return (
     <>
-      <div className='p-5' />
 
-       <Content blogs={blogs} /> 
 
-      <div style={{ height: '70px' }} />
+      <Content blogs={blogs} />
+
+ {/*      <div style={{ height: '70px' }} /> */}
 
       <About />
 
-      <div style={{ height: '70px' }} />
+{/*       <div style={{ height: '70px' }} /> */}
 
     </>
   )

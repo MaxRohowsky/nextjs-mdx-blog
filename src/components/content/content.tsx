@@ -6,11 +6,8 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { projects } from '@/components/projects';
 
-export default function Content({blogs}) {
+export default function Content({ blogs }) {
 
- 
-    console.log({blogs})
-    // filter the featured projects from the projects json
     const featuredProjects = projects.filter(project => project.featured);
     //console.log(featuredProjects)
     return (
@@ -20,12 +17,13 @@ export default function Content({blogs}) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
 
                 <div>
-                    <h2 className=' font-bold  text-red-500 text-xl'> Recent Posts</h2>
+                    <h2 className=' font-semibold  text-red-500 text-xl'> Recent Posts</h2>
                     {blogs.map((blog) => (
                         <div key={blog.slug}>
                             <Link href={`/blog/${blog.slug}`} className="flex flex-col justify-between  hover:shadow-lg transition-shadow duration-300 px-2 py-4 w-full h-full">
                                 <h3 className="font-bold text-xl mb-2">{blog.title}</h3>
-                                <p className="text-sm text-gray-500">{blog.publishedOn}</p>
+                                <h3 className="font-bold text-xl mb-2">{blog.subtitle}</h3>
+                  {/*               <p className="text-sm text-gray-500">{blog.publishedOn}</p> */}
                                 <p className="py-4">{blog.abstract}</p>
                                 <div className='flex flex-wrap gap-2 mb-4'>
                                     {blog.tags.map((tag) => (
@@ -40,13 +38,13 @@ export default function Content({blogs}) {
                     )
                     )}
 
-                </div> 
+                </div>
 
 
                 <div >
 
                     <div>
-                        <h2 className=' font-bold  text-red-500 text-xl'> Most Popular</h2>
+                        <h2 className=' font-bold  text-red-500 text-xl'>Popular Content</h2>
 
                         <div>
                             <ul>
@@ -72,6 +70,7 @@ export default function Content({blogs}) {
 
                     {featuredProjects.map((project) => (
                         <ProjectSnippet
+                            key={project.slug}
                             title={project.title}
                             text={project.description}
                             date={project.date}

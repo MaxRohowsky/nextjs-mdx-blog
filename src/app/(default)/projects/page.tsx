@@ -46,23 +46,21 @@ export default function Projects() {
 
   useEffect(() => {
     setIsFiltered(selectedTags.length > 0);
-    console.log("filter changed")
-    console.log(isFiltered)
   }, [selectedTags, isFiltered]);
 
 
   return (
     <>
 
-      <Title titles={['Projects', 'Projets', '프로젝트', '项目', 'Проект']} top='108px' left='95px' />
+      <Title titles={['Projects'/* , 'Projets', '프로젝트', '项目', 'Проект' */]} top='85px' left='100px' />
 
       <Filter allTags={allTags} selectedTags={selectedTags} handleResetFilters={handleResetFilters} handleTagSelection={handleTagSelection} />
 
       <div className='grid gap-7 grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] '>
         {projects.map((project) => (
 
-         <Card key={project.slug} item={project} />  
-         
+          <Card key={project.slug} item={project} />
+
 
         ))}
 
@@ -90,7 +88,7 @@ function Filter({ allTags, selectedTags, handleResetFilters, handleTagSelection 
           <Button variant="outline" size="sm" className="h-8 lg:flex gap-2 my-4">
             <ListFilter /> Filter
           </Button>
-          </PopoverTrigger>
+        </PopoverTrigger>
 
         <PopoverContent className='  w-48 p-2 flex flex-col gap-2 justify-between'>
           <Button
@@ -101,22 +99,18 @@ function Filter({ allTags, selectedTags, handleResetFilters, handleTagSelection 
             Reset Filters
           </Button>
 
-          <ScrollArea className=' h-52 pr-2'>
-            {allTags.map((tag) => (
-              <ul className='py-1 px-1 w-full mr-2'>
-                <li className='flex flex-row gap-2 w-full items-center px-2 py-1 border border-neutral-100 rounded-md '>
+          <ScrollArea className='h-52 pr-2'>
+            <ul className='py-1 px-1 w-full mr-2 flex flex-col gap-2'>
+              {allTags.map((tag) => (
+                <li key={tag} className='flex flex-row gap-2 w-full items-center px-2 py-1 border border-neutral-100 rounded-md'>
                   <Checkbox className='border-none bg-neutral-100' checked={selectedTags.includes(tag)} id={tag} onCheckedChange={() => handleTagSelection(tag)} />
-                  <label
-                    htmlFor={tag}
-                    className=" w-full "
-                  >
+                  <label htmlFor={tag} className="w-full">
                     {tag}
                   </label>
                 </li>
-              </ul>
-            ))}
+              ))}
+            </ul>
           </ScrollArea>
-
 
 
         </PopoverContent>

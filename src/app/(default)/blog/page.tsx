@@ -1,4 +1,3 @@
-
 import {sortBlogsByDate } from '@/lib/utils';
 import { getFilteredBlogFrontMatter } from '@/lib/server-actions';
 import { getBlogTags } from '@/lib/utils';
@@ -19,13 +18,20 @@ export default async function Overview() {
   const frontMatter = await getFilteredBlogFrontMatter()
   const blogs = sortBlogsByDate(frontMatter);
 
+
+  //const allTags = getBlogTags(frontMatter)
+
   
-    
+
+
+
+  
+
 
   return (
     <> 
 
-      <Title titles={['Blog', 'Blogue', 'ブログ', '블로그', '博客', 'Блог']} top='108px' left='50px' />
+      <Title titles={['Blog', /* 'Blogue', 'ブログ', '블로그', '博客', 'Блог' */]} top='50%' left='0px' />
 
       <div className='grid gap-7 grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] '>
         

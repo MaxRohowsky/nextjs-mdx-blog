@@ -1,6 +1,7 @@
 // Base Item Type
 interface BaseItem {
   title: string;
+  subtitle: string;
   slug: string;
   tags: string[];
   featured?: boolean;

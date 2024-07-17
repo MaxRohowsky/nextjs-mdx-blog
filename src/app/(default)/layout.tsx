@@ -36,15 +36,15 @@ export default function RootLayout({ children }) {
     <html lang="en" className={openSans.className}>
 
 
-      <body>
+      <body className='px-1 sm:px-2 md:px-4 ' style={{ paddingLeft: 'calc(100vw - 100%)' }}>
         <div className='max-w-screen-lg flex flex-wrap items-center mx-auto'>
-          <div className='w-full px-4'>
+          <div className='w-full'>
 
             <Navbar />
 
             {children}
 
-            <footer className="">
+            <footer>
               <Footer />
             </footer>
 

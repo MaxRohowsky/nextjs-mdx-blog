@@ -2,7 +2,7 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 /* import { BlogFrontMatter } from '@/lib/server-actions'; */
-import { projects} from '@/components/projects';
+import { projects } from '@/components/projects';
 
 
 export function cn(...inputs: ClassValue[]) {
@@ -51,12 +51,15 @@ export function getFilteredProjects(options: ProjectOptions = {}): Project[] {
   const allProjects = projects.map(project => ({
     ...project,
     // Convert the date string to the desired format
-    date: new Date(project.date).toLocaleDateString('en-US', {
-      weekday: 'long', // "Monday"
-      year: 'numeric', // "2023"
-      month: 'long', // "July"
-      day: 'numeric', // "6"
-    }),
+    date: (() => {
+      const date = new Date(project.date);
+      const day = date.getDate(); // "1"
+      const monthAndYear = date.toLocaleDateString('en-US', {
+        year: 'numeric', // "2024"
+        month: 'short', // "December"
+      });
+      return `${day} ${monthAndYear}`; // "1. December 2024"
+    })(),
   }));
 
   const filteredProjects = allProjects.filter((project) => {
@@ -96,7 +99,7 @@ export function getProjectTags(): Array<string> {
 
 
 
-export function getBlogTags( frontMatter: BlogFrontMatter[] ): Array<string> {
+export function getBlogTags(frontMatter: BlogFrontMatter[]): Array<string> {
   const allTags = frontMatter.flatMap(blog => blog.tags);
   return Array.from(new Set(allTags));
 }

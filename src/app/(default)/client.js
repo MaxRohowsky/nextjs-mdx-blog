@@ -21,7 +21,7 @@ export default async function Client() {
 
  {/*      <div style={{ height: '70px' }} /> */}
 
-      <About />
+   {/*    <About /> */}
 
 {/*       <div style={{ height: '70px' }} /> */}
 

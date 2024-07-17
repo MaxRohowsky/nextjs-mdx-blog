@@ -3,145 +3,54 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Car } from 'lucide-react';
 import { projects } from '@/components/projects';
 
 export default function Content({ blogs }) {
 
     const featuredProjects = projects.filter(project => project.featured);
-    //console.log(featuredProjects)
+
     return (
 
-        <section className="flex justify-center  items-center">
+        <section className="flex justify-center items-center">
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-3 pt-4">
 
-                <div>
-                    <h2 className=' font-semibold  text-red-500 text-xl'> Recent Posts</h2>
-                    {blogs.map((blog) => (
-                        <div key={blog.slug}>
-                            <Link href={`/blog/${blog.slug}`} className="flex flex-col justify-between  hover:shadow-lg transition-shadow duration-300 px-2 py-4 w-full h-full">
-                                <h3 className="font-bold text-xl mb-2">{blog.title}</h3>
-                                <h3 className="font-bold text-xl mb-2">{blog.subtitle}</h3>
-                  {/*               <p className="text-sm text-gray-500">{blog.publishedOn}</p> */}
-                                <p className="py-4">{blog.abstract}</p>
-                                <div className='flex flex-wrap gap-2 mb-4'>
-                                    {blog.tags.map((tag) => (
-                                        <span key={tag} className="bg-gray-200 text-gray-800 text-xs font-semibold px-2 py-1.5 rounded dark:bg-gray-700 dark:text-gray-300">
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                                <p className="text-indigo-600 hover:text-indigo-800 font-semibold cursor-pointer">Read more →</p>
-                            </Link>
-                        </div>
+                <div className='flex flex-col '>
+
+                    <h2 className='  text-rose-red  text-xl mt-8 mb-4'> Recent Posts</h2>
+
+                    {blogs.map((blog: BlogFrontMatter) => (
+                        <Card item={blog} />
                     )
                     )}
 
                 </div>
 
 
-                <div >
+                <div className='flex flex-col-reverse md:flex-col '>
 
-                    <div>
-                        <h2 className=' font-bold  text-red-500 text-xl'>Popular Content</h2>
-
-                        <div>
-                            <ul>
-                                <li className="flex align-middle"><ArrowRight /><span>My Core Beliefs</span></li>
-                                <li className="flex align-middle"><ArrowRight /><span>My Core Beliefs</span></li>
-                                <li className="flex align-middle"><ArrowRight /><span>An Introduction to PyCharm</span></li>
-                                <li className="flex align-middle"><ArrowRight /><span>JavaScript in a Nutshell</span></li>
-                                <li className="flex align-middle"><ArrowRight /><span>My Core Beliefs</span></li>
+                    <div className='flex flex-col md:mb-8'>
+                        <h2 className='  text-rose-red text-xl mt-8 mb-4'>Popular Content</h2>
+                  
+                            <ul className='space-y-5  font-semibold mt-4 '>
+                                <li className="flex align-middle hover:pl-2 transition-all"><ArrowRight className='mx-2 text-blue-500' /><span>My Core Beliefs</span></li>
+                                <li className="flex align-middle hover:pl-2 transition-all"><ArrowRight className='mx-2 text-blue-500' /><span>My Core Beliefs</span></li>
+                                <li className="flex align-middle hover:pl-2 transition-all"><ArrowRight className='mx-2 text-blue-500' /><span>An Introduction to PyCharm</span></li>
+                                <li className="flex align-middle hover:pl-2 transition-all"><ArrowRight className='mx-2 text-blue-500' /><span>JavaScript in a Nutshell</span></li>
+                                <li className="flex align-middle hover:pl-2 transition-all"><ArrowRight className='mx-2 text-blue-500' /><span>My Core Beliefs</span></li>
                             </ul>
-                        </div>
-
-
-
+                   
                     </div>
 
-                    <div>
+                    <div className='flex flex-col gap-3'>
+                        <h2 className=' text-rose-red text-xl mt-8 mb-4'> Featured Projects</h2>
 
-
-
+                        {featuredProjects.map((project) => (
+                            <Card item={project} />
+                        )
+                        )}
                     </div>
-                    <h2 className=' font-bold  text-red-500 text-xl'> Featured Projects</h2>
-
-
-                    {featuredProjects.map((project) => (
-                        <ProjectSnippet
-                            key={project.slug}
-                            title={project.title}
-                            text={project.description}
-                            date={project.date}
-                            url={project.link}
-                            imgSrc={project.img}
-                        />
-                    ))}
-
-
-                    {featuredProjects.map((project) => (
-                        <div key={project.slug}>
-                            <Link href={`/projects/${project.slug}`} className="flex flex-col justify-between  hover:shadow-lg transition-shadow duration-300 px-2 py-4 w-full h-full">
-                                <h3 className="font-bold text-xl mb-2">{project.title}</h3>
-                                <p className="text-sm text-gray-500">{project.date}</p>
-                                <p className="py-4">{project.description}</p>
-                                <div className='flex flex-wrap gap-2 mb-4'>
-                                    {project.tags.map((tag) => (
-                                        <span key={tag} className="bg-gray-200 text-gray-800 text-xs font-semibold px-2 py-1.5 rounded dark:bg-gray-700 dark:text-gray-300">
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                                <p className="text-indigo-600 hover:text-indigo-800 font-semibold cursor-pointer">Read more →</p>
-                            </Link>
-
-                        </div>
-
-                    )
-                    )}
-
-
-                    {/*                     <ProjectSnippet
-                        title='Twitter (X) Font Editor'
-                        text='Google Chrome Extension that Enables 𝗕𝗼𝗹𝗱, 𝐼𝑡𝑎𝑙𝑖𝑐, and U̲n̲d̲e̲r̲l̲i̲n̲e̲d̲ Fonts on Twitter X Posts by making use of Unicode characters.'
-                        date='16 March 2024'
-                        url='https://github.com/maxontech/twitter-font-editor'
-                        imgSrc='/previews/x-font-editor.png'
-                    />
-
-
-                    <ProjectSnippet
-                        title='Click to Copy'
-                        text='Google Chrome Extension that allows you to selectively Copy Text, Urls, and CSS with one Click.'
-                        date='10 March 2024'
-                        url='https://chromewebstore.google.com/detail/click-to-copy/fonpjogfddpklefillfepifbcikebelh'
-                        imgSrc='/previews/click-to-copy.png'
-                    />
-
-                    <ProjectSnippet
-                        title='GitPro'
-                        text='Showcase website for unique and beautiful GitHub profiles that is fully automated using GitHub Actions.'
-                        date='15 February 2024'
-                        url='https://maxontech.github.io/best-github-profile-readme/'
-                        imgSrc='/previews/gitpro.png'
-                    />
-
-
-                    <ProjectSnippet
-                        title='NEFT Flappy Bird'
-                        text='Neuroevolution with Fixed Topologies (NEFT) implemented in the Flappy Bird without using any Machine Learning Libraries.'
-                        date='10 January 2023'
-                        url='https://github.com/maxontech/neft-flappy-bird'
-                        imgSrc='/previews/neft-flappy-bird.png'
-                    /> */}
-
-
-                    <Link style={{ fontWeight: 'bold' }} href="/projects">View more →</Link>
-
-
-
-
 
 
                 </div>
@@ -156,7 +65,7 @@ export default function Content({ blogs }) {
 }
 
 
-const useMousePosition = () => {
+/* const useMousePosition = () => {
     const [mousePosition, setMousePosition] = useState({ x: null, y: null });
 
     useEffect(() => {
@@ -197,5 +106,41 @@ function ProjectSnippet({ title, text, date, url, imgSrc }) {
         </a>
     );
 };
+ */
 
 
+
+
+
+
+type Item = BlogFrontMatter | Project;
+
+function Card({ item }: { item: Item }) {
+    // Use item.description or item.abstract for blogs, item.date or item.publishedOn for blogs
+    const description = 'description' in item ? item.description : item.abstract;
+    const date = 'date' in item ? item.date : item.publishedOn;
+    const link = 'link' in item ? item.link : undefined;
+
+    return (
+
+        <div className="w-full group cursor-pointer mt-4 ">
+            <a href={link} className="flex flex-col  w-full h-full">
+                <div>
+                    <h3 className=" font-semibold md:text-xl group-hover:text-blue-500 pb-1 transition-all duration-300">{item.title}</h3>
+                    {item.subtitle && <h4 className=" font-medium md:text-l text-neutral-500 dark:text-neutral-400 transition-all duration-300">{item.subtitle}</h4>}
+                </div>
+                {description && <p className="text-sm py-4 md:text-base transition-all duration-300">{description}</p>}
+                <div className='flex flex-wrap gap-3 pb-2 transition-all duration-300'>
+                    {item.tags.map((tag) => (
+                        <span key={tag} className="bg-gray-100 dark:bg-neutral-900 text-gray-700 dark:text-neutral-200 text-xs font-semibold px-2 py-1.5 rounded transition-all duration-300">
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+
+                <p className=" text-sm md:text-base cursor-pointer flex gap-1 duration-300 transition-all">Read more <span className='pt-[1px] opacity-0 group-hover:opacity-100 transition-all'> <ArrowRight width={15}/> </span> </p>
+            </a>
+        </div>
+
+    );
+}

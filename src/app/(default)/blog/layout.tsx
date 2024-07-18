@@ -15,12 +15,9 @@ export default function MdxLayout({
   return (
     <>
 
-      <div className='flex flex-col '>
 
-        <div className='' >
           {children}
-        </div>
-      </div>
+
 
     </>
   )

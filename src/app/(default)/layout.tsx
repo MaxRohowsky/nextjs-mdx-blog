@@ -1,9 +1,8 @@
 import '@/styles/globals.css';
-import Transition from '@/components/transition';
 
 /* Components */
-import Navbar from "@/components/navbar/navbar";
-import Footer from '@/components/footer/footer';
+import Navbar from "@/components/navbar";
+import Footer from '@/components/footer';
 import Overlay from '@/components/overlay/overlay';
 
 /* Highlight.js */
@@ -36,21 +35,14 @@ export default function RootLayout({ children }) {
     <html lang="en" className={openSans.className}>
 
 
-      <body className='px-1 sm:px-2 md:px-4 ' style={{ paddingLeft: 'calc(100vw - 100%)' }}>
-        <div className='max-w-screen-lg flex flex-wrap items-center mx-auto'>
-          <div className='w-full'>
+      <body className='mx-1 sm:mx-2 md:mx-4 flex justify-center'>
+        <div className='max-w-screen-lg w-full flex flex-col '>
 
-            <Navbar />
+          <Navbar />
+          {children}
+          <Footer />
 
-            {children}
-
-            <footer>
-              <Footer />
-            </footer>
-
-          </div>
         </div>
-
       </body>
 
     </html>

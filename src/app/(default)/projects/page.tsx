@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ListFilter } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { ScrollArea } from "@/components/ui/scroll-area"
-import Card from '@/components/card/card';
+import Card from '@/components/card';
 import { Checkbox } from "@/components/ui/checkbox"
 import Title from '@/components/title/title';
 
@@ -85,7 +85,7 @@ function Filter({ allTags, selectedTags, handleResetFilters, handleTagSelection 
 
       <Popover>
         <PopoverTrigger asChild>
-          <Button variant="outline" size="sm" className="h-8 lg:flex gap-2 my-4">
+          <Button variant="outline" className=" w-28 lg:flex gap-2 my-4">
             <ListFilter /> Filter
           </Button>
         </PopoverTrigger>

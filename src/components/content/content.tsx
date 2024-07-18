@@ -32,15 +32,35 @@ export default function Content({ blogs }) {
 
                     <div className='flex flex-col md:mb-8'>
                         <h2 className='  text-rose-red text-xl mt-8 mb-4'>Popular Content</h2>
-                  
-                            <ul className='space-y-5 cursor-pointer font-semibold text-lg mt-4 '>
-                                <li className="flex align-middle hover:pl-2 transition-all"><ArrowRight className='mx-2 text-blue-500' /><span>Building a LinkedIn Post Scheduler</span></li>
-                                <li className="flex align-middle hover:pl-2 transition-all"><ArrowRight className='mx-2 text-blue-500' /><span>How does the Internet Work?</span></li>
-                                <li className="flex align-middle hover:pl-2 transition-all"><ArrowRight className='mx-2 text-blue-500' /><span>An Introduction to PyCharm</span></li> {/* https://www.youtube.com/watch?v=HHcZbXsZtm0 */}
-                                <li className="flex align-middle hover:pl-2 transition-all"><ArrowRight className='mx-2 text-blue-500' /><span>JavaScript in a Nutshell</span></li>
-                                <li className="flex align-middle hover:pl-2 transition-all"><ArrowRight className='mx-2 text-blue-500' /><span>My Key Principles and Beliefs</span></li>
-                            </ul>
-                   
+
+                        <ul className='space-y-5 cursor-pointer font-semibold text-lg mt-4 '>
+                            <li>
+                                <Link className="flex items-center hover:pl-2 transition-all" href="blog/building-a-linkedin-post-scheduler">
+                                    <ArrowRight className='mx-2 text-blue-500' /><span>Building a LinkedIn Post Scheduler</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <a className="flex items-center hover:pl-2 transition-all" href="https://github.com/maxontech/neft-flappy-bird" target="_blank" rel="noopener noreferrer">
+                                    <ArrowRight className='mx-2 text-blue-500' /><span>Neuro Evolution with Fixed Topologies</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a className="flex items-center hover:pl-2 transition-all" href="https://www.youtube.com/watch?v=HHcZbXsZtm0" target="_blank" rel="noopener noreferrer">
+                                    <ArrowRight className='mx-2 text-blue-500' /><span>An Introduction to PyCharm</span>
+                                </a>
+                            </li>
+                            <li>
+                                <Link className="flex items-center hover:pl-2 transition-all" href="blog/javascript-in-a-nutshell">
+                                    <ArrowRight className='mx-2 text-blue-500' /><span>JavaScript in a Nutshell</span>
+                                </Link>
+                            </li>
+                            <li >
+                                <Link className="flex items-center hover:pl-2 transition-all" href="blog/my-core-beliefs">
+                                    <ArrowRight className='mx-2 text-blue-500' /><span>My Core Principles and Beliefs</span>
+                                </Link>
+                            </li>
+                        </ul>
+
                     </div>
 
                     <div className='flex flex-col gap-3'>
@@ -138,7 +158,7 @@ function Card({ item }: { item: Item }) {
                     ))}
                 </div>
 
-                <p className=" text-sm md:text-base cursor-pointer flex gap-1 duration-300 transition-all">Read more <span className='pt-[1px] opacity-0 group-hover:opacity-100 transition-all'> <ArrowRight width={15}/> </span> </p>
+                <p className=" text-sm md:text-base cursor-pointer flex gap-1 duration-300 transition-all">Read more <span className='pt-[1px] opacity-0 group-hover:opacity-100 transition-all'> <ArrowRight width={15} /> </span> </p>
             </a>
         </div>
 

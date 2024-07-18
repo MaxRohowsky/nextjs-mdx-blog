@@ -2,6 +2,7 @@ import { sortBlogsByDate } from '@/lib/utils';
 import { getFilteredBlogFrontMatter } from '@/lib/server-actions';
 import { getBlogTags } from '@/lib/utils';
 import Card from '@/components/card';
+import { usePathname } from 'next/navigation'
 
 import { useState } from 'react';
 

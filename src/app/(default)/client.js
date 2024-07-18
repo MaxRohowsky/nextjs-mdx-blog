@@ -10,7 +10,7 @@ import Space from '@/components/space';
 export default async function Client() {
 
   const frontMatter = await getFilteredBlogFrontMatter()
-  const blogs = sortBlogsByDate(frontMatter).slice(0, 2);
+  const blogs = sortBlogsByDate(frontMatter).slice(0, 6);
 
 
   return (

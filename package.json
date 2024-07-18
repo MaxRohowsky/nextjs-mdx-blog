@@ -36,6 +36,7 @@
     "dat.gui": "^0.7.9",
     "dotenv": "^16.4.5",
     "eslint-config-next": "^14.2.5",
+    "extract-md-headings": "^0.2.7",
     "firebase": "^10.11.0",
     "firebase-admin": "^12.1.0",
     "graphql": "^16.6.0",

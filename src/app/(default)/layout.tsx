@@ -4,7 +4,7 @@ import '@/styles/globals.css';
 import Navbar from "@/components/navbar";
 import Footer from '@/components/footer';
 import Overlay from '@/components/overlay/overlay';
-
+import Space from '@/components/space';
 /* Highlight.js */
 import 'highlight.js/styles/srcery.css';
 
@@ -39,7 +39,9 @@ export default function RootLayout({ children }) {
         <div className='max-w-screen-lg w-full flex flex-col '>
 
           <Navbar />
+          <Space className='h-8'/>
           {children}
+          <Space className='h-8'/>
           <Footer />
 
         </div>

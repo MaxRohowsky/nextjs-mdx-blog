@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ArrowRight, Car } from 'lucide-react';
 import { projects } from '@/components/projects';
+import Space from '@/components/space';
 
 export default function Content({ blogs }) {
 
@@ -14,14 +15,18 @@ export default function Content({ blogs }) {
 
         <section className="flex justify-center items-center">
 
-            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 pt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 ">
 
                 <div className='flex flex-col '>
 
-                    <h2 className='  text-rose-red  text-xl mt-8 mb-4'> Recent Posts</h2>
-
+                    <h2 className='  text-rose-red  text-xl '> Recent Posts</h2>
+                    <Space className='h-3 lg:h-8' />
                     {blogs.map((blog: BlogFrontMatter) => (
-                        <Card item={blog} />
+                        <>
+
+                            <Card item={blog} />
+                            <Space className='h-2 lg:h-8' />
+                        </>
                     )
                     )}
 
@@ -30,30 +35,37 @@ export default function Content({ blogs }) {
 
                 <div className='flex flex-col-reverse md:flex-col '>
 
-                    <div className='flex flex-col md:mb-8'>
-                        <h2 className='  text-rose-red text-xl mt-8 mb-4'>Popular Content</h2>
+                    <div className='flex flex-col'>
 
-                        <ul className='space-y-5 cursor-pointer font-semibold text-lg mt-4 '>
-                            <li>
+                        <Space className='h-8 md:h-0 lg:h-0' />
+                        <h2 className='  text-rose-red text-xl '>Popular Content</h2>
+                        <Space className='h-2 lg:h-8' />
+                        <ul className='cursor-pointer font-semibold text-lg'>
+                            <Space />
+                            <li className='pb-4'>
                                 <Link className="flex items-center hover:pl-2 transition-all" href="blog/building-a-linkedin-post-scheduler">
                                     <ArrowRight className='mx-2 text-blue-500' /><span>Building a LinkedIn Post Scheduler</span>
                                 </Link>
                             </li>
-                            <li>
+                            <Space />
+                            <li className='pb-4'>
                                 <a className="flex items-center hover:pl-2 transition-all" href="https://github.com/maxontech/neft-flappy-bird" target="_blank" rel="noopener noreferrer">
                                     <ArrowRight className='mx-2 text-blue-500' /><span>Neuro Evolution with Fixed Topologies</span>
                                 </a>
                             </li>
-                            <li>
+                            <Space />
+                            <li className='pb-4'>
                                 <a className="flex items-center hover:pl-2 transition-all" href="https://www.youtube.com/watch?v=HHcZbXsZtm0" target="_blank" rel="noopener noreferrer">
                                     <ArrowRight className='mx-2 text-blue-500' /><span>An Introduction to PyCharm</span>
                                 </a>
                             </li>
-                            <li>
+                            <Space />
+                            <li className='pb-4'>
                                 <Link className="flex items-center hover:pl-2 transition-all" href="blog/javascript-in-a-nutshell">
                                     <ArrowRight className='mx-2 text-blue-500' /><span>JavaScript in a Nutshell</span>
                                 </Link>
                             </li>
+                            <Space />
                             <li >
                                 <Link className="flex items-center hover:pl-2 transition-all" href="blog/my-core-beliefs">
                                     <ArrowRight className='mx-2 text-blue-500' /><span>My Core Principles and Beliefs</span>
@@ -63,22 +75,21 @@ export default function Content({ blogs }) {
 
                     </div>
 
-                    <div className='flex flex-col gap-3'>
-                        <h2 className=' text-rose-red text-xl mt-8 mb-4'> Featured Projects</h2>
 
-                        {featuredProjects.map((project) => (
-                            <Card item={project} />
-                        )
-                        )}
+                    <div className='flex flex-col'>
+
+                        <Space className='h-8 lg:h-16' />
+                        <h2 className=' text-rose-red text-xl'> Featured Projects</h2>
+                        <Space className='h-2 lg:h-8' />
+                        {featuredProjects.map((project, index) => (
+                            <>
+                                <Card item={project} />
+                                {index !== featuredProjects.length - 1 && <Space className='h-2 lg:h-8' />}
+                            </>
+                        ))}
                     </div>
-
-
                 </div>
-
             </div>
-
-
-
         </section>
 
     )
@@ -143,7 +154,7 @@ function Card({ item }: { item: Item }) {
 
     return (
 
-        <div className="w-full group cursor-pointer mt-4 ">
+        <div className="w-full group cursor-pointer ">
             <a href={link} className="flex flex-col  w-full h-full">
                 <div>
                     <h3 className=" font-semibold md:text-xl group-hover:text-blue-500 pb-1 transition-all duration-300">{item.title}</h3>

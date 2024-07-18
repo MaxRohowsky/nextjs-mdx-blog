@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import { ScrollArea } from "@/components/ui/scroll-area"
 import Card from '@/components/card';
 import { Checkbox } from "@/components/ui/checkbox"
-import Title from '@/components/title/title';
+
 
 import {
   Popover,
@@ -51,10 +51,14 @@ export default function Projects() {
 
   return (
     <>
+      <div className='flex items-center h-40 '>
+        <h1 className='text-5xl font-semibold'>Projects</h1>
+      </div>
 
-      <Title titles={['Projects'/* , 'Projets', '프로젝트', '项目', 'Проект' */]} top='85px' left='100px' />
+      <div className="flex justify-end">
+        <Filter allTags={allTags} selectedTags={selectedTags} handleResetFilters={handleResetFilters} handleTagSelection={handleTagSelection} />
 
-      <Filter allTags={allTags} selectedTags={selectedTags} handleResetFilters={handleResetFilters} handleTagSelection={handleTagSelection} />
+      </div>
 
       <div className='grid gap-7 grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] '>
         {projects.map((project) => (

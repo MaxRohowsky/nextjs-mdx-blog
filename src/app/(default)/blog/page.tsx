@@ -1,8 +1,8 @@
-import {sortBlogsByDate } from '@/lib/utils';
+import { sortBlogsByDate } from '@/lib/utils';
 import { getFilteredBlogFrontMatter } from '@/lib/server-actions';
 import { getBlogTags } from '@/lib/utils';
 import Card from '@/components/card';
-import Title from '@/components/title/title';
+
 import { useState } from 'react';
 
 /* export const metadata = {
@@ -21,23 +21,20 @@ export default async function Overview() {
 
   //const allTags = getBlogTags(frontMatter)
 
-  
-
-
-
-  
 
 
   return (
-    <> 
+    <>
 
-      <Title titles={['Blog', /* 'Blogue', 'ブログ', '블로그', '博客', 'Блог' */]} top='50%' left='0px' />
+      <div className='flex items-center h-40 '>
+        <h1 className='text-5xl font-semibold'>Blog</h1>
+      </div>
 
       <div className='grid gap-7 grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] '>
-        
-      {blogs.map((blog) => (
+
+        {blogs.map((blog) => (
           <Card key={blog.slug} item={blog} />
-        ))} 
+        ))}
 
       </div>
     </>

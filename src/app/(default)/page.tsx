@@ -3,14 +3,14 @@ import Client from './client';
 import Image from 'next/image';
 import Particles from '@/components/dots/particles';
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
-
+import Space from '@/components/space';
 
 export default async function Home() {
 
   return (
     <>
-
-      <div className='relative bg-gradient-to-tr from-blue-700 to-blue-400 dark:from-zinc-800 dark:to-zinc-900  h-72  md:h-80 rounded-sm overflow-hidden my-5 lg:my-8'>
+      
+      <div className='relative bg-gradient-to-tr from-blue-700 to-blue-400 dark:from-zinc-800 dark:to-zinc-900  h-72  md:h-80 rounded-sm overflow-hidden  '>
 
         <div className=' text-white text-2xl sm:text-4xl lg:text-7xl m-4'>
           <RoughNotation type="underline" show={true} color='white' >Blog.</RoughNotation>
@@ -44,6 +44,8 @@ export default async function Home() {
         <Image className='absolute right-0 top-0 h-full -mr-8 mt-2 sm:-mr-10 md:-mr-1' src='/dot-hero.svg' alt='hero' height='180' width='180' />
 
       </div>
+      <Space className='h-8 lg:h-16'/>
+
 
       < Client />
 

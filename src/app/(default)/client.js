@@ -4,7 +4,7 @@ import { getFilteredBlogFrontMatter } from '@/lib/server-actions';
 
 import Content from '@/components/content/content';
 import About from '@/components/about/about';
-
+import Space from '@/components/space';
 
 
 export default async function Client() {
@@ -18,12 +18,13 @@ export default async function Client() {
 
 
       <Content blogs={blogs} />
+  
 
- {/*      <div style={{ height: '70px' }} /> */}
+      {/*      <div style={{ height: '70px' }} /> */}
 
-   {/*    <About /> */}
+      {/*    <About /> */}
 
-{/*       <div style={{ height: '70px' }} /> */}
+      {/*       <div style={{ height: '70px' }} /> */}
 
     </>
   )

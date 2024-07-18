@@ -8,7 +8,7 @@ export default function Footer() {
   return (
 
 
-    <footer className="flex align-middle justify-between items-center mt-7 py-2 border-t border-neutral-100">
+    <footer className="flex align-middle justify-between items-center  py-2 border-t border-neutral-100">
       <div className='flex flex-row gap-2'>
         <span className="font-sans flex items-center gap-2">
 

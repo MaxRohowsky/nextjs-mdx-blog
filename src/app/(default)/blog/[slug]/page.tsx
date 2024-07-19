@@ -1,11 +1,14 @@
 import { MDXRemote } from "next-mdx-remote/rsc"
-
+import rehypeHighlight from 'rehype-highlight';
+import remarkGfm from 'remark-gfm';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { format } from 'date-fns';
 import { useMDXComponents } from '@/mdx-components';
-
+import { extractHeadings } from "extract-md-headings";
+import { serialize } from 'next-mdx-remote/serialize'
+import remarkFrontmatter from 'remark-frontmatter'
 // https://github.com/owolfdev/simple-mdx-blog/blob/main/app/blog/%5Bslug%5D/page.tsx
 /* import type { Metadata, ResolvingMetadata } from "next";
 
@@ -50,14 +53,17 @@ export async function generateStaticParams() {
 }
 
 
-async function getPost({ slug }: { slug: string }) {
+async function getPost({ slug }: { slug: string }): Promise<{ frontMatter: any, content: string }> {
     try {
         const dir = path.join(process.cwd(), 'src/(posts)');
 
         console.log("dir", dir)
         const markdownFile = fs.readFileSync(path.join(dir, slug, "page.mdx"), "utf-8");
 
+
         const { data: frontMatter, content } = matter(markdownFile);
+
+        console.log(frontMatter)
         return {
             frontMatter,
             content,
@@ -70,7 +76,16 @@ async function getPost({ slug }: { slug: string }) {
 }
 
 
-
+const options = {
+    scope: {/* any variables you want to pass to MDX content */},
+    mdxOptions: {
+        remarkPlugins: [remarkGfm, remarkFrontmatter],
+        rehypePlugins: [rehypeHighlight],
+      // any other MDX compiler options except 'outputFormat' and 'providerImportSource'
+      useDynamicImport: true,
+    },
+    parseFrontmatter: true,
+  };
 
 
 export default async function Post({ params: { slug } }) {
@@ -78,12 +93,46 @@ export default async function Post({ params: { slug } }) {
     const { frontMatter, content } = await getPost({ slug });
     const mdxComponents = useMDXComponents({});
 
+    const dir = path.join(process.cwd(), 'src/(posts)');
+    path.join(dir, slug, "page.mdx")
+    const headings = extractHeadings(path.join(dir, slug, "page.mdx"));
+/*     console.log("headings", headings) */
+    
+/*     const mdxSource = await serialize(content, {
+        mdxOptions: {
+            rehypePlugins: [rehypeHighlight],
+        }})
+
+        console.log("mdxSource", mdxSource) */
 
     return (
-        <article className="prose prose-lg md:prose-lg lg:prose-lg mx-auto">
 
-            <h1>{frontMatter.title}</h1>
-            <MDXRemote source={content} components={mdxComponents} />
-        </article>
+        <div className='max-w-full flex flex-row  items-start  '>
+
+
+            <article className='text-pretty max-w-xl p-2'>
+
+                <h1>{frontMatter.title}</h1>
+                <MDXRemote source={content} options={options} components={mdxComponents} />
+            </article>
+
+            <aside className='sticky top-0 pl-10'>
+
+                <nav>
+
+                    <ul>
+                        <li>Published: {frontMatter.publishedOn}</li>
+                        <li>Updated: {frontMatter.publishedOn}</li>
+                        <li>Tags: {frontMatter.tags.join(', ')}</li>
+                    </ul>
+                </nav>
+
+            </aside>
+
+        </div>
+
+
+
     );
 }
+

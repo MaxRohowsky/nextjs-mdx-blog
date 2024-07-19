@@ -16,7 +16,7 @@ import { useState } from 'react';
 
 
 
-export default async function Overview({params}) {
+export default async function Blog({params}) {
   const para = params
 
   console.log("params", para)

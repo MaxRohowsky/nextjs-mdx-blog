@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
 
 
       <body className='mx-1 sm:mx-2 md:mx-4 flex justify-center'>
-        <div className='max-w-screen-lg w-full flex flex-col '>
+        <div className=' max-w-screen-lg w-full flex flex-col '>
 
           <Navbar />
           <Space className='h-8'/>

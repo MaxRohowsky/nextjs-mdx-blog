@@ -3,6 +3,7 @@ import { getFilteredBlogFrontMatter } from '@/lib/server-actions';
 import { getBlogTags } from '@/lib/utils';
 import Card from '@/components/card';
 import { usePathname } from 'next/navigation'
+import { getBlogFrontMatter } from '@/lib/server-actions';
 
 import { useState } from 'react';
 
@@ -14,7 +15,11 @@ import { useState } from 'react';
 
 
 
-export default async function Overview() {
+
+export default async function Overview({params}) {
+  const para = params
+
+  console.log("params", para)
 
   const frontMatter = await getFilteredBlogFrontMatter()
   const blogs = sortBlogsByDate(frontMatter);
@@ -32,7 +37,7 @@ export default async function Overview() {
       </div>
 
       <div className='grid gap-7 grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] '>
-
+      
         {blogs.map((blog) => (
           <Card key={blog.slug} item={blog} />
         ))}

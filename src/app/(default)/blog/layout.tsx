@@ -1,6 +1,7 @@
 import "@/styles/highlight-js/github-dark-dimmed.css";
 
-
+import Navbar from "@/components/navbar";
+import Footer from '@/components/footer';
 
 export const metadata = {
   title: 'Next.js',
@@ -15,12 +16,8 @@ export default function MdxLayout({
   return (
     <>
 
-      <div className='flex flex-col '>
 
-        <div className='' >
           {children}
-        </div>
-      </div>
 
     </>
   )

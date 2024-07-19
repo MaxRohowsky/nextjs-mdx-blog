@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function About() {
 
+    console.log('Add Ascii art here');
+
     return (
 
         <section className={styles.about}>

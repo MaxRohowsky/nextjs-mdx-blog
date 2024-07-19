@@ -1,0 +1,98 @@
+---
+title: JavaScript in a Nutshell
+subtitle: A summary of JavaScript terms
+seoTitle: How I Built my Blog using MDX, Next.js, and React
+abstract: A summary of JavaScript terms and concepts in the form of a glossery.
+isPublished: true
+publishedOn: 06 Mar 2024
+layout: Article
+tags:
+  - personal
+  - beliefs
+---
+
+A GitHub profile is to developers as a LinkedIn profile is to businesspeople. In this post, I’ll highlight some interesting elements and resources to help you build a great GitHub Readme. Here’s mine as an example:
+
+
+Visitor Count
+Adding a counter that shows the number of visitors to your GitHub only requires one line in your Readme file:
+
+![Visitor Count](https://profile-counter.glitch.me/{YOUR_USERNAME}/count.svg)
+Just replace {YOUR_USERNAME} with your GitHub user name. Here’s what it looks like:
+
+
+Stack Badges
+Repository Link: Badges4-README.md-Profile
+
+Instead of writing the technologies you use as plain text, try adding badges:
+
+
+You can find an extensive list of the badges in the repository. To add them to your markdown Readme file, use the following syntax:
+
+![](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+Buttons
+Repository: beautify-github-profile
+
+In contrast to badges, buttons do something when clicked. A great way to use them on your profile is to add fork, star, and follow buttons.
+
+
+Markdown Magic
+Repository Link: Markdown-Cheatsheet
+
+Markdown provides several simple formatting options that you can use to improve the look of your profile. For example, the table, bullets, headings, and links in my profile have all been formatted using markdown. You can find an overview/cheat sheet of markdown formatting linked here.
+
+Banners
+Markdown files support a broad range of images and animations, e.g., GIFs, .png, .jpg etc. You can make use of that by adding a banner to your profile:
+
+
+The syntax to add an image or animation is as follows:
+
+![banner](/assets/banner.png)
+!: This exclamation mark indicates that the element following it is an image.
+[banner]: This is the alternative text for the image. It is displayed if the image cannot be loaded or for accessibility purposes. In this case, “banner” is the alternative text.
+(/assets/banner.png): This is the path to the image file. In Markdown, you enclose the path to the image file in parentheses. In this case, the image file is located at /assets/banner.png.
+GitHub Stats
+Repository: github-readme-stats
+
+This repository allows you to showcase your GitHub activity and statistics in a beautiful card format.
+
+
+There are two ways to add this to your profile: one is easy but flawed, and the other is slightly more complex but clean.
+
+Easy but Flawed Method: You can simply adjust the following markdown to your user account to display the card:
+
+`[![{ALT TEXT}](https://github-readme-stats.vercel.app/api?username={USERNAME}])](https://github.com/anuraghazra/github-readme-stats)`
+The Vercel instance in the markdown above is used by all GitHub user who use this method to add the cards. During peak times, the instance reaches its rate limit, resulting in the cards not loading.
+
+Complex but Clean Method: To ensure that the stats always show, it’s better to fork the project and deploy your own instance. I’ve used Vercel to do this and here’s what it looks like in my Vercel dashboard:
+
+
+If you decide to use your own instance, here’s the corresponding markdown:
+
+`[![{ALT TEXT}]({INSTANCE LINK}/api?username={USERNAME}&show_icons=true&theme=vue)]({FORKED PROJECT LINK})`
+Alt text can be anything you choose
+Intance link is the link that ends with .vercel.app
+Username should be your GitHub username
+Forked project link looks like this {USERNAME}/github-readme-stats
+Automatically Show Recent Posts or Videos
+Show your latest activity from Stack Overflow, YouTube, or elsewhere on your GitHub automatically:
+
+
+The instructions for this project are well documented. To add this to your profile, simply follow the steps written here.
+
+3D Contributions
+Repository: github-profile-3d-contrib
+
+Display your GitHub contributions in a 3D tile. I think that this is an overkill but needless to say it looks cool.
+
+
+The instructions to implement this are quite long. To save space, i’ll refer you to the GitHub repository instead of writing out the explanation here.
+
+Readme Typing SVG
+Repository: readme-typing-svg
+
+The “Typing SVG” types letters, resets, and loops for ever. Take a look at the demo of the typewriter linked here. The previous link also provides an editor that outputs the markdown you can directly add to your Readme file.
+
+
+Want to see more?
+If you want to learn more about how to improve your GitHub Readme, then you’ll find a more comprehensive overview here: beautify-github-profile

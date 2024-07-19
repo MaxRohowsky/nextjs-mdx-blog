@@ -40,11 +40,11 @@ export default async function MdxLayout({
   console.log("headings", headings)
    */
   
-  const pathname = usePathname()
+/*   const pathname = usePathname()
   const slug = pathname.split('/').pop()
 
   console.log("pathname", slug)
-
+ */
 
     return(
 

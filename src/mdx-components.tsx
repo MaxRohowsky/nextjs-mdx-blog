@@ -9,10 +9,11 @@ import type { MDXComponents } from 'mdx/types'
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
       // Allows customizing built-in components, e.g., to add styling.
-      h1: ({ children }) => <h1 className="text-xl font-bold  my-6">{children}</h1>,
-      h2: ({ children }) => <h2 className="text-3xl font-semibold  my-4">{children}</h2>,
-      h3: ({ children }) => <h3 className="text-2xl font-medium  my-2">{children}</h3>,
-      p: ({ children }) => <p className="text-base  leading-relaxed my-4 max-w-full">{children}</p>,
+      h1: ({ children }) => <h1 className="text-3xl font-bold  my-6">{children}</h1>,
+      h2: ({ children }) => <h2 className="text-2xl font-semibold  my-4">{children}</h2>,
+      h3: ({ children }) => <h3 className="text-xl font-medium  my-2">{children}</h3>,
+      h4: ({ children }) => <h4 className="text-lg font-medium  my-2">{children}</h4>,
+      p: ({ children }) => <p className="text-base leading-relaxed my-4 max-w-full">{children}</p>,
       a: ({ children, ...props }) => <a className="text-blue-500 hover:text-blue-600 underline" {...props}>{children}</a>,
       img: (props) => (
         <Image

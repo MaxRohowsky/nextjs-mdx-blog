@@ -154,22 +154,22 @@ function Card({ item }: { item: Item }) {
 
     return (
 
-        <div className="w-full group cursor-pointer ">
-            <a href={link} className="flex flex-col  w-full h-full">
+        <div className="w-full group cursor-pointer  p-1  group">
+            <a href={link} className="flex flex-col  w-full h-full group-hover:shadow-[-2px_0px_0px_0px_#00000024] group-hover:pl-3  transition-all duration-300">
                 <div>
-                    <h3 className=" font-semibold md:text-xl group-hover:text-blue-500 pb-1 transition-all duration-300">{item.title}</h3>
-                    {item.subtitle && <h4 className=" font-medium md:text-l text-neutral-500 dark:text-neutral-400 transition-all duration-300">{item.subtitle}</h4>}
+                    <h3 className=" font-semibold md:text-xl group-hover:text-blue-500 pb-1 ">{item.title}</h3>
+                    {item.subtitle && <h4 className=" font-medium md:text-l text-neutral-500 dark:text-neutral-400 ">{item.subtitle}</h4>}
                 </div>
-                {description && <p className="text-sm py-4 md:text-base transition-all duration-300">{description}</p>}
-                <div className='flex flex-wrap gap-3 pb-2 transition-all duration-300'>
+                {description && <p className="text-sm py-4 md:text-base text-pretty">{description}</p>}
+                <div className='flex flex-wrap gap-3 pb-2 '>
                     {item.tags.map((tag) => (
-                        <span key={tag} className="bg-gray-100 dark:bg-neutral-900 text-gray-700 dark:text-neutral-200 text-xs font-semibold px-2 py-1.5 rounded transition-all duration-300">
+                        <span key={tag} className="bg-gray-100 dark:bg-neutral-900 text-gray-700 dark:text-neutral-200 text-xs font-semibold px-2 py-1.5 rounded ">
                             {tag}
                         </span>
                     ))}
                 </div>
 
-                <p className=" text-sm md:text-base cursor-pointer flex gap-1 duration-300 transition-all">Read more <span className='pt-[1px] opacity-0 group-hover:opacity-100 transition-all'> <ArrowRight width={15} /> </span> </p>
+                <p className=" text-sm md:text-base cursor-pointer flex gap-1 ">Read more <span className='pt-[1px] opacity-0 group-hover:opacity-100 transition-opacity'> <ArrowRight width={15} /> </span> </p>
             </a>
         </div>
 

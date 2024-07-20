@@ -2,12 +2,18 @@
 
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { projects } from '@/components/projects';
+import { projects } from '@/content/projects';
+import { popularContent } from '@/content/popular';
 import Space from '@/components/space';
+import { Fragment } from 'react';
 
+
+/**
+ * 
+ * 
+ * 
+ */
 export default function Content({ blogs }) {
-
-    const featuredProjects = projects.filter(project => project.featured);
 
     return (
 
@@ -15,127 +21,99 @@ export default function Content({ blogs }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 ">
 
-                <div className='flex flex-col '>
-
-                    <h2 className='  text-rose-red  text-xl '> Recent Posts</h2>
-                    <Space className='h-3 lg:h-8' />
-                    {blogs.map((blog: BlogFrontMatter) => (
-                        <>
-
-                            <Card item={blog} />
-                            <Space className='h-2 lg:h-8' />
-                        </>
-                    )
-                    )}
-
-                </div>
-
+                <RecentPosts blogs={blogs} />
 
                 <div className='flex flex-col-reverse md:flex-col '>
 
-                    <div className='flex flex-col'>
+                    <PopularContent />
 
-                        <Space className='h-8 md:h-0 lg:h-0' />
-                        <h2 className='  text-rose-red text-xl '>Popular Content</h2>
-                        <Space className='h-2 lg:h-8' />
-                        <ul className='cursor-pointer font-semibold text-lg'>
-                            <Space />
-                            <li className='pb-4'>
-                                <Link className="flex items-center hover:pl-2 transition-spacing duration-300" href="blog/building-a-linkedin-post-scheduler">
-                                    <ArrowRight className='mx-2 text-blue-500' /><span>Building a LinkedIn Post Scheduler</span>
-                                </Link>
-                            </li>
-                            <Space />
-                            <li className='pb-4'>
-                                <a className="flex items-center hover:pl-2 transition-spacing duration-300" href="https://github.com/maxontech/neft-flappy-bird" target="_blank" rel="noopener noreferrer">
-                                    <ArrowRight className='mx-2 text-blue-500' /><span>Neuro Evolution with Fixed Topologies</span>
-                                </a>
-                            </li>
-                            <Space />
-                            <li className='pb-4'>
-                                <a className="flex items-center hover:pl-2 transition-spacing duration-300" href="https://www.youtube.com/watch?v=HHcZbXsZtm0" target="_blank" rel="noopener noreferrer">
-                                    <ArrowRight className='mx-2 text-blue-500' /><span>An Introduction to PyCharm</span>
-                                </a>
-                            </li>
-                            <Space />
-                            <li className='pb-4'>
-                                <Link className="flex items-center hover:pl-2 transition-spacing duration-300" href="blog/javascript-in-a-nutshell">
-                                    <ArrowRight className='mx-2 text-blue-500' /><span>JavaScript in a Nutshell</span>
-                                </Link>
-                            </li>
-                            <Space />
-                            <li >
-                                <Link className="flex items-center hover:pl-2 transition-spacing duration-300" href="blog/my-core-beliefs">
-                                    <ArrowRight className='mx-2 text-blue-500' /><span>My Core Principles and Beliefs</span>
-                                </Link>
-                            </li>
-                        </ul>
-
-                    </div>
-
-
-                    <div className='flex flex-col'>
-
-                        <Space className='h-8 lg:h-16' />
-                        <h2 className=' text-rose-red text-xl'> Featured Projects</h2>
-                        <Space className='h-2 lg:h-8' />
-                        {featuredProjects.map((project, index) => (
-                            <>
-                                <Card item={project} />
-                                {index !== featuredProjects.length - 1 && <Space className='h-2 lg:h-8' />}
-                            </>
-                        ))}
-                    </div>
+                    <FeaturedProjects />
+                   
                 </div>
+
             </div>
+
         </section>
 
     )
 }
 
 
-/* const useMousePosition = () => {
-    const [mousePosition, setMousePosition] = useState({ x: null, y: null });
 
-    useEffect(() => {
-        const updateMousePosition = ev => {
-            setMousePosition({ x: ev.pageX - 160, y: ev.pageY - 200 });
-        };
-        window.addEventListener('mousemove', updateMousePosition);
-
-        return () => {
-            window.removeEventListener('mousemove', updateMousePosition);
-        };
-
-    }, []);
-    return mousePosition;
-};
-
-
-function ProjectSnippet({ title, text, date, url, imgSrc }) {
-    const mousePosition = useMousePosition();
+export function RecentPosts({ blogs }) {
     return (
-        <a href={url} className="group" key={url} >
-            <p className="">{title}</p>
-            <div>
-                <p>{text}</p>
-            </div>
-            <p className="">{date}</p>
-            <div className="opacity-0 transform scale-95 group-hover:opacity-100 transition-opacity" style={{ position: 'absolute', left: mousePosition.x, top: mousePosition.y }}>
-                <Image
-                    src={imgSrc} // Path relative to the `public` directory
-                    alt="Transparent Logo"
-                    width={320} // Set your desired width
-                    height={180} // Set your desired height
-
-                />
-            </div>
+        <div className='flex flex-col '>
+            <h2 className='  text-rose-red  text-xl '> Recent Posts</h2>
+            <Space className='h-3 lg:h-8' />
+            {blogs.map((blog: BlogFrontMatter) => (
+                <>
+                    <Card item={blog} />
+                    <Space className='h-2 lg:h-8' />
+                </>
+            )
+            )}
+        </div>
+    )
+}
 
 
-        </a>
-    );
-};
- */
+export function PopularContent() {
+    return (
+        <div className='flex flex-col'>
+            <Space className='h-8 md:h-0 lg:h-0' />
+            <h2 className='  text-rose-red text-xl '>Popular Content</h2>
+            <Space className='h-2 lg:h-8' />
+            <ul className='cursor-pointer font-semibold text-lg'>
+                {popularContent.links.map((link, index) => (
+                    <Fragment key={index}>
+                        <Space />
+                        <li className='pb-4'>
+                            {link.type === 'internal' ? (
+                                /* Link is used for internal navigation across pages on your site */
+                                <Link className="flex items-center hover:pl-2 transition-spacing duration-300" href={link.href}>
+                                    <ArrowRight className='mx-2 text-blue-500' /><span>{link.text}</span>
+                                </Link>
+                            ) : (
+                                /* Anchor tag is used for external navigation to other websites */
+                                <a className="flex items-center hover:pl-2 transition-spacing duration-300" href={link.href} target="_blank" rel="noopener noreferrer">
+                                    <ArrowRight className='mx-2 text-blue-500' /><span>{link.text}</span>
+                                </a>
+                            )}
+                        </li>
+                    </Fragment>
+                ))}
+            </ul>
+
+        </div>
+    )
+}
+
+
+export function FeaturedProjects(){
+    const featuredProjects = projects.filter(project => project.featured);
+    return (
+        <div className='flex flex-col'>
+
+        <Space className='h-8 lg:h-16' />
+        <h2 className=' text-rose-red text-xl'> Featured Projects</h2>
+        <Space className='h-2 lg:h-8' />
+        {featuredProjects.map((project, index) => (
+            <>
+                <Card item={project} />
+                {index !== featuredProjects.length - 1 && <Space className='h-2 lg:h-8' />}
+            </>
+        ))}
+    </div>
+    )
+}
+
+
+
+
+
+
+
+
 
 
 

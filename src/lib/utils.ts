@@ -2,7 +2,7 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 /* import { BlogFrontMatter } from '@/lib/server-actions'; */
-import { projects } from '@/components/projects';
+import { projects } from '@/content/projects';
 
 
 export function cn(...inputs: ClassValue[]) {

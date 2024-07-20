@@ -1,5 +1,4 @@
-interface Item {
-
+/* interface Item {
   title: string;
   subtitle: string;
   slug: string;
@@ -19,6 +18,58 @@ interface Item {
     featuredImage?: string;
   };
 }
+
+
+ */
+/*
+ *By design, both BlogItems and ProjectItems are identical for simplicity.
+ * I left them as separate interfaces to allow custom expansion.
+*/
+
+interface BlogItem {
+  title: string;
+  subtitle?: string;
+  tags: string[];
+  excerpt?: string;
+  seoTitle?: string;
+
+  publicationStatus: {
+    isPublished?: boolean;
+    isFeatured?: boolean;
+    updatedOn?: string;
+    publishedOn?: string;
+  };
+
+  media: {
+    img?: string;
+    link?: string;
+    featuredImage?: string;
+  };
+}
+
+interface ProjectItem {
+  title: string;
+  subtitle?: string;
+  tags: string[];
+  excerpt?: string;
+  seoTitle?: string;
+
+  publicationStatus: {
+    isPublished?: boolean;
+    isFeatured?: boolean;
+    updatedOn?: string;
+    publishedOn?: string;
+  };
+  
+  media: {
+    img?: string;
+    link?: string;
+    featuredImage?: string;
+  };
+}
+
+
+
 
 
 

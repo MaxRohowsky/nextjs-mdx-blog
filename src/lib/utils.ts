@@ -1,7 +1,6 @@
 
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
-/* import { BlogFrontMatter } from '@/lib/server-actions'; */
 import { projects } from '@/content/projects';
 
 
@@ -47,12 +46,12 @@ export function sortBlogsByDate(items: BlogFrontMatter[], ascending: boolean = f
  * @param options The filter options e.g., { published: true, featured: true, active: true, monetized: false, tags: ['tag1', 'tag2'] }.
  * @returns The filtered projects as an array.
  */
-export function getFilteredProjects(options: ProjectOptions = {}): Project[] {
+export function getFilteredProjects(options: ProjectOptions = {}): ProjectItem[] {
   const allProjects = projects.map(project => ({
     ...project,
     // Convert the date string to the desired format
     date: (() => {
-      const date = new Date(project.date);
+      const date = new Date(project.publishedOn);
       const day = date.getDate(); // "1"
       const monthAndYear = date.toLocaleDateString('en-US', {
         year: 'numeric', // "2024"
@@ -63,16 +62,10 @@ export function getFilteredProjects(options: ProjectOptions = {}): Project[] {
   }));
 
   const filteredProjects = allProjects.filter((project) => {
-    if (options.published !== undefined && options.published !== project.published) {
+    if (options.published !== undefined && options.published !== project.isPublished) {
       return false;
     }
-    if (options.featured !== undefined && options.featured !== project.featured) {
-      return false;
-    }
-    if (options.active !== undefined && options.active !== project.active) {
-      return false;
-    }
-    if (options.monetized !== undefined && options.monetized !== project.monetized) {
+    if (options.featured !== undefined && options.featured !== project.isFeatured) {
       return false;
     }
     if (options.tags !== undefined && !options.tags.every(tag => project.tags.includes(tag))) {

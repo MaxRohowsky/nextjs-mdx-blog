@@ -1,11 +1,6 @@
 import { sortBlogsByDate } from '@/lib/utils';
 import { getFilteredBlogFrontMatter } from '@/lib/server-actions';
-import { getBlogTags } from '@/lib/utils';
 import Card from '@/components/card';
-import { usePathname } from 'next/navigation'
-import { getBlogFrontMatter } from '@/lib/server-actions';
-
-import { useState } from 'react';
 
 /* export const metadata = {
   title: "Next Blog",

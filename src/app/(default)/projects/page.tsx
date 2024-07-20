@@ -63,7 +63,7 @@ export default function Projects() {
       <div className='grid gap-7 grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] '>
         {projects.map((project) => (
 
-          <Card key={project.slug} item={project} />
+          <Card item={project} />
 
 
         ))}

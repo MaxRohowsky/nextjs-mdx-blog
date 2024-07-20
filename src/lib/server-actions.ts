@@ -13,7 +13,7 @@ import { format } from 'date-fns';
  * @returns The front matter of all blog posts in an array.
  */
 export async function getBlogFrontMatter(): Promise<BlogFrontMatter[]> {
-    const dir = path.join(process.cwd(), 'src/(posts)');
+    const dir = path.join(process.cwd(), 'src/content/posts');
     const dirItems = fs.readdirSync(dir).filter(item => item !== 'layout.tsx');
     const frontMatter = dirItems.map((fileName) => {
         

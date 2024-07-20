@@ -49,7 +49,7 @@ export async function generateMetadata(
  * Docs: https://nextjs.org/docs/app/api-reference/functions/generate-static-params
  */
 export async function generateStaticParams() {
-    const dir = path.join(process.cwd(), 'src/(posts)');
+    const dir = path.join(process.cwd(), 'src/content/posts');
     // Read directory contents as directory entries
     const entries = fs.readdirSync(dir, { withFileTypes: true });
 
@@ -67,7 +67,7 @@ export async function generateStaticParams() {
 
 async function getPost({ slug }: { slug: string }): Promise<{ frontMatter: any, content: string }> {
     try {
-        const dir = path.join(process.cwd(), 'src/(posts)');
+        const dir = path.join(process.cwd(), 'src/content/posts');
 
 
         const markdownFile = fs.readFileSync(path.join(dir, slug, "page.mdx"), "utf-8");
@@ -107,7 +107,7 @@ export default async function Post({ params: { slug } }) {
     const { frontMatter, content } = await getPost({ slug });
     const mdxComponents = useMDXComponents({});
 
-    const dir = path.join(process.cwd(), 'src/(posts)');
+    const dir = path.join(process.cwd(), 'src/content/posts');
     path.join(dir, slug, "page.mdx")
     const headings = extractHeadings(path.join(dir, slug, "page.mdx"));
     /*     console.log("headings", headings) */

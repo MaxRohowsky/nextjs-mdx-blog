@@ -66,8 +66,8 @@ export function PopularContent() {
             <ul className='cursor-pointer font-semibold text-lg'>
                 {popularContent.links.map((link, index) => (
                     <Fragment key={index}>
-                        <Space />
-                        <li className='pb-4'>
+                        <Space className='h-1 lg:h-2' />
+                        <li className=''>
                             {link.type === 'internal' ? (
                                 /* Link is used for internal navigation across pages on your site */
                                 <Link className="flex items-center hover:pl-2 transition-spacing duration-300" href={link.href}>
@@ -80,6 +80,7 @@ export function PopularContent() {
                                 </a>
                             )}
                         </li>
+                        <Space className='h-1 lg:h-2' />
                     </Fragment>
                 ))}
             </ul>

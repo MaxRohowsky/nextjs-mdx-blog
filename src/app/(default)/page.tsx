@@ -1,6 +1,6 @@
 import Hero from '@/components/hero';
 import Space from '@/components/space';
-import Content from '@/components/content/content';
+import Content from '@/components/content';
 import { sortBlogsByDate } from '@/lib/utils';
 import { getFilteredBlogFrontMatter } from '@/lib/server-actions';
 

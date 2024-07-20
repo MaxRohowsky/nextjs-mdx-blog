@@ -9,6 +9,17 @@ import { useMDXComponents } from '@/mdx-components';
 import { extractHeadings } from "extract-md-headings";
 import { serialize } from 'next-mdx-remote/serialize'
 import remarkFrontmatter from 'remark-frontmatter'
+import Link from "next/link"
+
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
+
 // https://github.com/owolfdev/simple-mdx-blog/blob/main/app/blog/%5Bslug%5D/page.tsx
 /* import type { Metadata, ResolvingMetadata } from "next";
 
@@ -77,15 +88,15 @@ async function getPost({ slug }: { slug: string }): Promise<{ frontMatter: any, 
 
 
 const options = {
-    scope: {/* any variables you want to pass to MDX content */},
+    scope: {/* any variables you want to pass to MDX content */ },
     mdxOptions: {
         remarkPlugins: [remarkGfm, remarkFrontmatter],
         rehypePlugins: [rehypeHighlight],
-      // any other MDX compiler options except 'outputFormat' and 'providerImportSource'
-      useDynamicImport: true,
+        // any other MDX compiler options except 'outputFormat' and 'providerImportSource'
+        useDynamicImport: true,
     },
     parseFrontmatter: true,
-  };
+};
 
 
 export default async function Post({ params: { slug } }) {
@@ -96,14 +107,14 @@ export default async function Post({ params: { slug } }) {
     const dir = path.join(process.cwd(), 'src/(posts)');
     path.join(dir, slug, "page.mdx")
     const headings = extractHeadings(path.join(dir, slug, "page.mdx"));
-/*     console.log("headings", headings) */
-    
-/*     const mdxSource = await serialize(content, {
-        mdxOptions: {
-            rehypePlugins: [rehypeHighlight],
-        }})
+    /*     console.log("headings", headings) */
 
-        console.log("mdxSource", mdxSource) */
+    /*     const mdxSource = await serialize(content, {
+            mdxOptions: {
+                rehypePlugins: [rehypeHighlight],
+            }})
+    
+            console.log("mdxSource", mdxSource) */
 
     return (
 
@@ -111,8 +122,34 @@ export default async function Post({ params: { slug } }) {
 
 
             <article className='text-pretty max-w-xl p-2'>
+                <Breadcrumb className="max-w-full">
+                    <BreadcrumbList>
+                        <BreadcrumbItem>
+                            <BreadcrumbLink asChild>
+                                <Link href="/">Home</Link>
+                            </BreadcrumbLink>
+                        </BreadcrumbItem>
 
-                <h1>{frontMatter.title}</h1>
+                        <BreadcrumbSeparator />
+
+                        <BreadcrumbItem>
+                            <BreadcrumbLink asChild>
+                                <Link href="/blog">Blog</Link>
+                            </BreadcrumbLink>
+                        </BreadcrumbItem>
+
+                        <BreadcrumbSeparator />
+
+                        <BreadcrumbItem>
+                            <BreadcrumbLink asChild>
+                                <Link href={"/blog/" + slug}  className=" overflow-hidden text-ellipsis w-80 whitespace-nowrap">{frontMatter.title}</Link>
+                            </BreadcrumbLink>
+                        </BreadcrumbItem>
+
+
+                    </BreadcrumbList>
+                </Breadcrumb>
+
                 <MDXRemote source={content} options={options} components={mdxComponents} />
             </article>
 

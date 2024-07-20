@@ -68,3 +68,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+* {
+  transition-property: color;
+  transition-timing-function: ease-in;
+}

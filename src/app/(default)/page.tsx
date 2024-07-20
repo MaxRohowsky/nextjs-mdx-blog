@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <>
-      
+
       <div className='relative bg-gradient-to-tr from-blue-700 to-blue-400 dark:from-zinc-800 dark:to-zinc-900  h-72  md:h-80 rounded-sm overflow-hidden  '>
 
         <div className=' text-white text-2xl sm:text-4xl lg:text-7xl m-4'>
@@ -17,11 +17,13 @@ export default async function Home() {
         </div>
 
         <div className='absolute text-white text-sm bottom-0 m-4'>
-          <p className='text-lg md:pb-1 sm:text-2xl'>Hi, I'm Max.</p>
+          <p className='text-lg md:pb-1 sm:text-2xl'>
+            Hi, I'm Max.
+          </p>
+
           <p className='w-2/3 sm:text-lg font-light'>
             Welcome to my corner of the internet. I write about software engineering and indie hacking.
           </p>
-
 
         </div>
 
@@ -44,7 +46,7 @@ export default async function Home() {
         <Image className='absolute right-0 top-0 h-full -mr-8 mt-2 sm:-mr-10 md:-mr-1' src='/dot-hero.svg' alt='hero' height='180' width='180' />
 
       </div>
-      <Space className='h-8 lg:h-16'/>
+      <Space className='h-8 lg:h-16' />
 
 
       < Client />

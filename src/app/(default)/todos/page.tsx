@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 
 
 const initialTodos = [
-  { id: 1, text: 'Optimise spacing on Landing page so that it is consistent.', completed: false, priority: 2 },
-  { id: 2, text: 'Add links to the items under "popular content".', completed: false, priority: 2 },
+  { id: 1, text: 'Optimise spacing on Landing page so that it is consistent.', completed: true, priority: 2 },
+  { id: 2, text: 'Add links to the items under "popular content".', completed: true, priority: 2 },
   { id: 3, text: 'Socials dropdown causes layout shift. Unf**k it.', completed: true, priority: 1 },
   { id: 4, text: 'Add filter to blog tags.', completed: false, priority: 2 },
   { id: 5, text: 'Bonus: when i filter for a tag, that tag should turn green.', completed: false, priority: 3 },
@@ -12,7 +12,7 @@ const initialTodos = [
   { id: 7, text: 'Correct the privacy policy. (Borrring)', completed: false, priority: 3 },
   { id: 8, text: 'Migrate all the posts from WP to .mdx.', completed: false, priority: 1 },
   { id: 9, text: 'Deploy!', completed: false, priority: 1 },
-  { id: 10, text: 'Animate the light mode dark mode toggle.', completed: false, priority: 2 },
+  { id: 10, text: 'Animate the light mode dark mode toggle.', completed: true, priority: 2 },
   { id: 11, text: 'Add viewcount to this blog.', completed: false, priority: 2 },
   { id: 12, text: 'Sound effects?', completed: false, priority: 3 },
   { id: 13, text: 'Touch grass.', completed: false, priority: 3 },
@@ -23,13 +23,13 @@ const initialTodos = [
   { id: 18, text: 'Use react spring to make the wiggly project previews.', completed: false, priority: 2 },
   { id: 19, text: 'Cookie banner thing.', completed: false, priority: 3 },
   { id: 20, text: 'Add SEO meta tags.', completed: false, priority: 1 },
-  { id: 21, text: 'Add and optimise the OpenGraph images.', completed: false, priority: 1 },
+  { id: 21, text: 'Add and optimise the OpenGraph images.', completed: false, priority: 3 },
   { id: 22, text: 'Update the robots.txt.', completed: false, priority: 2 },
   { id: 23, text: 'Add the page not found page.', completed: false, priority: 2 },
   { id: 24, text: 'Add a possibility for people to subscribe to updates.', completed: false, priority: 2 },
   { id: 25, text: 'Add transitions between routes. -> slows the page significantly when loading :(', completed: true, priority: 2 },
   { id: 26, text: 'Add a sitemap.', completed: false, priority: 2 },
-  { id: 27, text: 'Make a breadcrumbs path.', completed: false, priority: 2 },
+  { id: 27, text: 'Make a breadcrumbs path.', completed: true, priority: 2 },
   { id: 28, text: "Understand import fs from 'node:fs/promises'mentioned here: https://mdxjs.com/guides/frontmatter/", completed: false, priority: 3 },
   { id: 29, text: 'Create layout for the blog posts.', completed: false, priority: 2 },
   { id: 30, text: 'Add sidebar with Content that sticks.', completed: false, priority: 2 },
@@ -43,7 +43,15 @@ const initialTodos = [
   { id: 38, text: 'What if cars where scratch cards you move over them to reveal the preview.', completed: false, priority: 3 },
   { id: 39, text: 'when i click on a blog on the homepage, I should be routed to it', completed: false, priority: 2 },
   { id: 40, text: 'Cookie saves read articles.', completed: false, priority: 3 },
+  { id: 41, text: 'Maintain dark mode across sites', completed: false, priority: 1 },
+  { id: 42, text: 'Add Sitemap', completed: false, priority: 1 },
+  { id: 43, text: 'Add Not found page', completed: false, priority: 2 },
+  { id: 44, text: 'Clean the code', completed: false, priority: 1 }, 
+  { id: 45, text: 'The header I scroll to should be blue in the blog', completed: false, priority: 1 }
 ];
+
+// Sort initialTodos by priority in ascending order
+initialTodos.sort((a, b) => -a.priority + b.priority);
 
 export default function TodoList() {
   const [todos, setTodos] = useState(initialTodos);

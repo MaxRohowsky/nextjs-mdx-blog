@@ -19,6 +19,7 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
+import TableOfContent from "@/components/table-of-content";
 
 // https://github.com/owolfdev/simple-mdx-blog/blob/main/app/blog/%5Bslug%5D/page.tsx
 /* import type { Metadata, ResolvingMetadata } from "next";
@@ -101,6 +102,8 @@ const options = {
 
 export default async function Post({ params: { slug } }) {
 
+
+  
     const { frontMatter, content } = await getPost({ slug });
     const mdxComponents = useMDXComponents({});
 
@@ -120,10 +123,10 @@ export default async function Post({ params: { slug } }) {
 
     return (
 
-        <div className='max-w-full flex flex-row  items-start  '>
+        <div className='max-w-full flex flex-row  justify-center  md:items-start  '>
 
 
-            <article className='text-pretty max-w-xl p-2'>
+            <article className='text-pretty w-full md:max-w-xl p-2'>
                 <Breadcrumb className="max-w-full">
                     <BreadcrumbList>
                         <BreadcrumbItem>
@@ -153,31 +156,15 @@ export default async function Post({ params: { slug } }) {
                 </Breadcrumb>
 
                 <MDXRemote source={content} options={options} components={mdxComponents} />
+                <div className="text-sm text-gray-600 mt-8">
+                    <p>Published on: {frontMatter.publishedOn}</p>
+                    <p>Last Updated: {frontMatter.updatedOn}</p>
+                </div>
             </article>
 
-            <aside className='sticky top-0 pl-10'>
+            <TableOfContent headings={headings} frontMatter={frontMatter} />
 
-                <nav>
-                    <ul>
-                        <li>Published: {frontMatter.publishedOn}</li>
-                        <li>Updated: {frontMatter.publishedOn}</li>
-                        <li>Tags: {frontMatter.tags.join(', ')}</li>
-                        {headings.filter(heading => heading.level > 1).map((heading) => (
-                            <li
-                                key={heading.id}
-                                style={{
-                                    marginLeft: heading.level === 2 ? '0' : `${heading.level * 4}px`, // Adjusted to account for starting from level 2
-                                    fontWeight: heading.level === 2 ? 'bold' : 'normal', // Since we're starting from level 2, all have normal weight
-                                    paddingBottom: heading.level === 2 ? '4px' : '2px' // Simplified as all are now starting from level 2
-                                }}
-                            >
-                                {heading.title}
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
 
-            </aside>
 
         </div>
 

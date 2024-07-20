@@ -103,7 +103,7 @@ const options = {
 export default async function Post({ params: { slug } }) {
 
 
-  
+
     const { frontMatter, content } = await getPost({ slug });
     const mdxComponents = useMDXComponents({});
 

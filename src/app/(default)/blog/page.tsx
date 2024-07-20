@@ -1,6 +1,6 @@
 import { sortBlogsByDate } from '@/lib/utils';
 import { getFilteredBlogFrontMatter } from '@/lib/server-actions';
-import Card from '@/components/card';
+import BlogCard from '@/components/blog-card';
 
 /* export const metadata = {
   title: "Next Blog",
@@ -12,9 +12,7 @@ import Card from '@/components/card';
 
 
 export default async function Blog({params}) {
-  const para = params
 
-  console.log("params", para)
 
   const frontMatter = await getFilteredBlogFrontMatter()
   const blogs = sortBlogsByDate(frontMatter);
@@ -34,7 +32,7 @@ export default async function Blog({params}) {
       <div className='grid gap-7 grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] '>
       
         {blogs.map((blog) => (
-          <Card key={blog.slug} item={blog} />
+          <BlogCard key={blog.slug} item={blog} />
         ))}
 
       </div>

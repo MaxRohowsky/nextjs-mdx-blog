@@ -11,8 +11,8 @@ export default function TableOfContent({ headings, frontMatter }) {
 
 
     return (
-        <aside className='sticky  md:pl-3 lg:pl-20 top-36 hidden md:block'>
-
+    
+        <>
             <nav>
                 <h2 className="text-sm font-medium uppercase text-neutral-500 dark:text-neutral-300 pb-2">Table of Contents</h2>
                 <ul className="pb-8 max-w-72">
@@ -51,6 +51,6 @@ export default function TableOfContent({ headings, frontMatter }) {
                     }
                 </div>
             </div>
-        </aside>
+            </>
     )
 }

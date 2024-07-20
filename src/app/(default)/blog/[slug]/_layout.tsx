@@ -1,5 +1,3 @@
-import "@/styles/highlight-js/github-dark-dimmed.css";
-
 
 export const metadata = {
   title: 'Next.js',

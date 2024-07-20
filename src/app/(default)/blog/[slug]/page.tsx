@@ -4,10 +4,8 @@ import remarkGfm from 'remark-gfm';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { format } from 'date-fns';
 import { useMDXComponents } from '@/mdx-components';
 import { extractHeadings } from "extract-md-headings";
-import { serialize } from 'next-mdx-remote/serialize'
 import remarkFrontmatter from 'remark-frontmatter'
 import Link from "next/link"
 import rehypeSlug from 'rehype-slug'
@@ -123,7 +121,7 @@ export default async function Post({ params: { slug } }) {
 
     return (
 
-        <div className='max-w-full flex flex-row  justify-center  md:items-start  '>
+        <div className='max-w-full flex flex-row  justify-center  md:items-start'>
 
 
             <article className='text-pretty w-full md:max-w-xl p-2'>
@@ -161,9 +159,10 @@ export default async function Post({ params: { slug } }) {
                     <p>Last Updated: {frontMatter.updatedOn}</p>
                 </div>
             </article>
-
+            
+            <aside className='sticky md:pl-3 lg:pl-20 top-36 hidden md:block'>
             <TableOfContent headings={headings} frontMatter={frontMatter} />
-
+            </aside>
 
 
         </div>

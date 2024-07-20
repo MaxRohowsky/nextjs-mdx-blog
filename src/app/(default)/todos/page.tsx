@@ -47,7 +47,11 @@ const initialTodos = [
   { id: 42, text: 'Add Sitemap', completed: false, priority: 1 },
   { id: 43, text: 'Add Not found page', completed: false, priority: 2 },
   { id: 44, text: 'Clean the code', completed: false, priority: 1 }, 
-  { id: 45, text: 'The header I scroll to should be blue in the blog', completed: false, priority: 1 }
+  { id: 45, text: 'The header I scroll to should be blue in the blog', completed: false, priority: 1 },
+  { id: 46, text: 'IF toc empty, dont show it', completed: false, priority: 1 },
+  { id: 47, text: 'move published and updated under tags', completed: false, priority: 1 },
+  { id: 48, text: 'Read more in dark mode needs other color', completed: false, priority: 1 },
+  { id: 49, text: 'Links on langing need to work', completed: false, priority: 1 }
 ];
 
 // Sort initialTodos by priority in ascending order

@@ -1,5 +1,3 @@
-
-import "@/styles/highlight-js/github-dark-dimmed.css";
 import Image from 'next/image';
 import Particles from '@/components/dots/particles';
 

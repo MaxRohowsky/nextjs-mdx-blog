@@ -1,3 +1,30 @@
+interface Item {
+
+  title: string;
+  subtitle: string;
+  slug: string;
+  tags: string[];
+  excerpt?: string;
+  seoTitle?: string;
+
+  publicationStatus: {
+    isPublished?: boolean;
+    isFeatured?: boolean;
+    updatedOn?: string;
+    publishedOn?: string;
+  };
+  media: {
+    img?: string;
+    link?: string;
+    featuredImage?: string;
+  };
+}
+
+
+
+
+
+
 // Base Item Type
 interface BaseItem {
   title: string;

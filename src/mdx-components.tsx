@@ -15,7 +15,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       h4: ({ id, children }) => <h4 id={id} className="text-lg font-medium  my-2">{children}</h4>,
       h5: ({ id, children }) => <h5 id={id}className="text-base font-medium  my-2">{children}</h5>,
       h6: ({ id, children }) => <h6 id={id} className="text-base font-medium  my-2">{children}</h6>,
-      p: ({ children }) => <p className="text-base leading-relaxed my-4 max-w-full">{children}</p>,
+      p: ({ children }) => <p className=" text-lg leading-relaxed my-4 max-w-full">{children}</p>,
       a: ({ children, ...props }) => <a className="text-blue-500 hover:text-blue-600 underline" {...props}>{children}</a>,
       img: (props) => (
         <Image

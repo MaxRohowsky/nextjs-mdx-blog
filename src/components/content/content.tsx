@@ -1,9 +1,7 @@
 'use client'
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { ArrowRight, Car } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { projects } from '@/components/projects';
 import Space from '@/components/space';
 

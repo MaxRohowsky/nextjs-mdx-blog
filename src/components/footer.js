@@ -26,9 +26,11 @@ export default function Footer() {
         </Button>
       </div>
 
+      <div className='text-neutral-200'>
+        Per aspera ad astra
+      </div>
+
       <div className='flex items-center gap-4 transition-all'>
-
-
 
         <Button asChild
           className=""

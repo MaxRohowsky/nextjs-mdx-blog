@@ -9,13 +9,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from "@/lib/utils";
 import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import {
 	Dialog,
 	DialogClose,
 	DialogContent,
@@ -172,7 +165,7 @@ function DesktopMenu({ pathname }) {
 
 				<Separator orientation="vertical" className="mx-4 h-5" />
 
-				<Button variant="label" className="relative" aria-label="Toggle theme" onClick={() => { document.documentElement.classList.toggle('dark'); }}>
+				<Button variant="ghost" className="relative" aria-label="Toggle theme" onClick={() => { document.documentElement.classList.toggle('dark'); }}>
 					<Moon className="hidden dark:block" />  <Sun className="dark:hidden block" />
 				</Button>
 
@@ -252,7 +245,7 @@ function MobileMenu() {
 
 
 
-					<Button variant="label" className="relative" aria-label="Toggle theme" onClick={() => { document.documentElement.classList.toggle('dark'); }}>
+					<Button variant="ghost" className="relative" aria-label="Toggle theme" onClick={() => { document.documentElement.classList.toggle('dark'); }}>
 						<Moon className="hidden dark:block" />  <Sun className="dark:hidden block" />
 					</Button>
 				</nav>

@@ -8,7 +8,7 @@ export const projects: ProjectItem[] = [
       slug: "linkedin-post-scheduler",
       title: "LinkedIn Post Scheduler",
       subtitle: "A LinkedIn post scheduler that I would like to use myself",
-      tags: ["SaaS", "TypeScript", "React", "Supabase", "TailwindCSS"],
+      tags: ["New", "TypeScript", "React", "Supabase", "TailwindCSS"],
       excerpt: "A LinkedIn Post Scheduler that allows users to preview, ideate, and schedule LinkedIn content. This tool aims to simplify and accelerate content creation and distribution on LinkedIn.",
     },
     {

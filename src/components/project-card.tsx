@@ -15,7 +15,7 @@ export default function Card({ item }: { item: BlogItem | ProjectItem; }) {
             <div className="rounded-sm w-full h-full group cursor-pointer ">
                 <a href={link} className="flex flex-col relative justify-between border  dark:bg-background  border-gray-200 dark:border-neutral-800 rounded-lg hover:shadow-md transition-shadow duration-300 py-3 p-3 md:p-6 w-full h-full">
 
-                    {item.tags.includes('new') && (
+                    {item.tags.map(tag => tag.toLowerCase()).includes('new') && (
                         <Image src="/icons/new.png" alt='new project icon' width={50} height={50} className="absolute right-0 top-0" />
                     )}
 

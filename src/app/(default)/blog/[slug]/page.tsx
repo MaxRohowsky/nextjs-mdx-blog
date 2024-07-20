@@ -10,7 +10,7 @@ import { extractHeadings } from "extract-md-headings";
 import { serialize } from 'next-mdx-remote/serialize'
 import remarkFrontmatter from 'remark-frontmatter'
 import Link from "next/link"
-
+import rehypeSlug from 'rehype-slug'
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -68,13 +68,13 @@ async function getPost({ slug }: { slug: string }): Promise<{ frontMatter: any, 
     try {
         const dir = path.join(process.cwd(), 'src/(posts)');
 
-        console.log("dir", dir)
+
         const markdownFile = fs.readFileSync(path.join(dir, slug, "page.mdx"), "utf-8");
 
 
         const { data: frontMatter, content } = matter(markdownFile);
 
-        console.log(frontMatter)
+
         return {
             frontMatter,
             content,
@@ -91,7 +91,7 @@ const options = {
     scope: {/* any variables you want to pass to MDX content */ },
     mdxOptions: {
         remarkPlugins: [remarkGfm, remarkFrontmatter],
-        rehypePlugins: [rehypeHighlight],
+        rehypePlugins: [rehypeHighlight, rehypeSlug],
         // any other MDX compiler options except 'outputFormat' and 'providerImportSource'
         useDynamicImport: true,
     },
@@ -115,6 +115,8 @@ export default async function Post({ params: { slug } }) {
             }})
     
             console.log("mdxSource", mdxSource) */
+
+    console.log(headings)
 
     return (
 
@@ -142,7 +144,7 @@ export default async function Post({ params: { slug } }) {
 
                         <BreadcrumbItem>
                             <BreadcrumbLink asChild>
-                                <Link href={"/blog/" + slug}  className=" overflow-hidden text-ellipsis w-80 whitespace-nowrap">{frontMatter.title}</Link>
+                                <Link href={"/blog/" + slug} className=" overflow-hidden text-ellipsis w-80 whitespace-nowrap">{frontMatter.title}</Link>
                             </BreadcrumbLink>
                         </BreadcrumbItem>
 
@@ -156,11 +158,22 @@ export default async function Post({ params: { slug } }) {
             <aside className='sticky top-0 pl-10'>
 
                 <nav>
-
                     <ul>
                         <li>Published: {frontMatter.publishedOn}</li>
                         <li>Updated: {frontMatter.publishedOn}</li>
                         <li>Tags: {frontMatter.tags.join(', ')}</li>
+                        {headings.filter(heading => heading.level > 1).map((heading) => (
+                            <li
+                                key={heading.id}
+                                style={{
+                                    marginLeft: heading.level === 2 ? '0' : `${heading.level * 4}px`, // Adjusted to account for starting from level 2
+                                    fontWeight: heading.level === 2 ? 'bold' : 'normal', // Since we're starting from level 2, all have normal weight
+                                    paddingBottom: heading.level === 2 ? '4px' : '2px' // Simplified as all are now starting from level 2
+                                }}
+                            >
+                                {heading.title}
+                            </li>
+                        ))}
                     </ul>
                 </nav>
 

@@ -21,7 +21,7 @@ export default function TableOfContent({ headings, frontMatter }) {
 
 
 
-            <div className="flex flex-col flex-wrap gap-2 transition-all duration-300  pb-8">
+            <div className="flex flex-col flex-wrap gap-2 transition-all duration-300 pb-8 w-72">
                 <span className="text-sm font-medium uppercase text-neutral-500 dark:text-neutral-300 pb-2">
                     Published
                 </span>

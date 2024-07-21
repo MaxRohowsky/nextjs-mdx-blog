@@ -150,7 +150,7 @@ export default async function Post({ params: { slug } }) {
 
             </article>
 
-            <aside className='sticky md:pl-3 lg:pl-20 top-36 hidden md:block overflow-y-auto max-h-[calc(100vh-15rem)]'>
+            <aside className='sticky md:pl-3 lg:pl-20 top-36 hidden md:block overflow-y-auto max-h-[calc(100vh-15rem)] '>
                 <TableOfContent headings={headings} frontMatter={frontMatter} />
             </aside>
 

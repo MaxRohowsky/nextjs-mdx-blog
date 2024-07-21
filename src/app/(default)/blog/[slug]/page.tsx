@@ -18,10 +18,10 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import TableOfContent from "@/components/table-of-content";
-import {getBlogItemBySlug} from "@/lib/server-actions";
+import { getBlogItemBySlug } from "@/lib/server-actions";
 import type { Metadata, ResolvingMetadata } from "next";
-import {pathToBlogPosts} from "@/lib/utils";
-
+import { pathToBlogPosts } from "@/lib/utils";
+import Caption from "@/components/mdx/caption";
 
 /**
  * Generates metadata for a blog post based on its slug.
@@ -31,11 +31,11 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 
     const BlogItem = await getBlogItemBySlug(params.slug)
-    const { title, seoTitle, excerpt } = BlogItem;
+    const { title, seoTitle, subtitle, excerpt } = BlogItem;
 
     return {
         title: title,
-        description: seoTitle ?? excerpt,
+        description: seoTitle ?? subtitle ?? excerpt,
     };
 }
 
@@ -100,8 +100,11 @@ export default async function Post({ params: { slug } }) {
 
     const { frontMatter, content } = await getPost({ slug });
 
-    
-    const mdxComponents = useMDXComponents({});
+
+    const mdxComponents = useMDXComponents({
+        Caption
+
+    });
 
 
 

@@ -1,6 +1,6 @@
 import { sortBlogsByDate } from '@/lib/utils';
 import { getFilteredBlogItems } from '@/lib/server-actions';
-import BlogCard from '@/components/blog-card';
+import BlogCard from '@/components/ui/blog-card';
 import { useState } from 'react';
 /* export const metadata = {
   title: "Next Blog",

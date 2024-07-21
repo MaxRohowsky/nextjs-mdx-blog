@@ -3,10 +3,10 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { projects } from '@/app/(default)/projects/_remote/projects';
-import { popularContent } from '@/content/popular';
+import { popularContent } from '@/components/popular';
 import Space from '@/components/space';
 import { Fragment } from 'react';
-import FeaturedProjectCard from '@/components/featured-project-card';
+import FeaturedProjectCard from '@/components/ui/featured-project-card';
 import RecentPostCard from '@/components/recent-post-card';
 
 /**

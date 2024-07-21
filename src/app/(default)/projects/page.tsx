@@ -5,9 +5,9 @@ import { Button } from '@/components/ui/button';
 import { ListFilter } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { ScrollArea } from "@/components/ui/scroll-area"
-import Card from '@/components/blog-card';
+import Card from '@/components/ui/blog-card';
 import { Checkbox } from "@/components/ui/checkbox"
-import ProjectCard from '@/components/project-card';
+import ProjectCard from '@/components/ui/project-card';
 
 import {
   Popover,

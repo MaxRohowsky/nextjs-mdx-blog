@@ -12,8 +12,7 @@ export default function Footer() {
       <div className='flex flex-row gap-2'>
         <span className="font-sans flex items-center gap-2">
 
-          <span className='text-slate-300'> made by max    </span>
-          <Image className=' right-0 top-0' src='/eyes.webp' alt='hero' height='30' width='30' />
+         
 
         </span>
         <Button asChild
@@ -21,14 +20,12 @@ export default function Footer() {
           variant={'ghost'}
         >
           <Link href="/todos">
-            todos
+            ToDos
           </Link>
         </Button>
       </div>
 
-      <div className='text-neutral-200'>
-        Per aspera ad astra
-      </div>
+
 
       <div className='flex items-center gap-4 transition-all'>
 

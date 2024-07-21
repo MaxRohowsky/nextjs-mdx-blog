@@ -19,8 +19,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       a: ({ children, ...props }) => <a className="text-blue-500 hover:text-blue-600 underline" {...props}>{children}</a>,
       img: (props) => (
         <Image
-          sizes="100vw"
-          style={{ width: '100%', height: 'auto' }}
+          height={600}
+          width={800}
           {...(props as ImageProps)}
         />
       ),
@@ -28,9 +28,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       ol: ({ children }) => <ol className="list-decimal pl-5 text-gray-600 my-4">{children}</ol>,
       li: ({ children }) => <li className="mb-2">{children}</li>,
       blockquote: ({ children }) => <blockquote className="border-l-4 border-gray-200 pl-4 italic text-gray-600 my-4">{children}</blockquote>,
+      caption: ({ children }) => <caption className="text-center text-red-400 text-sm my-2">{children}</caption>,
 
       ...components,
       
   }
 }
+
+
 

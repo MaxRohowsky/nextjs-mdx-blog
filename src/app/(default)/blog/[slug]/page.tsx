@@ -99,20 +99,15 @@ const options = {
 export default async function Post({ params: { slug } }) {
 
     const { frontMatter, content } = await getPost({ slug });
+
+    
     const mdxComponents = useMDXComponents({});
 
+
+
     const dir = path.join(process.cwd(), pathToBlogPosts);
-    path.join(dir, slug, "page.mdx")
+
     const headings = extractHeadings(path.join(dir, slug, "page.mdx"));
-
-         console.log("headings", headings) 
-
-    /*     const mdxSource = await serialize(content, {
-            mdxOptions: {
-                rehypePlugins: [rehypeHighlight],
-            }})
-    
-            console.log("mdxSource", mdxSource) */
 
 
     return (
@@ -150,13 +145,10 @@ export default async function Post({ params: { slug } }) {
                 </Breadcrumb>
 
                 <MDXRemote source={content} options={options} components={mdxComponents} />
-                <div className="text-sm text-gray-600 mt-8">
-                    <p>Published on: {frontMatter.publishedOn}</p>
-                    <p>Last Updated: {frontMatter.updatedOn}</p>
-                </div>
+
             </article>
 
-            <aside className='sticky md:pl-3 lg:pl-20 top-36 hidden md:block'>
+            <aside className='sticky md:pl-3 lg:pl-20 top-36 hidden md:block overflow-y-auto max-h-[calc(100vh-15rem)]'>
                 <TableOfContent headings={headings} frontMatter={frontMatter} />
             </aside>
 

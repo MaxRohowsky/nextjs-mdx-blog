@@ -4,7 +4,9 @@ import { twMerge } from "tailwind-merge"
 import { projects } from '@/app/(default)/projects/_remote/projects';
 
 
-export const pathToBlogPosts = 'src/app/(default)/blog/(posts)';
+export const pathToBlogPosts = 'src/app/(default)/blog/_posts';
+export const pathToRemoteProjects = 'src/app/(default)/projects/_remote/projects';
+export const pathToLocalProjects = 'src/app/(default)/projects/local/projects';
 
 
 export function cn(...inputs: ClassValue[]) {

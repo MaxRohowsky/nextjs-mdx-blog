@@ -20,7 +20,7 @@ import {
 import TableOfContent from "@/components/table-of-content";
 import {getBlogItemBySlug} from "@/lib/server-actions";
 import type { Metadata, ResolvingMetadata } from "next";
-
+import {pathToBlogPosts} from "@/lib/utils";
 
 
 /**
@@ -41,7 +41,7 @@ export async function generateMetadata(
 
 
 /**
- * Generates static parameters for each post directory within 'src/(posts)'.
+ * Generates static parameters for each post directory within 'pathToBlogPosts'.
  * It filters out the 'layout.tsx' file and any non-directory entries, ensuring
  * only directories are considered for generating slugs.
  * 
@@ -49,7 +49,7 @@ export async function generateMetadata(
  * Docs: https://nextjs.org/docs/app/api-reference/functions/generate-static-params
  */
 export async function generateStaticParams() {
-    const dir = path.join(process.cwd(), 'src/content/posts');
+    const dir = path.join(process.cwd(), 'pathToBlogPosts');
     // Read directory contents as directory entries
     const entries = fs.readdirSync(dir, { withFileTypes: true });
 
@@ -68,7 +68,7 @@ export async function generateStaticParams() {
 
 async function getPost({ slug }: { slug: string }): Promise<{ frontMatter: any, content: string }> {
     try {
-        const dir = path.join(process.cwd(), 'src/content/posts');
+        const dir = path.join(process.cwd(), 'pathToBlogPosts');
         const markdownFile = fs.readFileSync(path.join(dir, slug, "page.mdx"), "utf-8");
         const { data: frontMatter, content } = matter(markdownFile);
 
@@ -101,10 +101,11 @@ export default async function Post({ params: { slug } }) {
     const { frontMatter, content } = await getPost({ slug });
     const mdxComponents = useMDXComponents({});
 
-    const dir = path.join(process.cwd(), 'src/content/posts');
+    const dir = path.join(process.cwd(), pathToBlogPosts);
     path.join(dir, slug, "page.mdx")
     const headings = extractHeadings(path.join(dir, slug, "page.mdx"));
-    /*     console.log("headings", headings) */
+
+         console.log("headings", headings) 
 
     /*     const mdxSource = await serialize(content, {
             mdxOptions: {

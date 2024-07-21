@@ -1,9 +1,10 @@
 
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { projects } from '@/content/projects';
+import { projects } from '@/app/(default)/projects/_remote/projects';
 
 
+export const pathToBlogPosts = 'src/app/(default)/blog/(posts)';
 
 
 export function cn(...inputs: ClassValue[]) {

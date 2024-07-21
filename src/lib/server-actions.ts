@@ -3,7 +3,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
 import { format } from 'date-fns';
-
+import {pathToBlogPosts} from './utils';
 
 
 
@@ -13,7 +13,7 @@ import { format } from 'date-fns';
  * @returns The front matter of all blog posts in an array.
  */
 export async function getAllBlogItems(): Promise<BlogItem[]> {
-    const dir = path.join(process.cwd(), 'src/content/posts');
+    const dir = path.join(process.cwd(), pathToBlogPosts);
     const dirItems = await readdir(dir);
     const filteredItems = dirItems.filter(item => item !== 'layout.tsx');
 

@@ -117,7 +117,6 @@ export default async function Post({ params: { slug } }) {
     
             console.log("mdxSource", mdxSource) */
 
-    console.log(headings)
 
     return (
 

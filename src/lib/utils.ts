@@ -4,11 +4,45 @@ import { twMerge } from "tailwind-merge"
 import { projects } from '@/content/projects';
 
 
+
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
 
+
+/**
+ * Get all unique tags used in the projects in an array.
+ * @returns An array of all unique tags used in the projects.
+ */
+export function getProjectTags(): Array<string> {
+  const allTags = projects.flatMap(project => project.tags);
+  return Array.from(new Set(allTags));
+}
+
+
+
+/**
+ * Get all unique tags used in blog posts in an array.
+ * @returns An array of all unique tags used in blog posts.
+ */
+export function getAllBlogTags(blogItems: BlogItem[]): Array<string> {
+  const allTags = blogItems.flatMap(blog => blog.tags);
+  return Array.from(new Set(allTags));
+}
+
+
+
+/**
+ * Retrieves a blog item from the given array based on the provided slug.
+ * @param items - The array of blog items to search through.
+ * @param slug - The slug of the blog item to retrieve.
+ * @returns The blog item with the matching slug, or undefined if not found.
+ */
+export function getBlogbySlug(items: BlogItem[], slug: string): BlogItem | undefined {
+  return items.find(item => item.slug === slug);
+}
 
 
 /**
@@ -17,7 +51,7 @@ export function cn(...inputs: ClassValue[]) {
  * @param ascending Determines whether the items should be sorted in ascending order. Default is false (descending order).
  * @returns The sorted array of items.
  */
-export function sortBlogsByDate(items: BlogFrontMatter[], ascending: boolean = false) {
+export function sortBlogsByDate(items: BlogItem[], ascending: boolean = false): BlogItem[] {
   // Filter out entries with invalid dates and log mistakes
   const validItems = items.filter(item => {
     const isValidDate = !isNaN(new Date(item.publishedOn).getTime());
@@ -46,7 +80,7 @@ export function sortBlogsByDate(items: BlogFrontMatter[], ascending: boolean = f
  * @param options The filter options e.g., { published: true, featured: true, active: true, monetized: false, tags: ['tag1', 'tag2'] }.
  * @returns The filtered projects as an array.
  */
-export function getFilteredProjects(options: ProjectOptions = {}): ProjectItem[] {
+export function getFilteredProjects(options: ProjectFilterOptions = {}): ProjectItem[] {
   const allProjects = projects.map(project => ({
     ...project,
     // Convert the date string to the desired format
@@ -62,10 +96,10 @@ export function getFilteredProjects(options: ProjectOptions = {}): ProjectItem[]
   }));
 
   const filteredProjects = allProjects.filter((project) => {
-    if (options.published !== undefined && options.published !== project.isPublished) {
+    if (options.isPublished !== undefined && options.isPublished !== project.isPublished) {
       return false;
     }
-    if (options.featured !== undefined && options.featured !== project.isFeatured) {
+    if (options.isFeatured !== undefined && options.isFeatured !== project.isFeatured) {
       return false;
     }
     if (options.tags !== undefined && !options.tags.every(tag => project.tags.includes(tag))) {
@@ -77,26 +111,6 @@ export function getFilteredProjects(options: ProjectOptions = {}): ProjectItem[]
 
   return filteredProjects;
 }
-
-
-
-/**
- * Get all unique tags used in the projects in an array.
- * @returns An array of all unique tags used in the projects.
- */
-export function getProjectTags(): Array<string> {
-  const allTags = projects.flatMap(project => project.tags);
-  return Array.from(new Set(allTags));
-}
-
-
-
-
-export function getBlogTags(frontMatter: BlogFrontMatter[]): Array<string> {
-  const allTags = frontMatter.flatMap(blog => blog.tags);
-  return Array.from(new Set(allTags));
-}
-
 
 
 

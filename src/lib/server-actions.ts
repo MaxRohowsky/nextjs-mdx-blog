@@ -1,4 +1,4 @@
-'use server'
+
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -12,7 +12,7 @@ import { format } from 'date-fns';
  * Get the blog front matter of all blog posts.
  * @returns The front matter of all blog posts in an array.
  */
-export async function getBlogFrontMatter(): Promise<BlogFrontMatter[]> {
+export async function getAllBlogItems(): Promise<BlogItem[]> {
     const dir = path.join(process.cwd(), 'src/content/posts');
     const dirItems = fs.readdirSync(dir).filter(item => item !== 'layout.tsx');
     const frontMatter = dirItems.map((fileName) => {
@@ -38,8 +38,10 @@ export async function getBlogFrontMatter(): Promise<BlogFrontMatter[]> {
         return data;
     }
     );
-    return frontMatter as BlogFrontMatter[];
+    return frontMatter as BlogItem[];
 }
+
+
 
 
 /**
@@ -47,19 +49,15 @@ export async function getBlogFrontMatter(): Promise<BlogFrontMatter[]> {
  * @param options The filter options e.g. { featured: true, tag: 'personal', layout: 'Article' }.
  * @returns The front matter of the filtered blog posts in an array.
  */
-export async function getFilteredBlogFrontMatter(options: FrontMatterOptions = {}): Promise<BlogFrontMatter[]> {
-    const frontMatter = await getBlogFrontMatter();
+export async function getFilteredBlogItems(options: BlogFilterOptions = {}): Promise<BlogItem[]> {
+    const blogItems = await getAllBlogItems();
 
-    const filteredFrontMatter = frontMatter.filter((fm) => {
-        if (options.featured && !fm.featured) {
+    const filteredFrontMatter = blogItems.filter((fm) => {
+        if (options.isFeatured && !fm.isFeatured) {
             return false;
         }
 
-        if (options.tag && !options.tag.every(optionTag => fm.tags.map(tag => tag.toLowerCase()).includes(optionTag.toLowerCase()))) {
-            return false;
-        }
-
-        if (options.layout && fm.layout.toLowerCase() !== options.layout.toLowerCase()) {
+        if (options.tags && !options.tags.every(optionTag => fm.tags.map(tag => tag.toLowerCase()).includes(optionTag.toLowerCase()))) {
             return false;
         }
 
@@ -70,7 +68,7 @@ export async function getFilteredBlogFrontMatter(options: FrontMatterOptions = {
         return true;
     });
 
-    return filteredFrontMatter as BlogFrontMatter[];
+    return filteredFrontMatter as BlogItem[];
 }
 
 

@@ -18,7 +18,7 @@ export const dmSans = DM_Sans(
 
 export const metadata = {
   title: {
-    default: 'Max on Tech | Software Engineering and Indie Hacking Blog',
+    default: 'Max Rohowsky | Software Engineering and Indie Hacking Blog',
     template: '%s | Max on Tech'
   },
   description: 'A Blog on Software Engineering and Indie Hacking by Max Rohowsky',

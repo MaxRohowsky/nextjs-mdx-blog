@@ -1,12 +1,10 @@
 'use client'
 import Tilt from 'react-parallax-tilt';
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-// Assuming BlogFrontMatter and Project interfaces are imported or defined above
-// blog cards: https://dev.to/frontendsolutions/13-css-blog-cards-54d7
 
+// blog card inspiration: https://dev.to/frontendsolutions/13-css-blog-cards-54d7
 
-export default function BlogCard({ item }: { item: BlogItem | ProjectItem; }) {
+export default function BlogCard({ item }: { item: BlogItem; }) {
 
     const link = 'externalLink' in item ? item.externalLink : `/blog/${item.slug}`;
 

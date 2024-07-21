@@ -49,7 +49,7 @@ const initialTodos = [
   { id: 44, text: 'Clean the code', completed: true, priority: 1 }, 
   { id: 45, text: 'The header I scroll to should be blue in the blog', completed: false, priority: 1 },
   { id: 46, text: 'IF toc empty, dont show it', completed: false, priority: 1 },
-  { id: 47, text: 'move published and updated under tags', completed: false, priority: 1 },
+  { id: 47, text: 'move published and updated under tags', completed: true, priority: 1 },
   { id: 48, text: 'Read more in dark mode needs other color', completed: false, priority: 1 },
   { id: 49, text: 'Links on langing need to work', completed: true, priority: 1 }
 ];

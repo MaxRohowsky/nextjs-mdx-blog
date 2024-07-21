@@ -1,5 +1,5 @@
 
-import fs from 'fs';
+import { readdir, readFile } from 'node:fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
 import { format } from 'date-fns';
@@ -14,11 +14,12 @@ import { format } from 'date-fns';
  */
 export async function getAllBlogItems(): Promise<BlogItem[]> {
     const dir = path.join(process.cwd(), 'src/content/posts');
-    const dirItems = fs.readdirSync(dir).filter(item => item !== 'layout.tsx');
-    const frontMatter = dirItems.map((fileName) => {
-        
+    const dirItems = await readdir(dir);
+    const filteredItems = dirItems.filter(item => item !== 'layout.tsx');
+
+    const frontMatter = await Promise.all(filteredItems.map(async (fileName) => {
         const fullPath = path.join(dir, fileName, "page.mdx");
-        const fileContents = fs.readFileSync(fullPath, "utf8");
+        const fileContents = await readFile(fullPath, "utf8");
 
         const { data } = matter(fileContents);
 
@@ -36,11 +37,10 @@ export async function getAllBlogItems(): Promise<BlogItem[]> {
             data.publishedOn = 'Not yet published';
         }
         return data;
-    }
-    );
+    }));
+
     return frontMatter as BlogItem[];
 }
-
 
 
 

@@ -1,4 +1,4 @@
-import { sortBlogsByDate, getBlogTags } from '@/lib/utils';
+import { sortBlogsByDate } from '@/lib/utils';
 import { getFilteredBlogItems } from '@/lib/server-actions';
 import BlogCard from '@/components/blog-card';
 import { useState } from 'react';

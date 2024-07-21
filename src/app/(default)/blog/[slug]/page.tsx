@@ -18,24 +18,26 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import TableOfContent from "@/components/table-of-content";
+import {getBlogItemBySlug} from "@/lib/server-actions";
+import type { Metadata, ResolvingMetadata } from "next";
 
-// https://github.com/owolfdev/simple-mdx-blog/blob/main/app/blog/%5Bslug%5D/page.tsx
-/* import type { Metadata, ResolvingMetadata } from "next";
 
+
+/**
+ * Generates metadata for a blog post based on its slug.
+ */
 export async function generateMetadata(
-    { params }: Props,
-    parent: ResolvingMetadata
-  ): Promise<Metadata> {
-    const post = await getPost(params);
-    const title = post.frontMatter.title;
-    const description = post.frontMatter.description;
-  
+    { params }: { params: { slug: string } },
+): Promise<Metadata> {
+
+    const BlogItem = await getBlogItemBySlug(params.slug)
+    const { title, seoTitle, excerpt } = BlogItem;
+
     return {
-      title: title,
-      description: description,
-      // add other metadata fields as needed
+        title: title,
+        description: seoTitle ?? excerpt,
     };
-  } */
+}
 
 
 /**
@@ -63,16 +65,12 @@ export async function generateStaticParams() {
 }
 
 
+
 async function getPost({ slug }: { slug: string }): Promise<{ frontMatter: any, content: string }> {
     try {
         const dir = path.join(process.cwd(), 'src/content/posts');
-
-
         const markdownFile = fs.readFileSync(path.join(dir, slug, "page.mdx"), "utf-8");
-
-
         const { data: frontMatter, content } = matter(markdownFile);
-
 
         return {
             frontMatter,
@@ -99,8 +97,6 @@ const options = {
 
 
 export default async function Post({ params: { slug } }) {
-
-
 
     const { frontMatter, content } = await getPost({ slug });
     const mdxComponents = useMDXComponents({});
@@ -158,9 +154,9 @@ export default async function Post({ params: { slug } }) {
                     <p>Last Updated: {frontMatter.updatedOn}</p>
                 </div>
             </article>
-            
+
             <aside className='sticky md:pl-3 lg:pl-20 top-36 hidden md:block'>
-            <TableOfContent headings={headings} frontMatter={frontMatter} />
+                <TableOfContent headings={headings} frontMatter={frontMatter} />
             </aside>
 
 

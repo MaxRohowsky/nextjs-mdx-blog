@@ -42,7 +42,16 @@ export async function getAllBlogItems(): Promise<BlogItem[]> {
     return frontMatter as BlogItem[];
 }
 
-
+/**
+ * Get a single blog item by its unique slug.
+ * @param slug The unique slug of the blog item.
+ * @returns The blog item with the matching slug, or null if not found.
+ */
+export async function getBlogItemBySlug(slug: string): Promise<BlogItem | null> {
+    const blogItems = await getAllBlogItems();
+    const normalizedSlug = slug.trim().toLowerCase();
+    return blogItems.find(item => item.slug.toLowerCase() === normalizedSlug) || null;
+}
 
 /**
  * Get the blog front matter based on the provided filters. Upper and lower case are ignored.
@@ -52,23 +61,23 @@ export async function getAllBlogItems(): Promise<BlogItem[]> {
 export async function getFilteredBlogItems(options: BlogFilterOptions = {}): Promise<BlogItem[]> {
     const blogItems = await getAllBlogItems();
 
-    const filteredFrontMatter = blogItems.filter((fm) => {
-        if (options.isFeatured && !fm.isFeatured) {
+    const filteredFrontMatter = blogItems.filter((item) => {
+        if (options.isFeatured && !item.isFeatured) {
             return false;
         }
 
-        if (options.tags && !options.tags.every(optionTag => fm.tags.map(tag => tag.toLowerCase()).includes(optionTag.toLowerCase()))) {
+        if (options.tags && options.tags.length > 0 && !options.tags.every(optionTag => item.tags.map(tag => tag.toLowerCase()).includes(optionTag.toLowerCase()))) {
             return false;
         }
 
-        if (options.isPublished && !fm.isPublished) {
+        if (options.isPublished && !item.isPublished) {
             return false;
         }
 
         return true;
     });
 
-    return filteredFrontMatter as BlogItem[];
+    return filteredFrontMatter;
 }
 
 

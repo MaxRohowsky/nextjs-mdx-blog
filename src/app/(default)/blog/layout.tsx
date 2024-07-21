@@ -1,9 +1,9 @@
 export const metadata = {
   title: {
-    default: "hi",
+    default: "Blog",
     template: "%s | Blog | Max on Tech",
   },
-  description: "Blog posts about Software Engineering and Indie Hacking by Max Rohowsky",
+  description: 'Blog posts on Software Engineering and Indie Hacking by Max Rohowsky'
 }
 
 

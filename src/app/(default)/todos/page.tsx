@@ -51,7 +51,8 @@ const initialTodos = [
   { id: 47, text: 'move published and updated under tags', completed: true, priority: 1 },
   { id: 48, text: 'Read more in dark mode needs other color', completed: true, priority: 1 },
   { id: 49, text: 'Links on langing need to work', completed: true, priority: 1 },
-  { id: 50, text: 'Sidenav needs to stay a fixed size', completed: false, priority: 2 }
+  { id: 50, text: 'Sidenav needs to stay a fixed size', completed: false, priority: 2 },
+  { id: 51, text: 'Fix "jumping" date formats in posts', completed: false, priority: 2 }
 ];
 
 // Sort initialTodos by priority in ascending order

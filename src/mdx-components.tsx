@@ -31,10 +31,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     li: ({ children }) => <li className="mb-2">{children}</li>,
     code: ({ children, className }) => (
       className?.includes('hljs') 
-        ? <code className={className}>{children}</code>
+        ? <code className={`${className} rounded-sm`}>{children}</code>
         : <code className="bg-slate-100 dark:bg-slate-700 dark:text-white p-[2px] rounded-sm">{children}</code>
     ),
     blockquote: ({ children }) => <blockquote className="border-l-4 border-gray-200 pl-4 italic my-4">{children}</blockquote>,
+    pre: ({ children }) => <pre className=" rounded-md">{children}</pre>,
 
     Caption: ({ children }) => (
       <figcaption className="text-neutral-500 text-xs mt-2 text-center">{children}</figcaption>

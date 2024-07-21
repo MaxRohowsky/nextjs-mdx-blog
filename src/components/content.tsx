@@ -7,7 +7,7 @@ import { popularContent } from '@/components/popular';
 import Space from '@/components/space';
 import { Fragment } from 'react';
 import FeaturedProjectCard from '@/components/ui/featured-project-card';
-import RecentPostCard from '@/components/recent-post-card';
+import RecentPostCard from '@/components/ui/recent-post-card';
 
 /**
  * Handles the content of the landing page on the client side.

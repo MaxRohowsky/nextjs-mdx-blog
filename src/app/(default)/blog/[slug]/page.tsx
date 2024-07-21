@@ -21,7 +21,7 @@ import TableOfContent from "@/components/table-of-content";
 import { getBlogItemBySlug } from "@/lib/server-actions";
 import type { Metadata, ResolvingMetadata } from "next";
 import { pathToBlogPosts } from "@/lib/utils";
-import Caption from "@/components/mdx/caption";
+import * as mdx from "@/components/mdx/caption";
 
 /**
  * Generates metadata for a blog post based on its slug.
@@ -100,11 +100,8 @@ export default async function Post({ params: { slug } }) {
 
     const { frontMatter, content } = await getPost({ slug });
 
-
-    const mdxComponents = useMDXComponents({
-        Caption
-
-    });
+    // 'mdx' is a small custom library that provides a set of components for MDX
+    const mdxComponents = useMDXComponents({mdx});
 
 
 

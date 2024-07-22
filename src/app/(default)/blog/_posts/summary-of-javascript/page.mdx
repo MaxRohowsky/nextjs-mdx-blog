@@ -67,8 +67,8 @@ is a string literal. The literal is literally writing the value without the use 
 
 ## Scope 
 The parts of a code-base in which a variable is accessible is called the variable’s scope. 
-What’s interesting is that before JS ES6 (2015)
-variables only had global and function scope. ES6 introduced the keywords let and const to provide block scope.  Let’s unravel this in more detail below.
+<Note>What’s interesting is that before JS ES6 (2015) variables only had global and function scope. 
+ES6 introduced the keywords let and const to provide block scope. </Note> Let’s unravel this in more detail below.
 
 Variables declared in a `{...}` block can’t be accessed from outside the block:
 
@@ -80,9 +80,7 @@ Variables declared in a `{...}` block can’t be accessed from outside the block
 // x and y can't be used here
 ```
 
-
-
-Variables declared using var can’t have block scope which leads to confusing scoping, so best avoid it’s use completely:
+Variables declared using `var` can’t have block scope which leads to confusing scoping, so best avoid it’s use completely:
 
 ```javascript
 {
@@ -91,7 +89,7 @@ Variables declared using var can’t have block scope which leads to confusing s
 // x can be used here
 ```
 
-Variables inside a function are not accessible from outside the function, irrespective of whether they were declared with var, let, or const:
+Variables inside a function are not accessible from outside the function, irrespective of whether they were declared with `var`, `let`, or `const`:
 
 ```javascript
 function myFunction() {
@@ -101,11 +99,11 @@ function myFunction() {
 }
 // x, y, and z can't be used here
 ```
-Statement: 
+## Statement
 
 JavaScript code is just a sequence of statements that are separated by semicolons. By default, statements are executed in the order they are written
- one after the other. Sometimes you’ll want to change the order of execution and JS offers some tools to do so, e.g., conditionals (if, switch), loops (while, for),
-  or jumps (break, return, throw). To get a feel for statements, consider the following examples:
+ one after the other. Sometimes you’ll want to change the order of execution and JS offers some tools to do so, e.g., conditionals (`if`, `switch`), loops (`while`, `for`),
+  or jumps (`break`, `return`, `throw`). To get a feel for statements, consider the following examples:
 
 ```javascript
 window.close();
@@ -125,7 +123,7 @@ of a class. It’s true, but it doesn’t help if you don’t know what a class 
  Variables and properties are similar because they store values. Unlike variables, properties are contained within objects.
 
 ## Object Literal 
-An object literal is when you literally write out an object, e.g.,` {flavour: "chocolate"}`.
+An object literal is when you literally write out an object, e.g.,`{flavour: "chocolate"}`.
 
 ## Dot Notation 
 Dot notation is used to read the property of an object. Consider the `object car = {brand:"Audi", model:"Q8"}` where "Audi" can be read by writing car.brand and "Q8" by writing car.model.
@@ -158,26 +156,27 @@ class Car {
 ```
 
 Although the values (e.g., Audi, Q8, Back) will be different from one car to the next, most car’s do have similar properties 
-(e.g., a brand, model, and color) and similar behaviour (e.g., they accelerate, and brake). The class provides a blueprint for every 
-car (aka. instance) of the class. Perhaps the most significant advantage is that a class groups properties and methods that can be used across all member objects.
+(e.g., a brand, model, and color) and similar behaviour (e.g., they accelerate, and brake). The `class` provides a blueprint for every 
+car (aka. instance) of the `class`. Perhaps the most significant advantage is that a `class` groups properties and methods that can be used across all member objects.
 
 ## this
-The keyword this often holds the reference to an object. You can think of it as a special hidden argument that is passed into
+The keyword `this` often holds the reference to an object. You can think of it as a special hidden argument that is passed into
 a function by default. It’s value depends on how the function is called. Often, this points to the object that owns the method being
-executed. To have more control over the value of this, helpers, e.g., .bind, are used.
+executed. To have more control over the value of `this`, helpers, e.g., `.bind`, are used.
 
 ## Prototype
 Every JavaScript object has a second object associated with it, known as its prototype. All JavaScript objects inherit properties 
 and methods from their associated prototype. This is true for both standard JavaScript objects (e.g., Array) and custom objects you create
-(e.g., Car, Person, Student etc.). Using the class Car from earlier, imagine you call a function on an instance of Car, my_car, that doesn’t 
-exist, e.g., my_car.steer(). Since there’s no steer() function on my_car, JavaScript will look for that method in its prototype, next on that 
-object’s prototype, and so on. If it reaches the end of this prototype chain without finding that method, we get undefined. This also explains 
-why the my_car object has a toString method that was not defined in the class Car. It comes from the prototype.
+(e.g., Car, Person, Student etc.). Using the `class Car` from earlier, imagine you call a function on an instance of Car, `my_car`, that doesn’t 
+exist, e.g., `my_car.steer()`. Since there’s no `steer()` function on `my_car`, JavaScript will look for that method in its prototype, next on that 
+object’s prototype, and so on. If it reaches the end of this prototype chain without finding that method, we get `undefined`. This also explains 
+why the `my_car` object has a `toString` method that was not defined in the `class Car`. It comes from the prototype.
 
 ## Array
 An array is an object that presents an ordered collection of values (aka. elements). In simple terms: it allows us to list stuff. Every 
-element in an array has an index, where the first starts with 0. Fun fact: the highest possible index is 2³²-2 – that’s over 4 billion. It helps 
-to think of arrays as specialized objects that exist to prevent us from having to write something like `{0: ..., 1: ..., 2: ...}`.
+element in an array has an index, where the first starts with 0. 
+<Note>Fun fact: the highest possible index is 2³²-2 – that’s over 4 billion. </Note>
+It helps to think of arrays as specialized objects that exist to prevent us from having to write something like `{0: ..., 1: ..., 2: ...}`.
 
 ## Function
 A block of JS code that is defined once but can be executed (aka. called, invoked) any number of times. In JS, functions are objects 
@@ -195,12 +194,14 @@ called the function expression. To call this function, write `greet("Peter")`.
 
 ## Function Declaration
 Above, in the function expression, I wrote: `let greet = function(name) {...}`. A shorter version of this is `function greet(name) {...}`. 
-Here, the name “greet” is placed after function. This is called a function declaration.
+Here, the name `“greet”` is placed after `function`. This is called a function declaration.
 
 ## Arrow Functions
-The syntax of an arrow function is similar to a function expression: `let greet = (name) => {...}`. The arrow => separates the parameters
+The syntax of an arrow function is similar to a function expression: `let greet = (name) => {...}`. The arrow `=>` separates the parameters
 from the body of the function. A notable characteristic of arrow functions is that they don’t have their own this context. Instead, 
 they inherit the this value from their surrounding context.
+
+## Et voila!
 
 The concepts above only cover a small part of the JavaScript universe. Feel free to use this glossary whenever you feel the need to refresh the core concepts of JavaScript.
 

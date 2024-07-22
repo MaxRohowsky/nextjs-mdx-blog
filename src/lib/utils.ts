@@ -58,11 +58,15 @@ export function sortBlogsByDate(items: BlogItem[], ascending: boolean = false): 
   // Filter out entries with invalid dates and log mistakes
   const validItems = items.filter(item => {
     const isValidDate = !isNaN(new Date(item.publishedOn).getTime());
+    const isPublished = item.isPublished;
     if (!isValidDate) {
-      console.log(`Invalid date for item: ${JSON.stringify(item)}`);
+      console.log(`Invalid date for item: ${JSON.stringify(item.title)}`);
     }
-    return isValidDate;
-  });
+    if (!isPublished) {
+      console.log(`Item not published: ${JSON.stringify(item.title)}`);
+    }
+    return isValidDate && isPublished;
+});
 
   // Sort the remaining valid entries
   return validItems.sort((a, b) => {

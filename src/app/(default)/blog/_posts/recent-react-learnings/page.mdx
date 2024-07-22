@@ -1,51 +1,44 @@
 ---
-title: "Exploring React: My Recent Learnings"
-seoTitle: 
-abstract: Recently I’ve been learning React and this article summarises my main learnings.
 isPublished: true
+isFeatured: false
 publishedOn: 13 April 2024
-layout: Article
+updatedOn: "22 Jul 2024"
+title: "Exploring React: An Ongoing Thread of Learnings"
+seoTitle: 
+excerpt: 
+  React powers a significant part of the web and is my go-to library for building user interfaces.
+  This is an ongoing log of things I learn about it.
 tags:
-  - personal
-  - beliefs
+  - React
+  - Learnings
 ---
 
+# Exploring React: An Ongoing Log of Learnings
 
-Recently I’ve been learning react. Below are some interesting learnings that you might have overseen just like me.
+React powers a significant part of the web and it's also my go-to library for building user interfaces.
+The post below is an ongoing collection of interesting things I learn about React. Enjoy!
 
-Use immutable operations. In React, it’s better to follow immutable operations. For arrays this means that instead of directly modifying the existing array with push, create a new one using concat that has the updated values.
+## Use Immutable Operations
+In React, it’s better to follow <Define definition={"An immutable object is an object that, once created, can't be changed."}>immutable</Define> operations.
+For arrays this means that instead of directly modifying the existing array with push, create a new one using concat that has the updated values.
 
-Complex State. A component’s state can be of any type. And the practicality of using objects is often overlooked. On that basis, the following component will work perfectly fine.
+## Complex State
+A component’s state can be of any type. And the practicality of using objects is often overlooked. On that basis, the following component will work perfectly fine.
 
-```const App = () => {
-  const [count, setCount] = useState({
-    left:0, right:0
-  })
 
-  return (
-    <div>
-      {count.left}
+## Spread Syntax
+The spread `(...)` destructures an iterable, such as an array or string, into it’s elements. Here’s an example:
 
-      <button onClick={() => setCount({left: count.left + 1, right: count.right})}>
-        left
-      </button>
-
-      <button onClick={() => setCount({left: count.left + 1, right: count.right})}>
-        right
-      </button>
-
-      {count.right}
-    </div>
-  )
-}```
-
-Spread Syntax. The spread (...) destructures an iterable, such as an array or string, into it’s elements. Here’s an example:
-
+```jsx
 const obj1 = { a: 1, b: 2 };
 const obj2 = { ...obj1, c: 3 };
 // obj2 is { a: 1, b: 2, c: 3 }
-Update of State is Async. The example code below has a button that calls the event handler handleClick when clicked.
+```
 
+## Update of State is Async! 
+The example code below has a button that calls the event handler handleClick when clicked.
+
+```jsx
 function App() {
   const [count, setCount] = useState(0);
 
@@ -61,18 +54,19 @@ function App() {
     </div>
   );
 }
+```
 You might expect that the logged value of count would be the updated value (i.e., the incremented value), but it’s not the case.
-
-
 Instead, you will see that the logged value lags behind by one click. This is because updates to state in React are asynchronous.
 
-Console Logs. When debugging using console.log(...), you might come across the output [object Object]. That usually happens when you combine objects using the plus operator, e.g., console.log('props' + props). To avoid this, use commas instead, e.g., console.log('props', props).
+## Console Logs
+When debugging using `console.log(...)`, you might come across the output `[object Object]`. That usually happens when you combine objects using the plus operator, 
+e.g., `console.log('props' + props)`. To avoid this, use commas instead, e.g., `console.log('props', props)`.
 
-Debugging. There are three helpful things that can help in the debugging process. First, the React Developer Tools which is an extension that is tailored towards debugging React. Second, setting breakpoints in the inspector window as demonstrated in the gif below.
+## Debugging
+There are three helpful things that can help in the debugging process. **First**, the React Developer Tools which is an extension that is tailored 
+towards debugging React. **Second**, setting breakpoints in the inspector window as demonstrated in the gif below. **Third**, accessing the debugger by writing debugger into the component code.
 
-
-Third, accessing the debugger by writing debugger into the component code.
-
+```jsx
 // ...
 const handleLeftClick = () => {
    setAll(allClicks.concat('L'))
@@ -80,23 +74,29 @@ const handleLeftClick = () => {
    setLeft(left + 1)
 }
 // ...
-React Hook Rules. There are a few rules to follow when using React Hooks. The most important are the following:
+```
 
-Don’t call Hooks inside conditions of loops
-Don’t call Hooks in event handlers
-Don’t call Hooks inside functions passed into useEffect
-Handling Event Handlers. Event handlers must always be a function or a reference to a function.
+## React Hook Rules
 
-// ✗ Bad: Event handler is set to a function call
+There are a few rules to follow when using React Hooks. The most important are the following:
+
+- Don’t call Hooks inside conditions of loops
+- Don’t call Hooks in event handlers
+- Don’t call Hooks inside functions passed into `useEffect`
+
+## Event Handlers
+Event handlers must always be a function or a reference to a function.
+
+```jsx
+// ✗ Bad: Handler is set to a function call
 <button onClick={console.log('clicked')}> button </button>
 
-// ✓ Good: Event handler is set to an arrow function
+// ✓ Good: Handler is set to an arrow function
 <button onClick={() => console.log('clicked')}> button </button>
 
-// ✓ Good: Event handler is a function call that returns a function
+// ✓ Good: Handler is a function returning a function
 // ...  
 const handleClick = () => {
-
    return () => console.log('hello world')
 }
 
@@ -104,4 +104,5 @@ return (
    <button onClick={handleClick()}> button </button>
 )
 // ...
-Component Inception. Defining components within components is a bad practice. Don’t do it.
+```
+

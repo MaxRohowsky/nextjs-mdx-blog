@@ -2,8 +2,8 @@ export const popularContent = {
     "links": [
       {
         "type": "internal",
-        "href": "blog/building-a-linkedin-post-scheduler",
-        "text": "Building a LinkedIn Post Scheduler"
+        "href": "#",
+        "text": "Building a LinkedIn Post Scheduler (out soon)"
       },
       {
         "type": "external",

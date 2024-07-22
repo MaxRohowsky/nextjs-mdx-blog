@@ -5,9 +5,9 @@ import { Button } from '@/components/ui/button';
 import { ListFilter } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { ScrollArea } from "@/components/ui/scroll-area"
-import Card from '@/components/card';
+import Card from '@/components/ui/blog-card';
 import { Checkbox } from "@/components/ui/checkbox"
-
+import ProjectCard from '@/components/ui/project-card';
 
 import {
   Popover,
@@ -63,7 +63,7 @@ export default function Projects() {
       <div className='grid gap-7 grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] '>
         {projects.map((project) => (
 
-          <Card key={project.slug} item={project} />
+          <ProjectCard item={project} />
 
 
         ))}

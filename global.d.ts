@@ -1,122 +1,71 @@
-/* interface Item {
-  title: string;
-  subtitle: string;
-  slug: string;
-  tags: string[];
-  excerpt?: string;
-  seoTitle?: string;
-
-  publicationStatus: {
-    isPublished?: boolean;
-    isFeatured?: boolean;
-    updatedOn?: string;
-    publishedOn?: string;
-  };
-  media: {
-    img?: string;
-    link?: string;
-    featuredImage?: string;
-  };
-}
-
-
- */
-/*
- *By design, both BlogItems and ProjectItems are identical for simplicity.
- * I left them as separate interfaces to allow custom expansion.
-*/
-
 interface BlogItem {
-  title: string;
-  subtitle?: string;
-  tags: string[];
-  excerpt?: string;
-  seoTitle?: string;
-
-  publicationStatus: {
-    isPublished?: boolean;
-    isFeatured?: boolean;
-    updatedOn?: string;
-    publishedOn?: string;
-  };
-
-  media: {
-    img?: string;
-    link?: string;
-    featuredImage?: string;
-  };
-}
-
-interface ProjectItem {
-  title: string;
-  subtitle?: string;
-  tags: string[];
-  excerpt?: string;
-  seoTitle?: string;
-
-  publicationStatus: {
-    isPublished?: boolean;
-    isFeatured?: boolean;
-    updatedOn?: string;
-    publishedOn?: string;
-  };
-  
-  media: {
-    img?: string;
-    link?: string;
-    featuredImage?: string;
-  };
-}
-
-
-
-
-
-
-
-
-
-// Base Item Type
-interface BaseItem {
-  title: string;
-  subtitle: string;
-  slug: string;
-  tags: string[];
-  featured?: boolean;
-}
-
-// Blog Front Matter Type
-interface BlogFrontMatter extends BaseItem {
-  seoTitle: string;
-  abstract: string;
-  isPublished: boolean;
+  isPublished?: boolean;
+  isFeatured?: boolean;
   publishedOn?: string;
-  layout: string;
+  updatedOn?: string;
+  slug: string;               // gets generated automatically
+  title: string;
+  subtitle?: string;
+  tags: string[];
+  excerpt?: string;
+  externalLink?: string;
+  seoTitle?: string;
+  img?: string;
   featuredImage?: string;
 }
 
-// Project Type
-interface Project extends BaseItem {
-  date: string;
-  published: boolean;
-  description: string;
-  img: string;
-  link: string;
-  active: boolean;
-  monetized: boolean;
-}
-
-interface FrontMatterOptions {
-  featured?: boolean;
-  tag?: Array<string>;
-  layout?: string;
+interface BlogFilterOptions {
   isPublished?: boolean;
+  isFeatured?: boolean;
+  publishedOn?: string | { before?: string; after?: string }; // Same as updatedOn
+  updatedOn?: string | { before?: string; after?: string }; // Allows filtering before or after specific dates
+  slug?: string;
+  title?: string;
+  subtitle?: string;
+  tags?: string[]; // Assuming filtering by any of the provided tags
+  excerpt?: string;
+  externalLink?: string;
+  seoTitle?: string;
+  img?: string;
+  featuredImage?: string;
 }
 
-interface ProjectOptions {
-  published?: boolean;
-  featured?: boolean;
-  active?: boolean;
-  monetized?: boolean;
-  tags?: Array<string>;
+
+interface ProjectItem {
+  isPublished?: boolean;
+  isFeatured?: boolean;
+  updatedOn?: string;
+  publishedOn?: string;
+
+  slug: string;
+  title: string;
+  subtitle?: string;
+  tags: string[];
+  excerpt?: string;
+  externalLink?: string;
+  seoTitle?: string;
+  img?: string;
+  featuredImage?: string;
 }
+
+interface ProjectFilterOptions {
+  isPublished?: boolean;
+  isFeatured?: boolean;
+  updatedOn?: string | { before?: string; after?: string }; // Allows filtering before or after specific dates
+  publishedOn?: string | { before?: string; after?: string }; // Same as updatedOn
+  slug?: string;
+  title?: string;
+  subtitle?: string;
+  tags?: string[]; // Assuming filtering by any of the provided tags
+  excerpt?: string;
+  externalLink?: string;
+  seoTitle?: string;
+  img?: string;
+  featuredImage?: string;
+}
+
+
+
+
+
+

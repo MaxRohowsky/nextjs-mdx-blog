@@ -9,8 +9,8 @@ import { DM_Sans } from 'next/font/google';
 
 // Font for the entire website
 export const dmSans = DM_Sans(
-{
-    weight: ['100', '200', '300', '400', '500', '600','700'],
+  {
+    weight: ['100', '200', '300', '400', '500', '600', '700'],
     subsets: ['latin'],
     display: 'swap',
   }
@@ -18,10 +18,10 @@ export const dmSans = DM_Sans(
 
 export const metadata = {
   title: {
-    default: 'Max on Tech | Software Engineering and Indie Hacking Blog',
+    default: 'Max Rohowsky | Software Engineering and Indie Hacking Blog',
     template: '%s | Max on Tech'
   },
-  description: 'A Blog on Software Engineering and Indie Hacking by Max Rohowsky',
+  description: 'A Blog on Software Engineering and Indie Hacking by Max Rohowsky'
 }
 
 

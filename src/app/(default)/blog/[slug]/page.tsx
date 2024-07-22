@@ -4,10 +4,8 @@ import remarkGfm from 'remark-gfm';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { format } from 'date-fns';
 import { useMDXComponents } from '@/mdx-components';
 import { extractHeadings } from "extract-md-headings";
-import { serialize } from 'next-mdx-remote/serialize'
 import remarkFrontmatter from 'remark-frontmatter'
 import Link from "next/link"
 import rehypeSlug from 'rehype-slug'
@@ -20,28 +18,32 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import TableOfContent from "@/components/table-of-content";
+import { getBlogItemBySlug } from "@/lib/server-actions";
+import type { Metadata, ResolvingMetadata } from "next";
+import { pathToBlogPosts } from "@/lib/utils";
 
-// https://github.com/owolfdev/simple-mdx-blog/blob/main/app/blog/%5Bslug%5D/page.tsx
-/* import type { Metadata, ResolvingMetadata } from "next";
+// Blank Component to which you can add additional Components outside of useMDXComponents
+import * as mdx from "@/components/mdx";
 
+/**
+ * Generates metadata for a blog post based on its slug.
+ */
 export async function generateMetadata(
-    { params }: Props,
-    parent: ResolvingMetadata
-  ): Promise<Metadata> {
-    const post = await getPost(params);
-    const title = post.frontMatter.title;
-    const description = post.frontMatter.description;
-  
+    { params }: { params: { slug: string } },
+): Promise<Metadata> {
+
+    const BlogItem = await getBlogItemBySlug(params.slug)
+    const { title, seoTitle, subtitle, excerpt } = BlogItem;
+
     return {
-      title: title,
-      description: description,
-      // add other metadata fields as needed
+        title: title,
+        description: seoTitle ?? subtitle ?? excerpt,
     };
-  } */
+}
 
 
 /**
- * Generates static parameters for each post directory within 'src/(posts)'.
+ * Generates static parameters for each post directory within 'pathToBlogPosts'.
  * It filters out the 'layout.tsx' file and any non-directory entries, ensuring
  * only directories are considered for generating slugs.
  * 
@@ -49,7 +51,7 @@ export async function generateMetadata(
  * Docs: https://nextjs.org/docs/app/api-reference/functions/generate-static-params
  */
 export async function generateStaticParams() {
-    const dir = path.join(process.cwd(), 'src/(posts)');
+    const dir = path.join(process.cwd(), pathToBlogPosts);
     // Read directory contents as directory entries
     const entries = fs.readdirSync(dir, { withFileTypes: true });
 
@@ -65,16 +67,12 @@ export async function generateStaticParams() {
 }
 
 
+
 async function getPost({ slug }: { slug: string }): Promise<{ frontMatter: any, content: string }> {
     try {
-        const dir = path.join(process.cwd(), 'src/(posts)');
-
-
+        const dir = path.join(process.cwd(), pathToBlogPosts);
         const markdownFile = fs.readFileSync(path.join(dir, slug, "page.mdx"), "utf-8");
-
-
         const { data: frontMatter, content } = matter(markdownFile);
-
 
         return {
             frontMatter,
@@ -102,28 +100,21 @@ const options = {
 
 export default async function Post({ params: { slug } }) {
 
-
-
     const { frontMatter, content } = await getPost({ slug });
-    const mdxComponents = useMDXComponents({});
 
-    const dir = path.join(process.cwd(), 'src/(posts)');
-    path.join(dir, slug, "page.mdx")
+    // 'mdx' is a small custom library that can provide a set of components. Access with mdx.ComponentName
+    const mdxComponents = useMDXComponents({mdx});
+
+
+
+    const dir = path.join(process.cwd(), pathToBlogPosts);
+
     const headings = extractHeadings(path.join(dir, slug, "page.mdx"));
-    /*     console.log("headings", headings) */
 
-    /*     const mdxSource = await serialize(content, {
-            mdxOptions: {
-                rehypePlugins: [rehypeHighlight],
-            }})
-    
-            console.log("mdxSource", mdxSource) */
-
-    console.log(headings)
 
     return (
 
-        <div className='max-w-full flex flex-row  justify-center  md:items-start  '>
+        <div className='max-w-full flex flex-row  justify-center  md:items-start'>
 
 
             <article className='text-pretty w-full md:max-w-xl p-2'>
@@ -156,14 +147,12 @@ export default async function Post({ params: { slug } }) {
                 </Breadcrumb>
 
                 <MDXRemote source={content} options={options} components={mdxComponents} />
-                <div className="text-sm text-gray-600 mt-8">
-                    <p>Published on: {frontMatter.publishedOn}</p>
-                    <p>Last Updated: {frontMatter.updatedOn}</p>
-                </div>
+
             </article>
 
-            <TableOfContent headings={headings} frontMatter={frontMatter} />
-
+            <aside className='sticky md:pl-3 lg:pl-20 top-36 hidden md:block overflow-y-auto overflow-x-hidden max-h-[calc(100vh-15rem)] '>
+                <TableOfContent headings={headings} frontMatter={frontMatter} />
+            </aside>
 
 
         </div>

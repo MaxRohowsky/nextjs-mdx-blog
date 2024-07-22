@@ -1,12 +1,7 @@
 import { sortBlogsByDate } from '@/lib/utils';
-import { getFilteredBlogFrontMatter } from '@/lib/server-actions';
-import { getBlogTags } from '@/lib/utils';
-import Card from '@/components/card';
-import { usePathname } from 'next/navigation'
-import { getBlogFrontMatter } from '@/lib/server-actions';
-
+import { getFilteredBlogItems } from '@/lib/server-actions';
+import BlogCard from '@/components/ui/blog-card';
 import { useState } from 'react';
-
 /* export const metadata = {
   title: "Next Blog",
   description: "Next.js static mdx blog starter template",
@@ -16,13 +11,17 @@ import { useState } from 'react';
 
 
 
-export default async function Blog({params}) {
-  const para = params
+export default async function Blog() {
 
-  console.log("params", para)
+  const blogItems = await getFilteredBlogItems()
 
-  const frontMatter = await getFilteredBlogFrontMatter()
-  const blogs = sortBlogsByDate(frontMatter);
+/*   const [selectedTags, setSelectedTags] = useState<Array<string>>([]);
+  const [isFiltered, setIsFiltered] = useState<boolean>(false);
+  const displayTags = isFiltered ? selectedTags : undefined
+
+  const projects = getFilteredBlogItems({ tags: displayTags });
+ */
+  const blogs = sortBlogsByDate(blogItems);
 
 
   //const allTags = getBlogTags(frontMatter)
@@ -39,7 +38,7 @@ export default async function Blog({params}) {
       <div className='grid gap-7 grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] '>
       
         {blogs.map((blog) => (
-          <Card key={blog.slug} item={blog} />
+          <BlogCard key={blog.slug} item={blog} />
         ))}
 
       </div>

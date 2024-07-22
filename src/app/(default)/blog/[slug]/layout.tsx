@@ -1,7 +1,11 @@
-export const metadata = {
-  title: "Projects",
-  description: "Software Engineering and Indie Hacking Projects by Max Rohowsky",
-}
+
+
+
+
+
+
+
+
 
 
 export default function MdxLayout({
@@ -11,7 +15,10 @@ export default function MdxLayout({
 }) {
   return (
     <>
+
+
           {children}
+
     </>
   )
 }

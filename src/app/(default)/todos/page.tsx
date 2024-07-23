@@ -41,9 +41,9 @@ const initialTodos = [
   { id: 36, text: 'Filter on the right not left (see projects).', completed: true, priority: 2 },
   { id: 37, text: 'Projects are "viewed, Blogs are read more".', completed: false, priority: 2 },
   { id: 38, text: 'What if cars where scratch cards you move over them to reveal the preview.', completed: false, priority: 3 },
-  { id: 39, text: 'when i click on a blog on the homepage, I should be routed to it', completed: false, priority: 2 },
+  { id: 39, text: 'when i click on a blog on the homepage, I should be routed to it', completed: true, priority: 2 },
   { id: 40, text: 'Cookie saves read articles.', completed: false, priority: 3 },
-  { id: 41, text: 'Maintain dark mode across sites', completed: false, priority: 1 },
+  { id: 41, text: 'Maintain dark mode across sites -> fixed with next LINK :)', completed: true, priority: 1 },
   { id: 43, text: 'Add Not found page', completed: false, priority: 2 },
   { id: 44, text: 'Clean the code', completed: true, priority: 1 }, 
   { id: 45, text: 'The header I scroll to should be blue in the blog', completed: false, priority: 2 },
@@ -51,10 +51,11 @@ const initialTodos = [
   { id: 47, text: 'move published and updated under tags', completed: true, priority: 1 },
   { id: 48, text: 'Read more in dark mode needs other color', completed: true, priority: 1 },
   { id: 49, text: 'Links on langing need to work', completed: true, priority: 1 },
-  { id: 50, text: 'Sidenav needs to stay a fixed size', completed: false, priority: 2 },
+  { id: 50, text: 'Sidenav needs to stay a fixed size', completed: true, priority: 2 },
   { id: 51, text: 'Fix "jumping" date formats in posts', completed: false, priority: 2 },
-  {id: 52, text: "It doesnt make sense to have every blog post in a folder and then page. That's silly see https://github.com/leerob/leerob.io/tree/main/content", completed: false, priority: 1 },
+  {id: 52, text: "It doesnt make sense to have every blog post in a folder and then page. That's silly see https://github.com/leerob/leerob.io/tree/main/content", completed: true, priority: 1 },
   {id: 53, text: "The way popular content is handled on the landing page is silly, a flag in the frontmatter in both projects and posts would be better", completed: false, priority: 1 },
+  {id: 54, text: "on mobile devices the hover needs to work only when someone touches a post", completed: false, priority: 1 },
 ];
 
 // Sort initialTodos by priority in ascending order

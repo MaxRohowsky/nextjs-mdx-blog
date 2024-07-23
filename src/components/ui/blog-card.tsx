@@ -1,6 +1,7 @@
 'use client'
 import Tilt from 'react-parallax-tilt';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 // blog card inspiration: https://dev.to/frontendsolutions/13-css-blog-cards-54d7
 
@@ -11,7 +12,7 @@ export default function BlogCard({ item }: { item: BlogItem; }) {
     return (
         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
             <div className="rounded-sm w-full h-full group cursor-pointer ">
-                <a href={link} className="flex flex-col relative justify-between border  dark:bg-background  border-gray-200 dark:border-neutral-800 rounded-lg hover:shadow-md transition-shadow duration-300 py-3 p-3 md:p-6 w-full h-full">
+                <Link href={link} className="flex flex-col relative justify-between border  dark:bg-background  border-gray-200 dark:border-neutral-800 rounded-lg hover:shadow-md transition-shadow duration-300 py-3 p-3 md:p-6 w-full h-full">
 
                     <div className='flex'>
                         <div>
@@ -39,7 +40,7 @@ export default function BlogCard({ item }: { item: BlogItem; }) {
                     <p className="font-semibold text-sm md:text-base cursor-pointer flex gap-2 opacity-20 group-hover:opacity-100 duration-300  transition-all">
                         Read more <span className='pt-[1px]'> <ArrowRight /> </span>
                     </p>
-                </a>
+                </Link>
             </div>
         </Tilt>
     );

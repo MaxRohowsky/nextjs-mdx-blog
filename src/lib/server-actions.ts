@@ -18,7 +18,7 @@ export async function getAllBlogItems(): Promise<BlogItem[]> {
     const filteredItems = dirItems.filter(item => item !== 'layout.tsx');
 
     const frontMatter = await Promise.all(filteredItems.map(async (fileName) => {
-        const fullPath = path.join(dir, fileName, "page.mdx");
+        const fullPath = path.join(dir, fileName);
         const fileContents = await readFile(fullPath, "utf8");
 
         const { data } = matter(fileContents);

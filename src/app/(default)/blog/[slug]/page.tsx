@@ -68,16 +68,19 @@ export async function generateStaticParams() {
 
 
 
-async function getPost({ slug }: { slug: string }): Promise<{ frontMatter: any, content: string }> {
+async function getPost({ slug }: { slug: string })/* : Promise<{ frontMatter: any, content: string }> */ {
     try {
         const dir = path.join(process.cwd(), pathToBlogPosts);
-        const markdownFile = fs.readFileSync(path.join(dir, slug, "page.mdx"), "utf-8");
+        console.log(path.join(dir, `${slug}.mdx`));
+        
+        const markdownFile = fs.readFileSync(path.join(dir, `${slug}.mdx`), "utf-8");
         const { data: frontMatter, content } = matter(markdownFile);
+        console.log(frontMatter);
 
         return {
             frontMatter,
             content,
-        };
+        }; 
     }
     catch (error) {
         console.error("Error fetching post:", error);
@@ -100,16 +103,18 @@ const options = {
 
 export default async function Post({ params: { slug } }) {
 
-    const { frontMatter, content } = await getPost({ slug });
+     const { frontMatter, content } =  await getPost({ slug });
+
+
 
     // 'mdx' is a small custom library that can provide a set of components. Access with mdx.ComponentName
-    const mdxComponents = useMDXComponents({mdx});
+     const mdxComponents = useMDXComponents({mdx}); 
 
 
 
-    const dir = path.join(process.cwd(), pathToBlogPosts);
+     const dir = path.join(process.cwd(), pathToBlogPosts); 
 
-    const headings = extractHeadings(path.join(dir, slug, "page.mdx"));
+     const headings = extractHeadings(path.join(dir, `${slug}.mdx`)); 
 
 
     return (

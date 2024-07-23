@@ -13,9 +13,6 @@ const withMDX = nextMDX({
 })
 
 const nextConfig = {
-  images: {
-    domains: ['hosting189589.a2f4e.netcup.net'],
-  },
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx', 'md'],
 }
 

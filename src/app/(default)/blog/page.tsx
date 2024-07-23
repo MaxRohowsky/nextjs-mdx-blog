@@ -2,11 +2,8 @@ import { sortBlogsByDate } from '@/lib/utils';
 import { getFilteredBlogItems } from '@/lib/server-actions';
 import BlogCard from '@/components/ui/blog-card';
 import { useState } from 'react';
-/* export const metadata = {
-  title: "Next Blog",
-  description: "Next.js static mdx blog starter template",
-};
- */
+
+
 
 
 
@@ -14,23 +11,11 @@ import { useState } from 'react';
 export default async function Blog() {
 
   const blogItems = await getFilteredBlogItems()
-
-/*   const [selectedTags, setSelectedTags] = useState<Array<string>>([]);
-  const [isFiltered, setIsFiltered] = useState<boolean>(false);
-  const displayTags = isFiltered ? selectedTags : undefined
-
-  const projects = getFilteredBlogItems({ tags: displayTags });
- */
   const blogs = sortBlogsByDate(blogItems);
-
-
-  //const allTags = getBlogTags(frontMatter)
-
 
 
   return (
     <>
-
       <div className='flex items-center h-40 '>
         <h1 className='text-5xl font-semibold'>Blog</h1>
       </div>

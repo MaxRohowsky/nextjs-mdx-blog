@@ -8,6 +8,8 @@ export default async function Home() {
   const allBlogItems = await getAllBlogItems()
   const blogs = sortBlogsByDate(allBlogItems).slice(0, 6);
 
+  
+
   return (
     <>
       <Hero/>

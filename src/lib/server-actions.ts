@@ -12,7 +12,7 @@ import {pathToBlogPosts} from './utils';
  * Get the blog front matter of all blog posts.
  * @returns The front matter of all blog posts in an array.
  */
-export async function getAllBlogItems(): Promise<BlogItem[]> {
+export async function getAllBlogItems(): Promise<FrontMatter[]> {
     const dir = path.join(process.cwd(), pathToBlogPosts);
     const dirItems = await readdir(dir);
     const filteredItems = dirItems.filter(item => item !== 'layout.tsx');
@@ -39,7 +39,7 @@ export async function getAllBlogItems(): Promise<BlogItem[]> {
         return data;
     }));
 
-    return frontMatter as BlogItem[];
+    return frontMatter as FrontMatter[];
 }
 
 /**
@@ -47,7 +47,7 @@ export async function getAllBlogItems(): Promise<BlogItem[]> {
  * @param slug The unique slug of the blog item.
  * @returns The blog item with the matching slug, or null if not found.
  */
-export async function getBlogItemBySlug(slug: string): Promise<BlogItem | null> {
+export async function getBlogItemBySlug(slug: string): Promise<FrontMatter | null> {
     const blogItems = await getAllBlogItems();
     const normalizedSlug = slug.trim().toLowerCase();
     return blogItems.find(item => item.slug.toLowerCase() === normalizedSlug) || null;
@@ -58,7 +58,7 @@ export async function getBlogItemBySlug(slug: string): Promise<BlogItem | null> 
  * @param options The filter options e.g. { featured: true, tag: 'personal', layout: 'Article' }.
  * @returns The front matter of the filtered blog posts in an array.
  */
-export async function getFilteredBlogItems(options: BlogFilterOptions = {}): Promise<BlogItem[]> {
+export async function getFilteredBlogItems(options: Filter = {}): Promise<FrontMatter[]> {
     const blogItems = await getAllBlogItems();
 
     const filteredFrontMatter = blogItems.filter((item) => {

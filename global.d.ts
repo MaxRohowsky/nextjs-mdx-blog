@@ -1,4 +1,4 @@
-interface BlogItem {
+interface FrontMatter {
   isPublished?: boolean;
   isFeatured?: boolean;
   publishedOn?: string;
@@ -14,20 +14,19 @@ interface BlogItem {
   featuredImage?: string;
 }
 
-interface BlogFilterOptions {
+
+interface BlogPost {
+  frontMatter: FrontMatter;
+  content: string;
+}
+
+
+interface Filter {
   isPublished?: boolean;
   isFeatured?: boolean;
   publishedOn?: string | { before?: string; after?: string }; // Same as updatedOn
   updatedOn?: string | { before?: string; after?: string }; // Allows filtering before or after specific dates
-  slug?: string;
-  title?: string;
-  subtitle?: string;
   tags?: string[]; // Assuming filtering by any of the provided tags
-  excerpt?: string;
-  externalLink?: string;
-  seoTitle?: string;
-  img?: string;
-  featuredImage?: string;
 }
 
 
@@ -48,7 +47,7 @@ interface ProjectItem {
   featuredImage?: string;
 }
 
-interface ProjectFilterOptions {
+/* interface ProjectFilterOptions {
   isPublished?: boolean;
   isFeatured?: boolean;
   updatedOn?: string | { before?: string; after?: string }; // Allows filtering before or after specific dates
@@ -64,7 +63,7 @@ interface ProjectFilterOptions {
   featuredImage?: string;
 }
 
-
+ */
 
 
 

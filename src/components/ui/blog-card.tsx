@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 // blog card inspiration: https://dev.to/frontendsolutions/13-css-blog-cards-54d7
 
-export default function BlogCard({ item }: { item: BlogItem; }) {
+export default function BlogCard({ item }: { item: FrontMatter; }) {
 
     const link = 'externalLink' in item ? item.externalLink : `/blog/${item.slug}`;
 

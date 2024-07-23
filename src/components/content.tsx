@@ -35,7 +35,7 @@ export function RecentPosts({ blogs }) {
     <div className="flex flex-col ">
       <h2 className="  text-rose-red  text-xl "> Recent Posts</h2>
       <Space className="h-3 lg:h-8" />
-      {blogs.map((blog: BlogItem) => (
+      {blogs.map((blog: FrontMatter) => (
         <Fragment key={blog.slug}>
           <RecentPostCard item={blog} />
           <Space className="h-2 lg:h-8" />

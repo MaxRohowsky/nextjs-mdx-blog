@@ -18,8 +18,8 @@ interface ViewCounterProps {
  */
 export default function ViewCounter({ slug, allViews }: ViewCounterProps) {
 
-    const viewsForSlug = allViews && allViews.find((view) => view.slug === slug);
-    const number = new Number(viewsForSlug?.views || 0);
+    let viewsForSlug = allViews && allViews.find((view) => view.slug === slug);
+    let number = new Number(viewsForSlug?.views || 0);
 
     return (
         <p className="text-neutral-600 dark:text-neutral-400 mt-6 flex items-center">

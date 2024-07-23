@@ -5,8 +5,8 @@ import { sortBlogsByDate } from '@/lib/utils';
 import { getAllBlogItems } from '@/lib/server-actions';
 
 export default async function Home() {
-  const allBlogItems = await getAllBlogItems()
-  const blogs = sortBlogsByDate(allBlogItems).slice(0, 6);
+  let allBlogItems = await getAllBlogItems()
+  let blogs = sortBlogsByDate(allBlogItems).slice(0, 6);
 
   
 

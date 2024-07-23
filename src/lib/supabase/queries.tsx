@@ -8,8 +8,8 @@ export async function getViewsCount(): Promise<{ slug: string; views: number }[]
 
   noStore();
 
-  const supabase = createClient();
-  const { data, error } = await supabase
+  let supabase = createClient();
+  let { data, error } = await supabase
     .from("ana")
     .select("*")
  
@@ -21,12 +21,12 @@ export async function getViewsCount(): Promise<{ slug: string; views: number }[]
 export async function increment(slug: string) {
     // Get the slug from the URL
 
-    const URL =
+    let URL =
       process.env.NODE_ENV === "production"
         ? "https://maxontech.io/api/view"
         : "http://localhost:3000/api/view";
 
-    const res = await fetch(`${URL}`, {
+    let res = await fetch(`${URL}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,38 +1,29 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
-import { Suspense, cache } from 'react';
+import { cache } from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { useMDXComponents } from "@/mdx-components";
 import { extractHeadings } from "extract-md-headings";
 import remarkFrontmatter from "remark-frontmatter";
-
 import rehypeSlug from "rehype-slug";
-
 import TableOfContent from "@/components/table-of-content";
 import { getBlogItemBySlug } from "@/lib/server-actions";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import { pathToBlogPosts } from "@/lib/utils";
 import { getViewsCount, increment } from "@/lib/supabase/queries";
 import ViewCounter from "@/components/view-counter";
-
-
-// Blank Component to which you can add additional Components outside of useMDXComponents
-import * as mdx from "@/components/mdx";
+import * as mdx from "@/components/mdx"; // Blank Component to which you can add additional Components outside of useMDXComponents
 import BlogBreadcrumb from "@/components/blog-breadcrumb";
 
 /**
  * Generates metadata for a blog post based on its slug.
  */
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const BlogItem = await getBlogItemBySlug(params.slug);
-  const { title, seoTitle, subtitle, excerpt } = BlogItem;
+export async function generateMetadata({ params, }: { params: { slug: string }; }): Promise<Metadata> {
+  let BlogItem = await getBlogItemBySlug(params.slug);
+  let { title, seoTitle, subtitle, excerpt } = BlogItem;
 
   return {
     title: title,
@@ -49,37 +40,30 @@ export async function generateMetadata({
  * Docs: https://nextjs.org/docs/app/api-reference/functions/generate-static-params
  */
 export async function generateStaticParams() {
-  const dir = path.join(process.cwd(), pathToBlogPosts);
+  let dir = path.join(process.cwd(), pathToBlogPosts);
   // Read directory contents as directory entries
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  let entries = fs.readdirSync(dir, { withFileTypes: true });
 
   // Filter out 'layout.tsx' and non-directory entries
-  const directories = entries.filter(
+  let directories = entries.filter(
     (dirent) =>
       dirent.isDirectory() || (dirent.isFile() && dirent.name !== "layout.tsx")
   );
 
   // Map directory names to params
-  const params = directories.map((dirent) => ({
+  let params = directories.map((dirent) => ({
     slug: dirent.name,
   }));
 
   return params;
 }
 
-async function getPost({
-  slug,
-}: {
-  slug: string;
-}) /* : Promise<{ frontMatter: any, content: string }> */ {
+async function getPost({ slug, }: { slug: string }): Promise<{ frontMatter: any; content: string }> {
   try {
-    const dir = path.join(process.cwd(), pathToBlogPosts);
+    let dir = path.join(process.cwd(), pathToBlogPosts);
 
-    const markdownFile = fs.readFileSync(
-      path.join(dir, `${slug}.mdx`),
-      "utf-8"
-    );
-    const { data: frontMatter, content } = matter(markdownFile);
+    let markdownFile = fs.readFileSync(path.join(dir, `${slug}.mdx`), "utf-8");
+    let { data: frontMatter, content } = matter(markdownFile);
 
     return {
       frontMatter,
@@ -91,7 +75,7 @@ async function getPost({
   }
 }
 
-const options = {
+let options = {
   scope: {
     /* any variables you want to pass to MDX content */
   },
@@ -104,7 +88,6 @@ const options = {
   parseFrontmatter: true,
 };
 
-
 let incrementViews = cache(increment);
 
 async function Views({ slug }: { slug: string }) {
@@ -115,31 +98,19 @@ async function Views({ slug }: { slug: string }) {
   return <ViewCounter allViews={allViews} slug={slug} />;
 }
 
-
 export default async function Post({ params: { slug } }) {
-  const { frontMatter, content } = await getPost({ slug });
-  // 'mdx' is a small custom library that can provide a set of components. Access with mdx.ComponentName
-  const mdxComponents = useMDXComponents({ mdx });
-  const dir = path.join(process.cwd(), pathToBlogPosts);
-  const headings = extractHeadings(path.join(dir, `${slug}.mdx`));
+  let { frontMatter, content } = await getPost({ slug });
+  let mdxComponents = useMDXComponents({ mdx }); // 'mdx' is a small custom library that can provide a set of components. Access with mdx.ComponentName
 
-  console.log("slug", slug);
-  console.log("env", process.env.NODE_ENV);
-
-
-
-
-
-
+  let dir = path.join(process.cwd(), pathToBlogPosts);
+  let headings = extractHeadings(path.join(dir, `${slug}.mdx`));
 
   return (
     <div className="max-w-full flex flex-row  justify-center  md:items-start">
       <article className="text-pretty w-full md:max-w-xl p-2">
-
+        <BlogBreadcrumb slug={slug} frontMatter={frontMatter} />
 
         <Views slug={slug} />
-
-        <BlogBreadcrumb slug={slug} frontMatter={frontMatter} />
 
         <MDXRemote
           source={content}

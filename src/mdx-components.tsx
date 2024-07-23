@@ -7,6 +7,7 @@ import Image, { ImageProps } from "next/image";
 import type { MDXComponents } from "mdx/types";
 import { Info, Flame, BookType } from "lucide-react";
 
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Allows customizing built-in components, e.g., to add styling.
@@ -125,6 +126,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </span>
     ),
+
+
 
     ...components,
   };

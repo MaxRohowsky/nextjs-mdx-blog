@@ -29,6 +29,16 @@ export default function Footer() {
 
       <div className='flex items-center gap-4 transition-all'>
 
+      <Button asChild
+          className=""
+          variant={'ghost'}
+        >
+          <Link href="/sitemap.xml">
+            Sitemap
+          </Link>
+
+        </Button>
+
         <Button asChild
           className=""
           variant={'ghost'}

@@ -14,11 +14,11 @@ import RecentPostCard from "@/components/ui/recent-post-card";
  * Blogs are fetched from the server and passed as props to this component.
  * Popular content and featured projects are hardcoded and read from imported JSON files.
  */
-export default function Content({ blogs }) {
+export default function Content({ blogs, allViews }: { blogs: FrontMatter[]; allViews: { slug: string; views: number }[] }) {
   return (
     <section className="flex justify-center items-center">
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 ">
-        <RecentPosts blogs={blogs} />
+        <RecentPosts blogs={blogs} allViews={allViews}  />
 
         <div className="flex flex-col-reverse md:flex-col ">
           <PopularContent />
@@ -30,14 +30,14 @@ export default function Content({ blogs }) {
   );
 }
 
-export function RecentPosts({ blogs }) {
+export function RecentPosts({ blogs, allViews }: { blogs: FrontMatter[]; allViews: { slug: string; views: number }[] }) {
   return (
     <div className="flex flex-col ">
       <h2 className="  text-rose-red  text-xl "> Recent Posts</h2>
       <Space className="h-3 lg:h-8" />
       {blogs.map((blog: FrontMatter) => (
         <Fragment key={blog.slug}>
-          <RecentPostCard item={blog} />
+          <RecentPostCard item={blog} allViews={allViews} />
           <Space className="h-2 lg:h-8" />
         </Fragment>
       ))}
@@ -91,7 +91,7 @@ export function FeaturedProjects() {
   return (
     <div className="flex flex-col">
       <Space className="h-8 lg:h-16" />
-      <h2 className=" text-rose-red text-xl"> Featured Projects</h2>
+      <h2 className=" text-rose-red text-xl">Featured Projects</h2>
       <Space className="h-2 lg:h-8" />
       {featuredProjects.map((project, index) => (
         <Fragment key={index}>

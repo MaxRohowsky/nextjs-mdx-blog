@@ -1,6 +1,3 @@
-import { Eye } from "lucide-react";
-
-
 interface ViewCounterProps {
     slug: string;
     allViews: {
@@ -22,9 +19,8 @@ export default function ViewCounter({ slug, allViews }: ViewCounterProps) {
     let number = new Number(viewsForSlug?.views || 0);
 
     return (
-        <p className="text-neutral-600 dark:text-neutral-400 mt-6 flex items-center">
-            <Eye className="w-4 h-4 inline-block mr-1" />
-            {`${number.toLocaleString()} views`}
-        </p>
+        <>
+            {`${number.toLocaleString()}`}
+        </>
     );
 }

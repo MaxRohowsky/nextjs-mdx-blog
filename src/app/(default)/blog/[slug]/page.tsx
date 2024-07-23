@@ -17,7 +17,7 @@ import { getViewsCount, increment } from "@/lib/supabase/queries";
 import ViewCounter from "@/components/view-counter";
 import * as mdx from "@/components/mdx"; // Blank Component to which you can add additional Components outside of useMDXComponents
 import BlogBreadcrumb from "@/components/blog-breadcrumb";
-
+import { Suspense } from "react";
 /**
  * Generates metadata for a blog post based on its slug.
  */
@@ -91,10 +91,10 @@ let options = {
 let incrementViews = cache(increment);
 
 async function Views({ slug }: { slug: string }) {
-  let allViews = await getViewsCount();
-  console.log("allViews", allViews);
-  console.log("slug", slug);
-  incrementViews(slug);
+  let allViews: { slug: string; views: number }[];
+  allViews = await getViewsCount();
+  await incrementViews(slug);
+
   return <ViewCounter allViews={allViews} slug={slug} />;
 }
 
@@ -110,7 +110,15 @@ export default async function Post({ params: { slug } }) {
       <article className="text-pretty w-full md:max-w-xl p-2">
         <BlogBreadcrumb slug={slug} frontMatter={frontMatter} />
 
-        <Views slug={slug} />
+
+        <Suspense fallback={<p className=' pt-5 h-11 w-10' />}>
+          <p className=' whitespace-nowrap text-neutral-500 pt-5'>
+            <Views slug={slug}/> views
+          </p>
+        </Suspense>
+
+
+
 
         <MDXRemote
           source={content}

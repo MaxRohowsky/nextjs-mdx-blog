@@ -13,7 +13,7 @@ const initialTodos = [
   { id: 8, text: 'Migrate all the posts from WP to .mdx.', completed: false, priority: 1 },
   { id: 9, text: 'Deploy!', completed: true, priority: 1 },
   { id: 10, text: 'Animate the light mode dark mode toggle.', completed: true, priority: 2 },
-  { id: 11, text: 'Add viewcount to this blog.', completed: false, priority: 2 },
+  { id: 11, text: 'Add viewcount to this blog.', completed: true, priority: 2 },
   { id: 12, text: 'Sound effects?', completed: false, priority: 3 },
   { id: 13, text: 'Touch grass.', completed: false, priority: 3 },
   { id: 14, text: 'This would be nice: https://tympanus.net/codrops/2019/01/17/interactive-particles-with-three-js/', completed: false, priority: 3 },
@@ -39,7 +39,7 @@ const initialTodos = [
   { id: 34, text: 'Handle space between elements on landingpage with spacer component: https://seya01.medium.com/how-to-style-margin-with-react-d250d512d0a0.', completed: true, priority: 1 },
   { id: 35, text: 'Link up the stuff under popular content.', completed: true, priority: 2 },
   { id: 36, text: 'Filter on the right not left (see projects).', completed: true, priority: 2 },
-  { id: 37, text: 'Projects are "viewed, Blogs are read more".', completed: false, priority: 2 },
+  { id: 37, text: 'Projects are "viewed, Blogs are read more".', completed: true, priority: 2 },
   { id: 38, text: 'What if cars where scratch cards you move over them to reveal the preview.', completed: false, priority: 3 },
   { id: 39, text: 'when i click on a blog on the homepage, I should be routed to it', completed: true, priority: 2 },
   { id: 40, text: 'Cookie saves read articles.', completed: false, priority: 3 },
@@ -56,6 +56,7 @@ const initialTodos = [
   {id: 52, text: "It doesnt make sense to have every blog post in a folder and then page. That's silly see https://github.com/leerob/leerob.io/tree/main/content", completed: true, priority: 1 },
   {id: 53, text: "The way popular content is handled on the landing page is silly, a flag in the frontmatter in both projects and posts would be better", completed: false, priority: 1 },
   {id: 54, text: "on mobile devices the hover needs to work only when someone touches a post", completed: false, priority: 1 },
+  {id: 55, text: "Add Code sandbox", completed: false, priority: 1 },
 ];
 
 // Sort initialTodos by priority in ascending order

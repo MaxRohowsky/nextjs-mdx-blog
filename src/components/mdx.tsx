@@ -2,7 +2,7 @@
 // Caption.js
 import React from 'react';
 import { Info } from 'lucide-react';
-import Playground from "@agney/playground";
+/* import Playground from "@agney/playground"; */
 
 
 export const Example = ({ children }) => (
@@ -14,10 +14,10 @@ export const Example = ({ children }) => (
   </div>
 );
 
-
+/* 
 
 export const CodePlayground: React.FC<any> = ({ ...props }) => <Playground {...props}/>
-
+ */
 
 {/*
 

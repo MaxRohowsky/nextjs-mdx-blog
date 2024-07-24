@@ -43,7 +43,7 @@ export async function generateMetadata({ params, }: { params: { slug: string }; 
  * @returns - array of objects where each object represents the populated dynamic segments of a single route
  * Docs: https://nextjs.org/docs/app/api-reference/functions/generate-static-params
  */
-export async function generateStaticParams() {
+/* export async function generateStaticParams() {
   let dir = path.join(process.cwd(), pathToBlogPosts);
   // Read directory contents as directory entries
   let entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -60,7 +60,7 @@ export async function generateStaticParams() {
   }));
 
   return params;
-}
+} */
 
 async function getPost({ slug, }: { slug: string }): Promise<{ frontMatter: any; content: string }> {
   try {

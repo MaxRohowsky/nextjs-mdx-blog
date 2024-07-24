@@ -103,12 +103,7 @@ export function getFilteredProjects(options: Filter = {}): ProjectItem[] {
   }));
 
   const filteredProjects = allProjects.filter((project) => {
-    if (options.isPublished !== undefined && options.isPublished !== project.isPublished) {
-      return false;
-    }
-    if (options.isFeatured !== undefined && options.isFeatured !== project.isFeatured) {
-      return false;
-    }
+
     if (options.tags !== undefined && !options.tags.every(tag => project.tags.includes(tag))) {
       return false;
     }

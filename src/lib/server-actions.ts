@@ -26,16 +26,6 @@ export async function getAllBlogItems(): Promise<FrontMatter[]> {
         // add slug to data
         data.slug = fileName.replace(".mdx", "");
 
-        // format publishedOn date
-        if (data.publishedOn) {
-            try {
-                data.publishedOn = format(new Date(data.publishedOn), 'EEEE, dd MMMM yyyy');
-            } catch (error) {
-                data.publishedOn = "Date Format can't be interpreted";
-            }
-        } else {
-            data.publishedOn = 'Not yet published';
-        }
         return data;
     }));
 
@@ -62,15 +52,8 @@ export async function getFilteredBlogItems(options: Filter = {}): Promise<FrontM
     const blogItems = await getAllBlogItems();
 
     const filteredFrontMatter = blogItems.filter((item) => {
-        if (options.isFeatured && !item.isFeatured) {
-            return false;
-        }
 
         if (options.tags && options.tags.length > 0 && !options.tags.every(optionTag => item.tags.map(tag => tag.toLowerCase()).includes(optionTag.toLowerCase()))) {
-            return false;
-        }
-
-        if (options.isPublished && !item.isPublished) {
             return false;
         }
 

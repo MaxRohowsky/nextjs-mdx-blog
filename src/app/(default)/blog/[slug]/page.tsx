@@ -7,7 +7,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { useMDXComponents } from "@/mdx-components";
-import { extractHeadings } from "extract-md-headings";
+import { extractHeadings, Heading } from "extract-md-headings";
 import remarkFrontmatter from "remark-frontmatter";
 import rehypeSlug from "rehype-slug";
 import TableOfContent from "@/components/table-of-content";
@@ -19,16 +19,18 @@ import ViewCounter from "@/components/view-counter";
 import * as mdx from "@/components/mdx"; // Blank Component to which you can add additional Components outside of useMDXComponents
 import BlogBreadcrumb from "@/components/blog-breadcrumb";
 import { Suspense } from "react";
+
+
 /**
  * Generates metadata for a blog post based on its slug.
  */
 export async function generateMetadata({ params, }: { params: { slug: string }; }): Promise<Metadata> {
   let BlogItem = await getBlogItemBySlug(params.slug);
-  let { title, seoTitle, subtitle, excerpt } = BlogItem;
+  let { title, subtitle, excerpt } = BlogItem;
 
   return {
     title: title,
-    description: seoTitle ?? subtitle ?? excerpt,
+    description: subtitle ?? excerpt,
   };
 }
 

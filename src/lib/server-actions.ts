@@ -46,12 +46,16 @@ export async function getBlogItemBySlug(slug: string): Promise<FrontMatter | nul
 /**
  * Get the blog front matter based on the provided filters. Upper and lower case are ignored.
  * @param options The filter options e.g. { featured: true, tag: 'personal', layout: 'Article' }.
- * @returns The front matter of the filtered blog posts in an array.
+ * @returns The front matter of the filtered blog posts in an array. By default, only published posts are returned.
  */
-export async function getFilteredBlogItems(options: Filter = {}): Promise<FrontMatter[]> {
+export async function getFilteredBlogItems(options: Filter = { isPublished: true }): Promise<FrontMatter[]> {
     const blogItems = await getAllBlogItems();
 
     const filteredFrontMatter = blogItems.filter((item) => {
+
+        if (!item.isPublished) {
+            return false;
+        }
 
         if (options.tags && options.tags.length > 0 && !options.tags.every(optionTag => item.tags.map(tag => tag.toLowerCase()).includes(optionTag.toLowerCase()))) {
             return false;

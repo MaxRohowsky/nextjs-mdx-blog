@@ -19,6 +19,7 @@ interface BlogPost {
 
 
 interface Filter {
+  isPublished?: boolean;
   publishedOn?: string | { before?: string; after?: string }; // Same as updatedOn
   tags?: string[]; // Assuming filtering by any of the provided tags
 }

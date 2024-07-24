@@ -17,6 +17,7 @@ export default async function Blog() {
       <div className='grid gap-7 grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] '>
 
         {blogs.map((blog) => (
+          console.log(blog),
           <BlogCard key={blog.slug} item={blog} />
         ))}
 

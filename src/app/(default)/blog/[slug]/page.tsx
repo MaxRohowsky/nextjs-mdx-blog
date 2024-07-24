@@ -26,6 +26,7 @@ import { Suspense } from "react";
  */
 export async function generateMetadata({ params, }: { params: { slug: string }; }): Promise<Metadata> {
   let BlogItem = await getBlogItemBySlug(params.slug);
+
   let { title, subtitle, excerpt } = BlogItem;
 
   return {
@@ -64,8 +65,9 @@ export async function generateStaticParams() {
 async function getPost({ slug, }: { slug: string }): Promise<{ frontMatter: any; content: string }> {
   try {
     let dir = path.join(process.cwd(), pathToBlogPosts);
-
-    let markdownFile = fs.readFileSync(path.join(dir, `${slug}.mdx`), "utf-8");
+    let filePath = path.join(dir, `${slug}.mdx`)
+    let markdownFile = fs.readFileSync(filePath, "utf-8");
+    console.log(filePath);
     let { data: frontMatter, content } = matter(markdownFile);
 
     return {
@@ -107,6 +109,7 @@ export default async function Post({ params: { slug } }) {
 
   let dir = path.join(process.cwd(), pathToBlogPosts);
   let headings = extractHeadings(path.join(dir, `${slug}.mdx`));
+
 
   return (
     <div className="max-w-full flex flex-row  justify-center  md:items-start">

@@ -1,9 +1,9 @@
 'use client'
 // Caption.js
 import React from 'react';
-import { Info, Flame } from 'lucide-react';
+import { Info } from 'lucide-react';
 import Playground from "@agney/playground";
-import IProps from  "@agney/playground";
+
 
 export const Example = ({ children }) => (
   <div className="bg-blue-50 border-l-[3px] border-blue-500 p-4 relative rounded-sm my-5">

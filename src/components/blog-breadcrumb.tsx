@@ -7,7 +7,7 @@ import {
     BreadcrumbSeparator,
   } from "@/components/ui/breadcrumb";
 
-export default function BlogBreadcrumb({ slug, frontMatter } : { slug: string, frontMatter: BlogItem }) {
+export default function BlogBreadcrumb({ slug, frontMatter } : { slug: string, frontMatter: FrontMatter }) {
     return (
         <Breadcrumb className="max-w-full">
             <BreadcrumbList>

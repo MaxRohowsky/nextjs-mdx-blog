@@ -35,6 +35,7 @@ interface ProjectItem {
   tags: string[];
   excerpt?: string;
   externalLink?: string;
+  img?: string;
 }
 
 

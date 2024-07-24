@@ -21,8 +21,24 @@ export const metadata = {
     default: 'Max Rohowsky | Software Engineering and Indie Hacking Blog',
     template: '%s | Max on Tech'
   },
-  description: 'A Blog on Software Engineering and Indie Hacking by Max Rohowsky'
+  description: 'A Blog on Software Engineering and Indie Hacking by Max Rohowsky',
+  openGraph: {
+    title: 'Max Rohowsky',
+    description: 'Software Engineering & Indie Hacking',
+    url: 'https://maxontech.io',
+    siteName: 'Max Rohowsky',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Max Rohowsky',
+    card: 'summary_large_image',
+  },
+  verification: {
+    google: 'NVnL5jsghoSo_MaMO9El0UJE_I2k4FcLdA-BmHFnbEk'
+  },
 }
+
 
 
 export default function RootLayout({ children }) {

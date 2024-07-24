@@ -21,10 +21,10 @@ export default function Privacy() {
 
             <div className={styles.privacy}>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-                    <span onClick={() => setLanguage('ENG')} disabled={language === 'ENG'}>
+                    <span onClick={() => setLanguage('ENG')} >
                         <img src="icons/united-kingdom.png" alt="Switch to English" style={{ width: '30px', height: '30px', filter: language === 'GER' ? 'brightness(50%)' : 'none' }} />
                     </span>
-                    <span onClick={() => setLanguage('GER')} disabled={language === 'GER'}>
+                    <span onClick={() => setLanguage('GER')} >
                         <img src="icons/germany.png" alt="Switch to German" style={{ width: '30px', height: '30px', filter: language === 'ENG' ? 'brightness(50%)' : 'none' }} />
                     </span>
                 </div>

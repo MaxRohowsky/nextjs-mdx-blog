@@ -28,12 +28,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={dmSans.className}>
-      <body className='mx-1 sm:mx-2 md:mx-4 flex justify-center'>
-        <div className=' max-w-screen-lg w-full flex flex-col '>
+      <body className='mx-1 sm:mx-2 md:mx-4 flex justify-center min-h-svh'>
+        <div className=' max-w-screen-lg w-full flex flex-col min-h-full justify-between'>
+          <div>
           <Navbar />
           <Space className='h-8' />
           {children}
           <Space className='h-8' />
+          </div>
           <Footer />
         </div>
       </body>

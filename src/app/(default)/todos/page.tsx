@@ -56,7 +56,10 @@ const initialTodos = [
   {id: 52, text: "It doesnt make sense to have every blog post in a folder and then page. That's silly see https://github.com/leerob/leerob.io/tree/main/content", completed: true, priority: 1 },
   {id: 53, text: "The way popular content is handled on the landing page is silly, a flag in the frontmatter in both projects and posts would be better", completed: false, priority: 1 },
   {id: 54, text: "on mobile devices the hover needs to work only when someone touches a post", completed: false, priority: 1 },
-  {id: 55, text: "Add Code sandbox", completed: false, priority: 1 },
+  {id: 55, text: "Add Code sandbox", completed: true, priority: 1 },
+  {id: 55, text: "Youtube embeds", completed: false, priority: 1 },
+  {id: 55, text: "Twitter embeds", completed: false, priority: 1 },
+  {id: 56, text: "Call to action X", completed: false, priority: 1 },
 ];
 
 // Sort initialTodos by priority in ascending order

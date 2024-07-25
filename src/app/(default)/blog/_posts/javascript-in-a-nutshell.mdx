@@ -44,7 +44,7 @@ A variable is a “named storage” for data – it’s not the value itself. Cr
 declaration, the variable is `undefined`. If, for example, we write `let number = 50`, we can now write `number` instead of the value `50` throughout
 the code. Variables declared with `let` can be reassigned, whereas ones declared with `const` can’t. Since we declared `number` with `let` above,
 we can reassign it as follows: `number = 63`, the variable now stores (or, points to) a new value. It’s tempting to think that the original
-value of `50` has changed to `63`. It hasn’t! Instead, after reassignment, the number '50' still exists in memory. But it’s no longer accessible
+value of `50` has changed to `63`. It hasn’t! Instead, after reassignment, the number `50` still exists in memory. But it’s no longer accessible
 via the variable number. If there are no other references to the value `50`, it becomes eligible for garbage collection.
 
 ## Equality

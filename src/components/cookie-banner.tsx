@@ -20,9 +20,11 @@ export default function CookieBanner() {
         // 'denied' if cookieConsent is falsey, 'granted' otherwise
         const newValue = cookieConsent ? 'granted' : 'denied'
 
-        window.gtag("consent", 'update', {
-            'analytics_storage': newValue
-        });
+        if (typeof window !== 'undefined') {
+            window.gtag("consent", 'update', {
+                'analytics_storage': newValue
+            });
+        }
 
         setLocalStorage("mot_cookie_consent", cookieConsent)
         console.log("Cookie Consent: ", cookieConsent)

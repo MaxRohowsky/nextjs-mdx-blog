@@ -110,9 +110,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     Define: ({ children, definition }) => (
-      <span className="relative group mr-2 underline decoration-dotted  decoration-blue-500" style={{ textUnderlineOffset: "3px" }}>
+      <span className="relative group mr-1 underline decoration-dotted inline decoration-blue-500" style={{ textUnderlineOffset: "3px" }}>
         {children}
-        <span className="absolute top-0 right-0 font-semibold text-sm transform -translate-y-1 translate-x-2 text-blue-500">
+        <span className="font-semibold text-sm inline-block text-blue-500 transform -translate-y-2 translate-x-[0.5px]" >
           ?
         </span>
         <span className="absolute hidden group-hover:block opacity-0 border-l-[3px] border-indigo-500 group-hover:opacity-100 group-hover:scale-100 

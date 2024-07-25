@@ -3,6 +3,7 @@ import 'highlight.js/styles/github-dark-dimmed.css'; // Global Code Block Stylin
 
 import Navbar from "@/components/navbar";
 import Footer from '@/components/footer';
+import React, { Suspense } from 'react';
 
 import Space from '@/components/space';
 import { DM_Sans } from 'next/font/google';
@@ -47,16 +48,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={dmSans.className}>
-      <GoogleAnalytics GA_MEASUREMENT_ID='G-1CHMGCDEXS'/>
+      <Suspense fallback={null}>
+        <GoogleAnalytics GA_MEASUREMENT_ID='G-1CHMGCDEXS' />
+      </Suspense>
       <body className='mx-1 sm:mx-2 md:mx-4 flex justify-center min-h-svh'>
         <div className=' max-w-screen-lg w-full flex flex-col min-h-full justify-between'>
           <div>
-          <Navbar />
-          <CookieBanner />
-          <Space className='h-8' />
-          {children}
-          
-          <Space className='h-8' />
+            <Navbar />
+            <CookieBanner />
+            <Space className='h-8' />
+            {children}
+
+            <Space className='h-8' />
           </div>
           <Footer />
         </div>

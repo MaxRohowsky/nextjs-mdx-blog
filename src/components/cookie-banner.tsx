@@ -6,7 +6,7 @@ import { getLocalStorage, setLocalStorage } from '@/lib/storage-helper';
 
 export default function CookieBanner() {
     // By default, the cookie is unset (neither accepted nor denied) so we set it to null
-    const [cookieConsent, setCookieConsent] = useState(null);
+    const [cookieConsent, setCookieConsent] = useState(false);
 
     // Get the cookie consent status from local storage
     useEffect(() => {

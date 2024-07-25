@@ -6,33 +6,38 @@ import { getLocalStorage, setLocalStorage } from '@/lib/storage-helper';
 
 export default function CookieBanner() {
     // By default, the cookie is false 
-    const [cookieConsent, setCookieConsent] = useState(false);
-
+    const [cookieConsent, setCookieConsent] = useState(null);
+    //console.log("Cookie Consent initial value: ", cookieConsent)
     // Get the cookie consent status from local storage
     useEffect(() => {
         const storedCookieConsent = getLocalStorage("mot_cookie_consent", null)
-        console.log("Stored Cookie Consent: ", storedCookieConsent)
+        console.log("Cookie Consent retrieved from storage: ", storedCookieConsent)
         setCookieConsent(storedCookieConsent)
+        console.log("SetCookieConsent: ", storedCookieConsent)
     }, [])
 
     // When cookieConsent changes, update the cookie consent status in local storage and send the consent to Google Analytics
     useEffect(() => {
         // 'denied' if cookieConsent is falsey, 'granted' otherwise
         const newValue = cookieConsent ? 'granted' : 'denied'
+        setLocalStorage("mot_cookie_consent", cookieConsent)
+        console.log("Cookie Consent updated to: ", cookieConsent)
 
-        if (typeof window !== 'undefined' && window.gtag) {
+
+/*         if (typeof window !== 'undefined' && window.gtag) {
             window.gtag("consent", 'update', {
                 'analytics_storage': newValue
             });
-        }
+        } */
 
-        setLocalStorage("mot_cookie_consent", cookieConsent)
-        console.log("Cookie Consent: ", cookieConsent)
+       
+        
     }, [cookieConsent]);
 
-    // If unset cookie (i.e. == null), show the cookie banner
+    // If cookie is set to true or false, the first ternary operator will hide the banner
+    // https://gaudion.dev/blog/setup-google-analytics-with-gdpr-compliant-cookie-consent-in-nextjs13
     return (
-        <div className={`my-10  ${cookieConsent != null ? "bg-red-500" : "bg-blue-300 flex"}  mx-auto max-w-max md:max-w-screen-sm
+        <div className={`my-10  ${cookieConsent != null ? " bg-red-400 hid" : " bg-green-700"}  mx-auto max-w-max md:max-w-screen-sm
             fixed bottom-0 left-0 right-0 
              px-3 md:px-4 py-3 justify-between items-center flex-col sm:flex-row gap-4  
              bg-gray-700 rounded-lg shadow`}>

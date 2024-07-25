@@ -57,8 +57,9 @@ export default function RootLayout({ children }) {
             <Navbar />
            
             <Space className='h-8' />
-            {children}
             <CookieBanner />
+            {children}
+      
             <Space className='h-8' />
           </div>
           <Footer />

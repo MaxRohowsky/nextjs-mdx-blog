@@ -113,29 +113,31 @@ export default async function Post({ params: { slug } }) {
 
   return (
     <div className="max-w-full flex flex-row  justify-center  md:items-start">
-      <article className="text-pretty w-full md:max-w-xl p-2">
-        <BlogBreadcrumb slug={slug} frontMatter={frontMatter} />
+      <div>
+        <article className="text-pretty w-full md:max-w-xl p-2">
+          <BlogBreadcrumb slug={slug} frontMatter={frontMatter} />
 
 
-        <Suspense fallback={<p className=' pt-5 h-11 w-10' />}>
-          <p className=' whitespace-nowrap text-neutral-500 pt-5'>
-            <Views slug={slug}/> views
-          </p>
-        </Suspense>
+          <Suspense fallback={<p className=' pt-5 h-11 w-10' />}>
+            <p className=' whitespace-nowrap text-neutral-500 pt-5'>
+              <Views slug={slug} /> views
+            </p>
+          </Suspense>
 
+          <MDXRemote
+            source={content}
+            options={options}
+            components={mdxComponents}
+          />
+        </article>
 
-
-
-        <MDXRemote
-          source={content}
-          options={options}
-          components={mdxComponents}
-        />
-      </article>
+      </div>
 
       <aside className="sticky md:pl-3 lg:pl-20 top-36 hidden md:block overflow-y-auto overflow-x-hidden max-h-[calc(100vh-15rem)] ">
         <TableOfContent headings={headings} frontMatter={frontMatter} />
       </aside>
+
+
     </div>
   );
 }

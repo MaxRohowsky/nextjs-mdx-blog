@@ -6,6 +6,10 @@
 import Image, { ImageProps } from "next/image";
 import type { MDXComponents } from "mdx/types";
 import { Info, Flame, BookType } from "lucide-react";
+import { Tweet } from 'react-tweet'
+import  YouTube  from "@/components/youtube-embed";
+
+
 
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -84,7 +88,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     Note: ({ children }) => (
-      <span className="bg-blue-50 dark:bg-blue-700 border-l-[3px] border-blue-500 p-4 relative rounded-sm my-8 block text-lg">
+      <span className="bg-blue-50 border-l-[3px] dark:bg-slate-900 border-blue-500 p-4 relative rounded-sm my-8 block text-lg">
         <span className="absolute top-0 left-0 transform -translate-y-1/2 translate-x-[-17px]">
           <Info
             className="bg-white dark:bg-slate-900 dark:text-white text-blue-500 rounded-full p-1"
@@ -96,7 +100,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     Define: ({ children, definition }) => (
-      <span className="relative group mr-2 underline decoration-dotted decoration-blue-500" style={{ textUnderlineOffset: "3px" }}>
+      <span className="relative group mr-2 underline decoration-dotted  decoration-blue-500" style={{ textUnderlineOffset: "3px" }}>
         {children}
         <span className="absolute top-0 right-0 font-semibold text-sm transform -translate-y-1 translate-x-2 text-blue-500">
           ?
@@ -116,7 +120,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     Warning: ({ children }) => (
-      <span className="bg-red-50 dark:bg-red-700 border-l-[3px] border-red-500 dark:border-red-300 p-4 relative rounded-sm my-8 block text-lg">
+      <span className="bg-red-50 dark:bg-slate-900 border-l-[3px] border-red-500  p-4 relative rounded-sm my-8 block text-lg">
         <span className="absolute top-0 left-0 transform -translate-y-1/2 translate-x-[-17px]">
           <Flame
             className="bg-white dark:bg-slate-900 text-red-500 rounded-full p-1"
@@ -127,6 +131,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </span>
     ),
 
+    Tweet: Tweet,
+
+    YouTube: YouTube,
+
+    
 
 
     ...components,

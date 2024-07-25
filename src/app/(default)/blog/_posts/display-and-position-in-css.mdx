@@ -1,6 +1,7 @@
 ---
 isPublished: true
 publishedOn: "2024-05-10"
+updatedOn: "2024-07-24"
 title: Display and Position in CSS
 subtitle: A post that explains the difference between the CSS display and position properties.
 excerpt: The display and position properties in CSS cause a lot of confusion. This post draws a line between the two with some examples.
@@ -29,21 +30,21 @@ It can take one of the following values: `static`, `relative`, `fixed`, `absolut
 
 - `static`: This is the default position value for all elements. They are not affected by top, bottom, left, and right properties.
   
-  <span className='static block border rounded-sm px-2'>
+  <span className='static block border rounded-sm px-2 dark:bg-black'>
     This `span` has `position: static`
   </span>
 
 - `relative`: Positions elements relative to their normal (i.e. static) position.
 Contrary to static, the top, bottom, left, and right properties do have an influence.
 
-  <span className='relative block border rounded-sm px-2 right-10'>
+  <span className='relative block border rounded-sm px-2 right-10 dark:bg-black'>
     This `span` has `position: relative` and `right: 40px`
   </span>
 
 - `fixed`: The positioning happens relative to the viewport, so the element stays in the same place even if you scroll
   (see the element at the bottom of your screen).
   
-  <span className='fixed block border bg-white rounded-sm px-2 bottom-0'>
+  <span className='fixed block border bg-white dark:bg-black rounded-sm px-2 bottom-0 z-10  '>
     This `span` has `position: fixed` and `bottom: 0px`
   </span>
 
@@ -52,7 +53,7 @@ Contrary to static, the top, bottom, left, and right properties do have an influ
   <Define definition="An element is called positioned when it has the CSS position property set to a value other than static.">_positioned_ ancestor</Define>.
   If there are no positioned ancestors, the positioning occurs relative to the document body.
   
-  {<span className='relative block border bg-white rounded-sm px-2 h-40 overflow-y-auto'>
+  {<span className='relative block border bg-white dark:bg-black rounded-sm px-2 h-40 overflow-y-auto'>
     <p>
     This parent <code>span</code> has <code>position: relative</code> and the <span className="text-blue-400 font-bold">blue </span> 
     child <code>span</code> has <code>position: absolute</code>, <code>bottom: 0px</code>, and <code>right: 0px</code>.
@@ -65,7 +66,7 @@ Contrary to static, the top, bottom, left, and right properties do have an influ
 
   {<span className='h-52 block overflow-y-auto border'>
     <span className='h-6 block px-2'><p>Scroll down on this element to see the sticky effect.</p></span>
-    <span className='sticky block border my-4  mx-2 bg-white rounded-sm p-2 top-0'><p>This <code>span</code> with <code>position: sticky</code> stays at the top.</p></span>
+    <span className='sticky block border my-4  mx-2 bg-white dark:bg-black rounded-sm p-2 top-0'><p>This <code>span</code> with <code>position: sticky</code> stays at the top.</p></span>
     <span className='block h-96'/>
   </span>}
 

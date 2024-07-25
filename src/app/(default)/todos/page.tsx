@@ -61,8 +61,10 @@ const initialTodos = [
   {id: 54, text: "on mobile devices the hover needs to work only when someone touches a post", completed: false, priority: 1 },
   {id: 55, text: "Add Code sandbox", completed: true, priority: 1 },
   {id: 55, text: "Youtube embeds", completed: false, priority: 1 },
-  {id: 55, text: "Twitter embeds", completed: false, priority: 1 },
+  {id: 55, text: "Twitter embeds", completed: true, priority: 1 },
   {id: 56, text: "Call to action X", completed: false, priority: 1 },
+  {id: 57, text: "Fix youtube embeds with opt in", completed: false, priority: 1 },
+  {id: 57, text: "Add gogoel analytics with opt in", completed: false, priority: 1 },
 ];
 
 // Sort initialTodos by priority in ascending order

@@ -75,27 +75,28 @@ HID usage (i.e., key event) into a scan code.
 <Caption>Image from my Device Manager</Caption>
 
 
-Image from my Device Manager
+
 ### Drivers
 In our ‘google.com’ example, the press of the enter key originates from a keyboard; therefore, the KBDHID.sys driver interfaces with keyboard class driver (KBDCLASS.sys). 
 This class driver, in turn, communicates with the Windows 32-bit Kernel (Win32K.sys) driver.
 
+<ZoomImage src="/posts/how-the-internet-works/kbdhid-and-kbdclass-files.png" alt="Dissected view of a USB cable" title="Dissected view of a USB cable" iconColor="text-white" />
+<Caption>kbdhid.sys and kbdclass.sys</Caption>
 
-kbdhid.sys and kbdclass.sys
 ### Active Window
-To identify the currently active window, Win32K.sys uses the GetForegroundWindow() API. This ensures that the key press event is addressed to the desired target
+To identify the currently active window, `Win32K.sys` uses the `GetForegroundWindow()` API. This ensures that the key press event is addressed to the desired target
 which is the browser window.
 
 ### Message Queue
-Next, the message dispatcher responsible for managing the flow of messages between the operating system and open applications calls SendMessage(hWnd, uMsg, wParam, lParam). 
-This adds a message to the queue for a specific window which is processed by the message processing function (WindowProc).
+Next, the message dispatcher responsible for managing the flow of messages between the operating system and open applications calls `SendMessage(hWnd, uMsg, wParam, lParam)`. 
+This adds a message to the queue for a specific window which is processed by the message processing function `WindowProc`.
 
 | Parameter | Name           | Description                                                                                   |
 |-----------|----------------|-----------------------------------------------------------------------------------------------|
-| hWnd      | Window handle  | Unique identifier assigned to each window                                                     |
-| Msg       | Message        | The message to be sent                                                                        |
-| wParam    | Word Parameter | Additional message-specific information                                                       |
-| lParam    | Long Parameter | Info about the key press, including repeat count, scan code, extended key flag, and key context code |
+| `hWnd`      | Window handle  | Unique identifier assigned to each window                                                     |
+| `Msg`       | Message        | The message to be sent                                                                        |
+| `wParam`    | Word Parameter | Additional message-specific information                                                       |
+| `lParam`    | Long Parameter | Info about the key press, including repeat count, scan code, extended key flag, and key context code |
 
 ## Browser’s URL Bar is Parsed and Request is Sent
 
@@ -134,8 +135,11 @@ necessary information (i.e., the IP that belongs to the domain).
 Root name servers hold information about top level domains (e.g., .com, .de, .co-uk, etc.). As ‘google.com’ ends with .com, the TLD name server that handles .com domains is queried. 
 This server, in turn, knows the authoritative name server that stores the DNS record for the ‘google.com’ domain and sends the query to it.
 
+<ZoomImage src="/posts/how-the-internet-works/dns-lookup.jpg" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
+<Caption>Adapted version of [Xiaoli Shen‘s](https://xiaolishen.medium.com/the-dns-lookup-journey-240e9a5d345c) DNS lookup Journey</Caption>
 
-Adapted version of Xiaoli Shen‘s DNS lookup Journey
+
+
 ### IP Address Identified
 The authoritative name server identifies the IP address for the domain and sends a response containing the IP back. And, along the way, the caches are 
 updated for future requests.
@@ -160,8 +164,9 @@ model layers. This model describes the different layers of abstraction that comp
 The HTTP request originates from the highest OSI model layer, the Application Layer (e.g., the browser). As the request traverses down the OSI layers, it undergoes further processing 
 and encapsulation until it reaches the lowest layer, the Physical Layer, where it is transmitted as binary over the physical network medium.
 
+<ZoomImage src="/posts/how-the-internet-works/osi-model.jpg" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
+<Caption>Credits: [Layer X](http://networking.layer-x.com/p040200-1.html)</Caption>
 
-Credits: Layer X
 ## Server Side Request Handling
 
 ### Receiving the Request
@@ -189,7 +194,9 @@ To understand how the browser processes the HTTP response from the server, it’
 - Data Persistence: Handles storage for cookies, cache, etc.
 - UI Backend: Used for drawing basic windows, boxes, buttons in the UI
 
-Credits: Browser Stack
+<ZoomImage src="/posts/how-the-internet-works/browser-components.jpg" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
+<Caption>Credits: [Browser Stack](https://www.browserstack.com/guide/browser-rendering-engine)</Caption>
+
 ### Document Object Model
 The browser begins by parsing the HTML document. It turns the HTML markup into a hierarchical structure known as the Document Object Model (DOM). 
 This parsing process involves identifying HTML tags, attributes, and text content to construct the DOM tree.
@@ -202,8 +209,9 @@ It initiates separate network requests to fetch these resources from the server.
 The browser proceeds to parse CSS stylesheets to create a CSS Object Model (CSSOM). The CSSOM represents the hierarchy of CSS rules and their associated properties, which 
 should be applied to the corresponding HTML elements in the DOM tree.
 
+<ZoomImage src="/posts/how-the-internet-works/dom-cssom.png" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
+<Caption>Credits: [web.dev](https://web.dev/articles/critical-rendering-path/render-tree-construction)</Caption>
 
-Credits: web.dev
 
 ### Render Tree
 After the DOM tree and CSSOM are fully constructed, the browser combines them to create a unified representation known as the render tree.

@@ -17,12 +17,12 @@ export const popularContent = {
       },
       {
         "type": "internal",
-        "href": "blog/summary-of-javascript",
+        "href": "blog/javascript-in-a-nutshell",
         "text": "JavaScript in a Nutshell"
       },
       {
         "type": "internal",
-        "href": "blog/core-beliefs",
+        "href": "blog/my-core-beliefs",
         "text": "My Core Principles and Beliefs"
       }
     ]

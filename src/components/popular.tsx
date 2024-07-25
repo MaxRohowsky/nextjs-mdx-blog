@@ -2,12 +2,12 @@ export const popularContent = {
     "links": [
       {
         "type": "internal",
-        "href": "#",
-        "text": "Building a LinkedIn Post Scheduler (out soon)"
+        "href": "https://chromewebstore.google.com/detail/click-to-copy/fonpjogfddpklefillfepifbcikebelh",
+        "text": "Click to Copy Chrome Extension"
       },
       {
         "type": "external",
-        "href": "https://github.com/maxontech/neft-flappy-bird",
+        "href": "https://youtu.be/zsGvCwaaMOI",
         "text": "Neuro Evolution with Fixed Topologies"
       },
       {

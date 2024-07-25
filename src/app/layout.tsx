@@ -55,10 +55,10 @@ export default function RootLayout({ children }) {
         <div className=' max-w-screen-lg w-full flex flex-col min-h-full justify-between'>
           <div>
             <Navbar />
-            <CookieBanner />
+           
             <Space className='h-8' />
             {children}
-
+            <CookieBanner />
             <Space className='h-8' />
           </div>
           <Footer />

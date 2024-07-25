@@ -20,7 +20,7 @@ export default function CookieBanner() {
         // 'denied' if cookieConsent is falsey, 'granted' otherwise
         const newValue = cookieConsent ? 'granted' : 'denied'
 
-        if (typeof window !== 'undefined') {
+        if (typeof window !== 'undefined' && window.gtag) {
             window.gtag("consent", 'update', {
                 'analytics_storage': newValue
             });

@@ -4,7 +4,7 @@
 import Script from 'next/script'
 import {usePathname, useSearchParams} from 'next/navigation'
 import { useEffect } from "react";
-import {pageview} from "@/lib/gtag-helper"
+/* import {pageview} from "@/lib/gtag-helper" */
 
 export default function GoogleAnalytics({GA_MEASUREMENT_ID} : {GA_MEASUREMENT_ID : string}){
 
@@ -12,10 +12,13 @@ export default function GoogleAnalytics({GA_MEASUREMENT_ID} : {GA_MEASUREMENT_ID
     const searchParams = useSearchParams()
 
     useEffect(() => {
-        const url = pathname + searchParams.toString()
-    
-        pageview(GA_MEASUREMENT_ID, url);
-        
+        const url = pathname + searchParams.toString();
+
+        if (typeof window !== 'undefined' && window.gtag) {
+            window.gtag('config', GA_MEASUREMENT_ID, {
+                page_path: url,
+            });
+        }
     }, [pathname, searchParams, GA_MEASUREMENT_ID]);
 
     // Script is added to the head of the document. To Begin, consent is denied.

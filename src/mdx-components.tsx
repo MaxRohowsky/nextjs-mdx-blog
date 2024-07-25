@@ -8,7 +8,7 @@ import type { MDXComponents } from "mdx/types";
 import { Info, Flame, BookType } from "lucide-react";
 import { Tweet } from 'react-tweet'
 import  YouTube  from "@/components/youtube-embed";
-
+import RoundedImage from "@/components/rounded-image";
 
 
 
@@ -53,14 +53,24 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </a>
     ),
-    img: (props) => (
+    Image : (props) => (
+      <Image
+      width={400}
+      height={400}
+      className={`mx-auto shadow-sm rounded-sm bg-red-400  ${props.className}`}
+      src={props.src as string}
+      {...(props as ImageProps)}
+    />
+    ),
+/*     Image: (props) => (
       <Image
         width={400}
         height={400}
-        className="mx-auto shadow-md rounded-sm"
+        className={`mx-auto shadow-md rounded-sm bg-red-400 hidden ${props.className}`}
+        src={props.src as string}
         {...(props as ImageProps)}
       />
-    ),
+    ), */
     ul: ({ children }) => <ul className="list-disc pl-5 my-4">{children}</ul>,
     ol: ({ children }) => (
       <ol className="list-decimal pl-5 my-4">{children}</ol>
@@ -82,7 +92,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     pre: ({ children }) => <pre className=" rounded-md">{children}</pre>,
 
     Caption: ({ children }) => (
-      <figcaption className="text-neutral-500 text-xs mt-2 text-center">
+      <figcaption className="text-neutral-500 text-xs my-2 text-center">
         {children}
       </figcaption>
     ),
@@ -130,6 +140,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </span>
     ),
+
+
 
     Tweet: Tweet,
 

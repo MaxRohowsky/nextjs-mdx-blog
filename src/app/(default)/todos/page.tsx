@@ -52,10 +52,7 @@ const initialTodos = [
   { id: 48, text: 'Read more in dark mode needs other color', completed: true, priority: 1 },
   { id: 49, text: 'Links on langing need to work', completed: true, priority: 1 },
   { id: 50, text: 'Sidenav needs to stay a fixed size', completed: true, priority: 2 },
-
   { id: 51, text: 'Fix "jumping" date formats in posts', completed: true, priority: 1 }, 
-  
-  
   {id: 52, text: "It doesnt make sense to have every blog post in a folder and then page. That's silly see https://github.com/leerob/leerob.io/tree/main/content", completed: true, priority: 1 },
   {id: 53, text: "The way popular content is handled on the landing page is silly, a flag in the frontmatter in both projects and posts would be better", completed: false, priority: 1 },
   {id: 54, text: "on mobile devices the hover needs to work only when someone touches a post", completed: false, priority: 1 },

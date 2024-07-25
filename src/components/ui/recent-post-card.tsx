@@ -28,7 +28,7 @@ export default function RecentPostCard({
               {item.title}
               <Suspense fallback={<span className="w-[90px]" />}>
                 <span
-                  className="flex flex-row text-blue-500 items-center whitespace-nowrap pl-2 pr-5 text-lg font-normal
+                  className="flex flex-row text-blue-500 items-center whitespace-nowrap pl-2 sm:pr-5 text-lg font-normal
                     sm:text-neutral-200 group-hover:text-blue-500"
                 >
                   <ViewCounter allViews={allViews} slug={item.slug} />

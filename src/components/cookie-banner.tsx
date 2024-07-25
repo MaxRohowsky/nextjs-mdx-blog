@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { getLocalStorage, setLocalStorage } from '@/lib/storage-helper';
 
 export default function CookieBanner() {
-    // By default, the cookie is unset (neither accepted nor denied) so we set it to null
+    // By default, the cookie is false 
     const [cookieConsent, setCookieConsent] = useState(false);
 
     // Get the cookie consent status from local storage
@@ -32,9 +32,9 @@ export default function CookieBanner() {
 
     // If unset cookie (i.e. == null), show the cookie banner
     return (
-        <div className={`my-10  ${cookieConsent == null ? "bg-green-700" : "bg-red-700 hid"}  mx-auto max-w-max md:max-w-screen-sm
+        <div className={`my-10  ${cookieConsent != null ? "bg-red-500" : "bg-blue-300 flex"}  mx-auto max-w-max md:max-w-screen-sm
             fixed bottom-0 left-0 right-0 
-            flex px-3 md:px-4 py-3 justify-between items-center flex-col sm:flex-row gap-4  
+             px-3 md:px-4 py-3 justify-between items-center flex-col sm:flex-row gap-4  
              bg-gray-700 rounded-lg shadow`}>
 
             <div className='text-center'>

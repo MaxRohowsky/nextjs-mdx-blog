@@ -34,7 +34,7 @@ completing an electrical circuit. And this signals to the keyboard controller th
 Most keyboards have a circuit layout designed in the shape of a grid. That’s smart because each key needs to be uniquely identifiable which works 
 well with rows and columns (similar to a chessboard). When the ‘enter’ key bottoms out, the circuit between a specific row and column is completed. Here’s a simplified
  illustration of this:
-<Image src="/posts/how-the-internet-works/key-matrix.gif" alt="Alt text" title="Optional title"  />
+<ZoomImage src="/posts/how-the-internet-works/key-matrix.gif" alt="Alt text" title="Optional title"  />
 <Caption>Credits: [pcbheaven](https://pcbheaven.com/wikipages/How_Key_Matrices_Works/)</Caption>
 
 
@@ -46,7 +46,7 @@ The controller on the keyboard detects the row and column information that corre
 ### USB Cable
 The USB cable connects the keyboard to the computer and facilitates the ‘serial’ (i.e. one bit at a time in sequence) data transfer. The diagram below shows
 the structure of a USB cable.
-<Image src="/posts/how-the-internet-works/usb-cable-dissection.png" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
+<ZoomImage src="/posts/how-the-internet-works/usb-cable-dissection.png" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
 <Caption>Credits: [Ron Mattino](https://www.youtube.com/watch?v=yS_dAvOGeWg)</Caption>
 
 
@@ -59,7 +59,7 @@ The most common type of USB cables (USB 1.x and 2.0) have four wires: two for po
 Inside of the USB cable, data is transferred using differential signaling over the D+ and D- wires. This signaling technique uses two complementary signals to transmit 
 information. One wire carries the signal and the other carries the inverted signal as illustrated below.
 
-<Image src="/posts/how-the-internet-works/usb-differential-signal.webp" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
+<ZoomImage src="/posts/how-the-internet-works/usb-differential-signal.webp" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
 <Caption>Credits: [All about Circuits](https://www.allaboutcircuits.com/technical-articles/the-why-and-how-of-differential-signaling/)</Caption>
 
 ### Packet Transfer
@@ -70,6 +70,9 @@ the host USB controller it is decoded and interpreted by the keyboard device dri
 ### Key Press Event
 The key press is passed to Microsoft’s Keyboard Human Interface Device (KBDHID.sys) kernel-mode driver for USB devices, which converts the (Human Interface Device) 
 HID usage (i.e., key event) into a scan code.
+
+<ZoomImage src="/posts/how-the-internet-works/KBDHID-screenshot.png" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
+<Caption>Image from my Device Manager</Caption>
 
 
 Image from my Device Manager

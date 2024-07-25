@@ -8,7 +8,7 @@ import type { MDXComponents } from "mdx/types";
 import { Info, Flame, BookType } from "lucide-react";
 import { Tweet } from 'react-tweet'
 import  YouTube  from "@/components/youtube-embed";
-import RoundedImage from "@/components/rounded-image";
+import ZoomImage from "@/components/zoom-image";
 
 
 
@@ -57,11 +57,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <Image
       width={400}
       height={400}
-      className={`mx-auto shadow-sm rounded-sm bg-red-400  ${props.className}`}
-      src={props.src as string}
+      className={`mx-auto shadow-sm rounded-sm  ${props.className}`}
       {...(props as ImageProps)}
     />
     ),
+    ZoomImage: ZoomImage,
 /*     Image: (props) => (
       <Image
         width={400}

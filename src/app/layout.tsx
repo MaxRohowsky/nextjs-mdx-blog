@@ -21,19 +21,37 @@ export const metadata = {
     default: 'Max Rohowsky | Software Engineering and Indie Hacking Blog',
     template: '%s | Max on Tech'
   },
-  description: 'A Blog on Software Engineering and Indie Hacking by Max Rohowsky'
+  description: 'A Blog on Software Engineering and Indie Hacking by Max Rohowsky',
+  openGraph: {
+    title: 'Max Rohowsky',
+    description: 'Software Engineering & Indie Hacking',
+    url: 'https://maxontech.io',
+    siteName: 'Max Rohowsky',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Max Rohowsky',
+    card: 'summary_large_image',
+  },
+  verification: {
+    google: 'NVnL5jsghoSo_MaMO9El0UJE_I2k4FcLdA-BmHFnbEk'
+  },
 }
+
 
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={dmSans.className}>
-      <body className='mx-1 sm:mx-2 md:mx-4 flex justify-center'>
-        <div className=' max-w-screen-lg w-full flex flex-col '>
+      <body className='mx-1 sm:mx-2 md:mx-4 flex justify-center min-h-svh'>
+        <div className=' max-w-screen-lg w-full flex flex-col min-h-full justify-between'>
+          <div>
           <Navbar />
           <Space className='h-8' />
           {children}
           <Space className='h-8' />
+          </div>
           <Footer />
         </div>
       </body>

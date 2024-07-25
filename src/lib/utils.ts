@@ -30,7 +30,7 @@ export function getProjectTags(): Array<string> {
  * Get all unique tags used in blog posts in an array.
  * @returns An array of all unique tags used in blog posts.
  */
-export function getAllBlogTags(blogItems: BlogItem[]): Array<string> {
+export function getAllBlogTags(blogItems: FrontMatter[]): Array<string> {
   const allTags = blogItems.flatMap(blog => blog.tags);
   return Array.from(new Set(allTags));
 }
@@ -43,7 +43,7 @@ export function getAllBlogTags(blogItems: BlogItem[]): Array<string> {
  * @param slug - The slug of the blog item to retrieve.
  * @returns The blog item with the matching slug, or undefined if not found.
  */
-export function getBlogbySlug(items: BlogItem[], slug: string): BlogItem | undefined {
+export function getBlogbySlug(items: FrontMatter[], slug: string): FrontMatter | undefined {
   return items.find(item => item.slug === slug);
 }
 
@@ -54,7 +54,7 @@ export function getBlogbySlug(items: BlogItem[], slug: string): BlogItem | undef
  * @param ascending Determines whether the items should be sorted in ascending order. Default is false (descending order).
  * @returns The sorted array of items.
  */
-export function sortBlogsByDate(items: BlogItem[], ascending: boolean = false): BlogItem[] {
+export function sortBlogsByDate(items: FrontMatter[], ascending: boolean = false): FrontMatter[] {
   // Filter out entries with invalid dates and log mistakes
   const validItems = items.filter(item => {
     const isValidDate = !isNaN(new Date(item.publishedOn).getTime());
@@ -87,7 +87,7 @@ export function sortBlogsByDate(items: BlogItem[], ascending: boolean = false): 
  * @param options The filter options e.g., { published: true, featured: true, active: true, monetized: false, tags: ['tag1', 'tag2'] }.
  * @returns The filtered projects as an array.
  */
-export function getFilteredProjects(options: ProjectFilterOptions = {}): ProjectItem[] {
+export function getFilteredProjects(options: Filter = {}): ProjectItem[] {
   const allProjects = projects.map(project => ({
     ...project,
     // Convert the date string to the desired format
@@ -103,12 +103,7 @@ export function getFilteredProjects(options: ProjectFilterOptions = {}): Project
   }));
 
   const filteredProjects = allProjects.filter((project) => {
-    if (options.isPublished !== undefined && options.isPublished !== project.isPublished) {
-      return false;
-    }
-    if (options.isFeatured !== undefined && options.isFeatured !== project.isFeatured) {
-      return false;
-    }
+
     if (options.tags !== undefined && !options.tags.every(tag => project.tags.includes(tag))) {
       return false;
     }

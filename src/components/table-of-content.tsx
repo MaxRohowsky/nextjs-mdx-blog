@@ -1,6 +1,5 @@
-'use client'
 import Link from 'next/link'
-
+import { Heading } from "extract-md-headings";
 
 const getListItemStyle = (level) => {
     return {
@@ -12,33 +11,37 @@ const getListItemStyle = (level) => {
 }
 
 
-export default function TableOfContent({ headings, frontMatter }) {
+function formatDate(date: string) {
+    return new Date(date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    });
+}
+
+
+export default function TableOfContent({ headings, frontMatter }: { headings: Array<Heading>, frontMatter: FrontMatter }) {
+
 
 
     return (
 
         <>
-
-
-
             <div className="flex flex-col flex-wrap gap-2 transition-all duration-300 pb-8 w-72">
                 <span className="text-sm font-medium uppercase text-neutral-500 dark:text-neutral-300 pb-2">
                     Published
                 </span>
-                <p>{frontMatter.publishedOn}</p>
+                <p>{formatDate(frontMatter.publishedOn)}</p>
             </div>
 
-
-            <div className="flex flex-col flex-wrap gap-2 pb-8 transition-all duration-300">
-                <span className="text-sm font-medium uppercase text-neutral-500 dark:text-neutral-300 pb-2">
-                    Last Update
-                </span>
-                <p>{frontMatter.publishedOn}</p>
-            </div>
-
-
-
-
+            {frontMatter.updatedOn && (
+                <div className="flex flex-col flex-wrap gap-2 pb-8 transition-all duration-300">
+                    <span className="text-sm font-medium uppercase text-neutral-500 dark:text-neutral-300 pb-2">
+                        Last Update
+                    </span>
+                    <p>{formatDate(frontMatter.updatedOn)}</p>
+                </div>
+            )}
 
             {headings.filter(heading => heading.level > 1).length > 0 &&
                 <nav className='pb-8'>
@@ -49,7 +52,6 @@ export default function TableOfContent({ headings, frontMatter }) {
                         {headings.map((heading) => (
                             <li
                                 key={heading.id}
-                                id={heading.id}
                                 style={getListItemStyle(heading.level)}
                             >
                                 <Link

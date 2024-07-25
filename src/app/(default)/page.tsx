@@ -3,18 +3,20 @@ import Space from '@/components/space';
 import Content from '@/components/content';
 import { sortBlogsByDate } from '@/lib/utils';
 import { getAllBlogItems } from '@/lib/server-actions';
+import { getViewsCount } from '@/lib/supabase/queries';
 
 export default async function Home() {
-  const allBlogItems = await getAllBlogItems()
-  const blogs = sortBlogsByDate(allBlogItems).slice(0, 6);
+  let allBlogItems = await getAllBlogItems()
+  let blogs = sortBlogsByDate(allBlogItems).slice(0, 6);
+  let allViews = await getViewsCount();
 
   return (
     <>
-      <Hero/>
+      <Hero />
 
       <Space className='h-8 lg:h-16' />
 
-      <Content blogs={blogs}/>
+      <Content allViews={allViews} blogs={blogs} />
     </>
   )
 }

@@ -6,7 +6,7 @@ import Image from 'next/image';
 // blog cards: https://dev.to/frontendsolutions/13-css-blog-cards-54d7
 
 
-export default function Card({ item }: { item: BlogItem | ProjectItem; }) {
+export default function Card({ item }: { item: FrontMatter | ProjectItem; }) {
 
     const link = 'externalLink' in item ? item.externalLink : `/blog/${item.slug}`;
 

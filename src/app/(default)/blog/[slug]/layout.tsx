@@ -1,13 +1,4 @@
 
-
-
-
-
-
-
-
-
-
 export default function MdxLayout({
   children,
 }: {

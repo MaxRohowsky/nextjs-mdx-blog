@@ -7,6 +7,9 @@ import Footer from '@/components/footer';
 import Space from '@/components/space';
 import { DM_Sans } from 'next/font/google';
 
+import GoogleAnalytics from '@/components/google-analytics';
+import CookieBanner from '@/components/cookie-banner';
+
 // Font for the entire website
 export const dmSans = DM_Sans(
   {
@@ -44,12 +47,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={dmSans.className}>
+      <GoogleAnalytics GA_MEASUREMENT_ID='G-1CHMGCDEXS'/>
       <body className='mx-1 sm:mx-2 md:mx-4 flex justify-center min-h-svh'>
         <div className=' max-w-screen-lg w-full flex flex-col min-h-full justify-between'>
           <div>
           <Navbar />
+          <CookieBanner />
           <Space className='h-8' />
           {children}
+          
           <Space className='h-8' />
           </div>
           <Footer />

@@ -61,7 +61,12 @@ const initialTodos = [
   {id: 55, text: "Twitter embeds", completed: true, priority: 1 },
   {id: 56, text: "Call to action X", completed: false, priority: 1 },
   {id: 57, text: "Fix youtube embeds with opt in", completed: false, priority: 1 },
-  {id: 57, text: "Add gogoel analytics with opt in", completed: false, priority: 1 },
+  {id: 57, text: "Add googel analytics with opt in", completed: false, priority: 1 },
+  {id: 57, text: "on mobile the viewcount needs no right padding. remove it", completed: false, priority: 1 },
+  {id: 57, text: "ZoomImage only available on desktop not mobile. On mobile it makes the images smaller", completed: false, priority: 1 },
+  {id: 57, text: "on mobile the breadcrum has a silly line break. remove it", completed: false, priority: 1 },
+  {id: 57, text: "Menu should automatically close when i select something", completed: false, priority: 1 },
+  {id: 57, text: "On mobile fix blog post css disp vs postion - sticky explainer is broken", completed: false, priority: 1 },
 ];
 
 // Sort initialTodos by priority in ascending order

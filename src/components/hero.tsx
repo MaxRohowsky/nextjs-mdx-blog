@@ -37,7 +37,7 @@ export default function Hero() {
       </div>
 
       <Image className='absolute right-0 top-0 h-full -mr-8 mt-2 sm:-mr-10 md:-mr-1 ' src='/dot-hero.svg' alt='hero' height='180' width='180' />
-      <Image className='absolute right-0 top-14 transform scale-10 hidden dark:block' src='/deal-with-it.png' alt='hero' height='10' width='200' />
+      <Image className='absolute top-10 -right-8 sm:-right-11 sm:top-10 md:right-0 md:top-14 transform scale-10 hidden dark:block' src='/deal-with-it.png' alt='hero' height='10' width='200' />
 {/*       <Image
         className='absolute right-[85px] top-[165px]  transform scale-10 hidden dark:block'
         src='/mouth.png'

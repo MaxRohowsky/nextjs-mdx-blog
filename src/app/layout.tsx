@@ -48,9 +48,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={dmSans.className}>
-  {/*     <Suspense fallback={null}> */}
+      <Suspense fallback={null}>
         <GoogleAnalytics GA_MEASUREMENT_ID='G-1CHMGCDEXS' />
-{/*       </Suspense> */}
+      </Suspense>
       <body className='mx-1 sm:mx-2 md:mx-4 flex justify-center min-h-svh'>
         <div className=' max-w-screen-lg w-full flex flex-col min-h-full justify-between'>
           <div>

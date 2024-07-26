@@ -9,6 +9,7 @@ import { useEffect } from "react";
 export default function GoogleAnalytics({GA_MEASUREMENT_ID} : {GA_MEASUREMENT_ID : string}){
 
     const pathname = usePathname()
+    // SearchParams is a client side function.
     const searchParams = useSearchParams()
 
     useEffect(() => {

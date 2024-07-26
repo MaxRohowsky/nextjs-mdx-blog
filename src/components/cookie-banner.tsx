@@ -5,6 +5,7 @@ import { getLocalStorage, setLocalStorage } from "@/lib/storage-helper";
 import { Button } from "./ui/button";
 import { ToastAction } from "@/components/ui/toast"
 import { useToast } from "@/components/ui/use-toast"
+import Image from "next/image";
 
 export default function CookieBanner() {
     let [cookieConsent, setCookieConsent] = useState(null);
@@ -45,29 +46,35 @@ export default function CookieBanner() {
     return (
         <div
             className={`my-10 ${cookieConsent == null ? "" : "hidden"} fixed bottom-0 left-0 right-0 sm:left-auto sm:mr-6
-        mx-auto max-w-fit flex items-center justify-between gap-2 rounded-sm
-         px-3 py-3 flex-row md:max-w-screen-sm md:px-4 bg-white shadow-md border border-gray-200 z-50`}
+        mx-auto max-w-fit   z-30`}
         >
-            <div className="text-center">
+            <div className="relative">
+                <Image src="/pookie.png" alt="Cookie" className="absolute -top-[34px] right-7   " width={50} height={50} />
 
-                <p className="mr-3">
-                    This site uses cookies:
-                </p>
+                <div className=" bg-white dark:bg-black border border-gray-200 dark:border-gray-600 flex items-center justify-between gap-2 rounded-sm
+         px-3 py-3 flex-row md:max-w-screen-sm md:px-4  shadow-md ">
+                    <div className="text-center">
 
-            </div>
-            <div className="flex gap-2">
-                <Button
-                    variant="outline"
-                    onClick={() => setCookieConsent(false)}
-                >
-                    Decline
-                </Button>
-                <Button
+                        <p className="mr-3">
+                            This site uses cookies:
+                        </p>
 
-                    onClick={() => setCookieConsent(true)}
-                >
-                    Accept
-                </Button>
+                    </div>
+                    <div className="flex gap-2">
+                        <Button
+                            variant="outline"
+                            onClick={() => setCookieConsent(false)}
+                        >
+                            Decline
+                        </Button>
+                        <Button
+
+                            onClick={() => setCookieConsent(true)}
+                        >
+                            Accept
+                        </Button>
+                    </div>
+                </div>
             </div>
         </div>
     );

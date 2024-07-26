@@ -9,7 +9,7 @@ import {
 
 export default function BlogBreadcrumb({ slug, frontMatter } : { slug: string, frontMatter: FrontMatter }) {
     return (
-        <Breadcrumb className="max-w-full">
+        <Breadcrumb >
             <BreadcrumbList>
                 <BreadcrumbItem>
                     <BreadcrumbLink asChild>
@@ -29,10 +29,7 @@ export default function BlogBreadcrumb({ slug, frontMatter } : { slug: string, f
 
                 <BreadcrumbItem>
                     <BreadcrumbLink asChild>
-                        <Link
-                            href={"/blog/" + slug}
-                            className=" overflow-hidden text-ellipsis w-80 whitespace-nowrap"
-                        >
+                        <Link href={"/blog/" + slug} >
                             {frontMatter.title}
                         </Link>
                     </BreadcrumbLink>

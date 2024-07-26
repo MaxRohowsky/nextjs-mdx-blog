@@ -28,12 +28,12 @@ const ZoomImage = (props: ZoomImageProps) => {
         </div>
         {isFullWidth ? (
           <ZoomOut
-            className={`absolute bottom-2 right-2 cursor-pointer ${iconColor}`}
+            className={`absolute bottom-2 right-2 cursor-pointer hidden md:block ${iconColor}`}
             onClick={handleIconClick}
           />
         ) : (
           <ZoomIn
-            className={`absolute bottom-2 right-2 cursor-pointer ${iconColor}`}
+            className={`absolute bottom-2 right-2 cursor-pointer hidden md:block ${iconColor}`}
             onClick={handleIconClick}
           />
         )}

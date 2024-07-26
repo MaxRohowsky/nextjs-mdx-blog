@@ -10,7 +10,7 @@ const initialTodos = [
   { id: 5, text: 'Bonus: when i filter for a tag, that tag should turn green.', completed: false, priority: 3 },
   { id: 6, text: 'Add a decode effect: https://codepen.io/theodore-q/pen/mJqVZo to something because it\'s cool.', completed: false, priority: 3 },
   { id: 7, text: 'Correct the privacy policy. (Borrring)', completed: false, priority: 3 },
-  { id: 8, text: 'Migrate all the posts from WP to .mdx.', completed: false, priority: 1 },
+  { id: 8, text: 'Migrate all the posts from WP to .mdx.', completed: true, priority: 1 },
   { id: 9, text: 'Deploy!', completed: true, priority: 1 },
   { id: 10, text: 'Animate the light mode dark mode toggle.', completed: true, priority: 2 },
   { id: 11, text: 'Add viewcount to this blog.', completed: true, priority: 2 },
@@ -61,7 +61,12 @@ const initialTodos = [
   {id: 55, text: "Twitter embeds", completed: true, priority: 1 },
   {id: 56, text: "Call to action X", completed: false, priority: 1 },
   {id: 57, text: "Fix youtube embeds with opt in", completed: false, priority: 1 },
-  {id: 57, text: "Add gogoel analytics with opt in", completed: false, priority: 1 },
+  {id: 57, text: "Add googel analytics with opt in", completed: true, priority: 1 },
+  {id: 57, text: "on mobile the viewcount needs no right padding. remove it", completed: true, priority: 1 },
+  {id: 57, text: "ZoomImage only available on desktop not mobile. On mobile it makes the images smaller", completed: false, priority: 1 },
+  {id: 57, text: "on mobile the breadcrum has a silly line break. remove it", completed: true, priority: 1 },
+  {id: 57, text: "Menu should automatically close when i select something", completed: false, priority: 1 },
+  {id: 57, text: "On mobile fix blog post css disp vs postion - sticky explainer is broken", completed: false, priority: 1 },
 ];
 
 // Sort initialTodos by priority in ascending order

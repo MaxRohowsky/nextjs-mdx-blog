@@ -5,34 +5,36 @@ import { useState, useEffect } from 'react';
 import { getLocalStorage, setLocalStorage } from '@/lib/storage-helper';
 
 export default function CookieBanner() {
-    // By default, the cookie is false 
-    const [cookieConsent, setCookieConsent] = useState(null);
-    //console.log("Cookie Consent initial value: ", cookieConsent)
-    // Get the cookie consent status from local storage
+
+    let [cookieConsent, setCookieConsent] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
-        const storedCookieConsent = getLocalStorage("mot_cookie_consent", null)
+        let storedCookieConsent = getLocalStorage("mot_cookie_consent", null)
         console.log("Cookie Consent retrieved from storage: ", storedCookieConsent)
         setCookieConsent(storedCookieConsent)
-        console.log("SetCookieConsent: ", storedCookieConsent)
+        setIsLoading(false);
     }, [])
 
-    // When cookieConsent changes, update the cookie consent status in local storage and send the consent to Google Analytics
+
     useEffect(() => {
-        // 'denied' if cookieConsent is falsey, 'granted' otherwise
+        if (cookieConsent !== null) {
+            setLocalStorage('mot_cookie_consent', cookieConsent);
+          }
+
         const newValue = cookieConsent ? 'granted' : 'denied'
-        setLocalStorage("mot_cookie_consent", cookieConsent)
-        console.log("Cookie Consent updated to: ", cookieConsent)
 
-
-/*         if (typeof window !== 'undefined' && window.gtag) {
+       if (typeof window !== 'undefined' && window.gtag) {
             window.gtag("consent", 'update', {
                 'analytics_storage': newValue
             });
-        } */
+        } 
 
-       
-        
     }, [cookieConsent]);
+
+    if (isLoading || cookieConsent !== null) {
+        return null;
+      }
 
     // If cookie is set to true or false, the first ternary operator will hide the banner
     // https://gaudion.dev/blog/setup-google-analytics-with-gdpr-compliant-cookie-consent-in-nextjs13

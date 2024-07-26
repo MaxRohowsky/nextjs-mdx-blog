@@ -7,7 +7,6 @@ import React, { Suspense } from 'react';
 
 import Space from '@/components/space';
 import { DM_Sans } from 'next/font/google';
-import { Toaster } from "@/components/ui/toaster"
 
 import GoogleAnalytics from '@/components/google-analytics';
 import CookieBanner from '@/components/cookie-banner';
@@ -60,7 +59,7 @@ export default function RootLayout({ children }) {
             <Space className='h-8' />
 
             {children}
-            <Toaster />
+    
             <Space className='h-8' />
           </div>
           <CookieBanner />

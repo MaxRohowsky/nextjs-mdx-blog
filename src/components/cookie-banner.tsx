@@ -3,17 +3,14 @@
 import { useState, useEffect } from "react";
 import { getLocalStorage, setLocalStorage } from "@/lib/storage-helper";
 import { Button } from "./ui/button";
-import { ToastAction } from "@/components/ui/toast"
-import { useToast } from "@/components/ui/use-toast"
 import Image from "next/image";
 
 export default function CookieBanner() {
-    let [cookieConsent, setCookieConsent] = useState(null);
+    const [cookieConsent, setCookieConsent] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-    const { toast } = useToast()
 
     useEffect(() => {
-        let storedCookieConsent = getLocalStorage("mot_cookie_consent", null);
+        const storedCookieConsent = getLocalStorage("mot_cookie_consent", null);
         console.log("Cookie Consent retrieved from storage: ", storedCookieConsent);
         setCookieConsent(storedCookieConsent);
         setIsLoading(false);
@@ -46,7 +43,7 @@ export default function CookieBanner() {
     return (
         <div
             className={`my-10 ${cookieConsent == null ? "" : "hidden"} fixed bottom-0 left-0 right-0 sm:left-auto sm:mr-6
-        mx-auto max-w-fit   z-30`}
+        mx-auto max-w-fit z-30`}
         >
             <div className="relative">
                 <Image src="/pookie.png" alt="Cookie" className="absolute -top-[34px] right-7   " width={50} height={50} />

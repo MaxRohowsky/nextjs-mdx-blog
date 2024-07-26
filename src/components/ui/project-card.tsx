@@ -30,7 +30,7 @@ export default function Card({ item }: { item: FrontMatter | ProjectItem }) {
 
           <div className="flex">
             <div>
-              <h3 className="font-semibold transition-all duration-300 text-blue-500 sm:text-black group-hover:text-blue-500 md:text-xl">
+              <h3 className="font-semibold transition-all duration-300 text-blue-500 sm:text-black sm:dark:text-white group-hover:text-blue-500 md:text-xl">
                 {item.title}
               </h3>
               <h4
@@ -59,12 +59,11 @@ export default function Card({ item }: { item: FrontMatter | ProjectItem }) {
           </div>
 
           <p
-            className="flex cursor-pointer gap-2 text-sm font-semibold text-neutral-600 sm:opacity-20 transition-all
-              duration-300 group-hover:opacity-100 md:text-base"
+            className="flex cursor-pointer gap-2 text-sm md:text-base"
           >
             View Project
             <span className="pt-[1px]">
-              <ArrowRight />
+              <ArrowRight className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </span>
           </p>
         </a>

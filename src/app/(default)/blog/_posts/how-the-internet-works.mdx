@@ -36,7 +36,11 @@ completing an electrical circuit. And this signals to the keyboard controller th
 Most keyboards have a circuit layout designed in the shape of a grid. That’s smart because each key needs to be uniquely identifiable which works 
 well with rows and columns (similar to a chessboard). When the enter key bottoms out, the circuit between a specific row and column is completed. Here’s a simplified
  illustration of this:
+<<<<<<< Updated upstream
 <ZoomImage src="/posts/how-the-internet-works/key-matrix.gif" alt="Alt text" title="Optional title"  />
+=======
+<Image src="/posts/how-the-internet-works/key-matrix.gif" alt="Key matrix animation" title="Key matrix animation"  />
+>>>>>>> Stashed changes
 <Caption>Credits: [pcbheaven](https://pcbheaven.com/wikipages/How_Key_Matrices_Works/)</Caption>
 
 
@@ -61,7 +65,7 @@ The most common type of USB cables (USB 1.x and 2.0) have four wires: two for po
 Inside of the USB cable, data is transferred using differential signaling over the D+ and D- wires. This signaling technique uses two complementary signals to transmit 
 information. One wire carries the signal and the other carries the inverted signal as illustrated below.
 
-<ZoomImage src="/posts/how-the-internet-works/usb-differential-signal.webp" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
+<ZoomImage src="/posts/how-the-internet-works/usb-differential-signal.webp" alt="USB differential signal" title="Usb differential signal"  />
 <Caption>Credits: [All about Circuits](https://www.allaboutcircuits.com/technical-articles/the-why-and-how-of-differential-signaling/)</Caption>
 
 ### Packet Transfer
@@ -77,7 +81,7 @@ The key press is passed to Microsoft’s **K**ey**b**oar**d** **H**uman **I**nte
 ### Drivers
 In our ‘google.com’ example, the press of the enter key originates from a keyboard; therefore, the `KBDHID.sys` driver interfaces with keyboard class driver `KBDCLASS.sys`. 
 This class driver, in turn, communicates with the Windows 32-bit Kernel `Win32K.sys` driver.
-<ZoomImage src="/posts/how-the-internet-works/KBDHID-screenshot.png" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
+<ZoomImage src="/posts/how-the-internet-works/KBDHID-screenshot.png" alt="Keyboard Human Interface Driver" title="Keyboard Human Interface Driver"  />
 <Caption>Image from my Device Manager</Caption>
 
 
@@ -135,7 +139,7 @@ necessary information (i.e., the IP that belongs to the domain).
 Root name servers hold information about top level domains (e.g., .com, .de, .co-uk, etc.). As ‘google.com’ ends with .com, the TLD name server that handles .com domains is queried. 
 This server, in turn, knows the authoritative name server that stores the DNS record for the ‘google.com’ domain and sends the query to it.
 
-<ZoomImage src="/posts/how-the-internet-works/dns-lookup.jpg" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
+<ZoomImage src="/posts/how-the-internet-works/dns-lookup.jpg" alt="DNS Lookup" title="DNS Lookup"  />
 <Caption>Adapted version of [Xiaoli Shen‘s](https://xiaolishen.medium.com/the-dns-lookup-journey-240e9a5d345c) DNS lookup Journey</Caption>
 
 
@@ -164,7 +168,7 @@ The HTTP GET Request sent by the browser is wrapped (encapsulated) with protocol
 The HTTP request originates from the highest OSI model layer, the Application Layer (e.g., the browser). As the request traverses down the OSI layers, it undergoes further processing 
 and encapsulation until it reaches the lowest layer, the Physical Layer, where it is transmitted as binary over the physical network medium.
 
-<ZoomImage src="/posts/how-the-internet-works/osi-model.jpg" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
+<ZoomImage src="/posts/how-the-internet-works/osi-model.jpg" alt="OSI Model" title="OSI Model"  />
 <Caption>Credits: [Layer X](http://networking.layer-x.com/p040200-1.html)</Caption>
 
 ## Server Handles Request
@@ -194,7 +198,7 @@ To understand how the browser processes the HTTP response from the server, it’
 - Data Persistence: Handles storage for cookies, cache, etc.
 - UI Backend: Used for drawing basic windows, boxes, buttons in the UI
 
-<ZoomImage src="/posts/how-the-internet-works/browser-components.jpg" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
+<ZoomImage src="/posts/how-the-internet-works/browser-components.jpg" alt="Components of a Browser" title="Components of a Browser"  />
 <Caption>Credits: [Browser Stack](https://www.browserstack.com/guide/browser-rendering-engine)</Caption>
 
 ### Document Object Model
@@ -209,7 +213,7 @@ It initiates separate network requests to fetch these resources from the server.
 The browser proceeds to parse CSS stylesheets to create a CSS Object Model (CSSOM). The CSSOM represents the hierarchy of CSS rules and their associated properties, which 
 should be applied to the corresponding HTML elements in the DOM tree.
 
-<ZoomImage src="/posts/how-the-internet-works/dom-cssom.png" alt="Dissected view of a USB cable" title="Dissected view of a USB cable"  />
+<ZoomImage src="/posts/how-the-internet-works/dom-cssom.png" alt="DOM and CSSOM" title="DOM and CSSOM"  />
 <Caption>Credits: [web.dev](https://web.dev/articles/critical-rendering-path/render-tree-construction)</Caption>
 
 

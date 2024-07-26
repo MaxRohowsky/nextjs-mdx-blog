@@ -7,12 +7,13 @@ export function getLocalStorage(key: string, defaultValue: any) {
     //console.log("Sticky Value read from storage: ", stickyValue)
     // Check if stickyValue is not null or undefined
     if (stickyValue !== null && stickyValue !== undefined) {
-       // console.log("Sticky Value is not null or undefined:", stickyValue)
-        // Parse the value from local storage
-        return JSON.parse(stickyValue);
+        try {
+            return JSON.parse(stickyValue);
+        } catch (error) {
+            console.error(`Error parsing JSON for key "${key}":`, error);
+            return defaultValue;
+        }
     } else {
-       // console.log("Sticky Value is null or undefined", stickyValue)
-        // Return the default value if stickyValue is not set
         return defaultValue;
     }
 }

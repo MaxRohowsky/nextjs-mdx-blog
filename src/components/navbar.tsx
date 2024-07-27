@@ -147,7 +147,7 @@ function DesktopMenu({ pathname }) {
 							</a>
 						</Button>
 
-						<Separator />
+{/* 						<Separator />
 
 						<Button variant="link" className="group flex justify-center px-6 py-2" asChild>
 							<a href="https://twitter.com/max_on_tech">
@@ -158,7 +158,7 @@ function DesktopMenu({ pathname }) {
 									Twitter
 								</span>
 							</a>
-						</Button>
+						</Button> */}
 
 					</PopoverContent>
 				</Popover>
@@ -236,9 +236,9 @@ function MobileMenu() {
 						<a href="https://www.linkedin.com/in/maxrohowsky/" target="_blank" rel="noopener noreferrer">
 							<FontAwesomeIcon icon={faLinkedin} className="text-blue-500 size-8 hover:bg-gray-100 p-2 rounded-full" />
 						</a>
-						<a href="https://twitter.com/max_on_tech" target="_blank" rel="noopener noreferrer">
+{/* 						<a href="https://twitter.com/max_on_tech" target="_blank" rel="noopener noreferrer">
 							<FontAwesomeIcon icon={faXTwitter} className="size-8 hover:bg-gray-100 p-2 rounded-full " />
-						</a>
+						</a> */}
 					</span>
 
 					<MobileSeparator text="Dark Mode" />

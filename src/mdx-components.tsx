@@ -71,7 +71,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...(props as ImageProps)}
       />
     ), */
-    ul: ({ children }) => <ul className="list-disc pl-5 my-4">{children}</ul>,
+    ul: ({ children }) => <ul className="list-disc pl-5 my-2">{children}</ul>,
+   
     ol: ({ children }) => (
       <ol className="list-decimal pl-5 my-4">{children}</ol>
     ),

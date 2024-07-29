@@ -73,3 +73,19 @@
   transition-property: color;
   transition-timing-function: ease-in;
 }
+
+
+
+/* styles/globals.css or any other CSS file */
+.scrollbar::-webkit-scrollbar {
+  width: 5px; /* Adjust the width as needed */
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* No gutter */
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #dedede; /* Gray color */
+  border-radius: 10px; /* Rounded corners */
+}

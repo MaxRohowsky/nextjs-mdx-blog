@@ -1,4 +1,3 @@
-
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
@@ -20,11 +19,14 @@ import * as mdx from "@/components/mdx"; // Blank Component to which you can add
 import BlogBreadcrumb from "@/components/blog-breadcrumb";
 import { Suspense } from "react";
 
-
 /**
  * Generates metadata for a blog post based on its slug.
  */
-export async function generateMetadata({ params, }: { params: { slug: string }; }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   let BlogItem = await getBlogItemBySlug(params.slug);
 
   let { title, subtitle, excerpt } = BlogItem;
@@ -62,10 +64,14 @@ export async function generateMetadata({ params, }: { params: { slug: string }; 
   return params;
 } */
 
-async function getPost({ slug, }: { slug: string }): Promise<{ frontMatter: any; content: string }> {
+async function getPost({
+  slug,
+}: {
+  slug: string;
+}): Promise<{ frontMatter: any; content: string }> {
   try {
     let dir = path.join(process.cwd(), pathToBlogPosts);
-    let filePath = path.join(dir, `${slug}.mdx`)
+    let filePath = path.join(dir, `${slug}.mdx`);
     let markdownFile = fs.readFileSync(filePath, "utf-8");
     console.log(filePath);
     let { data: frontMatter, content } = matter(markdownFile);
@@ -110,16 +116,14 @@ export default async function Post({ params: { slug } }) {
   let dir = path.join(process.cwd(), pathToBlogPosts);
   let headings = extractHeadings(path.join(dir, `${slug}.mdx`));
 
-
   return (
-    <div className="max-w-full flex flex-row  justify-center  md:items-start">
-      <div>
-        <article className="text-pretty w-full md:max-w-xl p-2">
+    <div className="flex max-w-full flex-row justify-between md:items-start">
+
+        <article className="w-full text-pretty  p-2 md:max-w-xl ">
           <BlogBreadcrumb slug={slug} frontMatter={frontMatter} />
 
-
-          <Suspense fallback={<p className=' pt-5 h-11 w-10' />}>
-            <p className=' whitespace-nowrap text-neutral-500 pt-5'>
+          <Suspense fallback={<p className="h-11 w-10 pt-5" />}>
+            <p className="whitespace-nowrap pt-5 text-neutral-500">
               <Views slug={slug} /> views
             </p>
           </Suspense>
@@ -131,13 +135,13 @@ export default async function Post({ params: { slug } }) {
           />
         </article>
 
-      </div>
 
-      <aside className="sticky md:pl-3 lg:pl-20 top-36 hidden md:block overflow-y-auto overflow-x-hidden max-h-[calc(100vh-15rem)] ">
+      <aside
+        className="sticky top-36 hidden max-h-[calc(100vh-15rem)] overflow-y-auto 
+          md:block w-72 scrollbar"
+      >
         <TableOfContent headings={headings} frontMatter={frontMatter} />
       </aside>
-
-
     </div>
   );
 }

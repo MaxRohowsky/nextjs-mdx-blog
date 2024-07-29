@@ -103,4 +103,8 @@ return (
 )
 // ...
 ```
+The difference between the two lines is the trailing comma at the end of the commented-out line. In CSS, the animation property can accept multiple animations separated by commas. However, a trailing comma without a subsequent animation definition is invalid and will cause the entire animation property to be ignored.
 
+
+/*   animation: spotlight_opacity calc(var(--duration, 5s) * 1.2) linear infinite var(--delay, 0s) alternate,  */
+animation: spotlight_opacity calc(var(--duration, 5s) * 1.2) linear infinite var(--delay, 0s) alternate;

@@ -17,10 +17,11 @@ export const projects: ProjectItem[] = [
       updatedOn: "2024-06-01",
       publishedOn: "2024-06-01",
       slug: "mdx-boilerplate",
-      title: "MDX Blog Bolierplate (out soon)",
+      title: "MDX Blog Boilerplate",
       subtitle: "I'm publishing the template code for this MDX blog",
       tags: ["New", "MDX", "NextJS", "TailwindCSS"],
       excerpt: "Extended Markdown (MDX) blogs have two advantages: they're highly customizable and don't require a CMS. There aren't any great templates out there, so I'm making one.",
+      externalLink: "https://mdx-blog-amber.vercel.app/"
     },
     {
       isPublished: true,

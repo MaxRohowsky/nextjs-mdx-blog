@@ -1,33 +1,74 @@
 ---
-isPublished: false
-publishedOn: "2024-05-01"
-updatedOn: "2024-07-24"
+isPublished: true
+publishedOn: "2024-07-30"
 title: Google Analytics (GA4) for Next.js 14
 subtitle: Add Google Analytics to a Next.js site with a GDPR-compliant opt-in cookie banner.
 excerpt: I couldn't find a clean GDPR compliant implementation of Google Analytics (GA4) for Next.js 14 single page apps, so here it is.
 tags:
   - Google Analytics
   - Next.js
+  - Opt-in
 ---
 
-# How to Add Google Analytics (GA4) to a Next.js 14 Website?
+# How to Add Google Analytics (GA4) to a Next.js 14 Website with Opt-in?
 
-The requirements are clear, we want to add Google Analytics GA4 to a Next.js 14 (App direcotry website).
-We want to make sure that the following requirements are met:
+My recent X post on how to add Google Analytics to a Next.js site with an opt-in banner got a lot of traction. 
+Since there is interest, I've made detailed explanation with code to copy below.
 
-- Track page views across every URL not just when page initially loads
-- Only set tracking cookie if user consents to tracking
-- Cookie banner does not flicker while stored cookie state is being loaded from local storage.
+<Note>The GitHub repository with a minimum working example is linked [here](https://github.com/maxontech/google-analytics-nextjs).</Note>
+
+
+<Tweet id="1816902104599953645" />
+
+## Layout File
+
+The layout file is where the Google Analytics and Cookie Banner components are added. Notice the suspense wrapper around the
+Google Analytics component. This is necessary because the component uses `useSearchParams` which is a client side function.
+Without a `Suspense` boundary the entire layout page will be rendered on the client-side. [^1]
+
+
+
+
+
 
 ```jsx
-// components/google-analytics.tsx
+import React, { Suspense } from 'react';
+import GoogleAnalytics from '@/components/google-analytics';
+import CookieBanner from '@/components/cookie-banner';
+
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" >
+      <Suspense fallback={null}>
+        <GoogleAnalytics GA_MEASUREMENT_ID='G-1234567890' />
+      </Suspense>
+      <body className='container'>
+          {children}
+          <CookieBanner />
+
+      </body>
+    </html>
+  )
+}
+
+```
+
+
+## Google Analytics Component
+
+The `GoogleAnalytics` component takes a `GA_MEASUREMENT_ID` as a prop and uses the `useEffect` hook to update Google Analytics with the current URL whenever the pathname or search parameters change.
+
+The component also includes two script tags that load the "Google Analytics" script and set up the initial configuration, including setting default consent for analytics storage to "denied". 
+
+```jsx
 'use client';
 
 import Script from 'next/script'
+import { usePathname, useSearchParams } from 'next/navigation'
 import { useEffect } from "react";
-import {usePathname, useSearchParams} from 'next/navigation'
 
-export default function GoogleAnalytics({GA_MEASUREMENT_ID} : {GA_MEASUREMENT_ID : string}){
+export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_ID: string }) {
 
     const pathname = usePathname()
     const searchParams = useSearchParams()
@@ -42,14 +83,15 @@ export default function GoogleAnalytics({GA_MEASUREMENT_ID} : {GA_MEASUREMENT_ID
         }
     }, [pathname, searchParams, GA_MEASUREMENT_ID]);
 
+    // Script is added to the head of the document. To Begin, consent is denied.
     return (
         <>
             <Script strategy="afterInteractive"
-                src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}/>
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
 
             <Script id='google-analytics' strategy="afterInteractive"
                 dangerouslySetInnerHTML={{
-                __html: `
+                    __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
@@ -57,7 +99,7 @@ export default function GoogleAnalytics({GA_MEASUREMENT_ID} : {GA_MEASUREMENT_ID
                 gtag('consent', 'default', {
                     'analytics_storage': 'denied'
                 });
-
+                
                 gtag('config', '${GA_MEASUREMENT_ID}', {
                     page_path: window.location.pathname,
                 });
@@ -65,95 +107,94 @@ export default function GoogleAnalytics({GA_MEASUREMENT_ID} : {GA_MEASUREMENT_ID
                 }}
             />
         </>
-)}
-```
-
-```jsx
-// components/layout.tsx
-import GoogleAnalytics from "@/components/google-analytics";
-import CookieBanner from "@/components/cookie-banner";
-import React, { Suspense } from "react";
-
-// Add Google Analytics and Cookie Banner to the root layout
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <Suspense fallback={null}>
-        <GoogleAnalytics GA_MEASUREMENT_ID="G-*********" />
-      </Suspense>
-      <body>{children}</body>
-      <CookieBanner />
-    </html>
-  );
+    )
 }
+
 ```
 
+## Cookie Banner Component
+
+The `CookieBanner` component displays a banner for cookie consent. It uses the `useState` and `useEffect` hooks to manage the cookie consent state 
+and update the local storage and Google Analytics consent status when the user accepts or declines the cookie banner.
+
 ```jsx
-// components/cookie-banner.tsx
 "use client";
 
 import { useState, useEffect } from "react";
 import { getLocalStorage, setLocalStorage } from "@/lib/storage-helper";
-import { Button } from "./ui/button";
-import Image from "next/image";
 
+// CookieBanner component that displays a banner for cookie consent.
 export default function CookieBanner() {
-  const [cookieConsent, setCookieConsent] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+    const [cookieConsent, setCookieConsent] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const storedCookieConsent = getLocalStorage("mot_cookie_consent", null);
-    console.log("Cookie Consent retrieved from storage: ", storedCookieConsent);
-    setCookieConsent(storedCookieConsent);
-    setIsLoading(false);
-  }, []);
+    // Retrieve cookie consent status from local storage on component mount
+    useEffect(() => {
+        const storedCookieConsent = getLocalStorage("cookie_consent", null);
+        console.log("Cookie Consent retrieved from storage: ", storedCookieConsent);
+        setCookieConsent(storedCookieConsent);
+        setIsLoading(false);
+    }, []);
 
-  useEffect(() => {
-    if (cookieConsent !== null) {
-      setLocalStorage("mot_cookie_consent", cookieConsent);
+    // Update local storage and Google Analytics consent status when cookieConsent changes
+    useEffect(() => {
+        if (cookieConsent !== null) {
+            setLocalStorage("cookie_consent", cookieConsent);
+        }
+
+        const newValue = cookieConsent ? "granted" : "denied";
+
+        if (typeof window !== "undefined" && window.gtag) {
+            window.gtag("consent", "update", {
+                analytics_storage: newValue,
+            });
+        }
+    }, [cookieConsent]);
+
+    // Do not render the banner if loading or consent is already given
+    if (isLoading || cookieConsent !== null) {
+        return null;
     }
 
-    const newValue = cookieConsent ? "granted" : "denied";
-
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("consent", "update", {
-        analytics_storage: newValue,
-      });
-    }
-  }, [cookieConsent]);
-
-  if (isLoading || cookieConsent !== null) {
-    return null;
-  }
-
-  return (
-    <div
-      className={`my-10 ${cookieConsent == null ? "" : "hidden"} fixed bottom-0 left-0 right-0
-        z-30 mx-auto max-w-fit sm:left-auto sm:mr-6`}>
-      <div className="text-center">
-        <p className="mr-3">This site uses cookies:</p>
-      </div>
-      <div className="flex gap-2">
-        <Button variant="outline" onClick={() => setCookieConsent(false)}>
-          Decline
-        </Button>
-        <Button onClick={() => setCookieConsent(true)}>Accept</Button>
-      </div>
-    </div>
-  );
+    return (
+        <div className={`cookie-banner ${cookieConsent == null ? 'visible' : 'hidden'}`}>
+            <div className="cookie-banner-inner">
+                <div className="cookie-banner-content">
+                    <div className="cookie-banner-text">
+                        <p>This site uses cookies:</p>
+                    </div>
+                    <div className="cookie-banner-buttons">
+                        <button className="decline-button" 
+                        onClick={() => setCookieConsent(false)}>
+                            Decline
+                        </button>
+                        <button className="accept-button" 
+                        onClick={() => setCookieConsent(true)}>
+                            Accept
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
+
 ```
 
+## Local Storage Helper
+Finally, the `storage-helper` file contains two functions to get and set values in local storage. 
+The `getLocalStorage` function retrieves a value from local storage and parses it as JSON, while
+ the `setLocalStorage` function stores a value in local storage after serializing it to JSON.
 
 ```ts
-
-// lib/storageHelper.ts
 'use client';
 
+// Retrieves a value from local storage and parses it as JSON.
 export function getLocalStorage(key: string, defaultValue: any) {
+
     // Get the value from local storage
     const stickyValue = localStorage.getItem(key);
-    //console.log("Sticky Value read from storage: ", stickyValue)
+
     // Check if stickyValue is not null or undefined
     if (stickyValue !== null && stickyValue !== undefined) {
         try {
@@ -167,9 +208,13 @@ export function getLocalStorage(key: string, defaultValue: any) {
     }
 }
 
-export function setLocalStorage(key: string, value:any){
+// Stores a value in local storage after serializing it to JSON.
+export function setLocalStorage(key: string, value: any) {
     localStorage.setItem(key, JSON.stringify(value));
 }
-
 ```
 
+If you got this far, feel free to [follow me on X](https://x.com/max_on_tech) for more content like this.
+
+
+[^1]: If you forget the suspense boundary, you'll see the error: ["Missing Suspense boundary with useSearchParams"](https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout)

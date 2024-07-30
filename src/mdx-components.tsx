@@ -9,7 +9,8 @@ import { Info, Flame, BookType } from "lucide-react";
 import { Tweet } from 'react-tweet'
 import  YouTube  from "@/components/youtube-embed";
 import ZoomImage from "@/components/zoom-image";
-
+import React from 'react';
+import EnhancedCode from "@/components/enhanced-code";
 
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -77,14 +78,24 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <ol className="list-decimal pl-5 my-4">{children}</ol>
     ),
     li: ({ children }) => <li className="mb-2">{children}</li>,
-    code: ({ children, className }) =>
+    /* code: ({ children, className }) =>
       className?.includes("hljs") ? (
         <code className={`${className} rounded-sm`}>{children}</code>
       ) : (
         <code className="bg-slate-100 dark:bg-slate-700 dark:text-white p-[2px] rounded-sm">
           {children}
         </code>
-      ),
+      ), */
+      code: ({ children, className }) => {
+        if (className?.includes("hljs")) {
+          return <EnhancedCode className={className}>{children}</EnhancedCode>;
+        }
+        return (
+          <code className="bg-slate-100 dark:bg-slate-700 dark:text-white p-[2px] rounded-sm">
+            {children}
+          </code>
+        );
+      },
     blockquote: ({ children }) => (
       <blockquote className="border-l-4 border-gray-200 pl-4 italic my-4">
         {children}
@@ -147,6 +158,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Tweet: Tweet,
 
     YouTube: YouTube,
+
+
 
     
 

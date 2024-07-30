@@ -1,6 +1,6 @@
 import '@/styles/globals.css';
 import 'highlight.js/styles/github-dark-dimmed.css'; // Global Code Block Styling from Highlight.js Node Module
-
+import { Toaster } from "@/components/ui/toaster"
 import Navbar from "@/components/navbar";
 import Footer from '@/components/footer';
 import React, { Suspense } from 'react';
@@ -59,12 +59,13 @@ export default function RootLayout({ children }) {
             <Space className='h-8' />
 
             {children}
-    
+
             <Space className='h-8' />
           </div>
           <CookieBanner />
           <Footer />
         </div>
+        <Toaster />
       </body>
     </html>
   )

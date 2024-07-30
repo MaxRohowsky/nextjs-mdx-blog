@@ -49,6 +49,8 @@ export const metadata = {
   twitter: {
     title: 'Max Rohowsky',
     card: 'summary_large_image',
+    description: 'Software Engineering & Indie Hacking',
+    image: 'https://maxontech.io/api/og?title="maxontech.io"',
   },
   verification: {
     google: 'NVnL5jsghoSo_MaMO9El0UJE_I2k4FcLdA-BmHFnbEk'

@@ -8,5 +8,7 @@ export async function POST(req) {
 
   await supabase.rpc('view_increment', { page_slug: request.slug })
 
-  return Response.json({ data: 'success' })
+  return new Response(JSON.stringify({ data: 'success' }), {
+    headers: { 'Content-Type': 'application/json' },
+  })
 }

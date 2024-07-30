@@ -30,7 +30,12 @@ export const metadata = {
   openGraph: {
     title: 'Max Rohowsky',
     description: 'Software Engineering & Indie Hacking',
-    url: 'https://maxontech.io/api/og?title="maxontech.io"',
+    url:  'https://maxontech.io',
+    images: [
+      {
+        url: 'https://maxontech.io/api/og?title=maxontech.io',
+      },
+    ],
     siteName: 'Max Rohowsky',
     locale: 'en_US',
     type: 'website',
@@ -50,7 +55,8 @@ export const metadata = {
     title: 'Max Rohowsky',
     card: 'summary_large_image',
     description: 'Software Engineering & Indie Hacking',
-    image: 'https://maxontech.io/api/og?title="maxontech.io"',
+    url: 'https://maxontech.io',
+    images: ['https://maxontech.io/api/og?title=maxontech.io']
   },
   verification: {
     google: 'NVnL5jsghoSo_MaMO9El0UJE_I2k4FcLdA-BmHFnbEk'

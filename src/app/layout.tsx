@@ -30,7 +30,7 @@ export const metadata = {
   openGraph: {
     title: 'Max Rohowsky',
     description: 'Software Engineering & Indie Hacking',
-    url: 'https://maxontech.io',
+    url: 'https://maxontech.io/api/og?title="maxontech.io"',
     siteName: 'Max Rohowsky',
     locale: 'en_US',
     type: 'website',

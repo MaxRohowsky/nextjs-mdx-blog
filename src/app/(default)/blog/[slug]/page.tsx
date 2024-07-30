@@ -43,7 +43,7 @@ export async function generateMetadata({
     description,
     openGraph: {
       title: title,
-      description: subtitle ?? excerpt,
+      description,
       url: `https://maxontech.io/blog/${params.slug}`,
       images: [
         {

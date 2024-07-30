@@ -7,10 +7,10 @@ import Image, { ImageProps } from "next/image";
 import type { MDXComponents } from "mdx/types";
 import { Info, Flame, BookType } from "lucide-react";
 import { Tweet } from 'react-tweet'
-import  YouTube  from "@/components/youtube-embed";
-import ZoomImage from "@/components/zoom-image";
+import  YouTube  from "@/components/mdx/youtube-embed";
+import ZoomImage from "@/components/mdx/zoom-image";
 import React from 'react';
-import EnhancedCode from "@/components/enhanced-code";
+import EnhancedCode from "@/components/mdx/enhanced-code";
 
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {

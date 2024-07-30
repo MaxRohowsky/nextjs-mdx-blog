@@ -35,7 +35,7 @@ export async function generateMetadata({
 
   let ogImage = image
   ? `https://maxontech.io${image}`
-  : `https://maxontech.io/og?title=${title}`;
+  : `https://maxontech.io/api/og?title=${title}`;
 
 
   return {

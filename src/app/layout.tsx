@@ -21,9 +21,10 @@ export const dmSans = DM_Sans(
 )
 
 export const metadata = {
+  metadataBase: new URL('https://maxontech.io'),
   title: {
     default: 'Max Rohowsky | Software Engineering and Indie Hacking Blog',
-    template: '%s | Max on Tech'
+    template: '%s | Max Rohowsky'
   },
   description: 'A Blog on Software Engineering and Indie Hacking by Max Rohowsky',
   openGraph: {
@@ -33,6 +34,17 @@ export const metadata = {
     siteName: 'Max Rohowsky',
     locale: 'en_US',
     type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   twitter: {
     title: 'Max Rohowsky',

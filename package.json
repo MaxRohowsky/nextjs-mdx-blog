@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "vercel-build": "npm run clean && next build",
+    "clean": "rm -rf .next/cache",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

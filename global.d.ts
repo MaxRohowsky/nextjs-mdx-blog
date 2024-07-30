@@ -9,6 +9,7 @@ interface FrontMatter {
   tags?: string[];
   excerpt?: string;
   externalLink?: string;
+  image?: string;
 }
 
 

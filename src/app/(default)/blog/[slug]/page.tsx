@@ -26,14 +26,38 @@ export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
-}): Promise<Metadata> {
+}): Promise<Metadata | undefined> {
   let BlogItem = await getBlogItemBySlug(params.slug);
 
-  let { title, subtitle, excerpt } = BlogItem;
+  let { title, subtitle, excerpt, image } = BlogItem;
+
+  let description = subtitle ?? excerpt;
+
+  let ogImage = image
+  ? `https://maxontech.io${image}`
+  : `https://maxontech.io/og?title=${title}`;
+
 
   return {
-    title: title,
-    description: subtitle ?? excerpt,
+    title,
+    description,
+    openGraph: {
+      title: title,
+      description: subtitle ?? excerpt,
+      url: `https://maxontech.io/blog/${params.slug}`,
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
+
   };
 }
 
@@ -118,6 +142,8 @@ export default async function Post({ params: { slug } }) {
 
   return (
     <div className="flex max-w-full flex-row justify-between md:items-start">
+
+      
 
         <article className="w-full text-pretty  p-2 md:max-w-xl ">
           <BlogBreadcrumb slug={slug} frontMatter={frontMatter} />

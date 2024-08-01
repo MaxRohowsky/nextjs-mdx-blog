@@ -33,23 +33,27 @@ export async function generateMetadata({
 
   let description = subtitle ?? excerpt;
 
-  let ogImage = `https://maxontech.io/api/og?title=${title}`; 
+  let ogImage = `https://maxontech.io/api/og?title=${title}`;
 
-/*   let ogImage = image
-  ? `https://maxontech.io/${image}`
-  : `https://maxontech.io/api/og?title=${title}`; */
+  /*   let ogImage = image
+    ? `https://maxontech.io/${image}`
+    : `https://maxontech.io/api/og?title=${title}`; */
 
 
   return {
     title,
     description,
     openGraph: {
-      title: title,
+      title,
       description,
       url: `https://maxontech.io/blog/${params.slug}`,
+      siteName: 'Max on Tech - Max Rohowsky',
       images: [
         {
           url: ogImage,
+          width: 1200, // Recommended width for Open Graph images
+          height: 630, // Recommended height for Open Graph images
+          alt: 'Article featured image', // Add an alt text for accessibility
         },
       ],
     },
@@ -57,7 +61,19 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: [ogImage],
+      images: [
+        {
+          url: ogImage,
+          width: 1920, // Recommended width for Open Graph images
+          height: 1080, // Recommended height for Open Graph images
+          alt: 'Article featured image', // Add an alt text for accessibility
+
+        }
+
+
+      ]
+      
+
     },
 
   };
@@ -145,23 +161,23 @@ export default async function Post({ params: { slug } }) {
   return (
     <div className="flex max-w-full flex-row justify-between md:items-start">
 
-      
 
-        <article className="w-full text-pretty  p-2 md:max-w-xl ">
-          <BlogBreadcrumb slug={slug} frontMatter={frontMatter} />
 
-          <Suspense fallback={<p className="h-11 w-10 pt-5" />}>
-            <p className="whitespace-nowrap pt-5 text-neutral-500">
-              <Views slug={slug} /> views
-            </p>
-          </Suspense>
+      <article className="w-full text-pretty  p-2 md:max-w-xl ">
+        <BlogBreadcrumb slug={slug} frontMatter={frontMatter} />
 
-          <MDXRemote
-            source={content}
-            options={options}
-            components={mdxComponents}
-          />
-        </article>
+        <Suspense fallback={<p className="h-11 w-10 pt-5" />}>
+          <p className="whitespace-nowrap pt-5 text-neutral-500">
+            <Views slug={slug} /> views
+          </p>
+        </Suspense>
+
+        <MDXRemote
+          source={content}
+          options={options}
+          components={mdxComponents}
+        />
+      </article>
 
 
       <aside

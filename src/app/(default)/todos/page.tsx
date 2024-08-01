@@ -67,6 +67,8 @@ const initialTodos = [
   {id: 57, text: "on mobile the breadcrum has a silly line break. remove it", completed: true, priority: 1 },
   {id: 57, text: "Menu should automatically close when i select something", completed: false, priority: 1 },
   {id: 57, text: "On mobile fix blog post css disp vs postion - sticky explainer is broken", completed: false, priority: 1 },
+  {id: 57, text: "Debut twitter open graph image: https://devcommunity.x.com/t/card-validator-preview-removal/175006", completed: false, priority: 1 },
+  {id: 57, text: "add social share", completed: false, priority: 1 },
 ];
 
 // Sort initialTodos by priority in ascending order

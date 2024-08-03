@@ -189,7 +189,7 @@ function MobileMenu() {
 
 					<MobileSeparator text="Navigation" />
 
-
+					<DialogClose asChild>
 					<Button asChild
 						variant="ghost"
 					>
@@ -198,9 +198,11 @@ function MobileMenu() {
 						</Link>
 
 					</Button>
+					</DialogClose>
 
 					<Separator orientation="horizontal" className="w-full " />
-
+					
+					<DialogClose asChild>
 					<Button asChild
 						variant="ghost"
 					>
@@ -208,9 +210,11 @@ function MobileMenu() {
 							Blog
 						</Link>
 					</Button>
+					</DialogClose>
 
 					<Separator orientation="horizontal" className="w-full " />
-
+					
+					<DialogClose asChild>
 					<Button asChild
 						variant="ghost"
 					>
@@ -218,6 +222,7 @@ function MobileMenu() {
 							Projects
 						</Link>
 					</Button>
+					</DialogClose>
 
 
 					<MobileSeparator text="Socials" />

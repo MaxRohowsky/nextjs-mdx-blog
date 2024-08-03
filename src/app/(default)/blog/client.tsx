@@ -15,7 +15,7 @@ export default function Client({ blogItems }) {
     const [isFiltered, setIsFiltered] = useState<boolean>(false);
     const tagsToFilterBy = isFiltered ? selectedTags : undefined
 
-    const blogs = getFilteredBlogItems({ tags: tagsToFilterBy }, blogItems);
+    const filteredBlogs = getFilteredBlogItems({ tags: tagsToFilterBy }, blogItems);
 
 
 
@@ -50,7 +50,7 @@ export default function Client({ blogItems }) {
 
                 <div className='grid gap-7 grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] '>
 
-                    {blogs.map((blog) => (
+                    {filteredBlogs.map((blog) => (
                         <BlogCard key={blog.slug} item={blog} />
                     ))}
 

@@ -1,6 +1,6 @@
 'use client'
 import BlogCard from '@/components/ui/blog-card';
-import { sortBlogsByDate } from '@/lib/utils';
+
 import { getBlogTags } from '@/lib/utils';
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { ListFilter } from 'lucide-react';
@@ -17,15 +17,13 @@ import { getFilteredBlogItems } from '@/lib/utils';
 
 export default function Client({ blogItems }) {
     
-    let blogsx = sortBlogsByDate(blogItems);
     let allTags = getBlogTags(blogItems)
-
 
     const [selectedTags, setSelectedTags] = useState<Array<string>>([]);
     const [isFiltered, setIsFiltered] = useState<boolean>(false);
     const tagsToFilterBy = isFiltered ? selectedTags : undefined
 
-    const blogs = getFilteredBlogItems({ tags: tagsToFilterBy }, blogsx);
+    const blogs = getFilteredBlogItems({ tags: tagsToFilterBy }, blogItems);
 
 
 
@@ -85,24 +83,6 @@ export default function Client({ blogItems }) {
 
 
 function Filter({ allTags, selectedTags, handleResetFilters, handleTagSelection }) {
-    /*     const [selectedTags, setSelectedTags] = useState<Array<string>>([]);
-    
-        const handleTagSelection = (tag: string) => {
-            if (selectedTags.includes(tag)) {
-                setSelectedTags(selectedTags.filter((selectedTag) => selectedTag !== tag));
-            } else {
-                setSelectedTags([...selectedTags, tag]);
-            }
-        }
-    
-        const handleResetFilters = () => {
-            setSelectedTags([]);
-        }
-     */
-
-
-
-
 
     return (
         <>

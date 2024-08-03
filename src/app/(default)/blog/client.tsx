@@ -16,7 +16,7 @@ import { getFilteredBlogItems } from '@/lib/utils';
 
 
 export default function Client({ blogItems }) {
-    
+
     let allTags = getBlogTags(blogItems)
 
     const [selectedTags, setSelectedTags] = useState<Array<string>>([]);
@@ -64,10 +64,6 @@ export default function Client({ blogItems }) {
 
                 </div>
             </>
-
-
-
-
         </>
     );
 
@@ -75,18 +71,9 @@ export default function Client({ blogItems }) {
 
 
 
-
-
-
-
-
-
-
 function Filter({ allTags, selectedTags, handleResetFilters, handleTagSelection }) {
-
     return (
         <>
-
             <Popover>
                 <PopoverTrigger asChild>
                     <Button variant="outline" className=" w-28 lg:flex gap-2 my-4">
@@ -119,8 +106,6 @@ function Filter({ allTags, selectedTags, handleResetFilters, handleTagSelection 
 
                 </PopoverContent>
             </Popover>
-
-
         </>
     );
 

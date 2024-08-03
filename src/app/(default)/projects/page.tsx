@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ListFilter } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { ScrollArea } from "@/components/ui/scroll-area"
-import Card from '@/components/ui/blog-card';
+
 import { Checkbox } from "@/components/ui/checkbox"
 import ProjectCard from '@/components/ui/project-card';
 
@@ -28,9 +28,9 @@ export default function Projects() {
 
   const [selectedTags, setSelectedTags] = useState<Array<string>>([]);
   const [isFiltered, setIsFiltered] = useState<boolean>(false);
-  const displayTags = isFiltered ? selectedTags : undefined
+  const tagsToFilterBy = isFiltered ? selectedTags : undefined
 
-  const projects = getFilteredProjects({ tags: displayTags });
+  const projects = getFilteredProjects({ tags: tagsToFilterBy });
 
   const handleTagSelection = (tag: string) => {
     if (selectedTags.includes(tag)) {

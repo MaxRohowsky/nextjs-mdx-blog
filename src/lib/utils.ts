@@ -30,7 +30,7 @@ export function getProjectTags(): Array<string> {
  * Get all unique tags used in blog posts in an array.
  * @returns An array of all unique tags used in blog posts.
  */
-export function getAllBlogTags(blogItems: FrontMatter[]): Array<string> {
+export function getBlogTags(blogItems: FrontMatter[]): Array<string> {
   const allTags = blogItems.flatMap(blog => blog.tags);
   return Array.from(new Set(allTags));
 }
@@ -114,5 +114,29 @@ export function getFilteredProjects(options: Filter = {}): ProjectItem[] {
   return filteredProjects;
 }
 
+
+
+/**
+ * Get the blog front matter based on the provided filters. Upper and lower case are ignored.
+ * @param options The filter options e.g. { featured: true, tag: 'personal', layout: 'Article' }.
+ * @returns The front matter of the filtered blog posts in an array. By default, only published posts are returned.
+ */
+export function getFilteredBlogItems(options: Filter = { isPublished: true }, blogItems: FrontMatter[]): FrontMatter[] {
+
+  const filteredFrontMatter = blogItems.filter((item) => {
+
+      if (!item.isPublished) {
+          return false;
+      }
+
+      if (options.tags && options.tags.length > 0 && !options.tags.every(optionTag => item.tags.map(tag => tag.toLowerCase()).includes(optionTag.toLowerCase()))) {
+          return false;
+      }
+
+      return true;
+  });
+
+  return filteredFrontMatter;
+}
 
 

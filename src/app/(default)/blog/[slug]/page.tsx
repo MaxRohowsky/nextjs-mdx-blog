@@ -39,7 +39,6 @@ export async function generateMetadata({
     ? `https://maxontech.io/${image}`
     : `https://maxontech.io/api/og?title=${title}`; */
 
-
   return {
     title,
     description,
@@ -47,18 +46,18 @@ export async function generateMetadata({
       title,
       description,
       url: `https://maxontech.io/blog/${params.slug}`,
-      siteName: 'Max on Tech - Max Rohowsky',
+      siteName: "Max on Tech - Max Rohowsky",
       images: [
         {
           url: ogImage,
           width: 1200, // Recommended width for Open Graph images
           height: 630, // Recommended height for Open Graph images
-          alt: 'Article featured image', // Add an alt text for accessibility
+          alt: "Article featured image", // Add an alt text for accessibility
         },
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title,
       description,
       images: [
@@ -66,16 +65,10 @@ export async function generateMetadata({
           url: ogImage,
           width: 1920, // Recommended width for Open Graph images
           height: 1080, // Recommended height for Open Graph images
-          alt: 'Article featured image', // Add an alt text for accessibility
-
-        }
-
-
-      ]
-      
-
+          alt: "Article featured image", // Add an alt text for accessibility
+        },
+      ],
     },
-
   };
 }
 
@@ -160,10 +153,7 @@ export default async function Post({ params: { slug } }) {
 
   return (
     <div className="flex max-w-full flex-row justify-between md:items-start">
-
-
-
-      <article className="w-full text-pretty  p-2 md:max-w-xl ">
+      <article className="w-full text-pretty p-2 md:max-w-xl">
         <BlogBreadcrumb slug={slug} frontMatter={frontMatter} />
 
         <Suspense fallback={<p className="h-11 w-10 pt-5" />}>
@@ -179,10 +169,9 @@ export default async function Post({ params: { slug } }) {
         />
       </article>
 
-
       <aside
-        className="sticky top-36 hidden max-h-[calc(100vh-15rem)] overflow-y-auto 
-          md:block w-72 scrollbar"
+        className="scrollbar sticky top-36 hidden max-h-[calc(100vh-15rem)] w-72 overflow-y-auto
+          md:block"
       >
         <TableOfContent headings={headings} frontMatter={frontMatter} />
       </aside>

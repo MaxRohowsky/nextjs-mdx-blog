@@ -1,8 +1,8 @@
 'use client'
-// Caption.js
+
 import React from 'react';
 import { Info } from 'lucide-react';
-/* import Playground from "@agney/playground"; */
+
 
 
 export const Example = ({ children }) => (
@@ -14,34 +14,5 @@ export const Example = ({ children }) => (
   </div>
 );
 
-/* 
 
-export const CodePlayground: React.FC<any> = ({ ...props }) => <Playground {...props}/>
- */
-
-{/*
-
-Here's how to use the codeplayground in the mdx.
-
-<mdx.CodePlayground
- id="example"
-initialSnippet={{
-    markup: `<div id=app />`,
-    css: ``,
-    javascript: `import { h, Component, render } from 'preact';
-import htm from 'htm';
-
-const html = htm.bind(h);
-
-const app = html\`<div>Hello World from Playground!</div>\`
-
-render(app, document.getElementById('app'));`,
-  }}
-defaultEditorTab="javascript"
-transformJs
-/>
-
-
-
-  */}
 

@@ -1,7 +1,7 @@
 
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { projects } from '@/app/(default)/projects/_remote/projects';
+import { projects } from '@/app/projects/_remote/projects';
 
 
 export const pathToBlogPosts = 'src/app/(default)/blog/_posts';

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { projects } from "@/app/(default)/projects/_remote/projects";
+import { projects } from "@/app/projects/_remote/projects";
 import { popularContent } from "@/components/popular";
 import Space from "@/components/space";
 import { Fragment } from "react";

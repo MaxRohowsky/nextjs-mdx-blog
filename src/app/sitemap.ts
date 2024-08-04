@@ -1,5 +1,3 @@
-//import { getBlogPosts } from 'app/db/blog';
-
 import { getFilteredBlogItems } from '@/lib/utils';
 import { getAllBlogItems } from '@/lib/server-actions';
 

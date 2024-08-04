@@ -1,0 +1,183 @@
+---
+isPublished: true
+publishedOn: "2024-08-04"
+title: Implementing Dark Mode in React with Tailwind CSS and Next.js
+subtitle: Learn how to add a smooth dark mode toggle to your Next.js app using React hooks and Tailwind CSS.
+excerpt: Discover how to implement a user-friendly dark mode in your Next.js application using React hooks and Tailwind CSS, with persistent user preferences.
+tags:
+  - React
+  - Next.js
+  - Tailwind CSS
+  - Dark Mode
+---
+
+# Implementing Dark Mode in React with Tailwind CSS and Next.js
+
+Dark mode has become a popular feature in modern web applications, offering users a comfortable viewing experience in low-light environments. In this post, we'll walk through implementing a dark mode toggle in a Next.js application using React hooks and Tailwind CSS.
+
+## Setting Up the Project
+
+First, make sure you have a Next.js project set up with Tailwind CSS. If you don't, you can create one using the following commands:
+
+```bash
+npx create-next-app@latest my-dark-mode-app
+cd my-dark-mode-app
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+npx tailwindcss init -p
+```
+
+## Configuring Tailwind CSS for Dark Mode
+
+Open your `tailwind.config.js` file and add the `darkMode` option:
+
+```javascript
+module.exports = {
+  darkMode: 'class',
+  // ... other configurations
+}
+```
+
+This tells Tailwind to use the `class` strategy for dark mode, which we'll toggle with JavaScript.
+
+## Creating a Dark Mode Hook
+
+Create a new file called `useDarkMode.js` in your `hooks` directory:
+
+```javascript
+import { useState, useEffect } from 'react';
+
+function useDarkMode() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    setIsDarkMode(darkModeMediaQuery.matches);
+
+    const handleChange = (e) => setIsDarkMode(e.matches);
+    darkModeMediaQuery.addEventListener('change', handleChange);
+
+    return () => darkModeMediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+
+  return [isDarkMode, toggleDarkMode];
+}
+
+export default useDarkMode;
+```
+
+This hook does three things:
+1. It checks the user's system preferences for dark mode.
+2. It adds or removes the `dark` class from the `<html>` element based on the current mode.
+3. It provides a function to toggle between light and dark modes.
+
+## Implementing the Dark Mode Toggle
+
+Now, let's create a component to toggle dark mode. Create a new file called `DarkModeToggle.js` in your `components` directory:
+
+```jsx
+import React from 'react';
+import useDarkMode from '../hooks/useDarkMode';
+
+const DarkModeToggle = () => {
+  const [isDarkMode, toggleDarkMode] = useDarkMode();
+
+  return (
+    <button
+      onClick={toggleDarkMode}
+      className="p-2 rounded-md hover:ring-2 hover:ring-gray-300 dark:hover:ring-gray-700"
+    >
+      {isDarkMode ? '🌙' : '☀️'}
+    </button>
+  );
+};
+
+export default DarkModeToggle;
+```
+
+## Using the Dark Mode Toggle
+
+You can now use this toggle in your layout or any component. For example, in your `pages/_app.js`:
+
+```jsx
+import '../styles/globals.css';
+import DarkModeToggle from '../components/DarkModeToggle';
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      <nav className="p-4">
+        <DarkModeToggle />
+      </nav>
+      <Component {...pageProps} />
+    </div>
+  );
+}
+
+export default MyApp;
+```
+
+## Styling for Dark Mode
+
+With Tailwind CSS, you can easily add dark mode variants to your styles. For example:
+
+```jsx
+<h1 className="text-gray-900 dark:text-white">
+  Welcome to my app!
+</h1>
+<p className="text-gray-600 dark:text-gray-300">
+  This text adapts to dark mode.
+</p>
+```
+
+## Persisting User Preference
+
+To remember the user's preference, you can store it in localStorage. Update your `useDarkMode` hook:
+
+```javascript
+import { useState, useEffect } from 'react';
+
+function useDarkMode() {
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedMode = localStorage.getItem('darkMode');
+      return savedMode ? JSON.parse(savedMode) : false;
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+
+  return [isDarkMode, toggleDarkMode];
+}
+
+export default useDarkMode;
+```
+
+This implementation checks localStorage for a saved preference and uses it if available. It also updates localStorage whenever the mode changes.
+
+## Conclusion
+
+You now have a fully functional dark mode in your Next.js application! The toggle respects user preferences, persists across sessions, and smoothly transitions between light and dark themes. Remember to test your application thoroughly in both modes to ensure all components look great regardless of the chosen theme.
+
+Happy coding, and may your users' eyes thank you for the dark mode option! 🌙✨
+
+If you found this helpful, feel free to [follow me on GitHub](https://github.com/yourusername) for more React and Next.js tips.

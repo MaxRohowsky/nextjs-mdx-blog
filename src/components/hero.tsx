@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Particles from '@/components/dots/particles';
+import Particles from '@/components/particles/particles';
 import { RoughNotation } from "react-rough-notation";
 
 export default function Hero() {
@@ -13,10 +13,10 @@ export default function Hero() {
 
       <div className='absolute text-white text-sm bottom-0 m-4'>
         <p className='text-lg md:pb-1 sm:text-2xl'>
-          Hi, I'm Max.
+          Welcome to your new Blog!
         </p>
         <p className='w-2/3 sm:text-lg font-light'>
-          Welcome to my corner of the internet. I write about software engineering and indie hacking.
+          Upon purchase you receive the source code of this exact preview blog. Feel free to play around!
         </p>
       </div>
 
@@ -29,22 +29,13 @@ export default function Hero() {
       </div>
 
       <div className='absolute md:hidden  right-0  top-36 -mr-10'>
-        <Particles numberOfParticles={50} radius={140} opacity={0.5} />
-        <Particles numberOfParticles={40} radius={160} opacity={0.4} />
-        <Particles numberOfParticles={30} radius={190} opacity={0.3} />
-        <Particles numberOfParticles={20} radius={230} opacity={0.2} />
-        <Particles numberOfParticles={10} radius={280} opacity={0.1} />
+        <Particles numberOfParticles={50} radius={200} opacity={0.5} />
+        <Particles numberOfParticles={40} radius={220} opacity={0.4} />
+        <Particles numberOfParticles={30} radius={250} opacity={0.3} />
+        <Particles numberOfParticles={20} radius={270} opacity={0.2} />
       </div>
 
-      <Image className='absolute right-0 top-0 h-full -mr-8 mt-2 sm:-mr-10 md:-mr-1 ' src='/dot-hero.svg' alt='hero' height='180' width='180' />
-      <Image className='absolute top-10 -right-8 sm:-right-11 sm:top-10 md:right-0 md:top-14 transform scale-10 hidden dark:block' src='/deal-with-it.png' alt='hero' height='10' width='200' />
-{/*       <Image
-        className='absolute right-[85px] top-[165px]  transform scale-10 hidden dark:block'
-        src='/mouth.png'
-        alt='hero'
-        height='10'
-        width='90'
-      /> */}
+      <Image className='absolute right-10 top-0 h-full -mr-8 mt-2 sm:-mr-10 md:-mr-1 ' src='/bird-stipple.svg' alt='hero' height='180' width='180' />
 
     </div>
   )

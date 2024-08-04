@@ -14,11 +14,11 @@ import RecentPostCard from "@/components/ui/recent-post-card";
  * Blogs are fetched from the server and passed as props to this component.
  * Popular content and featured projects are hardcoded and read from imported JSON files.
  */
-export default function Content({ blogs, allViews }: { blogs: FrontMatter[]; allViews: { slug: string; views: number }[] }) {
+export default function Content({ blogs}: { blogs: FrontMatter[] }) {
   return (
     <section className="flex justify-center items-center">
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 ">
-        <RecentPosts blogs={blogs} allViews={allViews}  />
+        <RecentPosts blogs={blogs}  />
 
         <div className="flex flex-col-reverse md:flex-col ">
           <PopularContent />
@@ -30,14 +30,14 @@ export default function Content({ blogs, allViews }: { blogs: FrontMatter[]; all
   );
 }
 
-export function RecentPosts({ blogs, allViews }: { blogs: FrontMatter[]; allViews: { slug: string; views: number }[] }) {
+export function RecentPosts({ blogs }: { blogs: FrontMatter[]}) {
   return (
     <div className="flex flex-col ">
       <h2 className="  text-rose-red  text-xl "> Recent Posts</h2>
       <Space className="h-3 lg:h-8" />
       {blogs.map((blog: FrontMatter) => (
         <Fragment key={blog.slug}>
-          <RecentPostCard item={blog} allViews={allViews} />
+          <RecentPostCard item={blog} />
           <Space className="h-2 lg:h-8" />
         </Fragment>
       ))}

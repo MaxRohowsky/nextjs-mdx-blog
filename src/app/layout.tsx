@@ -8,8 +8,8 @@ import React, { Suspense } from 'react';
 import Space from '@/components/space';
 import { DM_Sans } from 'next/font/google';
 
-import GoogleAnalytics from '@/components/google-analytics';
-import CookieBanner from '@/components/cookie-banner';
+import GoogleAnalytics from '@/components/analytics/google-analytics';
+import CookieBanner from '@/components/analytics/cookie-banner';
 
 // Font for the entire website
 export const dmSans = DM_Sans(

@@ -13,8 +13,6 @@ import TableOfContent from "@/components/table-of-content";
 import { getBlogItemBySlug } from "@/lib/server-actions";
 import type { Metadata } from "next";
 import { pathToBlogPosts } from "@/lib/utils";
-import { getViewsCount, increment } from "@/lib/supabase/queries";
-import ViewCounter from "@/components/view-counter";
 import * as mdx from "@/components/mdx"; // Blank Component to which you can add additional Components outside of useMDXComponents
 import BlogBreadcrumb from "@/components/blog-breadcrumb";
 import { Suspense } from "react";
@@ -134,15 +132,9 @@ let options = {
   parseFrontmatter: true,
 };
 
-let incrementViews = cache(increment);
 
-async function Views({ slug }: { slug: string }) {
-  let allViews: { slug: string; views: number }[];
-  allViews = await getViewsCount();
-  await incrementViews(slug);
 
-  return <ViewCounter allViews={allViews} slug={slug} />;
-}
+
 
 export default async function Post({ params: { slug } }) {
   let { frontMatter, content } = await getPost({ slug });
@@ -156,11 +148,6 @@ export default async function Post({ params: { slug } }) {
       <article className="w-full text-pretty p-2 md:max-w-xl">
         <BlogBreadcrumb slug={slug} frontMatter={frontMatter} />
 
-        <Suspense fallback={<p className="h-11 w-10 pt-5" />}>
-          <p className="whitespace-nowrap pt-5 text-neutral-500">
-            <Views slug={slug} /> views
-          </p>
-        </Suspense>
 
         <MDXRemote
           source={content}

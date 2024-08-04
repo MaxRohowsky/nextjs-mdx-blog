@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { getLocalStorage, setLocalStorage } from "@/lib/storage-helper";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function CookieBanner() {

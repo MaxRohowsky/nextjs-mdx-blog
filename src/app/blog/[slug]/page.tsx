@@ -62,6 +62,9 @@ export async function generateMetadata({
   };
 }
 
+/**
+ * Fetches a blog post based on its slug.
+ */
 async function getPost({
   slug,
 }: {
@@ -94,6 +97,9 @@ let options = {
   parseFrontmatter: true,
 };
 
+/**
+ * Renders a blog post.
+ */
 export default async function Post({ params: { slug } }) {
   let { frontMatter, content } = await getPost({ slug });
   let mdxComponents = useMDXComponents({ }); 

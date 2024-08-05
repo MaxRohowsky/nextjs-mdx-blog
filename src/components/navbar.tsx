@@ -104,7 +104,7 @@ function DesktopMenu({ pathname }) {
               className="group flex justify-center px-6 py-2"
               asChild
             >
-              <a href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw">
+              <a href={process.env.NEXT_PUBLIC_YOUTUBE_URL || '#'}>
                 <span className="text-red-500 mr-2">
                   <FontAwesomeIcon icon={faYoutube} />
                 </span>
@@ -119,7 +119,7 @@ function DesktopMenu({ pathname }) {
               className="group flex justify-center px-6 py-2"
               asChild
             >
-              <a href="https://www.github.com/maxontech">
+              <a href={process.env.NEXT_PUBLIC_GITHUB_URL || '#'}>
                 <span className=" mr-2">
                   <FontAwesomeIcon icon={faGithub} />
                 </span>
@@ -134,7 +134,7 @@ function DesktopMenu({ pathname }) {
               className="group flex justify-center px-6 py-2"
               asChild
             >
-              <a href="https://discord.com/invite/JERatQsfY8">
+              <a href={process.env.NEXT_PUBLIC_DISCORD_URL || '#'}>
                 <span className="text-indigo-500  mr-2">
                   <FontAwesomeIcon icon={faDiscord} />
                 </span>
@@ -149,7 +149,7 @@ function DesktopMenu({ pathname }) {
               className="group flex justify-center px-6 py-2"
               asChild
             >
-              <a href="https://www.linkedin.com/in/maxrohowsky/">
+              <a href={process.env.NEXT_PUBLIC_LINKEDIN_URL || '#'}>
                 <span className="text-blue-500  mr-2">
                   <FontAwesomeIcon icon={faLinkedin} />
                 </span>
@@ -218,7 +218,7 @@ function MobileMenu() {
 
           <span className="flex flex-wrap justify-between w-full px-6">
             <a
-              href="https://www.youtube.com/channel/UCB_IfFmew4M6kgeo6yp18Nw"
+              href={process.env.NEXT_PUBLIC_YOUTUBE_URL || '#'}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -228,7 +228,7 @@ function MobileMenu() {
               />
             </a>
             <a
-              href="https://github.com/maxontech"
+              href={process.env.NEXT_PUBLIC_GITHUB_URL || '#'}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -238,7 +238,7 @@ function MobileMenu() {
               />
             </a>
             <a
-              href="https://discord.com/invite/JERatQsfY8"
+              href={process.env.NEXT_PUBLIC_DISCORD_URL || '#'}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -248,7 +248,7 @@ function MobileMenu() {
               />
             </a>
             <a
-              href="https://www.linkedin.com/in/maxrohowsky/"
+              href={process.env.NEXT_PUBLIC_LINKEDIN_URL || '#'}
               target="_blank"
               rel="noopener noreferrer"
             >

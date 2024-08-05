@@ -21,22 +21,22 @@ export const dmSans = DM_Sans(
 )
 
 export const metadata = {
-  metadataBase: new URL('https://maxontech.io'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL),
   title: {
-    default: 'Max Rohowsky | Software Engineering and Indie Hacking Blog',
-    template: '%s | Max Rohowsky'
+    default: `${process.env.NEXT_PUBLIC_FIRST_NAME} ${process.env.NEXT_PUBLIC_LAST_NAME} | Tech Blog`,
+    template: `%s | ${process.env.NEXT_PUBLIC_FIRST_NAME} ${process.env.NEXT_PUBLIC_LAST_NAME}`
   },
-  description: 'A Blog on Software Engineering and Indie Hacking by Max Rohowsky',
+  description: process.env.NEXT_PUBLIC_BLOG_DESCRIPTION || 'Tech Blog',
   openGraph: {
-    title: 'Max Rohowsky',
-    description: 'Software Engineering & Indie Hacking',
-    url:  'https://maxontech.io',
+    title: `${process.env.NEXT_PUBLIC_FIRST_NAME} ${process.env.NEXT_PUBLIC_LAST_NAME}`,
+    description: process.env.NEXT_PUBLIC_BLOG_DESCRIPTION,
+    url: process.env.NEXT_PUBLIC_BASE_URL,
     images: [
       {
-        url: 'https://maxontech.io/api/og?title=maxontech.io',
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/og?title=${process.env.NEXT_PUBLIC_BASE_URL}`,
       },
     ],
-    siteName: 'Max Rohowsky',
+    siteName: `${process.env.NEXT_PUBLIC_FIRST_NAME} ${process.env.NEXT_PUBLIC_LAST_NAME}`,
     locale: 'en_US',
     type: 'website',
   },
@@ -52,14 +52,11 @@ export const metadata = {
     },
   },
   twitter: {
-    title: 'Max Rohowsky',
+    title: `${process.env.NEXT_PUBLIC_FIRST_NAME} ${process.env.NEXT_PUBLIC_LAST_NAME}`,
     card: 'summary_large_image',
-    description: 'Software Engineering & Indie Hacking',
-    url: 'https://maxontech.io',
-    images: ['https://maxontech.io/api/og?title=maxontech.io']
-  },
-  verification: {
-    google: 'NVnL5jsghoSo_MaMO9El0UJE_I2k4FcLdA-BmHFnbEk'
+    description: process.env.NEXT_PUBLIC_BLOG_DESCRIPTION,
+    url: process.env.NEXT_PUBLIC_BASE_URL,
+    images: [`${process.env.NEXT_PUBLIC_BASE_URL}/api/og?title=${process.env.NEXT_PUBLIC_BASE_URL}`]
   },
 }
 

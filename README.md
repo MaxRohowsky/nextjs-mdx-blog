@@ -1,4 +1,4 @@
-## Running the Project Locally
+## Running the Project on Localhost
 
 1. **Download and Extract the Zip File**
 

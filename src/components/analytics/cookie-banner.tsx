@@ -39,14 +39,12 @@ export default function CookieBanner() {
 
 
     // If cookie is set to true or false, the first ternary operator will hide the banner
-    // https://gaudion.dev/blog/setup-google-analytics-with-gdpr-compliant-cookie-consent-in-nextjs13
     return (
         <div
             className={`my-10 ${cookieConsent == null ? "" : "hidden"} fixed bottom-0 left-0 right-0 sm:left-auto sm:mr-6
         mx-auto max-w-fit z-30`}
         >
             <div className="relative">
-                <Image src="/pookie.png" alt="Cookie" className="absolute -top-[34px] right-7   " width={50} height={50} />
 
                 <div className=" bg-white dark:bg-black border border-gray-200 dark:border-gray-600 flex items-center justify-between gap-2 rounded-sm
          px-3 py-3 flex-row md:max-w-screen-sm md:px-4  shadow-md ">

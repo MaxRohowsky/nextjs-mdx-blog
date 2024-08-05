@@ -1,13 +1,11 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Suspense } from "react";
-import { Eye } from "lucide-react";
 
-export default function RecentPostCard({
-  item,
-}: {
-  item: FrontMatter;
-}) {
+
+/**
+ * Card component for displaying recent posts on the home page.
+ */
+export default function RecentPostCard({ item }: { item: FrontMatter }) {
   return (
     <div className="group w-full cursor-pointer p-1">
       <Link
@@ -23,14 +21,6 @@ export default function RecentPostCard({
                 group-hover:text-blue-500 md:text-xl"
             >
               {item.title}
-              <Suspense fallback={<span className="w-[90px]" />}>
-                <span
-                  className="flex flex-row text-blue-500 items-center whitespace-nowrap pl-2 sm:pr-5 text-lg font-normal
-                    sm:text-neutral-200 group-hover:text-blue-500"
-                >
-                  <Eye className="ml-1 inline-block" width={20} />
-                </span>
-              </Suspense>
             </h3>
             {item.subtitle && (
               <h4 className="md:text-l font-medium text-neutral-500 dark:text-neutral-400">

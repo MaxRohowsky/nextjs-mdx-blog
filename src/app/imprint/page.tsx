@@ -1,5 +1,3 @@
-import styles from './imprint.module.scss'
-
 export default function Imprint() {
 
 

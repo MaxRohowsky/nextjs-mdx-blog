@@ -2,10 +2,7 @@
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
-import { format } from 'date-fns';
 import {pathToBlogPosts} from './utils';
-
-
 
 
 /**

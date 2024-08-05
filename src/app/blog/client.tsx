@@ -4,7 +4,7 @@ import { getFilteredBlogItems } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 import Filter from "@/components/ui/filter"
 import { getBlogTags } from '@/lib/utils';
-import BlogCard from '@/components/ui/blog-card';
+import BlogCard from '@/components/cards/blog-card';
 
 
 export default function Client({ blogItems }) {

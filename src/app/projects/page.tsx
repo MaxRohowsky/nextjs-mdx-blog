@@ -3,7 +3,7 @@
 import { getFilteredProjects, getProjectTags } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import Filter from "@/components/ui/filter";
-import ProjectCard from "@/components/ui/project-card";
+import ProjectCard from "@/components/cards/project-card";
 
 /* export const metadata = {
   title: "Projects",

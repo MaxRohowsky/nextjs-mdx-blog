@@ -6,19 +6,19 @@ import { projects } from "@/app/projects/_remote/projects";
 import { popularContent } from "@/components/popular";
 import Space from "@/components/space";
 import { Fragment } from "react";
-import FeaturedProjectCard from "@/components/ui/featured-project-card";
-import RecentPostCard from "@/components/ui/recent-post-card";
+import FeaturedProjectCard from "@/components/cards/featured-project-card";
+import RecentPostCard from "@/components/cards/recent-post-card";
 
 /**
  * Handles the content of the landing page on the client side.
  * Blogs are fetched from the server and passed as props to this component.
  * Popular content and featured projects are hardcoded and read from imported JSON files.
  */
-export default function Content({ blogs}: { blogs: FrontMatter[] }) {
+export default function Content({ blogs }: { blogs: FrontMatter[] }) {
   return (
     <section className="flex justify-center items-center">
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 ">
-        <RecentPosts blogs={blogs}  />
+        <RecentPosts blogs={blogs} />
 
         <div className="flex flex-col-reverse md:flex-col ">
           <PopularContent />
@@ -30,7 +30,7 @@ export default function Content({ blogs}: { blogs: FrontMatter[] }) {
   );
 }
 
-export function RecentPosts({ blogs }: { blogs: FrontMatter[]}) {
+export function RecentPosts({ blogs }: { blogs: FrontMatter[] }) {
   return (
     <div className="flex flex-col ">
       <h2 className="  text-rose-red  text-xl "> Recent Posts</h2>

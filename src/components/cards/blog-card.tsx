@@ -3,8 +3,6 @@ import Tilt from "react-parallax-tilt";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-// blog card inspiration: https://dev.to/frontendsolutions/13-css-blog-cards-54d7
-
 export default function BlogCard({ item }: { item: FrontMatter }) {
   const link =
     "externalLink" in item ? item.externalLink : `/blog/${item.slug}`;
@@ -51,12 +49,10 @@ export default function BlogCard({ item }: { item: FrontMatter }) {
             ))}
           </div>
 
-          <p
-          className="flex cursor-pointer gap-2 text-sm md:text-base"
-          >
+          <p className="flex cursor-pointer gap-2 text-sm md:text-base">
             Read more
             <span className="pt-[1px]">
-              <ArrowRight className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+              <ArrowRight className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </span>
           </p>
         </Link>

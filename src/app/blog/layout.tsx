@@ -1,40 +1,31 @@
 export const metadata = {
   title: {
     default: "Blog",
-    template: "%s | Blog | Max on Tech",
+    template: `%s | Blog | ${process.env.FIRST_NAME} ${process.env.LAST_NAME}`,
   },
-  description: 'Blog posts on Software Engineering and Indie Hacking by Max Rohowsky',
+  description: process.env.BLOG_TITLE,
   openGraph: {
-    title: 'Max Rohowsky',
-    description: 'Software Engineering & Indie Hacking',
-    url:  'https://maxontech.io/blog',
+    title: `${process.env.FIRST_NAME} ${process.env.LAST_NAME}`,
+    description: "Software Engineering & Indie Hacking",
+    url: `${process.env.BASE_URL}/blog`,
     images: [
       {
-        url: 'https://maxontech.io/api/og?title=maxontech.io',
+        url: `${process.env.BASE_URL}/api/og?title=${process.env.BASE_URL}`,
       },
     ],
-    siteName: 'Max Rohowsky',
-    locale: 'en_US',
-    type: 'website',
+    siteName: `${process.env.FIRST_NAME} ${process.env.LAST_NAME}`,
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    title: 'Max Rohowsky',
-    card: 'summary_large_image',
-    description: 'Software Engineering & Indie Hacking',
-    url: 'https://maxontech.io/blog',
-    images: ['https://maxontech.io/api/og?title=maxontech.io']
-  }
-}
+    title: `${process.env.FIRST_NAME} ${process.env.LAST_NAME}`,
+    card: "summary_large_image",
+    description: process.env.BLOG_TITLE,
+    url: `${process.env.BASE_URL}/blog`,
+    images: [`${process.env.BASE_URL}/api/og?title=${process.env.BASE_URL}`],
+  },
+};
 
-
-export default function MdxLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <>
-      {children}
-    </>
-  )
+export default function MdxLayout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
 }

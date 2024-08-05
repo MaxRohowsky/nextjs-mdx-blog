@@ -5,13 +5,6 @@ import { useState, useEffect } from "react";
 import Filter from "@/components/ui/filter";
 import ProjectCard from "@/components/cards/project-card";
 
-/* export const metadata = {
-  title: "Projects",
-  description: "Portfolio Projects by Max on Tech"
-} */
-
-// https://codepen.io/creativeocean/pen/JjemXGY
-
 export default function Projects() {
   const allTags = getProjectTags();
 
@@ -24,7 +17,7 @@ export default function Projects() {
   const handleTagSelection = (tag: string) => {
     if (selectedTags.includes(tag)) {
       setSelectedTags(
-        selectedTags.filter((selectedTag) => selectedTag !== tag),
+        selectedTags.filter((selectedTag) => selectedTag !== tag)
       );
     } else {
       setSelectedTags([...selectedTags, tag]);

@@ -6,12 +6,12 @@ export default async function sitemap() {
 
     let filteredBlogItems = getFilteredBlogItems(undefined, allBlogItems);
     let blogs = filteredBlogItems.map((post) => ({
-        url: `https://maxontech.io/blog/${post.slug}`,
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/blog/${post.slug}`,
         lastModified: post.updatedOn,
     }));
 
-    let routes = ['', '/blog', '/projects'].map((route) => ({
-        url: `https://maxontech.io${route}`,
+    let routes = ['', 'blog', 'projects'].map((route) => ({
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/${route}`,
         lastModified: new Date().toISOString().split('T')[0],
     }));
 

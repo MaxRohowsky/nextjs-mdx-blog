@@ -12,9 +12,9 @@
   - [License](#license)
 
 ## Support
-Star 🌟 the Project: ![GitHub stars](https://img.shields.io/github/stars/maxontech/nextjs-mdx-blog.svg?style=social&label=Star)
+Star 🌟 the Project: ![GitHub stars](https://img.shields.io/github/stars/maxrohowsky/nextjs-mdx-blog.svg?style=social&label=Star)
 <br>
-Follow 🤝 on GitHub: ![GitHub followers](https://img.shields.io/github/followers/maxontech.svg?style=social&label=Follow)
+Follow 🤝 on GitHub: ![GitHub followers](https://img.shields.io/github/followers/maxrohowsky.svg?style=social&label=Follow)
 <br>
 Follow 🐦 on X: ![X Follow](https://img.shields.io/twitter/follow/max_on_tech?style=social)
 

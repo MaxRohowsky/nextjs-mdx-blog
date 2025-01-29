@@ -16,7 +16,7 @@ Star 🌟 the Project: ![GitHub stars](https://img.shields.io/github/stars/maxro
 <br>
 Follow 🤝 on GitHub: ![GitHub followers](https://img.shields.io/github/followers/maxrohowsky.svg?style=social&label=Follow)
 <br>
-Follow 🐦 on X: ![X Follow](https://img.shields.io/twitter/follow/max_on_tech?style=social)
+Follow 🐦 on X: ![X Follow](https://img.shields.io/twitter/follow/maxrohowsky?style=social)
 
 ## Running the Project on Localhost
 
